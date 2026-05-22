@@ -1,1 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orumi | Slow journeys, lasting memories</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <div class="leaf"></div>
+
+            <h1>Orumi</h1>
+
+            <p>Slow journeys, lasting memories</p>
+
+        </div>
+
+    </div>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo-area">
+
+                <img src="logo.png" alt="Logo Orumi">
+
+                <div>
+                    <h1>Orumi</h1>
+                    <p>Slow journeys, lasting memories</p>
+                </div>
+
+            </div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+
+                <li><a href="#">Inicio</a></li>
+
+                <li class="dropdown">
+
+                    <a href="#">Destinos ▾</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#yakushima">Yakushima</a></li>
+                        <li><a href="#ginzan">Ginzan Onsen</a></li>
+                        <li><a href="#jeju">Jeju Island</a></li>
+                        <li><a href="#hoian">Hội An</a></li>
+                        <li><a href="#jiufen">Jiufen</a></li>
+                    </ul>
+
+                </li>
+
+                <li><a href="#promo">Promociones</a></li>
+
+                <li><a href="#reserva">Reservas</a></li>
+
+                <li><a href="#footer">Contacto</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+
+            <h2>Viajes lentos para almas curiosas</h2>
+
+            <p>
+                Explora destinos inspirados en la naturaleza,
+                la nostalgia y la magia de los paisajes asiáticos.
+            </p>
+
+            <a href="#reserva" class="hero-btn">
+                Reservar Ahora
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- DESTINOS -->
+
+    <section class="destinations">
+
+        <div class="section-title">
+
+            <h2>Destinos Destacados</h2>
+
+            <p>
+                Lugares cálidos, mágicos y memorables.
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <!-- YAKUSHIMA -->
+
+            <div class="card" id="yakushima">
+
+                <img src="img/yakushima.jpg" alt="Yakushima">
+
+                <div class="card-content">
+
+                    <h3>Yakushima</h3>
+
+                    <p>
+                        Bosques milenarios cubiertos de niebla y naturaleza viva.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- GINZAN -->
+
+            <div class="card" id="ginzan">
+
+                <img src="img/ginzan.jpg" alt="Ginzan">
+
+                <div class="card-content">
+
+                    <h3>Ginzan Onsen</h3>
+
+                    <p>
+                        Calles iluminadas y aguas termales en un pueblo de invierno.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- JEJU -->
+
+            <div class="card" id="jeju">
+
+                <img src="img/jeju.jpg" alt="Jeju">
+
+                <div class="card-content">
+
+                    <h3>Jeju Island</h3>
+
+                    <p>
+                        Campos verdes, volcanes y mar en perfecta armonía.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- HOIAN -->
+
+            <div class="card" id="hoian">
+
+                <img src="img/hoian.jpg" alt="Hoi An">
+
+                <div class="card-content">
+
+                    <h3>Hội An</h3>
+
+                    <p>
+                        Faroles cálidos y calles históricas llenas de vida.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- JIUFEN -->
+
+            <div class="card" id="jiufen">
+
+                <img src="img/jiufen.jpg" alt="Jiufen">
+
+                <div class="card-content">
+
+                    <h3>Jiufen</h3>
+
+                    <p>
+                        Montañas, té y callejones inspirados en mundos fantásticos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROMO -->
+
+    <section class="promo" id="promo">
+
+        <div class="promo-box">
+
+            <h2>Primavera en Asia</h2>
+
+            <p>
+                Reserva durante esta temporada y recibe descuentos especiales
+                en rutas culturales y naturales.
+            </p>
+
+            <a href="#reserva">
+                Explorar ofertas
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- RESERVA -->
+
+    <section class="booking" id="reserva">
+
+        <h2>Comienza tu viaje</h2>
+
+        <p>
+            Tu próxima aventura empieza con un solo paso.
+        </p>
+
+        <button>
+            Reservar Ahora
+        </button>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer id="footer">
+
+        <h2>Orumi</h2>
+
+        <p>
+            Slow journeys, lasting memories
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
