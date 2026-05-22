@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Orumi | Slow journeys, lasting memories</title>
+    <title>Orumi | Slow Journeys</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -14,45 +14,28 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- CURSOR LIGHT -->
+    <!-- TEXTURA -->
 
-    <div class="cursor-glow"></div>
-
-    <!-- LOADER -->
-
-    <div id="loader">
-
-        <div class="loader-content">
-
-            <div class="furin-loader">
-
-                <div class="furin-top"></div>
-                <div class="furin-string"></div>
-                <div class="furin-circle"></div>
-                <div class="furin-paper"></div>
-
-            </div>
-
-            <h2>Orumi</h2>
-
-        </div>
-
-    </div>
+    <div class="paper-overlay"></div>
 
     <!-- HEADER -->
 
-    <header id="header">
+    <header>
 
         <nav class="navbar">
 
-            <div class="logo-text">
-                Orumi
+            <div class="logo">
+
+                <img src="logo.png" alt="Orumi Logo">
+
+                <h1>Orumi</h1>
+
             </div>
 
             <div class="menu-toggle" id="menu-toggle">
@@ -63,9 +46,10 @@
 
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#destinations">Destinos</a></li>
-                <li><a href="#promo">Experiencias</a></li>
-                <li><a href="#about">Nosotros</a></li>
                 <li><a href="#booking">Reserva</a></li>
+                <li><a href="#offers">Ofertas</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#footer">Contacto</a></li>
 
             </ul>
 
@@ -77,49 +61,34 @@
 
     <section class="hero">
 
-        <!-- TEXTURA -->
-
-        <div class="hero-overlay"></div>
-
-        <!-- LUCES -->
-
-        <div class="floating-light light-1"></div>
-        <div class="floating-light light-2"></div>
-
-        <!-- LOGO -->
-
-        <div class="hero-logo">
-
-            <img src="logo.png" alt="Orumi">
-
-        </div>
-
-        <!-- CONTENIDO -->
+        <div class="hero-gradient"></div>
 
         <div class="hero-content">
 
-            <span class="hero-tag">
+            <img src="logo.png" class="hero-logo" alt="Orumi">
+
+            <span class="hero-subtitle">
                 JOURNEYS INSPIRED BY WONDER
             </span>
 
-            <h1>
+            <h2>
                 Slow journeys,<br>
                 lasting memories
-            </h1>
+            </h2>
 
             <p>
                 Viajes inspirados en paisajes cálidos,
-                nostalgia emocional y la belleza artesanal
-                de los mundos de Studio Ghibli.
+                nostalgia tranquila y la magia emocional
+                del universo Ghibli.
             </p>
 
             <div class="hero-buttons">
 
-                <a href="#booking" class="hero-button primary">
+                <a href="#booking" class="primary-btn">
                     Reservar viaje
                 </a>
 
-                <a href="#destinations" class="hero-button secondary">
+                <a href="#destinations" class="secondary-btn">
                     Explorar destinos
                 </a>
 
@@ -139,15 +108,9 @@
 
             <h2>Escenarios que parecen sueños</h2>
 
-            <p>
-                Lugares tranquilos, naturales y memorables.
-            </p>
-
         </div>
 
         <div class="cards">
-
-            <!-- CARD -->
 
             <div class="card">
 
@@ -165,8 +128,6 @@
 
             </div>
 
-            <!-- CARD -->
-
             <div class="card">
 
                 <img src="img/ginzan.jpg" alt="Ginzan">
@@ -182,26 +143,6 @@
                 </div>
 
             </div>
-
-            <!-- CARD -->
-
-            <div class="card">
-
-                <img src="img/jeju.jpg" alt="Jeju">
-
-                <div class="card-content">
-
-                    <h3>Jeju Island</h3>
-
-                    <p>
-                        Volcanes verdes y paisajes infinitos junto al mar.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- CARD -->
 
             <div class="card">
 
@@ -223,23 +164,23 @@
 
     </section>
 
-    <!-- PROMO -->
+    <!-- OFERTAS -->
 
-    <section class="promo" id="promo">
+    <section class="offers" id="offers">
 
-        <div class="promo-box">
+        <div class="offer-box">
 
-            <span>EXPERIENCIAS CURADAS</span>
+            <span>OFERTAS ESPECIALES</span>
 
             <h2>Primavera en Asia</h2>
 
             <p>
-                Descubre rutas emocionales entre montañas,
-                gastronomía y paisajes cinematográficos.
+                Descubre experiencias cálidas y cinematográficas
+                inspiradas en pueblos, montañas y jardines ocultos.
             </p>
 
             <a href="#booking">
-                Explorar experiencias
+                Ver ofertas
             </a>
 
         </div>
@@ -257,12 +198,10 @@
             <h2>Viajar lento también es lujo</h2>
 
             <p>
-                En Orumi creemos que los mejores viajes
-                nacen de momentos simples:
-                una tarde lluviosa,
-                un tren lento,
-                una calle iluminada
-                y memorias imposibles de olvidar.
+                En Orumi creemos en viajes tranquilos,
+                memorables y emocionales.
+                Experiencias donde el tiempo se mueve lento
+                y cada paisaje parece una escena de película.
             </p>
 
         </div>
@@ -278,7 +217,7 @@
             <h2>Comienza tu próxima historia</h2>
 
             <p>
-                Diseñamos experiencias cálidas,
+                Diseñamos viajes cálidos,
                 artesanales y memorables.
             </p>
 
@@ -292,7 +231,7 @@
 
     <!-- FOOTER -->
 
-    <footer>
+    <footer id="footer">
 
         <h2>Orumi</h2>
 
