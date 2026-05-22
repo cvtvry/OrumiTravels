@@ -4,32 +4,36 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Orumi | Slow journeys, lasting memories</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
+    <div class="cursor-glow"></div>
+
     <!-- LOADER -->
 
     <div id="loader">
 
-        <div class="furin-loader">
+        <div class="loader-content">
 
-            <div class="furin-top"></div>
+            <div class="furin-loader">
+                <div class="furin-top"></div>
+                <div class="furin-string"></div>
+                <div class="furin-circle"></div>
+                <div class="furin-paper"></div>
+            </div>
 
-            <div class="furin-string"></div>
-
-            <div class="furin-circle"></div>
-
-            <div class="furin-paper"></div>
+            <h2>Orumi</h2>
 
         </div>
 
@@ -37,13 +41,13 @@
 
     <!-- HEADER -->
 
-    <header>
+    <header id="header">
 
         <nav class="navbar">
 
             <div class="logo-section">
 
-                <img src="logo.png" alt="Orumi Logo">
+                <img src="logo.png" alt="Orumi">
 
                 <h1>Orumi</h1>
 
@@ -56,16 +60,10 @@
             <ul class="nav-links" id="nav-links">
 
                 <li><a href="#">Inicio</a></li>
-
                 <li><a href="#destinations">Destinos</a></li>
-
+                <li><a href="#promo">Experiencias</a></li>
+                <li><a href="#about">Filosofía</a></li>
                 <li><a href="#booking">Reserva</a></li>
-
-                <li><a href="#promo">Ofertas</a></li>
-
-                <li><a href="#about">Sobre Nosotros</a></li>
-
-                <li><a href="#footer">Contacto</a></li>
 
             </ul>
 
@@ -79,7 +77,14 @@
 
         <div class="hero-overlay"></div>
 
+        <div class="floating-light light-1"></div>
+        <div class="floating-light light-2"></div>
+
         <div class="hero-content">
+
+            <span class="hero-tag">
+                JOURNEYS INSPIRED BY WONDER
+            </span>
 
             <h2>
                 Slow journeys,<br>
@@ -87,13 +92,22 @@
             </h2>
 
             <p>
-                Viajes inspirados en paisajes cálidos, naturaleza viva
-                y la nostalgia de los mundos de Studio Ghibli.
+                Viajes inmersivos inspirados en naturaleza viva,
+                nostalgia cálida y los paisajes emocionales
+                del universo Ghibli.
             </p>
 
-            <a href="#booking" class="hero-button">
-                Reservar Ahora
-            </a>
+            <div class="hero-buttons">
+
+                <a href="#booking" class="hero-button primary">
+                    Reservar viaje
+                </a>
+
+                <a href="#destinations" class="hero-button secondary">
+                    Explorar destinos
+                </a>
+
+            </div>
 
         </div>
 
@@ -105,10 +119,12 @@
 
         <div class="section-title">
 
-            <h2>Destinos Destacados</h2>
+            <span>DESTINOS</span>
+
+            <h2>Escenarios que parecen sueños</h2>
 
             <p>
-                Lugares tranquilos, mágicos y memorables.
+                Lugares donde el tiempo avanza lentamente.
             </p>
 
         </div>
@@ -124,7 +140,7 @@
                     <h3>Yakushima</h3>
 
                     <p>
-                        Bosques ancestrales cubiertos de niebla y naturaleza viva.
+                        Bosques ancestrales cubiertos de niebla y musgo.
                     </p>
 
                 </div>
@@ -156,39 +172,7 @@
                     <h3>Jeju Island</h3>
 
                     <p>
-                        Flores, volcanes y campos verdes junto al mar.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <img src="img/hoian.jpg" alt="Hoi An">
-
-                <div class="card-content">
-
-                    <h3>Hội An</h3>
-
-                    <p>
-                        Faroles cálidos y calles llenas de historia.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <img src="img/jiufen.jpg" alt="Jiufen">
-
-                <div class="card-content">
-
-                    <h3>Jiufen</h3>
-
-                    <p>
-                        Callejones montañosos inspirados en mundos fantásticos.
+                        Volcanes verdes y campos infinitos junto al mar.
                     </p>
 
                 </div>
@@ -205,14 +189,19 @@
 
         <div class="promo-box">
 
-            <h2>Primavera en Asia</h2>
+            <span>EXPERIENCIAS CURADAS</span>
+
+            <h2>
+                Primavera en Asia
+            </h2>
 
             <p>
-                Descubre rutas naturales y culturales con promociones especiales.
+                Rutas diseñadas para conectar con paisajes,
+                gastronomía y momentos inolvidables.
             </p>
 
             <a href="#booking">
-                Explorar ofertas
+                Descubrir experiencias
             </a>
 
         </div>
@@ -225,12 +214,14 @@
 
         <div class="about-box">
 
-            <h2>Sobre Orumi</h2>
+            <span>NUESTRA FILOSOFÍA</span>
+
+            <h2>Viajar lento también es lujo</h2>
 
             <p>
-                Orumi nace para crear viajes lentos, cálidos y memorables,
-                inspirados en la belleza tranquila de los paisajes asiáticos
-                y la magia emocional de Studio Ghibli.
+                En Orumi creemos que los mejores viajes
+                no se miden en kilómetros,
+                sino en emociones, silencios y memorias.
             </p>
 
         </div>
@@ -241,21 +232,26 @@
 
     <section class="booking" id="booking">
 
-        <h2>Comienza tu viaje</h2>
+        <div class="booking-box">
 
-        <p>
-            Tu próxima aventura empieza aquí.
-        </p>
+            <h2>Comienza tu próxima historia</h2>
 
-        <button>
-            Reservar Ahora
-        </button>
+            <p>
+                Diseñamos experiencias cinematográficas,
+                cálidas y memorables.
+            </p>
+
+            <button>
+                Reservar ahora
+            </button>
+
+        </div>
 
     </section>
 
     <!-- FOOTER -->
 
-    <footer id="footer">
+    <footer>
 
         <h2>Orumi</h2>
 
