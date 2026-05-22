@@ -24,7 +24,7 @@ menuToggle.addEventListener("click", () => {
 
 });
 
-/* HEADER */
+/* HEADER SCROLL */
 
 const header = document.getElementById("header");
 
