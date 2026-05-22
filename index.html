@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -21,13 +21,15 @@
 
     <div id="loader">
 
-        <div class="loader-box">
+        <div class="furin-loader">
 
-            <div class="leaf"></div>
+            <div class="furin-top"></div>
 
-            <h1>Orumi</h1>
+            <div class="furin-string"></div>
 
-            <p>Slow journeys, lasting memories</p>
+            <div class="furin-circle"></div>
+
+            <div class="furin-paper"></div>
 
         </div>
 
@@ -43,13 +45,7 @@
 
                 <img src="logo.png" alt="Orumi Logo">
 
-                <div>
-
-                    <h1>Orumi</h1>
-
-                    <p>Slow journeys, lasting memories</p>
-
-                </div>
+                <h1>Orumi</h1>
 
             </div>
 
@@ -61,29 +57,13 @@
 
                 <li><a href="#">Inicio</a></li>
 
-                <li class="dropdown">
+                <li><a href="#destinations">Destinos</a></li>
 
-                    <a href="#">Destinos ▾</a>
+                <li><a href="#booking">Reserva</a></li>
 
-                    <ul class="dropdown-menu">
+                <li><a href="#promo">Ofertas</a></li>
 
-                        <li><a href="#yakushima">Yakushima</a></li>
-
-                        <li><a href="#ginzan">Ginzan Onsen</a></li>
-
-                        <li><a href="#jeju">Jeju Island</a></li>
-
-                        <li><a href="#hoian">Hội An</a></li>
-
-                        <li><a href="#jiufen">Jiufen</a></li>
-
-                    </ul>
-
-                </li>
-
-                <li><a href="#promo">Promociones</a></li>
-
-                <li><a href="#booking">Reservas</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
 
                 <li><a href="#footer">Contacto</a></li>
 
@@ -101,11 +81,14 @@
 
         <div class="hero-content">
 
-            <h2>Viajes lentos para almas curiosas</h2>
+            <h2>
+                Slow journeys,<br>
+                lasting memories
+            </h2>
 
             <p>
-                Descubre paisajes cálidos, mágicos y naturales inspirados
-                en los mundos tranquilos del Studio Ghibli.
+                Viajes inspirados en paisajes cálidos, naturaleza viva
+                y la nostalgia de los mundos de Studio Ghibli.
             </p>
 
             <a href="#booking" class="hero-button">
@@ -118,23 +101,21 @@
 
     <!-- DESTINOS -->
 
-    <section class="destinations">
+    <section class="destinations" id="destinations">
 
         <div class="section-title">
 
             <h2>Destinos Destacados</h2>
 
             <p>
-                Naturaleza, nostalgia y aventuras memorables.
+                Lugares tranquilos, mágicos y memorables.
             </p>
 
         </div>
 
         <div class="cards">
 
-            <!-- YAKUSHIMA -->
-
-            <div class="card" id="yakushima">
+            <div class="card">
 
                 <img src="img/yakushima.jpg" alt="Yakushima">
 
@@ -143,16 +124,14 @@
                     <h3>Yakushima</h3>
 
                     <p>
-                        Bosques ancestrales cubiertos de niebla y vida.
+                        Bosques ancestrales cubiertos de niebla y naturaleza viva.
                     </p>
 
                 </div>
 
             </div>
 
-            <!-- GINZAN -->
-
-            <div class="card" id="ginzan">
+            <div class="card">
 
                 <img src="img/ginzan.jpg" alt="Ginzan">
 
@@ -161,16 +140,14 @@
                     <h3>Ginzan Onsen</h3>
 
                     <p>
-                        Aguas termales y calles iluminadas por faroles.
+                        Calles iluminadas y aguas termales entre montañas.
                     </p>
 
                 </div>
 
             </div>
 
-            <!-- JEJU -->
-
-            <div class="card" id="jeju">
+            <div class="card">
 
                 <img src="img/jeju.jpg" alt="Jeju">
 
@@ -179,16 +156,14 @@
                     <h3>Jeju Island</h3>
 
                     <p>
-                        Volcanes, flores y mar en perfecta armonía.
+                        Flores, volcanes y campos verdes junto al mar.
                     </p>
 
                 </div>
 
             </div>
 
-            <!-- HOI AN -->
-
-            <div class="card" id="hoian">
+            <div class="card">
 
                 <img src="img/hoian.jpg" alt="Hoi An">
 
@@ -197,16 +172,14 @@
                     <h3>Hội An</h3>
 
                     <p>
-                        Calles históricas llenas de luces y cultura.
+                        Faroles cálidos y calles llenas de historia.
                     </p>
 
                 </div>
 
             </div>
 
-            <!-- JIUFEN -->
-
-            <div class="card" id="jiufen">
+            <div class="card">
 
                 <img src="img/jiufen.jpg" alt="Jiufen">
 
@@ -215,7 +188,7 @@
                     <h3>Jiufen</h3>
 
                     <p>
-                        Montañas, té y callejones llenos de magia.
+                        Callejones montañosos inspirados en mundos fantásticos.
                     </p>
 
                 </div>
@@ -235,8 +208,7 @@
             <h2>Primavera en Asia</h2>
 
             <p>
-                Vive rutas naturales y culturales con descuentos exclusivos
-                durante esta temporada.
+                Descubre rutas naturales y culturales con promociones especiales.
             </p>
 
             <a href="#booking">
@@ -247,7 +219,25 @@
 
     </section>
 
-    <!-- RESERVA -->
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="about-box">
+
+            <h2>Sobre Orumi</h2>
+
+            <p>
+                Orumi nace para crear viajes lentos, cálidos y memorables,
+                inspirados en la belleza tranquila de los paisajes asiáticos
+                y la magia emocional de Studio Ghibli.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- BOOKING -->
 
     <section class="booking" id="booking">
 
