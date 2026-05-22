@@ -1,147 +1,800 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
 
-/* VARIABLES */
-
-:root {
-
-    --rose-soft: #e78a7a;
-    --clay-orange: #be5746;
-    --terracotta: #9b4a44;
-
-    --paper: #e6caad;
-
-    --moss: #70673f;
-
-    --wine-dark: #421f28;
-
-    --bg-dark: #171412;
-
-    --text: #f4e7d8;
-    --text-soft: #d9ccb8;
-}
-
 /* RESET */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
+body{
 
-    font-family: 'Manrope', sans-serif;
+    font-family:'Manrope', sans-serif;
+
+    overflow-x:hidden;
 
     background:
-        radial-gradient(
-            circle at top,
-            rgba(231,138,122,0.12),
-            transparent 30%
-        ),
-        linear-gradient(
-            180deg,
-            #171412 0%,
-            #2a211d 35%,
-            #3c3128 100%
-        );
 
-    color: var(--text);
+    radial-gradient(
+        circle at top,
+        rgba(231,138,122,0.12),
+        transparent 30%
+    ),
 
-    overflow-x: hidden;
+    linear-gradient(
+        180deg,
+        #171412 0%,
+        #2a211d 40%,
+        #3c3128 100%
+    );
 
-    position: relative;
+    color:#f4e7d8;
+
+    position:relative;
 }
 
-/* PAPER TEXTURE */
+/* TEXTURA */
 
-body::before {
+body::before{
 
-    content: "";
+    content:"";
 
-    position: fixed;
+    position:fixed;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
+    inset:0;
 
     background-image:
-        url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
 
-    opacity: 0.12;
+    opacity:0.12;
 
-    pointer-events: none;
+    pointer-events:none;
 
-    z-index: 9999;
+    z-index:9999;
 }
 
-/* CURSOR GLOW */
+/* CURSOR */
 
-.cursor-glow {
+.cursor-glow{
 
-    position: fixed;
+    position:fixed;
 
-    width: 300px;
-    height: 300px;
+    width:300px;
+    height:300px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(255,170,110,0.12),
-            transparent 70%
-        );
+    radial-gradient(
+        circle,
+        rgba(255,170,110,0.12),
+        transparent 70%
+    );
 
-    pointer-events: none;
+    pointer-events:none;
 
-    transform: translate(-50%, -50%);
+    transform:translate(-50%,-50%);
 
-    z-index: 1;
+    z-index:1;
 }
 
 /* LOADER */
 
-#loader {
+#loader{
 
-    position: fixed;
+    position:fixed;
 
-    width: 100%;
-    height: 100vh;
+    width:100%;
+    height:100vh;
 
-    background: #171412;
+    background:#171412;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    z-index: 99999;
+    z-index:99999;
 
-    transition: 1s;
+    transition:1s;
 }
 
-.loader-content {
-    text-align: center;
+.loader-content{
+    text-align:center;
 }
 
-.loader-content h2 {
+.loader-content h2{
 
-    margin-top: 25px;
+    margin-top:25px;
 
-    font-size: 3rem;
+    font-size:3rem;
 
-    color: var(--paper);
+    color:#e6caad;
 
-    font-family: 'Cormorant Garamond', serif;
+    font-family:'Cormorant Garamond', serif;
 }
 
 /* FURIN */
 
-.furin-loader {
+.furin-loader{
 
-    width: 120px
+    width:120px;
+    height:220px;
+
+    animation:swing 2s ease-in-out infinite;
+}
+
+.furin-top{
+
+    width:18px;
+    height:18px;
+
+    background:#be5746;
+
+    border-radius:50%;
+
+    margin:auto;
+}
+
+.furin-string{
+
+    width:2px;
+    height:60px;
+
+    background:#e6caad;
+
+    margin:auto;
+}
+
+.furin-circle{
+
+    width:95px;
+    height:95px;
+
+    border:4px solid #e6caad;
+
+    border-radius:50%;
+
+    margin:auto;
+}
+
+.furin-paper{
+
+    width:40px;
+    height:90px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #e78a7a,
+        #be5746
+    );
+
+    margin:auto;
+
+    margin-top:-5px;
+
+    border-radius:0 0 12px 12px;
+}
+
+@keyframes swing{
+
+    0%{
+        transform:rotate(-5deg);
+    }
+
+    50%{
+        transform:rotate(5deg);
+    }
+
+    100%{
+        transform:rotate(-5deg);
+    }
+}
+
+/* HEADER */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    transition:0.4s;
+}
+
+header.scrolled{
+
+    background:rgba(23,20,18,0.85);
+
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:24px 8%;
+}
+
+.logo-text{
+
+    font-size:2.7rem;
+
+    font-family:'Cormorant Garamond', serif;
+
+    color:#e6caad;
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style:none;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#f4e7d8;
+
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#e78a7a;
+}
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:2rem;
+
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        rgba(20,15,12,0.35),
+        rgba(20,15,12,0.65)
+    ),
+
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1970&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+
+    background-size:4px 4px;
+
+    opacity:0.15;
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at top,
+        rgba(255,170,80,0.12),
+        transparent 35%
+    );
+}
+
+/* LIGHTS */
+
+.floating-light{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+}
+
+.light-1{
+
+    width:300px;
+    height:300px;
+
+    background:rgba(255,170,100,0.12);
+
+    top:10%;
+    left:10%;
+}
+
+.light-2{
+
+    width:420px;
+    height:420px;
+
+    background:rgba(140,90,70,0.14);
+
+    bottom:-5%;
+    right:10%;
+}
+
+/* HERO LOGO */
+
+.hero-logo{
+
+    position:absolute;
+
+    top:28px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:5;
+}
+
+.hero-logo img{
+
+    width:90px;
+
+    opacity:0.92;
+
+    filter:
+    drop-shadow(0 8px 18px rgba(0,0,0,0.22));
+
+    animation:floatLogo 5s ease-in-out infinite;
+}
+
+@keyframes floatLogo{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:4;
+
+    max-width:900px;
+
+    padding:20px;
+
+    margin-top:120px;
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#e6caad;
+
+    margin-bottom:30px;
+
+    letter-spacing:1px;
+}
+
+.hero-content h1{
+
+    font-size:5.2rem;
+
+    line-height:0.92;
+
+    margin-bottom:30px;
+
+    font-family:'Cormorant Garamond', serif;
+}
+
+.hero-content p{
+
+    max-width:700px;
+
+    margin:auto auto 45px;
+
+    font-size:1.2rem;
+
+    line-height:1.9;
+
+    color:#d9ccb8;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.hero-button{
+
+    padding:18px 34px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    transition:0.4s;
+}
+
+.hero-button.primary{
+
+    background:#be5746;
+
+    color:white;
+}
+
+.hero-button.secondary{
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+}
+
+.hero-button:hover{
+
+    transform:translateY(-3px);
+
+    background:#d56d59;
+}
+
+/* SECTIONS */
+
+section{
+    padding:130px 8%;
+}
+
+/* TITLES */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:80px;
+}
+
+.section-title span{
+
+    color:#e78a7a;
+
+    letter-spacing:2px;
+}
+
+.section-title h2{
+
+    font-size:4.5rem;
+
+    margin:20px 0;
+
+    font-family:'Cormorant Garamond', serif;
+}
+
+.section-title p{
+
+    color:#d9ccb8;
+}
+
+/* CARDS */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+}
+
+.card{
+
+    background:#ead8c3;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    transition:0.45s;
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,0.22);
+}
+
+.card:hover{
+
+    transform:
+    translateY(-10px)
+    rotate(-1deg);
+}
+
+.card img{
+
+    width:100%;
+    height:420px;
+
+    object-fit:cover;
+}
+
+.card-content{
+    padding:30px;
+}
+
+.card-content h3{
+
+    font-size:2rem;
+
+    color:#4e3428;
+
+    margin-bottom:12px;
+
+    font-family:'Cormorant Garamond', serif;
+}
+
+.card-content p{
+
+    color:#715f53;
+
+    line-height:1.8;
+}
+
+/* PROMO + BOOKING */
+
+.promo-box,
+.booking-box{
+
+    background:rgba(255,240,220,0.08);
+
+    padding:90px;
+
+    border-radius:35px;
+
+    text-align:center;
+}
+
+.promo-box span,
+.about-box span{
+
+    color:#e78a7a;
+
+    letter-spacing:2px;
+}
+
+.promo-box h2,
+.about-box h2,
+.booking-box h2{
+
+    font-size:4.5rem;
+
+    margin:25px 0;
+
+    font-family:'Cormorant Garamond', serif;
+}
+
+.promo-box p,
+.about-box p,
+.booking-box p{
+
+    max-width:720px;
+
+    margin:auto auto 40px;
+
+    line-height:1.9;
+
+    color:#d9ccb8;
+}
+
+.promo-box a,
+.booking-box button{
+
+    display:inline-block;
+
+    padding:18px 36px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#be5746;
+
+    color:white;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.promo-box a:hover,
+.booking-box button:hover{
+
+    background:#d56d59;
+
+    transform:translateY(-3px);
+}
+
+/* ABOUT */
+
+.about-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+
+    padding:70px;
+
+    text-align:center;
+
+    background:#140f0d;
+}
+
+footer h2{
+
+    font-size:3rem;
+
+    margin-bottom:10px;
+
+    font-family:'Cormorant Garamond', serif;
+
+    color:#e6caad;
+}
+
+footer p{
+    color:#bda998;
+}
+
+/* ANIMATIONS */
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all 1s ease;
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    .hero-content h1{
+        font-size:4rem;
+    }
+
+    .section-title h2,
+    .promo-box h2,
+    .about-box h2,
+    .booking-box h2{
+        font-size:3rem;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:100%;
+        right:0;
+
+        width:260px;
+
+        padding:30px;
+
+        background:#1d1714;
+
+        flex-direction:column;
+
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .promo-box,
+    .booking-box{
+        padding:50px 25px;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    section{
+        padding:100px 6%;
+    }
+
+    .hero-logo img{
+        width:70px;
+    }
+}
