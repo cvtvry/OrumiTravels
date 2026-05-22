@@ -1,1 +1,396 @@
+/* RESET */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+/* BODY */
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f4f1e8;
+    color:#2e3b2d;
+    overflow-x:hidden;
+}
+
+/* LOADER */
+
+#loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#edf3e3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:1s;
+}
+
+.loader-content{
+    text-align:center;
+}
+
+.loader-content h1{
+    font-size:4rem;
+    font-family:'Playfair Display', serif;
+    color:#5c7854;
+}
+
+.loader-content p{
+    margin-top:10px;
+    color:#6b7f63;
+}
+
+.leaf{
+    width:80px;
+    height:80px;
+    margin:auto;
+    background:linear-gradient(135deg,#8eb486,#d6e8c8);
+    border-radius:0 100% 0 100%;
+    transform:rotate(45deg);
+    animation:floatLeaf 2s infinite ease-in-out;
+}
+
+@keyframes floatLeaf{
+    0%{transform:rotate(45deg) translateY(0);}
+    50%{transform:rotate(45deg) translateY(-10px);}
+    100%{transform:rotate(45deg) translateY(0);}
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.2);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-area img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.logo-area h1{
+    font-family:'Playfair Display', serif;
+    font-size:2rem;
+    color:#4e6b47;
+}
+
+.logo-area p{
+    font-size:0.8rem;
+    color:#6f7c68;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#31422f;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#88a67d;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu{
+    position:absolute;
+    top:30px;
+    left:0;
+    background:white;
+    list-style:none;
+    min-width:180px;
+    border-radius:15px;
+    padding:10px 0;
+    display:none;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu li{
+    padding:10px 20px;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+/* MENU MOBILE */
+
+.menu-toggle{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1974&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+    padding:20px;
+}
+
+.hero-content h2{
+    font-size:4rem;
+    color:white;
+    font-family:'Playfair Display', serif;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    color:white;
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.hero-btn{
+    background:#dcebc8;
+    color:#40523c;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.4s;
+}
+
+.hero-btn:hover{
+    background:#adc79b;
+    transform:translateY(-3px);
+}
+
+/* SECTIONS */
+
+section{
+    padding:120px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    font-family:'Playfair Display', serif;
+    margin-bottom:15px;
+    color:#4f6849;
+}
+
+.section-title p{
+    color:#6d7a67;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h3{
+    font-family:'Playfair Display', serif;
+    margin-bottom:15px;
+    font-size:1.7rem;
+    color:#4c6445;
+}
+
+.card-content p{
+    color:#687564;
+    line-height:1.7;
+}
+
+/* PROMO */
+
+.promo{
+    background:linear-gradient(135deg,#dce8cb,#eef4e5);
+}
+
+.promo-box{
+    background:white;
+    border-radius:35px;
+    padding:70px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.promo-box h2{
+    font-size:3rem;
+    font-family:'Playfair Display', serif;
+    margin-bottom:20px;
+    color:#56704f;
+}
+
+.promo-box p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    color:#687564;
+    margin-bottom:35px;
+}
+
+.promo-box a{
+    background:#91b182;
+    color:white;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.promo-box a:hover{
+    background:#6e8e61;
+}
+
+/* BOOKING */
+
+.booking{
+    text-align:center;
+}
+
+.booking h2{
+    font-size:3rem;
+    font-family:'Playfair Display', serif;
+    margin-bottom:20px;
+    color:#4f6849;
+}
+
+.booking p{
+    color:#6b7867;
+    margin-bottom:30px;
+}
+
+.booking button{
+    border:none;
+    background:#8cae7d;
+    color:white;
+    padding:18px 40px;
+    border-radius:50px;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.booking button:hover{
+    background:#6d8b60;
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+footer{
+    background:#dde8d4;
+    text-align:center;
+    padding:50px;
+}
+
+footer h2{
+    font-family:'Playfair Display', serif;
+    font-size:2.5rem;
+    margin-bottom:10px;
+    color:#4f6849;
+}
+
+footer p{
+    color:#6b7867;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-content h2{
+        font-size:2.8rem;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        right:0;
+        background:white;
+        flex-direction:column;
+        width:250px;
+        padding:30px;
+        display:none;
+        border-radius:0 0 0 20px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+}
