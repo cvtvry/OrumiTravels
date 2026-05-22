@@ -1,5 +1,3 @@
-/* FUENTES */
-
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito:wght@300;400;500;600;700&display=swap');
 
 /* RESET */
@@ -22,33 +20,13 @@ body{
     linear-gradient(
         180deg,
         #1b1614 0%,
-        #31241f 45%,
-        #46352d 100%
+        #2f231d 45%,
+        #47352c 100%
     );
 
     color:#f5e7d8;
 
     overflow-x:hidden;
-
-    position:relative;
-}
-
-/* TEXTURA PAPEL */
-
-.paper-overlay{
-
-    position:fixed;
-
-    inset:0;
-
-    background-image:
-    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
-
-    opacity:0.13;
-
-    pointer-events:none;
-
-    z-index:999;
 }
 
 /* HEADER */
@@ -63,15 +41,12 @@ header{
 
     z-index:1000;
 
-    background:
-    rgba(20,16,14,0.45);
+    background:rgba(22,17,15,0.6);
 
     backdrop-filter:blur(10px);
 }
 
 .navbar{
-
-    width:100%;
 
     display:flex;
 
@@ -105,11 +80,9 @@ header{
     font-size:2.2rem;
 
     color:#ead0b0;
-
-    letter-spacing:1px;
 }
 
-/* MENU */
+/* NAV */
 
 .nav-links{
 
@@ -124,9 +97,7 @@ header{
 
     text-decoration:none;
 
-    color:#f4e6d7;
-
-    font-size:1rem;
+    color:#f5e7d8;
 
     transition:0.3s;
 }
@@ -140,11 +111,11 @@ header{
 
     display:none;
 
+    color:white;
+
     font-size:2rem;
 
     cursor:pointer;
-
-    color:white;
 }
 
 /* HERO */
@@ -152,8 +123,6 @@ header{
 .hero{
 
     min-height:100vh;
-
-    position:relative;
 
     display:flex;
 
@@ -163,10 +132,9 @@ header{
 
     text-align:center;
 
-    overflow:hidden;
+    position:relative;
 
     background:
-
     linear-gradient(
         rgba(15,12,10,0.45),
         rgba(15,12,10,0.7)
@@ -178,7 +146,7 @@ header{
     background-position:center;
 }
 
-.hero-gradient{
+.overlay{
 
     position:absolute;
 
@@ -191,8 +159,6 @@ header{
         transparent 35%
     );
 }
-
-/* HERO CONTENT */
 
 .hero-content{
 
@@ -212,31 +178,11 @@ header{
     width:120px;
 
     margin-bottom:30px;
-
-    animation:floatLogo 5s ease-in-out infinite;
-
-    filter:
-    drop-shadow(0 10px 25px rgba(0,0,0,0.25));
 }
 
-@keyframes floatLogo{
+/* TEXT */
 
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-}
-
-/* HERO TEXT */
-
-.hero-subtitle{
+.subtitle{
 
     display:inline-block;
 
@@ -244,17 +190,11 @@ header{
 
     border-radius:999px;
 
-    background:
-    rgba(255,255,255,0.08);
-
-    border:
-    1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.08);
 
     color:#ead0b0;
 
     margin-bottom:28px;
-
-    letter-spacing:1px;
 
     font-size:0.85rem;
 }
@@ -268,8 +208,6 @@ header{
     line-height:0.95;
 
     margin-bottom:28px;
-
-    color:#fff4e7;
 }
 
 .hero p{
@@ -278,11 +216,11 @@ header{
 
     margin:auto auto 45px;
 
-    font-size:1.2rem;
-
     line-height:1.9;
 
     color:#d9c7b6;
+
+    font-size:1.2rem;
 }
 
 /* BUTTONS */
@@ -298,8 +236,8 @@ header{
     flex-wrap:wrap;
 }
 
-.primary-btn,
-.secondary-btn{
+.btn-primary,
+.btn-secondary{
 
     padding:18px 34px;
 
@@ -307,26 +245,25 @@ header{
 
     text-decoration:none;
 
-    transition:0.4s;
+    transition:0.3s;
 }
 
-.primary-btn{
+.btn-primary{
 
     background:#be5746;
 
     color:white;
 }
 
-.secondary-btn{
+.btn-secondary{
 
-    background:
-    rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.08);
 
     color:white;
 }
 
-.primary-btn:hover,
-.secondary-btn:hover{
+.btn-primary:hover,
+.btn-secondary:hover{
 
     transform:translateY(-4px);
 
@@ -430,17 +367,16 @@ section{
     line-height:1.8;
 }
 
-/* OFFER */
+/* BOXES */
 
 .offer-box,
 .booking-box{
 
-    background:
-    rgba(255,240,220,0.08);
-
-    border-radius:32px;
+    background:rgba(255,240,220,0.08);
 
     padding:90px;
+
+    border-radius:32px;
 
     text-align:center;
 }
@@ -496,7 +432,7 @@ section{
 
     cursor:pointer;
 
-    transition:0.4s;
+    transition:0.3s;
 }
 
 .offer-box a:hover,
