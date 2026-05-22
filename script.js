@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
 
         loader.style.visibility = "hidden";
 
-    }, 1800);
+    }, 2200);
 
 });
 
@@ -24,7 +24,7 @@ menuToggle.addEventListener("click", () => {
 
 });
 
-/* CARDS ANIMATION */
+/* SCROLL CARDS */
 
 const cards = document.querySelectorAll(".card");
 
@@ -32,21 +32,21 @@ cards.forEach(card => {
 
     card.style.opacity = "0";
 
-    card.style.transform = "translateY(40px)";
+    card.style.transform = "translateY(50px)";
 
-    card.style.transition = "0.8s";
+    card.style.transition = "0.8s ease";
 
 });
 
 window.addEventListener("scroll", () => {
 
-    const triggerBottom = window.innerHeight * 0.85;
+    const trigger = window.innerHeight * 0.85;
 
     cards.forEach(card => {
 
-        const cardTop = card.getBoundingClientRect().top;
+        const top = card.getBoundingClientRect().top;
 
-        if(cardTop < triggerBottom){
+        if(top < trigger){
 
             card.style.opacity = "1";
 
