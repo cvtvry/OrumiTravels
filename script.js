@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
 
 });
 
-/* MOBILE MENU */
+/* MENU MOBILE */
 
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
@@ -24,7 +24,7 @@ menuToggle.addEventListener("click", () => {
 
 });
 
-/* HEADER SCROLL */
+/* HEADER */
 
 const header = document.getElementById("header");
 
@@ -42,7 +42,7 @@ window.addEventListener("scroll", () => {
 
 });
 
-/* REVEAL ANIMATION */
+/* SCROLL REVEAL */
 
 const observer = new IntersectionObserver((entries) => {
 
@@ -57,11 +57,12 @@ const observer = new IntersectionObserver((entries) => {
     });
 
 }, {
-    threshold: 0.2
+    threshold:0.2
 });
 
-document.querySelectorAll(".card, .promo-box, .about-box, .booking-box")
-.forEach(el => {
+document.querySelectorAll(
+".card, .promo-box, .about-box, .booking-box"
+).forEach(el => {
 
     el.classList.add("hidden");
 
