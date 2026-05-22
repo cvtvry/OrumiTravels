@@ -24,31 +24,9 @@ menuToggle.addEventListener("click", () => {
 
 });
 
-/* ANIMACION SCROLL */
+/* CARDS ANIMATION */
 
 const cards = document.querySelectorAll(".card");
-
-window.addEventListener("scroll", () => {
-
-    const trigger = window.innerHeight * 0.85;
-
-    cards.forEach(card => {
-
-        const top = card.getBoundingClientRect().top;
-
-        if(top < trigger){
-
-            card.style.opacity = "1";
-
-            card.style.transform = "translateY(0)";
-
-        }
-
-    });
-
-});
-
-/* ESTADO INICIAL */
 
 cards.forEach(card => {
 
@@ -56,25 +34,25 @@ cards.forEach(card => {
 
     card.style.transform = "translateY(40px)";
 
-    card.style.transition = "0.8s ease";
+    card.style.transition = "0.8s";
 
 });
 
-/* EFECTO BOTON */
+window.addEventListener("scroll", () => {
 
-const buttons = document.querySelectorAll("button, .hero-btn");
+    const triggerBottom = window.innerHeight * 0.85;
 
-buttons.forEach(button => {
+    cards.forEach(card => {
 
-    button.addEventListener("mouseenter", () => {
+        const cardTop = card.getBoundingClientRect().top;
 
-        button.style.transform = "scale(1.05)";
+        if(cardTop < triggerBottom){
 
-    });
+            card.style.opacity = "1";
 
-    button.addEventListener("mouseleave", () => {
+            card.style.transform = "translateY(0)";
 
-        button.style.transform = "scale(1)";
+        }
 
     });
 
