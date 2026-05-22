@@ -1,3 +1,5 @@
+/* LOADER */
+
 window.addEventListener("load", () => {
 
     const loader = document.getElementById("loader");
@@ -5,17 +7,15 @@ window.addEventListener("load", () => {
     setTimeout(() => {
 
         loader.style.opacity = "0";
-
         loader.style.visibility = "hidden";
 
     }, 2200);
 
 });
 
-/* MENU MOBILE */
+/* MOBILE MENU */
 
 const menuToggle = document.getElementById("menu-toggle");
-
 const navLinks = document.getElementById("nav-links");
 
 menuToggle.addEventListener("click", () => {
@@ -24,36 +24,58 @@ menuToggle.addEventListener("click", () => {
 
 });
 
-/* SCROLL CARDS */
+/* HEADER SCROLL */
 
-const cards = document.querySelectorAll(".card");
-
-cards.forEach(card => {
-
-    card.style.opacity = "0";
-
-    card.style.transform = "translateY(50px)";
-
-    card.style.transition = "0.8s ease";
-
-});
+const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
 
-    const trigger = window.innerHeight * 0.85;
+    if(window.scrollY > 50){
 
-    cards.forEach(card => {
+        header.classList.add("scrolled");
 
-        const top = card.getBoundingClientRect().top;
+    } else {
 
-        if(top < trigger){
+        header.classList.remove("scrolled");
 
-            card.style.opacity = "1";
+    }
 
-            card.style.transform = "translateY(0)";
+});
+
+/* REVEAL ANIMATION */
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
 
         }
 
     });
+
+}, {
+    threshold: 0.2
+});
+
+document.querySelectorAll(".card, .promo-box, .about-box, .booking-box")
+.forEach(el => {
+
+    el.classList.add("hidden");
+
+    observer.observe(el);
+
+});
+
+/* CURSOR GLOW */
+
+const glow = document.querySelector(".cursor-glow");
+
+window.addEventListener("mousemove", (e) => {
+
+    glow.style.left = `${e.clientX}px`;
+    glow.style.top = `${e.clientY}px`;
 
 });
