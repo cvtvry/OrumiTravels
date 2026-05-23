@@ -1,24 +1,59 @@
-window.onload = function () {
+window.addEventListener("load", () => {
 
     const loader = document.getElementById("loader");
 
-    loader.style.opacity = "0";
-
     setTimeout(() => {
 
-        loader.style.display = "none";
+        loader.style.opacity = "0";
 
-    }, 1000);
+        loader.style.visibility = "hidden";
 
-};
+    }, 2200);
 
-/* MENU */
+});
+
+/* MENU MOBILE */
 
 const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
+
+const navLinks = document.getElementById("nav-links");
 
 menuToggle.addEventListener("click", () => {
 
-    navMenu.classList.toggle("active");
+    navLinks.classList.toggle("active");
+
+});
+
+/* SCROLL CARDS */
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+
+    card.style.transform = "translateY(50px)";
+
+    card.style.transition = "0.8s ease";
+
+});
+
+window.addEventListener("scroll", () => {
+
+    const trigger = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+
+        const top = card.getBoundingClientRect().top;
+
+        if(top < trigger){
+
+            card.style.opacity = "1";
+
+            card.style.transform = "translateY(0)";
+
+        }
+
+    });
 
 });
