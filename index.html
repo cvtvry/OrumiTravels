@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orumi Travel</title>
+
+    <title>Orumi | Slow journeys, lasting memories</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -17,34 +20,53 @@
     <!-- LOADER -->
 
     <div id="loader">
-        <img src="furin.gif" alt="Loading">
-        <p>Preparing your slow journey...</p>
+
+        <div class="furin-loader">
+
+            <div class="furin-top"></div>
+
+            <div class="furin-string"></div>
+
+            <div class="furin-circle"></div>
+
+            <div class="furin-paper"></div>
+
+        </div>
+
     </div>
 
     <!-- HEADER -->
 
     <header>
 
-        <div class="logo-area">
-            <img src="logo.png" alt="Orumi Logo">
-            <div>
-                <h1>ORUMI</h1>
-                <p>Slow journeys, lasting memories</p>
-            </div>
-        </div>
+        <nav class="navbar">
 
-        <nav>
+            <div class="logo-section">
+
+                <img src="logo.png" alt="Orumi Logo">
+
+                <h1>Orumi</h1>
+
+            </div>
 
             <div class="menu-toggle" id="menu-toggle">
                 ☰
             </div>
 
-            <ul id="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Destinations</a></li>
-                <li><a href="#">Offers</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Reserve</a></li>
+            <ul class="nav-links" id="nav-links">
+
+                <li><a href="#">Inicio</a></li>
+
+                <li><a href="#destinations">Destinos</a></li>
+
+                <li><a href="#booking">Reserva</a></li>
+
+                <li><a href="#promo">Ofertas</a></li>
+
+                <li><a href="#about">Sobre Nosotros</a></li>
+
+                <li><a href="#footer">Contacto</a></li>
+
             </ul>
 
         </nav>
@@ -57,82 +79,189 @@
 
         <div class="hero-overlay"></div>
 
-        <img src="banner.jpg" alt="Banner">
-
         <div class="hero-content">
-            <h2>Travel like a Ghibli Story</h2>
+
+            <h2>
+                Slow journeys,<br>
+                lasting memories
+            </h2>
 
             <p>
-                Quiet villages, warm lights, hidden trains and unforgettable landscapes.
+                Viajes inspirados en paisajes cálidos, naturaleza viva
+                y la nostalgia de los mundos de Studio Ghibli.
             </p>
 
-            <button>Reserve Now</button>
+            <a href="#booking" class="hero-button">
+                Reservar Ahora
+            </a>
+
         </div>
 
     </section>
 
-    <!-- DESTINATIONS -->
+    <!-- DESTINOS -->
 
-    <section class="destinations">
+    <section class="destinations" id="destinations">
 
         <div class="section-title">
-            <h2>Featured Destinations</h2>
+
+            <h2>Destinos Destacados</h2>
+
+            <p>
+                Lugares tranquilos, mágicos y memorables.
+            </p>
+
         </div>
 
         <div class="cards">
 
             <div class="card">
-                <h3>Yakushima</h3>
-                <p>Misty forests and ancient cedar trees.</p>
+
+                <img src="img/yakushima.jpg" alt="Yakushima">
+
+                <div class="card-content">
+
+                    <h3>Yakushima</h3>
+
+                    <p>
+                        Bosques ancestrales cubiertos de niebla y naturaleza viva.
+                    </p>
+
+                </div>
+
             </div>
 
             <div class="card">
-                <h3>Ginzan Onsen</h3>
-                <p>Warm lantern streets and traditional ryokans.</p>
+
+                <img src="img/ginzan.jpg" alt="Ginzan">
+
+                <div class="card-content">
+
+                    <h3>Ginzan Onsen</h3>
+
+                    <p>
+                        Calles iluminadas y aguas termales entre montañas.
+                    </p>
+
+                </div>
+
             </div>
 
             <div class="card">
-                <h3>Jeju Island</h3>
-                <p>Ocean winds and peaceful volcanic landscapes.</p>
+
+                <img src="img/jeju.jpg" alt="Jeju">
+
+                <div class="card-content">
+
+                    <h3>Jeju Island</h3>
+
+                    <p>
+                        Flores, volcanes y campos verdes junto al mar.
+                    </p>
+
+                </div>
+
             </div>
 
             <div class="card">
-                <h3>Hội An</h3>
-                <p>Golden lanterns and timeless riverside nights.</p>
+
+                <img src="img/hoian.jpg" alt="Hoi An">
+
+                <div class="card-content">
+
+                    <h3>Hội An</h3>
+
+                    <p>
+                        Faroles cálidos y calles llenas de historia.
+                    </p>
+
+                </div>
+
             </div>
 
             <div class="card">
-                <h3>Jiufen</h3>
-                <p>Mountain alleys glowing with nostalgic lights.</p>
+
+                <img src="img/jiufen.jpg" alt="Jiufen">
+
+                <div class="card-content">
+
+                    <h3>Jiufen</h3>
+
+                    <p>
+                        Callejones montañosos inspirados en mundos fantásticos.
+                    </p>
+
+                </div>
+
             </div>
 
         </div>
 
     </section>
 
-    <!-- OFFERS -->
+    <!-- PROMO -->
 
-    <section class="offers">
+    <section class="promo" id="promo">
 
-        <div class="offers-box">
+        <div class="promo-box">
 
-            <h2>Seasonal Slow Travel Offers</h2>
+            <h2>Primavera en Asia</h2>
 
             <p>
-                Discover curated journeys inspired by peaceful countryside adventures and hidden cultural gems.
+                Descubre rutas naturales y culturales con promociones especiales.
             </p>
 
-            <button>Explore Offers</button>
+            <a href="#booking">
+                Explorar ofertas
+            </a>
 
         </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="about-box">
+
+            <h2>Sobre Orumi</h2>
+
+            <p>
+                Orumi nace para crear viajes lentos, cálidos y memorables,
+                inspirados en la belleza tranquila de los paisajes asiáticos
+                y la magia emocional de Studio Ghibli.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- BOOKING -->
+
+    <section class="booking" id="booking">
+
+        <h2>Comienza tu viaje</h2>
+
+        <p>
+            Tu próxima aventura empieza aquí.
+        </p>
+
+        <button>
+            Reservar Ahora
+        </button>
 
     </section>
 
     <!-- FOOTER -->
 
-    <footer>
+    <footer id="footer">
 
-        <p>© 2026 ORUMI TRAVEL — Crafted with calm journeys.</p>
+        <h2>Orumi</h2>
+
+        <p>
+            Slow journeys, lasting memories
+        </p>
 
     </footer>
 
