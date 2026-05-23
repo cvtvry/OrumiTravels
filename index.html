@@ -2,264 +2,203 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ORUMI TRAVEL</title>
+    <title>Orumi | Slow journeys, lasting memories</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- FUENTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Marcellus&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- ICONOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="furin-loader">
+            <div class="furin-top"></div>
+            <div class="furin-string"></div>
+            <div class="furin-circle"></div>
+            <div class="furin-paper"></div>
+        </div>
+    </div>
+
     <!-- HEADER -->
-
     <header>
-
         <nav class="navbar">
 
-            <div class="brand-mini">
-
-                <span>ORUMI TRAVEL</span>
-
+            <div class="logo-section">
+                <img src="logo.png" alt="Orumi Logo">
+                <div class="logo-text">
+                    <h1>Orumi</h1>
+                    <span>Slow journeys</span>
+                </div>
             </div>
 
             <div class="menu-toggle" id="menu-toggle">
-
-                <i class="fa-solid fa-bars"></i>
-
+                ☰
             </div>
 
             <ul class="nav-links" id="nav-links">
-
                 <li><a href="#">Inicio</a></li>
-
                 <li><a href="#destinations">Destinos</a></li>
-
-                <li><a href="#offers">Ofertas</a></li>
-
-                <li><a href="#about">Sobre Nosotros</a></li>
-
                 <li><a href="#booking">Reserva</a></li>
-
+                <li><a href="#promo">Ofertas</a></li>
+                <li><a href="#about">Nosotros</a></li>
                 <li><a href="#footer">Contacto</a></li>
-
             </ul>
 
         </nav>
-
     </header>
 
     <!-- HERO -->
-
     <section class="hero">
 
-        <!-- OVERLAY -->
+        <div class="mist mist-1"></div>
+        <div class="mist mist-2"></div>
 
         <div class="hero-overlay"></div>
 
-        <!-- SUNSET LIGHT -->
-
-        <div class="sun-glow"></div>
-
-        <!-- PARTICULAS -->
-
-        <div class="particles"></div>
-
-        <!-- LOGO COLGANTE -->
-
-        <div class="hanging-logo">
-
-            <div class="rope"></div>
-
-            <img src="logo.png" alt="Orumi Logo" class="hero-logo">
-
+        <div class="floating-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-
-        <!-- CONTENIDO -->
 
         <div class="hero-content">
 
-            <span class="hero-tag">
-
-                SLOW JOURNEYS • WARM MEMORIES
-
-            </span>
-
-            <h1>
-
-                ORUMI TRAVEL
-
-            </h1>
+            <p class="hero-mini">
+                Inspired by quiet worlds
+            </p>
 
             <h2>
-
-                Viajes cálidos,<br>
-                mágicos y memorables
-
+                Slow journeys,<br>
+                lasting memories
             </h2>
 
-            <p>
-
-                Explora paisajes inspirados en la nostalgia,
-                naturaleza viva y la tranquilidad del universo Ghibli.
-                Bosques encantados, pueblos escondidos y rutas
-                cinematográficas alrededor del mundo.
-
+            <p class="hero-description">
+                Viajes inspirados en paisajes cálidos,
+                bosques eternos y la nostalgia mágica
+                de los mundos de Studio Ghibli.
             </p>
 
             <div class="hero-buttons">
-
-                <a href="#booking" class="btn-primary">
-
+                <a href="#booking" class="hero-button primary-btn">
                     Reservar viaje
-
                 </a>
 
-                <a href="#destinations" class="btn-secondary">
-
+                <a href="#destinations" class="hero-button secondary-btn">
                     Explorar destinos
-
                 </a>
-
             </div>
 
+        </div>
+
+        <div class="hero-scroll">
+            <span></span>
         </div>
 
     </section>
 
     <!-- DESTINOS -->
-
     <section class="destinations" id="destinations">
 
         <div class="section-title">
-
-            <span>DESTINOS</span>
-
-            <h2>
-
-                Escenarios que parecen sueños
-
-            </h2>
-
+            <h2>Destinos Destacados</h2>
+            <p>
+                Lugares tranquilos, mágicos y memorables.
+            </p>
         </div>
 
         <div class="cards">
 
-            <!-- CARD -->
-
             <div class="card">
-
                 <img src="img/yakushima.jpg" alt="Yakushima">
 
                 <div class="card-content">
-
-                    <i class="fa-solid fa-tree"></i>
-
                     <h3>Yakushima</h3>
 
                     <p>
-
-                        Bosques ancestrales cubiertos de niebla
-                        y naturaleza viva.
-
+                        Bosques ancestrales cubiertos de niebla y naturaleza viva.
                     </p>
-
                 </div>
-
             </div>
 
-            <!-- CARD -->
-
             <div class="card">
-
                 <img src="img/ginzan.jpg" alt="Ginzan">
 
                 <div class="card-content">
-
-                    <i class="fa-solid fa-water"></i>
-
                     <h3>Ginzan Onsen</h3>
 
                     <p>
-
-                        Calles iluminadas y aguas termales
-                        entre montañas.
-
+                        Calles iluminadas y aguas termales entre montañas.
                     </p>
-
                 </div>
-
             </div>
 
-            <!-- CARD -->
+            <div class="card">
+                <img src="img/jeju.jpg" alt="Jeju">
+
+                <div class="card-content">
+                    <h3>Jeju Island</h3>
+
+                    <p>
+                        Flores, volcanes y campos verdes junto al mar.
+                    </p>
+                </div>
+            </div>
 
             <div class="card">
-
                 <img src="img/hoian.jpg" alt="Hoi An">
 
                 <div class="card-content">
-
-                    <i class="fa-solid fa-torii-gate"></i>
-
-                    <h3>Hoi An</h3>
+                    <h3>Hội An</h3>
 
                     <p>
-
-                        Faroles cálidos y calles llenas
-                        de historia.
-
+                        Faroles cálidos y calles llenas de historia.
                     </p>
-
                 </div>
+            </div>
 
+            <div class="card">
+                <img src="img/jiufen.jpg" alt="Jiufen">
+
+                <div class="card-content">
+                    <h3>Jiufen</h3>
+
+                    <p>
+                        Callejones montañosos inspirados en mundos fantásticos.
+                    </p>
+                </div>
             </div>
 
         </div>
 
     </section>
 
-    <!-- OFERTAS -->
+    <!-- PROMO -->
+    <section class="promo" id="promo">
 
-    <section class="offers" id="offers">
+        <div class="promo-box">
 
-        <div class="glass-box">
+            <p class="promo-subtitle">
+                Seasonal journeys
+            </p>
 
-            <span>
-
-                OFERTAS ESPECIALES
-
-            </span>
-
-            <h2>
-
-                Primavera en Asia
-
-            </h2>
+            <h2>Primavera en Asia</h2>
 
             <p>
-
-                Experiencias inspiradas en trenes antiguos,
-                jardines japoneses y pueblos escondidos.
-
+                Descubre rutas naturales y culturales
+                con promociones especiales inspiradas
+                en paisajes cinematográficos.
             </p>
 
             <a href="#booking">
-
-                Ver ofertas
-
+                Explorar ofertas
             </a>
 
         </div>
@@ -267,29 +206,23 @@
     </section>
 
     <!-- ABOUT -->
-
     <section class="about" id="about">
 
-        <div class="glass-box">
+        <div class="about-box">
 
-            <span>
-
-                NUESTRA FILOSOFÍA
-
-            </span>
+            <p class="about-mini">
+                About Orumi
+            </p>
 
             <h2>
-
-                Viajar lento también es lujo
-
+                Viajar lento también es una forma de volver a sentir.
             </h2>
 
             <p>
-
-                Diseñamos viajes emocionales y cinematográficos,
-                inspirados en la tranquilidad, naturaleza
-                y belleza del universo Ghibli.
-
+                Orumi nace para crear viajes cálidos,
+                tranquilos y memorables inspirados
+                en la belleza emocional de Asia
+                y los paisajes nostálgicos del cine animado japonés.
             </p>
 
         </div>
@@ -297,58 +230,30 @@
     </section>
 
     <!-- BOOKING -->
-
     <section class="booking" id="booking">
 
-        <div class="glass-box">
+        <h2>Comienza tu viaje</h2>
 
-            <span>
+        <p>
+            Tu próxima aventura empieza aquí.
+        </p>
 
-                COMIENZA TU VIAJE
-
-            </span>
-
-            <h2>
-
-                Tu próxima historia empieza aquí
-
-            </h2>
-
-            <p>
-
-                Viajes cálidos, relajados y memorables.
-
-            </p>
-
-            <button>
-
-                Reservar ahora
-
-            </button>
-
-        </div>
+        <button>
+            Reservar Ahora
+        </button>
 
     </section>
 
     <!-- FOOTER -->
-
     <footer id="footer">
 
-        <h2>
-
-            ORUMI TRAVEL
-
-        </h2>
+        <h2>Orumi</h2>
 
         <p>
-
             Slow journeys, lasting memories
-
         </p>
 
     </footer>
-
-    <!-- JS -->
 
     <script src="script.js"></script>
 
