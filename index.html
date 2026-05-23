@@ -1,699 +1,341 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>
-    Orumi Journeys | Slow journeys, lasting memories
-  </title>
+  <title>Orumi Journeys | Slow journeys, lasting memories</title>
 
-  <!-- =========================
-       GOOGLE FONTS
-  ========================== -->
-
+  <!-- FUENTES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <style>
-
-    /* =========================
-       RESET
-    ========================= */
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Nunito', sans-serif;
-      overflow-x:hidden;
-      background:#f4efe6;
-      color:white;
-    }
-
-    /* =========================
-       LOADER
-    ========================= */
-
-    .loader{
-
-      position:fixed;
-
-      inset:0;
-
-      background:#f4efe6;
-
-      display:flex;
-
-      justify-content:center;
-
-      align-items:center;
-
-      flex-direction:column;
-
-      z-index:9999;
-
-      transition:1s;
-
-    }
-
-    .loader.hidden{
-
-      opacity:0;
-
-      visibility:hidden;
-
-    }
-
-    .flower{
-
-      width:70px;
-
-      height:70px;
-
-      border:3px solid #d8b38a;
-
-      border-top-color:transparent;
-
-      border-radius:50%;
-
-      animation:spin 2s linear infinite;
-
-      margin-bottom:20px;
-
-    }
-
-    @keyframes spin{
-
-      to{
-        transform:rotate(360deg);
-      }
-
-    }
-
-    .loader p{
-
-      color:#2d2d2d;
-
-      font-family:'Cormorant Garamond', serif;
-
-      font-size:1.5rem;
-
-      letter-spacing:2px;
-
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    .header{
-
-      position:fixed;
-
-      top:0;
-
-      left:0;
-
-      width:100%;
-
-      display:flex;
-
-      justify-content:space-between;
-
-      align-items:center;
-
-      padding:20px 25px;
-
-      z-index:1000;
-
-      backdrop-filter:blur(10px);
-
-      background:linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.25),
-      transparent
-      );
-
-    }
-
-    .logo{
-
-      font-family:'Cormorant Garamond', serif;
-
-      font-size:2.4rem;
-
-      letter-spacing:2px;
-
-      color:white;
-
-      text-shadow:0 5px 20px rgba(0,0,0,0.4);
-
-    }
-
-    /* =========================
-       MENÚ HAMBURGUESA
-    ========================= */
-
-    .menu-toggle{
-
-      width:35px;
-
-      height:25px;
-
-      display:flex;
-
-      flex-direction:column;
-
-      justify-content:space-between;
-
-      cursor:pointer;
-
-      z-index:1001;
-
-    }
-
-    .menu-toggle span{
-
-      width:100%;
-
-      height:3px;
-
-      background:white;
-
-      border-radius:20px;
-
-      transition:0.4s;
-
-    }
-
-    /* =========================
-       MENÚ LATERAL
-    ========================= */
-
-    .menu{
-
-      position:fixed;
-
-      top:0;
-
-      right:-100%;
-
-      width:270px;
-
-      height:100vh;
-
-      background:rgba(18,18,18,0.96);
-
-      backdrop-filter:blur(18px);
-
-      display:flex;
-
-      flex-direction:column;
-
-      padding-top:120px;
-
-      transition:0.5s;
-
-      z-index:999;
-
-    }
-
-    .menu.active{
-      right:0;
-    }
-
-    .menu a{
-
-      color:white;
-
-      text-decoration:none;
-
-      padding:20px 40px;
-
-      font-size:1.1rem;
-
-      transition:0.35s;
-
-    }
-
-    .menu a:hover{
-
-      background:rgba(255,255,255,0.08);
-
-      padding-left:50px;
-
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero{
-
-      position:relative;
-
-      width:100%;
-
-      height:100vh;
-
-      overflow:hidden;
-
-      display:flex;
-
-      justify-content:center;
-
-      align-items:center;
-
-      text-align:center;
-
-      background-image:
-
-      linear-gradient(
-      rgba(0,0,0,0.40),
-      rgba(0,0,0,0.45)
-      ),
-
-      url('img/sunset-train.jpg');
-
-      background-size:cover;
-
-      background-position:center;
-
-      background-repeat:no-repeat;
-
-      background-attachment:fixed;
-
-    }
-
-    /* =========================
-       NIEBLA CINEMATOGRÁFICA
-    ========================= */
-
-    .fog{
-
-      position:absolute;
-
-      inset:0;
-
-      z-index:1;
-
-      background:
-
-      radial-gradient(
-      circle at 20% 50%,
-      rgba(255,255,255,0.06),
-      transparent 40%
-      ),
-
-      radial-gradient(
-      circle at 80% 60%,
-      rgba(255,255,255,0.05),
-      transparent 40%
-      );
-
-      animation:fogMove 20s linear infinite;
-
-    }
-
-    @keyframes fogMove{
-
-      0%{
-        transform:translateX(0);
-      }
-
-      50%{
-        transform:translateX(-20px);
-      }
-
-      100%{
-        transform:translateX(0);
-      }
-
-    }
-
-    /* =========================
-       HERO CONTENT
-    ========================= */
-
-    .hero-content{
-
-      position:relative;
-
-      z-index:3;
-
-      max-width:850px;
-
-      padding:20px;
-
-      animation:fadeUp 2s ease;
-
-    }
-
-    .slogan{
-
-      font-family:'Cormorant Garamond', serif;
-
-      font-size:2rem;
-
-      margin-bottom:25px;
-
-      color:#f5e5d0;
-
-      letter-spacing:2px;
-
-      text-shadow:0 4px 20px rgba(0,0,0,0.5);
-
-    }
-
-    .hero h1{
-
-      font-size:3.7rem;
-
-      line-height:1.2;
-
-      font-weight:300;
-
-      margin-bottom:40px;
-
-      text-shadow:0 8px 35px rgba(0,0,0,0.6);
-
-    }
-
-    /* =========================
-       BOTÓN
-    ========================= */
-
-    .btn{
-
-      padding:16px 40px;
-
-      border:none;
-
-      border-radius:50px;
-
-      background:rgba(216,179,138,0.92);
-
-      color:white;
-
-      font-size:1rem;
-
-      cursor:pointer;
-
-      transition:0.4s;
-
-      backdrop-filter:blur(10px);
-
-      box-shadow:0 12px 30px rgba(0,0,0,0.25);
-
-    }
-
-    .btn:hover{
-
-      transform:translateY(-6px);
-
-      background:#c89a6c;
-
-      box-shadow:0 15px 40px rgba(0,0,0,0.4);
-
-    }
-
-    /* =========================
-       PARTÍCULAS
-    ========================= */
-
-    .particles span{
-
-      position:absolute;
-
-      bottom:-20px;
-
-      width:8px;
-
-      height:8px;
-
-      border-radius:50%;
-
-      background:rgba(255,255,255,0.45);
-
-      animation:float linear infinite;
-
-    }
-
-    @keyframes float{
-
-      from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-      }
-
-      to{
-
-        transform:translateY(-110vh);
-
-        opacity:1;
-
-      }
-
-    }
-
-    /* =========================
-       ANIMACIONES
-    ========================= */
-
-    @keyframes fadeUp{
-
-      from{
-
-        opacity:0;
-
-        transform:translateY(40px);
-
-      }
-
-      to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-      }
-
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media(max-width:768px){
-
-      .hero{
-
-        background-attachment:scroll;
-
-      }
-
-      .hero h1{
-
-        font-size:2.2rem;
-
-      }
-
-      .slogan{
-
-        font-size:1.5rem;
-
-      }
-
-      .logo{
-
-        font-size:1.9rem;
-
-      }
-
-      .menu{
-
-        width:100%;
-
-      }
-
-    }
-
-  </style>
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Nunito', sans-serif;
+  background:#f4efe6;
+  overflow-x:hidden;
+  color:white;
+}
+
+/* ================= LOADER ================= */
+
+.loader{
+  position:fixed;
+  inset:0;
+  background:#f4efe6;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  transition:1s;
+}
+
+.loader.hidden{
+  opacity:0;
+  visibility:hidden;
+}
+
+.flower{
+  width:70px;
+  height:70px;
+  border:3px solid #d8b38a;
+  border-top-color:transparent;
+  border-radius:50%;
+  animation:spin 2s linear infinite;
+  margin-bottom:20px;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
+
+.loader p{
+  font-family:'Cormorant Garamond', serif;
+  color:#2d2d2d;
+  font-size:1.4rem;
+  letter-spacing:2px;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 25px;
+  z-index:1000;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.35), transparent);
+  backdrop-filter:blur(10px);
+}
+
+.logo{
+  font-family:'Cormorant Garamond', serif;
+  font-size:2.3rem;
+  letter-spacing:2px;
+}
+
+/* ================= MENU ================= */
+
+.menu-toggle{
+  width:35px;
+  height:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.menu-toggle span{
+  height:3px;
+  background:white;
+  border-radius:10px;
+}
+
+.menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:280px;
+  height:100vh;
+  background:rgba(15,15,15,0.96);
+  backdrop-filter:blur(20px);
+  padding-top:120px;
+  transition:.5s;
+  z-index:999;
+}
+
+.menu.active{
+  right:0;
+}
+
+.menu a{
+  display:block;
+  padding:20px 40px;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.menu a:hover{
+  background:rgba(255,255,255,0.08);
+  padding-left:55px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.5)),
+    url('img/sunset-train.jpg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  overflow:hidden;
+}
+
+/* NIEBLA */
+
+.fog{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 30% 60%, rgba(255,255,255,0.06), transparent 40%),
+    radial-gradient(circle at 80% 40%, rgba(255,255,255,0.05), transparent 40%);
+  animation:fogMove 20s linear infinite;
+}
+
+@keyframes fogMove{
+  0%{transform:translateX(0);}
+  50%{transform:translateX(-20px);}
+  100%{transform:translateX(0);}
+}
+
+/* GLOW */
+
+.glow{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 70%, rgba(255,180,120,0.18), transparent 45%);
+  pointer-events:none;
+}
+
+/* CONTENIDO */
+
+.hero-content{
+  position:relative;
+  z-index:3;
+  max-width:800px;
+  padding:20px;
+  animation:fadeUp 2s ease;
+}
+
+.slogan{
+  font-family:'Cormorant Garamond', serif;
+  font-size:2rem;
+  margin-bottom:20px;
+  color:#f5e5d0;
+}
+
+.hero h1{
+  font-size:3.5rem;
+  font-weight:300;
+  margin-bottom:35px;
+}
+
+/* BOTÓN */
+
+.btn{
+  padding:16px 40px;
+  border:none;
+  border-radius:50px;
+  background:#d8b38a;
+  color:white;
+  cursor:pointer;
+  transition:.4s;
+  box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+.btn:hover{
+  transform:translateY(-6px);
+  background:#c89a6c;
+}
+
+/* PARTÍCULAS */
+
+.particles span,
+.leaves span{
+  position:absolute;
+  bottom:-20px;
+  border-radius:50%;
+  animation:float linear infinite;
+}
+
+.particles span{
+  width:6px;
+  height:6px;
+  background:rgba(255,255,255,0.4);
+}
+
+@keyframes float{
+  from{transform:translateY(0);opacity:0;}
+  to{transform:translateY(-120vh);opacity:1;}
+}
+
+/* HOJAS */
+
+.leaves span{
+  top:-10%;
+  width:18px;
+  height:18px;
+  background:radial-gradient(circle, #ffdede, #ffbaba);
+  border-radius:60% 40% 70% 30%;
+  animation:leafFall linear infinite;
+}
+
+@keyframes leafFall{
+  from{transform:translateY(-10vh) rotate(0deg);opacity:0;}
+  to{transform:translateY(120vh) rotate(360deg);opacity:1;}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+  .hero{background-attachment:scroll;}
+  .hero h1{font-size:2.2rem;}
+  .slogan{font-size:1.4rem;}
+  .logo{font-size:1.8rem;}
+  .menu{width:100%;}
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       LOADER
-  ========================== -->
+<div class="loader" id="loader">
+  <div class="flower"></div>
+  <p>Entering Orumi...</p>
+</div>
 
-  <div class="loader" id="loader">
-
-    <div class="flower"></div>
-
-    <p>Entering Orumi...</p>
-
+<header class="header">
+  <div class="logo">Orumi Journeys</div>
+  <div class="menu-toggle" id="toggle">
+    <span></span><span></span><span></span>
   </div>
+  <nav class="menu" id="menu">
+    <a href="#">Inicio</a>
+    <a href="#">Destinos</a>
+    <a href="#">Reserva</a>
+    <a href="#">Sobre Nosotros</a>
+    <a href="#">Contacto</a>
+  </nav>
+</header>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+<section class="hero">
+  <div class="fog"></div>
+  <div class="glow"></div>
+  <div class="particles" id="particles"></div>
+  <div class="leaves" id="leaves"></div>
 
-  <header class="header">
+  <div class="hero-content">
+    <p class="slogan">Slow journeys, lasting memories</p>
+    <h1>Viajes tranquilos inspirados<br>en mundos mágicos</h1>
+    <button class="btn">Reservar Ahora</button>
+  </div>
+</section>
 
-    <div class="logo">
-      Orumi Journeys
-    </div>
+<script>
+window.addEventListener("load",()=>{
+  setTimeout(()=>document.getElementById("loader").classList.add("hidden"),1600);
+});
 
-    <!-- MENÚ HAMBURGUESA -->
+document.getElementById("toggle").onclick=()=>{
+  document.getElementById("menu").classList.toggle("active");
+};
 
-    <div class="menu-toggle" id="menu-toggle">
+const particles=document.getElementById("particles");
+for(let i=0;i<45;i++){
+  let s=document.createElement("span");
+  s.style.left=Math.random()*100+"%";
+  s.style.animationDuration=8+Math.random()*12+"s";
+  particles.appendChild(s);
+}
 
-      <span></span>
-      <span></span>
-      <span></span>
-
-    </div>
-
-    <!-- MENÚ -->
-
-    <nav class="menu" id="menu">
-
-      <a href="#">Inicio</a>
-
-      <a href="#">Destinos</a>
-
-      <a href="#">Reserva</a>
-
-      <a href="#">Ofertas</a>
-
-      <a href="#">Sobre Nosotros</a>
-
-      <a href="#">Contacto</a>
-
-    </nav>
-
-  </header>
-
-  <!-- =========================
-       HERO SECTION
-  ========================== -->
-
-  <section class="hero">
-
-    <!-- NIEBLA -->
-
-    <div class="fog"></div>
-
-    <!-- PARTÍCULAS -->
-
-    <div class="particles" id="particles"></div>
-
-    <!-- CONTENIDO -->
-
-    <div class="hero-content">
-
-      <p class="slogan">
-        Slow journeys, lasting memories
-      </p>
-
-      <h1>
-        Viajes tranquilos inspirados
-        en mundos mágicos
-      </h1>
-
-      <button class="btn">
-        Reservar Ahora
-      </button>
-
-    </div>
-
-  </section>
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
-  <script>
-
-    /* =========================
-       LOADER
-    ========================= */
-
-    window.addEventListener("load", () => {
-
-      const loader =
-      document.getElementById("loader");
-
-      setTimeout(() => {
-
-        loader.classList.add("hidden");
-
-      }, 1800);
-
-    });
-
-    /* =========================
-       MENÚ
-    ========================= */
-
-    const toggle =
-    document.getElementById("menu-toggle");
-
-    const menu =
-    document.getElementById("menu");
-
-    toggle.addEventListener("click", () => {
-
-      menu.classList.toggle("active");
-
-    });
-
-    /* =========================
-       PARTÍCULAS
-    ========================= */
-
-    const particles =
-    document.getElementById("particles");
-
-    for(let i = 0; i < 45; i++){
-
-      const span =
-      document.createElement("span");
-
-      span.style.left =
-      Math.random() * 100 + "%";
-
-      span.style.animationDuration =
-      (8 + Math.random() * 12) + "s";
-
-      span.style.animationDelay =
-      Math.random() * 5 + "s";
-
-      particles.appendChild(span);
-
-    }
-
-  </script>
+const leaves=document.getElementById("leaves");
+for(let i=0;i<22;i++){
+  let l=document.createElement("span");
+  l.style.left=Math.random()*100+"%";
+  l.style.animationDuration=10+Math.random()*12+"s";
+  leaves.appendChild(l);
+}
+</script>
 
 </body>
-
 </html>
