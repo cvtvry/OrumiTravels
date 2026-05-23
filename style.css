@@ -174,6 +174,40 @@ body{
   background-attachment:fixed;
 
   overflow:hidden;
+
+  isolation:isolate;
+}
+
+/* ================================================= */
+/* ============ HERO CINEMATIC TRANSITION ========== */
+/* ================================================= */
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-1px;
+
+  width:100%;
+  height:220px;
+
+  z-index:2;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(244,239,230,0) 0%,
+      rgba(244,239,230,0.12) 20%,
+      rgba(244,239,230,0.4) 40%,
+      rgba(244,239,230,0.78) 70%,
+      #f7f1e7 100%
+    );
+
+  pointer-events:none;
 }
 
 /* ================================================= */
@@ -240,8 +274,13 @@ body{
 .hero-content{
   position:relative;
   z-index:3;
+
   max-width:800px;
+
   padding:20px;
+
+  margin-top:-40px;
+
   animation:fadeUp 2s ease;
 }
 
@@ -385,33 +424,33 @@ body{
 
   overflow:hidden;
 
-  background:
-
-    radial-gradient(
-      circle at top left,
-      rgba(255,240,220,0.75),
-      transparent 30%
-    ),
-
-    radial-gradient(
-      circle at bottom right,
-      rgba(255,210,170,0.18),
-      transparent 30%
-    ),
-
-    radial-gradient(
-      circle at center,
-      rgba(255,255,255,0.25),
-      transparent 60%
-    ),
+  background-image:
 
     linear-gradient(
-      to bottom,
-      #f7f1e7 0%,
-      #efe2cf 45%,
-      #eadbc7 100%
-    );
+      rgba(247,241,231,0.84),
+      rgba(239,226,207,0.88)
+    ),
+
+    url("img/background-texture.jpg");
+
+  background-size:
+    cover,
+    cover;
+
+  background-position:
+    center,
+    center;
+
+  background-repeat:
+    no-repeat,
+    no-repeat;
+
+  background-attachment:
+    scroll,
+    fixed;
 }
+
+/* ================= LIGHTS ================= */
 
 .destinations::before{
 
@@ -423,15 +462,35 @@ body{
 
   background:
 
-    url("https://www.transparenttextures.com/patterns/rice-paper-3.png"),
-
     radial-gradient(
-      circle at top right,
+      circle at top left,
       rgba(255,255,255,0.35),
       transparent 30%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(255,210,170,0.15),
+      transparent 35%
     );
 
-  opacity:.35;
+  pointer-events:none;
+}
+
+/* ================= FILM GRAIN ================= */
+
+.destinations::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background-image:
+    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+
+  opacity:.18;
 
   mix-blend-mode:soft-light;
 
@@ -478,6 +537,9 @@ body{
     repeat(auto-fit,minmax(300px,1fr));
 
   gap:35px;
+
+  position:relative;
+  z-index:2;
 }
 
 /* ================= CARD ================= */
@@ -625,30 +687,14 @@ body{
   }
 
   .destinations{
+    padding:
+      100px 6%
+      120px;
 
-  position:relative;
-
-  padding:
-    130px 7%
-    140px;
-
-  overflow:hidden;
-
-  background:
-
-    linear-gradient(
-      rgba(247,241,231,0.82),
-      rgba(239,226,207,0.9)
-    ),
-
-    url('img/background-texture.jpg');
-
-  background-size:cover;
-
-  background-position:center;
-
-  background-attachment:fixed;
-}
+    background-attachment:
+      scroll,
+      scroll;
+  }
 
   .section-title{
     font-size:2.8rem;
