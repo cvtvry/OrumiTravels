@@ -2,261 +2,421 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Orumi | Slow journeys, lasting memories</title>
+  <title>Orumi | Slow journeys, lasting memories</title>
 
-    <link rel="stylesheet" href="style.css">
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Nunito', sans-serif;
+      overflow-x:hidden;
+      background:#f4efe6;
+      color:white;
+    }
+
+    /* =========================
+       LOADER
+    ========================= */
+
+    .loader{
+      position:fixed;
+      inset:0;
+      background:#f4efe6;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      z-index:9999;
+      transition:1s;
+    }
+
+    .loader.hidden{
+      opacity:0;
+      visibility:hidden;
+    }
+
+    .flower{
+      width:70px;
+      height:70px;
+      border:3px solid #d8b38a;
+      border-top-color:transparent;
+      border-radius:50%;
+      animation:spin 2s linear infinite;
+      margin-bottom:20px;
+    }
+
+    @keyframes spin{
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    .loader p{
+      color:#2d2d2d;
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.5rem;
+      letter-spacing:2px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      position:relative;
+      height:100vh;
+
+      background-image:
+      linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+
+      overflow:hidden;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header{
+      position:fixed;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 25px;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+    }
+
+    .logo{
+      font-family:'Cormorant Garamond', serif;
+      font-size:2.3rem;
+      letter-spacing:2px;
+    }
+
+    /* =========================
+       MENÚ
+    ========================= */
+
+    .menu-toggle{
+      width:35px;
+      height:25px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      cursor:pointer;
+      z-index:1001;
+    }
+
+    .menu-toggle span{
+      height:3px;
+      background:white;
+      border-radius:20px;
+    }
+
+    .menu{
+      position:fixed;
+      top:0;
+      right:-100%;
+      width:260px;
+      height:100vh;
+      background:rgba(28,28,28,0.96);
+
+      display:flex;
+      flex-direction:column;
+
+      padding-top:120px;
+
+      transition:0.5s;
+    }
+
+    .menu.active{
+      right:0;
+    }
+
+    .menu a{
+      color:white;
+      text-decoration:none;
+      padding:20px 40px;
+      font-size:1.1rem;
+      transition:0.3s;
+    }
+
+    .menu a:hover{
+      background:rgba(255,255,255,0.08);
+      padding-left:50px;
+    }
+
+    /* =========================
+       HERO CONTENT
+    ========================= */
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding:20px;
+      max-width:800px;
+
+      animation:fadeUp 2s ease;
+    }
+
+    .slogan{
+      font-family:'Cormorant Garamond', serif;
+      font-size:2rem;
+      margin-bottom:20px;
+      color:#f5e5d0;
+      letter-spacing:2px;
+    }
+
+    .hero h1{
+      font-size:3rem;
+      font-weight:300;
+      line-height:1.2;
+      margin-bottom:40px;
+    }
+
+    .btn{
+      padding:16px 36px;
+      border:none;
+      border-radius:50px;
+      background:#d8b38a;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:#c89a6c;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* =========================
+       PARTÍCULAS
+    ========================= */
+
+    .particles span{
+      position:absolute;
+      bottom:-20px;
+      width:8px;
+      height:8px;
+      background:rgba(255,255,255,0.4);
+      border-radius:50%;
+
+      animation:float linear infinite;
+    }
+
+    @keyframes float{
+
+      from{
+        transform:translateY(0);
+        opacity:0;
+      }
+
+      to{
+        transform:translateY(-110vh);
+        opacity:1;
+      }
+
+    }
+
+    /* =========================
+       ANIMACIONES
+    ========================= */
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2rem;
+      }
+
+      .slogan{
+        font-size:1.5rem;
+      }
+
+      .logo{
+        font-size:2rem;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
-    <!-- LOADER -->
-    <div id="loader">
-        <div class="furin-loader">
-            <div class="furin-top"></div>
-            <div class="furin-string"></div>
-            <div class="furin-circle"></div>
-            <div class="furin-paper"></div>
-        </div>
+  <!-- Loader -->
+
+  <div class="loader" id="loader">
+
+    <div class="flower"></div>
+
+    <p>Entering Orumi...</p>
+
+  </div>
+
+  <!-- Header -->
+
+  <header class="header">
+
+    <div class="logo">
+      Orumi
     </div>
 
-    <!-- HEADER -->
-    <header>
-        <nav class="navbar">
+    <!-- Menú hamburguesa -->
 
-            <div class="logo-section">
-                <img src="logo.png" alt="Orumi Logo">
-                <div class="logo-text">
-                    <h1>Orumi</h1>
-                    <span>Slow journeys</span>
-                </div>
-            </div>
+    <div class="menu-toggle" id="menu-toggle">
 
-            <div class="menu-toggle" id="menu-toggle">
-                ☰
-            </div>
+      <span></span>
+      <span></span>
+      <span></span>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#destinations">Destinos</a></li>
-                <li><a href="#booking">Reserva</a></li>
-                <li><a href="#promo">Ofertas</a></li>
-                <li><a href="#about">Nosotros</a></li>
-                <li><a href="#footer">Contacto</a></li>
-            </ul>
+    </div>
 
-        </nav>
-    </header>
+    <!-- Menú -->
 
-    <!-- HERO -->
-    <section class="hero">
+    <nav class="menu" id="menu">
 
-        <div class="mist mist-1"></div>
-        <div class="mist mist-2"></div>
+      <a href="#">Inicio</a>
+      <a href="#">Destinos</a>
+      <a href="#">Reserva</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Sobre Nosotros</a>
+      <a href="#">Contacto</a>
 
-        <div class="hero-overlay"></div>
+    </nav>
 
-        <div class="floating-particles">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+  </header>
 
-        <div class="hero-content">
+  <!-- Hero -->
 
-            <p class="hero-mini">
-                Inspired by quiet worlds
-            </p>
+  <section class="hero">
 
-            <h2>
-                Slow journeys,<br>
-                lasting memories
-            </h2>
+    <!-- Partículas -->
 
-            <p class="hero-description">
-                Viajes inspirados en paisajes cálidos,
-                bosques eternos y la nostalgia mágica
-                de los mundos de Studio Ghibli.
-            </p>
+    <div class="particles" id="particles"></div>
 
-            <div class="hero-buttons">
-                <a href="#booking" class="hero-button primary-btn">
-                    Reservar viaje
-                </a>
+    <!-- Texto -->
 
-                <a href="#destinations" class="hero-button secondary-btn">
-                    Explorar destinos
-                </a>
-            </div>
+    <div class="hero-content">
 
-        </div>
+      <p class="slogan">
+        Slow journeys, lasting memories
+      </p>
 
-        <div class="hero-scroll">
-            <span></span>
-        </div>
+      <h1>
+        Viajes tranquilos inspirados en mundos mágicos
+      </h1>
 
-    </section>
+      <button class="btn">
+        Reservar Ahora
+      </button>
 
-    <!-- DESTINOS -->
-    <section class="destinations" id="destinations">
+    </div>
 
-        <div class="section-title">
-            <h2>Destinos Destacados</h2>
-            <p>
-                Lugares tranquilos, mágicos y memorables.
-            </p>
-        </div>
+  </section>
 
-        <div class="cards">
+  <script>
 
-            <div class="card">
-                <img src="img/yakushima.jpg" alt="Yakushima">
+    /* =========================
+       LOADER
+    ========================= */
 
-                <div class="card-content">
-                    <h3>Yakushima</h3>
+    window.addEventListener("load", () => {
 
-                    <p>
-                        Bosques ancestrales cubiertos de niebla y naturaleza viva.
-                    </p>
-                </div>
-            </div>
+      const loader = document.getElementById("loader");
 
-            <div class="card">
-                <img src="img/ginzan.jpg" alt="Ginzan">
+      setTimeout(() => {
 
-                <div class="card-content">
-                    <h3>Ginzan Onsen</h3>
+        loader.classList.add("hidden");
 
-                    <p>
-                        Calles iluminadas y aguas termales entre montañas.
-                    </p>
-                </div>
-            </div>
+      }, 1800);
 
-            <div class="card">
-                <img src="img/jeju.jpg" alt="Jeju">
+    });
 
-                <div class="card-content">
-                    <h3>Jeju Island</h3>
+    /* =========================
+       MENÚ
+    ========================= */
 
-                    <p>
-                        Flores, volcanes y campos verdes junto al mar.
-                    </p>
-                </div>
-            </div>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
 
-            <div class="card">
-                <img src="img/hoian.jpg" alt="Hoi An">
+    toggle.addEventListener("click", () => {
 
-                <div class="card-content">
-                    <h3>Hội An</h3>
+      menu.classList.toggle("active");
 
-                    <p>
-                        Faroles cálidos y calles llenas de historia.
-                    </p>
-                </div>
-            </div>
+    });
 
-            <div class="card">
-                <img src="img/jiufen.jpg" alt="Jiufen">
+    /* =========================
+       PARTÍCULAS
+    ========================= */
 
-                <div class="card-content">
-                    <h3>Jiufen</h3>
+    const particles = document.getElementById("particles");
 
-                    <p>
-                        Callejones montañosos inspirados en mundos fantásticos.
-                    </p>
-                </div>
-            </div>
+    for(let i = 0; i < 40; i++){
 
-        </div>
+      const span = document.createElement("span");
 
-    </section>
+      span.style.left = Math.random() * 100 + "%";
 
-    <!-- PROMO -->
-    <section class="promo" id="promo">
+      span.style.animationDuration =
+      (8 + Math.random() * 10) + "s";
 
-        <div class="promo-box">
+      span.style.animationDelay =
+      Math.random() * 5 + "s";
 
-            <p class="promo-subtitle">
-                Seasonal journeys
-            </p>
+      particles.appendChild(span);
 
-            <h2>Primavera en Asia</h2>
+    }
 
-            <p>
-                Descubre rutas naturales y culturales
-                con promociones especiales inspiradas
-                en paisajes cinematográficos.
-            </p>
-
-            <a href="#booking">
-                Explorar ofertas
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-
-        <div class="about-box">
-
-            <p class="about-mini">
-                About Orumi
-            </p>
-
-            <h2>
-                Viajar lento también es una forma de volver a sentir.
-            </h2>
-
-            <p>
-                Orumi nace para crear viajes cálidos,
-                tranquilos y memorables inspirados
-                en la belleza emocional de Asia
-                y los paisajes nostálgicos del cine animado japonés.
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- BOOKING -->
-    <section class="booking" id="booking">
-
-        <h2>Comienza tu viaje</h2>
-
-        <p>
-            Tu próxima aventura empieza aquí.
-        </p>
-
-        <button>
-            Reservar Ahora
-        </button>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer id="footer">
-
-        <h2>Orumi</h2>
-
-        <p>
-            Slow journeys, lasting memories
-        </p>
-
-    </footer>
-
-    <script src="script.js"></script>
+  </script>
 
 </body>
-
 </html>
