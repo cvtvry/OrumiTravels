@@ -357,3 +357,276 @@ body{
   }
 
 }
+
+/* ================================================= */
+/* ================= DESTINATIONS ================== */
+/* ================================================= */
+
+.destinations{
+
+  position:relative;
+
+  padding:
+    130px 7%
+    140px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f4efe6 0%,
+      #efe3d1 100%
+    );
+
+  overflow:hidden;
+}
+
+/* ================= LIGHT EFFECT ================= */
+
+.destinations::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255,255,255,0.35),
+      transparent 30%
+    );
+
+  pointer-events:none;
+}
+
+/* ================= INTRO ================= */
+
+.section-intro{
+
+  max-width:850px;
+
+  margin:auto;
+
+  text-align:center;
+
+  margin-bottom:80px;
+}
+
+.section-mini{
+
+  color:#b8895d;
+
+  letter-spacing:4px;
+
+  text-transform:uppercase;
+
+  font-size:.85rem;
+
+  margin-bottom:20px;
+}
+
+.section-title{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:4.3rem;
+
+  line-height:1.1;
+
+  color:#2f241d;
+
+  margin-bottom:25px;
+}
+
+.section-text{
+
+  color:#5f5650;
+
+  line-height:1.9;
+
+  font-size:1.05rem;
+}
+
+/* ================= GRID ================= */
+
+.destination-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+  gap:35px;
+}
+
+/* ================= CARD ================= */
+
+.destination-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:32px;
+
+  background:white;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.08);
+
+  transition:.7s;
+
+  text-decoration:none;
+}
+
+.destination-card:hover{
+
+  transform:
+    translateY(-10px)
+    scale(1.01);
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.14);
+}
+
+/* ================= IMAGE ================= */
+
+.destination-image{
+
+  height:420px;
+
+  overflow:hidden;
+
+  position:relative;
+}
+
+.destination-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.65),
+      transparent 45%
+    );
+}
+
+.destination-image img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:1.3s;
+}
+
+.destination-card:hover img{
+
+  transform:scale(1.08);
+}
+
+/* ================= CONTENT ================= */
+
+.destination-content{
+
+  position:absolute;
+
+  bottom:0;
+
+  left:0;
+
+  width:100%;
+
+  padding:35px;
+
+  z-index:3;
+}
+
+.destination-content h3{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2.5rem;
+
+  margin-bottom:12px;
+
+  color:white;
+}
+
+.destination-content p{
+
+  color:rgba(255,255,255,0.88);
+
+  line-height:1.7;
+
+  margin-bottom:25px;
+}
+
+/* ================= BUTTON ================= */
+
+.destination-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:
+    14px 24px;
+
+  border-radius:50px;
+
+  background:
+    rgba(255,255,255,0.18);
+
+  backdrop-filter:blur(12px);
+
+  color:white;
+
+  text-decoration:none;
+
+  transition:.4s;
+
+  border:
+    1px solid rgba(255,255,255,0.18);
+}
+
+.destination-btn:hover{
+
+  background:
+    rgba(255,255,255,0.28);
+
+  transform:translateX(5px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+  .destinations{
+
+    padding:
+      100px 6%
+      120px;
+  }
+
+  .section-title{
+
+    font-size:2.8rem;
+  }
+
+  .destination-image{
+
+    height:360px;
+  }
+
+}
