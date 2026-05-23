@@ -414,6 +414,7 @@ body{
 }
 
 .destinations::before{
+
   content:"";
 
   position:absolute;
@@ -421,11 +422,18 @@ body{
   inset:0;
 
   background:
+
+    url("https://www.transparenttextures.com/patterns/rice-paper-3.png"),
+
     radial-gradient(
       circle at top right,
       rgba(255,255,255,0.35),
       transparent 30%
     );
+
+  opacity:.35;
+
+  mix-blend-mode:soft-light;
 
   pointer-events:none;
 }
