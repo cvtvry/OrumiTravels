@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Marcellus&family=Nunito:wght@300;400;500;600;700&display=swap');
 
-/* ===================================
-   RESET
-=================================== */
+/* =========================
+RESET
+========================= */
 
 *{
     margin:0;
@@ -20,24 +20,24 @@ body{
 
     overflow-x:hidden;
 
-    color:#fff7f0;
+    color:#fff7f1;
 
     background:
     linear-gradient(
         180deg,
-        #ffbf80 0%,
-        #f48c6b 20%,
-        #d96b68 42%,
-        #9f6f5f 72%,
-        #5f6d4e 100%
+        #f9c27d 0%,
+        #f09372 20%,
+        #d96d6c 40%,
+        #8d735f 72%,
+        #4f694d 100%
     );
 
     position:relative;
 }
 
-/* ===================================
-   GRANITE TEXTURE
-=================================== */
+/* =========================
+TEXTURA GRANITO
+========================= */
 
 body::before{
 
@@ -50,7 +50,7 @@ body::before{
     background-image:
     url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 
-    opacity:0.30;
+    opacity:0.26;
 
     pointer-events:none;
 
@@ -59,9 +59,61 @@ body::before{
     mix-blend-mode:soft-light;
 }
 
-/* ===================================
-   HEADER
-=================================== */
+/* =========================
+HOJAS FLOTANTES
+========================= */
+
+.floating-leaf{
+
+    position:fixed;
+
+    width:18px;
+    height:18px;
+
+    background:#ffe3a6;
+
+    border-radius:50% 0;
+
+    opacity:0.18;
+
+    z-index:1;
+
+    animation:floatLeaf 14s linear infinite;
+}
+
+.leaf1{
+    top:20%;
+    left:10%;
+}
+
+.leaf2{
+    top:60%;
+    right:12%;
+}
+
+.leaf3{
+    top:35%;
+    right:25%;
+}
+
+@keyframes floatLeaf{
+
+    0%{
+        transform:
+        translateY(0)
+        rotate(0deg);
+    }
+
+    100%{
+        transform:
+        translateY(-120px)
+        rotate(360deg);
+    }
+}
+
+/* =========================
+HEADER
+========================= */
 
 header{
 
@@ -75,7 +127,7 @@ header{
     z-index:1000;
 
     background:
-    rgba(55,35,28,0.22);
+    rgba(58,35,25,0.22);
 
     backdrop-filter:blur(12px);
 
@@ -85,20 +137,45 @@ header{
 
 .navbar{
 
-    width:100%;
-
     display:flex;
 
-    justify-content:flex-end;
+    justify-content:space-between;
 
     align-items:center;
 
-    padding:26px 8%;
+    padding:22px 8%;
 }
 
-/* ===================================
-   MENU
-=================================== */
+/* =========================
+BRAND MINI
+========================= */
+
+.brand-mini{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.brand-mini img{
+
+    width:42px;
+}
+
+.brand-mini span{
+
+    font-family:'Cherry Bomb One', cursive;
+
+    font-size:1.8rem;
+
+    color:#fff0dd;
+}
+
+/* =========================
+NAV
+========================= */
 
 .nav-links{
 
@@ -113,9 +190,7 @@ header{
 
     text-decoration:none;
 
-    color:#fff4eb;
-
-    font-size:0.95rem;
+    color:#fff5ec;
 
     font-weight:600;
 
@@ -124,23 +199,23 @@ header{
 
 .nav-links a:hover{
 
-    color:#ffe2a9;
+    color:#ffe09c;
 }
 
 .menu-toggle{
 
     display:none;
 
+    color:white;
+
     font-size:2rem;
 
     cursor:pointer;
-
-    color:white;
 }
 
-/* ===================================
-   HERO
-=================================== */
+/* =========================
+HERO
+========================= */
 
 .hero{
 
@@ -161,8 +236,8 @@ header{
     background:
 
     linear-gradient(
-        rgba(35,20,12,0.18),
-        rgba(45,25,15,0.58)
+        rgba(35,20,15,0.22),
+        rgba(45,25,18,0.58)
     ),
 
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1970&auto=format&fit=crop');
@@ -171,13 +246,11 @@ header{
     background-position:center;
 }
 
-/* ===================================
-   GOLDEN LIGHT
-=================================== */
+/* =========================
+OVERLAY
+========================= */
 
-.hero::before{
-
-    content:"";
+.hero-overlay{
 
     position:absolute;
 
@@ -187,43 +260,66 @@ header{
 
     radial-gradient(
         circle at top,
-        rgba(255,215,120,0.38),
+        rgba(255,220,120,0.34),
         transparent 30%
     ),
 
     radial-gradient(
         circle at center,
-        rgba(255,160,100,0.18),
+        rgba(255,150,100,0.18),
         transparent 60%
     );
 
     mix-blend-mode:screen;
 }
 
-/* ===================================
-   FLOATING LOGO
-=================================== */
+/* =========================
+SOL
+========================= */
+
+.sun-glow{
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,210,120,0.28),
+        transparent 70%
+    );
+
+    top:-150px;
+    right:-120px;
+
+    filter:blur(40px);
+}
+
+/* =========================
+LOGO
+========================= */
 
 .hero-logo{
 
     position:absolute;
 
-    top:28px;
+    top:100px;
 
     left:50%;
 
     transform:translateX(-50%);
 
-    width:72px;
+    width:82px;
+
+    opacity:0.95;
 
     z-index:10;
 
-    opacity:0.96;
-
     animation:floatLogo 5s ease-in-out infinite;
-
-    filter:
-    drop-shadow(0 10px 18px rgba(0,0,0,0.25));
 }
 
 @keyframes floatLogo{
@@ -247,93 +343,85 @@ header{
     }
 }
 
-/* ===================================
-   HERO CONTENT
-=================================== */
+/* =========================
+HERO CONTENT
+========================= */
 
 .hero-content{
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
 
     max-width:950px;
 
-    padding:180px 20px 40px;
+    padding:240px 20px 60px;
 }
 
-/* ===================================
-   BRAND
-=================================== */
+/* =========================
+SUBTITLE
+========================= */
 
-.brand{
+.hero-subtitle{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    color:#fff1dc;
+
+    letter-spacing:2px;
+
+    font-size:0.85rem;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    padding:10px 18px;
+
+    border-radius:999px;
+}
+
+/* =========================
+TITLE
+========================= */
+
+.hero h1{
 
     font-family:'Cherry Bomb One', cursive;
 
     font-size:5.8rem;
 
-    line-height:1;
+    color:#fff4e4;
 
-    margin-bottom:18px;
-
-    color:#fff3de;
+    margin-bottom:20px;
 
     letter-spacing:3px;
 
     text-shadow:
-    0 10px 25px rgba(0,0,0,0.20);
+    0 10px 25px rgba(0,0,0,0.22);
 }
 
-/* ===================================
-   HERO TAG
-=================================== */
-
-.hero-tag{
-
-    display:inline-block;
-
-    padding:10px 20px;
-
-    border-radius:999px;
-
-    background:
-    rgba(255,255,255,0.10);
-
-    border:
-    1px solid rgba(255,255,255,0.08);
-
-    color:#fff2dd;
-
-    font-size:0.8rem;
-
-    letter-spacing:2px;
-
-    margin-bottom:30px;
-}
-
-/* ===================================
-   HERO TITLE
-=================================== */
+/* =========================
+HERO H2
+========================= */
 
 .hero h2{
 
     font-family:'Marcellus', serif;
 
-    font-size:4.8rem;
+    font-size:4.6rem;
 
-    line-height:1.05;
+    line-height:1.08;
 
     margin-bottom:28px;
 
-    color:#fff8f0;
-
-    text-shadow:
-    0 10px 20px rgba(0,0,0,0.18);
+    color:#fffaf3;
 }
 
-/* ===================================
-   HERO TEXT
-=================================== */
+/* =========================
+TEXT
+========================= */
 
 .hero p{
 
@@ -345,12 +433,12 @@ header{
 
     line-height:1.9;
 
-    color:#fff0dd;
+    color:#fff0df;
 }
 
-/* ===================================
-   BUTTONS
-=================================== */
+/* =========================
+BUTTONS
+========================= */
 
 .hero-buttons{
 
@@ -382,9 +470,6 @@ header{
     background:#de6c67;
 
     color:white;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.18);
 }
 
 .btn-secondary{
@@ -403,21 +488,63 @@ header{
 
     transform:translateY(-4px);
 
-    background:#ffbf80;
+    background:#ffbe78;
 }
 
-/* ===================================
-   SECTIONS
-=================================== */
+/* =========================
+FLOWERS
+========================= */
+
+.flower{
+
+    position:absolute;
+
+    font-size:2rem;
+
+    color:#ffe8c5;
+
+    opacity:0.25;
+
+    animation:floatFlower 8s ease-in-out infinite;
+}
+
+.flower1{
+    left:8%;
+    bottom:12%;
+}
+
+.flower2{
+    right:10%;
+    top:22%;
+}
+
+@keyframes floatFlower{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+SECTIONS
+========================= */
 
 section{
 
     padding:120px 8%;
 }
 
-/* ===================================
-   TITLES
-=================================== */
+/* =========================
+TITLES
+========================= */
 
 .section-title{
 
@@ -428,7 +555,7 @@ section{
 
 .section-title span{
 
-    color:#ffe1a6;
+    color:#ffe09c;
 
     letter-spacing:2px;
 
@@ -441,14 +568,14 @@ section{
 
     font-size:4rem;
 
-    margin-top:18px;
+    color:#fff8ef;
 
-    color:#fff7ef;
+    margin-top:16px;
 }
 
-/* ===================================
-   CARDS
-=================================== */
+/* =========================
+CARDS
+========================= */
 
 .cards{
 
@@ -462,7 +589,7 @@ section{
 
 .card{
 
-    background:#f6dcc1;
+    background:#f7ddc2;
 
     border-radius:28px;
 
@@ -472,11 +599,6 @@ section{
 
     box-shadow:
     0 20px 40px rgba(0,0,0,0.18);
-
-    border:
-    1px solid rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(8px);
 }
 
 .card:hover{
@@ -497,7 +619,16 @@ section{
 
 .card-content{
 
-    padding:28px;
+    padding:30px;
+}
+
+.card-content i{
+
+    font-size:1.5rem;
+
+    margin-bottom:18px;
+
+    color:#de6c67;
 }
 
 .card-content h3{
@@ -508,23 +639,21 @@ section{
 
     margin-bottom:12px;
 
-    color:#a0544a;
+    color:#9b564a;
 }
 
 .card-content p{
 
-    color:#6f5b4e;
+    color:#6b5b50;
 
     line-height:1.8;
 }
 
-/* ===================================
-   GLASS BOXES
-=================================== */
+/* =========================
+GLASS BOX
+========================= */
 
-.offer-box,
-.booking-box,
-.about-box{
+.glass-box{
 
     background:
     rgba(255,255,255,0.08);
@@ -539,24 +668,18 @@ section{
 
     border:
     1px solid rgba(255,255,255,0.06);
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,0.16);
 }
 
-.offer-box span,
-.about-box span{
+.glass-box span{
 
-    color:#ffe2a8;
-
-    letter-spacing:2px;
+    color:#ffe09c;
 
     font-weight:700;
+
+    letter-spacing:2px;
 }
 
-.offer-box h2,
-.about-box h2,
-.booking-box h2{
+.glass-box h2{
 
     font-family:'Marcellus', serif;
 
@@ -567,9 +690,7 @@ section{
     color:#fff7ef;
 }
 
-.offer-box p,
-.about-box p,
-.booking-box p{
+.glass-box p{
 
     max-width:720px;
 
@@ -580,12 +701,8 @@ section{
     color:#fff0df;
 }
 
-/* ===================================
-   ACTION BUTTONS
-=================================== */
-
-.offer-box a,
-.booking-box button{
+.glass-box a,
+.glass-box button{
 
     display:inline-block;
 
@@ -608,25 +725,32 @@ section{
     transition:0.3s;
 }
 
-.offer-box a:hover,
-.booking-box button:hover{
+.glass-box a:hover,
+.glass-box button:hover{
 
-    background:#ffbf80;
+    background:#ffbe78;
 
     transform:translateY(-4px);
 }
 
-/* ===================================
-   FOOTER
-=================================== */
+/* =========================
+FOOTER
+========================= */
 
 footer{
 
-    padding:70px;
+    padding:80px 20px;
 
     text-align:center;
 
-    background:#55654a;
+    background:#51644a;
+}
+
+footer img{
+
+    width:65px;
+
+    margin-bottom:18px;
 }
 
 footer h2{
@@ -635,34 +759,32 @@ footer h2{
 
     font-size:3rem;
 
-    margin-bottom:12px;
+    color:#fff0dc;
 
-    color:#fff0dd;
+    margin-bottom:10px;
 }
 
 footer p{
 
-    color:#ffe4cb;
+    color:#ffe4c9;
 }
 
-/* ===================================
-   RESPONSIVE
-=================================== */
+/* =========================
+RESPONSIVE
+========================= */
 
 @media(max-width:900px){
 
-    .brand{
+    .hero h1{
         font-size:4rem;
     }
 
     .hero h2{
-        font-size:3.8rem;
+        font-size:3.4rem;
     }
 
     .section-title h2,
-    .offer-box h2,
-    .about-box h2,
-    .booking-box h2{
+    .glass-box h2{
         font-size:3rem;
     }
 
@@ -692,32 +814,30 @@ footer p{
         display:flex;
     }
 
-    .offer-box,
-    .booking-box,
-    .about-box{
+    .glass-box{
         padding:50px 25px;
     }
 }
 
 @media(max-width:600px){
 
-    .brand{
+    .hero h1{
         font-size:2.8rem;
     }
 
     .hero h2{
-        font-size:3rem;
+        font-size:2.5rem;
     }
 
     .hero p{
         font-size:1rem;
     }
 
-    section{
-        padding:100px 6%;
+    .hero-logo{
+        width:65px;
     }
 
-    .hero-logo{
-        width:62px;
+    section{
+        padding:100px 6%;
     }
 }
