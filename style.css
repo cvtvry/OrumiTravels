@@ -1,351 +1,451 @@
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Marcellus&family=Nunito:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
-/* =========================
-   RESET
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-html{
-    scroll-behavior:smooth;
+body {
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    background: linear-gradient(180deg, #1d231d 0%, #273228 40%, #374537 100%);
+    color: #f5ead7;
 }
 
-body{
+/* LOADER */
 
-    font-family:'Nunito', sans-serif;
-
-    overflow-x:hidden;
-
-    color:#fff7f0;
-
-    position:relative;
-
-    background:
-
-    linear-gradient(
-        180deg,
-        #ffb37b 0%,
-        #f48b6a 20%,
-        #de6c67 40%,
-        #c45773 58%,
-        #7f6b58 78%,
-        #4d5b3f 100%
-    );
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #161b16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: 1s;
 }
 
-/* =========================
-   GRANITE TEXTURE
-========================= */
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    background-image:
-    url("https://www.transparenttextures.com/patterns/concrete-wall.png");
-
-    opacity:0.28;
-
-    pointer-events:none;
-
-    z-index:9999;
-
-    mix-blend-mode:soft-light;
+.furin-loader {
+    position: relative;
+    width: 120px;
+    height: 220px;
+    animation: swing 2s ease-in-out infinite;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-header{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-
-    z-index:1000;
-
-    background:
-    rgba(60,35,28,0.26);
-
-    backdrop-filter:blur(14px);
-
-    border-bottom:
-    1px solid rgba(255,255,255,0.06);
+.furin-top {
+    width: 16px;
+    height: 16px;
+    background: #d95c43;
+    border-radius: 50%;
+    margin: auto;
 }
 
-.navbar{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    align-items:center;
-
-    padding:24px 8%;
+.furin-string {
+    width: 2px;
+    height: 50px;
+    background: #f2dfc2;
+    margin: auto;
 }
 
-/* =========================
-   NAV LINKS
-========================= */
-
-.nav-links{
-
-    display:flex;
-
-    list-style:none;
-
-    gap:35px;
+.furin-circle {
+    width: 90px;
+    height: 90px;
+    border: 4px solid #f2dfc2;
+    border-radius: 50%;
+    margin: auto;
 }
 
-.nav-links a{
-
-    text-decoration:none;
-
-    color:#fff5eb;
-
-    transition:0.3s;
-
-    font-weight:600;
-
-    font-size:0.95rem;
+.furin-paper {
+    width: 34px;
+    height: 90px;
+    background: linear-gradient(180deg, #d95c43, #9f3424);
+    margin: auto;
+    margin-top: -8px;
+    border-radius: 0 0 12px 12px;
+    animation: paperMove 1.5s ease-in-out infinite;
 }
 
-.nav-links a:hover{
-
-    color:#ffe1a6;
-}
-
-.menu-toggle{
-
-    display:none;
-
-    font-size:2rem;
-
-    color:white;
-
-    cursor:pointer;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-
-    linear-gradient(
-        rgba(35,20,15,0.28),
-        rgba(35,20,15,0.65)
-    ),
-
-    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1970&auto=format&fit=crop');
-
-    background-size:cover;
-    background-position:center;
-}
-
-/* =========================
-   SUNSET OVERLAY
-========================= */
-
-.hero-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(
-        circle at top,
-        rgba(255,206,120,0.34),
-        transparent 30%
-    ),
-
-    radial-gradient(
-        circle at center,
-        rgba(244,139,106,0.22),
-        transparent 60%
-    );
-
-    mix-blend-mode:screen;
-}
-
-/* =========================
-   FLOATING CENTRAL LOGO
-========================= */
-
-.hero-logo{
-
-    position:absolute;
-
-    top:28px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:92px;
-
-    z-index:50;
-
-    opacity:0.96;
-
-    animation:floatLogo 5s ease-in-out infinite;
-
-    filter:
-    drop-shadow(0 10px 18px rgba(0,0,0,0.28));
-}
-
-@keyframes floatLogo{
-
-    0%{
-        transform:
-        translateX(-50%)
-        translateY(0px);
+@keyframes swing {
+    0% {
+        transform: rotate(-6deg);
     }
 
-    50%{
-        transform:
-        translateX(-50%)
-        translateY(-10px);
+    50% {
+        transform: rotate(6deg);
     }
 
-    100%{
-        transform:
-        translateX(-50%)
-        translateY(0px);
+    100% {
+        transform: rotate(-6deg);
     }
 }
 
-/* =========================
-   HERO CONTENT
-========================= */
+@keyframes paperMove {
+    0% {
+        transform: translateY(0);
+    }
 
-.hero-content{
+    50% {
+        transform: translateY(8px);
+    }
 
-    position:relative;
-
-    z-index:2;
-
-    max-width:850px;
-
-    padding:180px 20px 20px;
+    100% {
+        transform: translateY(0);
+    }
 }
 
-/* =========================
-   BRAND
-========================= */
+/* HEADER */
 
-.brand{
-
-    font-family:'Cherry Bomb One', cursive;
-
-    font-size:5rem;
-
-    color:#fff2df;
-
-    margin-bottom:18px;
-
-    letter-spacing:2px;
-
-    text-shadow:
-    0 8px 20px rgba(0,0,0,0.22);
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(14px);
+    background: rgba(15, 18, 15, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* =========================
-   HERO TAG
-========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+}
 
-.hero-tag{
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
 
-    display:inline-block;
+.logo-section img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
 
-    padding:10px 18px;
+.logo-section h1 {
+    font-size: 2.4rem;
+    color: #f6dfbc;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
 
-    border-radius:999px;
+/* MENU */
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f3e5cf;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d95c43;
+}
+
+.menu-toggle {
+    display: none;
+    color: #f5e5c8;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(10, 10, 10, 0.45), rgba(10, 10, 10, 0.55)),
+        url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=1974&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 20px;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
 
     background:
-    rgba(255,255,255,0.10);
-
-    border:
-    1px solid rgba(255,255,255,0.08);
-
-    color:#fff1da;
-
-    margin-bottom:28px;
-
-    letter-spacing:1px;
-
-    font-size:0.8rem;
+        radial-gradient(circle at top,
+            rgba(255, 170, 80, 0.18),
+            transparent 35%);
 }
 
-/* =========================
-   HERO TITLE
-========================= */
-
-.hero h2{
-
-    font-family:'Marcellus', serif;
-
-    font-size:4.8rem;
-
-    line-height:1.05;
-
-    margin-bottom:28px;
-
-    color:#fff8f0;
-
-    text-shadow:
-    0 10px 25px rgba(0,0,0,0.22);
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
 }
 
-/* =========================
-   HERO TEXT
-========================= */
-
-.hero p{
-
-    max-width:720px;
-
-    margin:auto auto 45px;
-
-    font-size:1.15rem;
-
-    line-height:1.9;
-
-    color:#fff0de;
+.hero-content h2 {
+    font-size: 6rem;
+    line-height: 0.95;
+    margin-bottom: 30px;
+    color: #fff1d9;
+    font-weight: 600;
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
-/* =========================
-   BUTTONS
-========================= */
+.hero-content p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #f0ddc0;
+    margin-bottom: 45px;
+}
 
-.hero-buttons
+.hero-button {
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #d95c43, #b3432d);
+    color: white;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+}
+
+/* SECCIONES */
+
+section {
+    padding: 120px 8%;
+}
+
+/* TITULOS */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title h2 {
+    font-size: 4rem;
+    color: #f6dfbc;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    font-size: 1.4rem;
+    color: #dcc7a8;
+}
+
+/* DESTINOS */
+
+.destinations {
+    background: linear-gradient(180deg, #283228 0%, #364537 100%);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 35px;
+}
+
+.card {
+    background: #f7ecd8;
+    border-radius: 28px;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 2rem;
+    color: #573d2a;
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    color: #715744;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+/* PROMO */
+
+.promo {
+    background: linear-gradient(135deg, #2b372c, #1f261f);
+}
+
+.promo-box {
+    background: rgba(255, 245, 228, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+
+    padding: 80px;
+    border-radius: 35px;
+    text-align: center;
+}
+
+.promo-box h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #f6dfbc;
+}
+
+.promo-box p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #e5d2b5;
+    margin-bottom: 40px;
+}
+
+.promo-box a {
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 999px;
+    background: #d95c43;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* ABOUT */
+
+.about {
+    background: linear-gradient(180deg, #1f261f 0%, #2b372c 100%);
+}
+
+.about-box {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-box h2 {
+    font-size: 4rem;
+    color: #f6dfbc;
+    margin-bottom: 25px;
+}
+
+.about-box p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: #e0ccb0;
+}
+
+/* BOOKING */
+
+.booking {
+    text-align: center;
+    background: linear-gradient(180deg, #2a332a 0%, #1d231d 100%);
+}
+
+.booking h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #f6dfbc;
+}
+
+.booking p {
+    font-size: 1.5rem;
+    margin-bottom: 35px;
+    color: #e1ccb0;
+}
+
+.booking button {
+    border: none;
+    padding: 18px 40px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #d95c43, #b3432d);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 60px;
+    text-align: center;
+    background: #141814;
+}
+
+footer h2 {
+    font-size: 3rem;
+    color: #f6dfbc;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #ccb99d;
+    font-size: 1.2rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .hero-content h2 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+
+        flex-direction: column;
+
+        background: #1d231d;
+
+        width: 250px;
+
+        padding: 30px;
+
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .promo-box {
+        padding: 45px 25px;
+    }
+
+}
