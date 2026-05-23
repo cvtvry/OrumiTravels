@@ -7,33 +7,22 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Orumi | Slow journeys, lasting memories</title>
+    <title>ORUMI TRAVEL</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Marcellus&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
-
-    <!-- LOADER -->
-
-    <div id="loader">
-
-        <div class="furin-loader">
-
-            <div class="furin-top"></div>
-
-            <div class="furin-string"></div>
-
-            <div class="furin-circle"></div>
-
-            <div class="furin-paper"></div>
-
-        </div>
-
-    </div>
 
     <!-- HEADER -->
 
@@ -41,16 +30,18 @@
 
         <nav class="navbar">
 
-            <div class="logo-section">
+            <div class="nav-left">
 
-                <img src="logo.png" alt="Orumi Logo">
-
-                <h1>Orumi</h1>
+                <span class="mini-brand">
+                    ORUMI TRAVEL
+                </span>
 
             </div>
 
             <div class="menu-toggle" id="menu-toggle">
-                ☰
+
+                <i class="fa-solid fa-bars"></i>
+
             </div>
 
             <ul class="nav-links" id="nav-links">
@@ -59,11 +50,11 @@
 
                 <li><a href="#destinations">Destinos</a></li>
 
-                <li><a href="#booking">Reserva</a></li>
-
-                <li><a href="#promo">Ofertas</a></li>
+                <li><a href="#offers">Ofertas</a></li>
 
                 <li><a href="#about">Sobre Nosotros</a></li>
+
+                <li><a href="#booking">Reserva</a></li>
 
                 <li><a href="#footer">Contacto</a></li>
 
@@ -77,23 +68,63 @@
 
     <section class="hero">
 
+        <!-- OVERLAY -->
+
         <div class="hero-overlay"></div>
+
+        <!-- LUZ -->
+
+        <div class="sun-glow"></div>
+
+        <!-- PARTICULAS -->
+
+        <div class="particles"></div>
+
+        <!-- LOGO COLGANTE -->
+
+        <div class="hanging-logo">
+
+            <div class="rope"></div>
+
+            <img src="logo.png" alt="Orumi Logo" class="hero-logo">
+
+        </div>
+
+        <!-- HERO CONTENT -->
 
         <div class="hero-content">
 
+            <span class="hero-tag">
+                SLOW JOURNEYS • WARM MEMORIES
+            </span>
+
+            <h1>
+                ORUMI TRAVEL
+            </h1>
+
             <h2>
-                Slow journeys,<br>
-                lasting memories
+                Viajes cálidos,<br>
+                mágicos y memorables
             </h2>
 
             <p>
-                Viajes inspirados en paisajes cálidos, naturaleza viva
-                y la nostalgia de los mundos de Studio Ghibli.
+                Explora paisajes inspirados en la nostalgia,
+                naturaleza viva y la tranquilidad del universo Ghibli.
+                Bosques encantados, pueblos escondidos y rutas
+                cinematográficas alrededor del mundo.
             </p>
 
-            <a href="#booking" class="hero-button">
-                Reservar Ahora
-            </a>
+            <div class="hero-buttons">
+
+                <a href="#booking" class="btn-primary">
+                    Reservar viaje
+                </a>
+
+                <a href="#destinations" class="btn-secondary">
+                    Explorar destinos
+                </a>
+
+            </div>
 
         </div>
 
@@ -105,11 +136,11 @@
 
         <div class="section-title">
 
-            <h2>Destinos Destacados</h2>
+            <span>DESTINOS</span>
 
-            <p>
-                Lugares tranquilos, mágicos y memorables.
-            </p>
+            <h2>
+                Escenarios que parecen sueños
+            </h2>
 
         </div>
 
@@ -120,6 +151,8 @@
                 <img src="img/yakushima.jpg" alt="Yakushima">
 
                 <div class="card-content">
+
+                    <i class="fa-solid fa-tree"></i>
 
                     <h3>Yakushima</h3>
 
@@ -137,6 +170,8 @@
 
                 <div class="card-content">
 
+                    <i class="fa-solid fa-water"></i>
+
                     <h3>Ginzan Onsen</h3>
 
                     <p>
@@ -149,46 +184,16 @@
 
             <div class="card">
 
-                <img src="img/jeju.jpg" alt="Jeju">
-
-                <div class="card-content">
-
-                    <h3>Jeju Island</h3>
-
-                    <p>
-                        Flores, volcanes y campos verdes junto al mar.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
                 <img src="img/hoian.jpg" alt="Hoi An">
 
                 <div class="card-content">
 
-                    <h3>Hội An</h3>
+                    <i class="fa-solid fa-torii-gate"></i>
+
+                    <h3>Hoi An</h3>
 
                     <p>
                         Faroles cálidos y calles llenas de historia.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <img src="img/jiufen.jpg" alt="Jiufen">
-
-                <div class="card-content">
-
-                    <h3>Jiufen</h3>
-
-                    <p>
-                        Callejones montañosos inspirados en mundos fantásticos.
                     </p>
 
                 </div>
@@ -199,20 +204,25 @@
 
     </section>
 
-    <!-- PROMO -->
+    <!-- OFERTAS -->
 
-    <section class="promo" id="promo">
+    <section class="offers" id="offers">
 
-        <div class="promo-box">
+        <div class="glass-box">
 
-            <h2>Primavera en Asia</h2>
+            <span>OFERTAS ESPECIALES</span>
+
+            <h2>
+                Primavera en Asia
+            </h2>
 
             <p>
-                Descubre rutas naturales y culturales con promociones especiales.
+                Experiencias inspiradas en trenes antiguos,
+                jardines japoneses y pueblos escondidos.
             </p>
 
             <a href="#booking">
-                Explorar ofertas
+                Ver ofertas
             </a>
 
         </div>
@@ -223,14 +233,18 @@
 
     <section class="about" id="about">
 
-        <div class="about-box">
+        <div class="glass-box">
 
-            <h2>Sobre Orumi</h2>
+            <span>NUESTRA FILOSOFÍA</span>
+
+            <h2>
+                Viajar lento también es lujo
+            </h2>
 
             <p>
-                Orumi nace para crear viajes lentos, cálidos y memorables,
-                inspirados en la belleza tranquila de los paisajes asiáticos
-                y la magia emocional de Studio Ghibli.
+                Diseñamos viajes emocionales y cinematográficos,
+                inspirados en la tranquilidad, naturaleza
+                y belleza del universo Ghibli.
             </p>
 
         </div>
@@ -241,15 +255,23 @@
 
     <section class="booking" id="booking">
 
-        <h2>Comienza tu viaje</h2>
+        <div class="glass-box">
 
-        <p>
-            Tu próxima aventura empieza aquí.
-        </p>
+            <span>COMIENZA TU VIAJE</span>
 
-        <button>
-            Reservar Ahora
-        </button>
+            <h2>
+                Tu próxima historia empieza aquí
+            </h2>
+
+            <p>
+                Viajes cálidos, relajados y memorables.
+            </p>
+
+            <button>
+                Reservar ahora
+            </button>
+
+        </div>
 
     </section>
 
@@ -257,13 +279,17 @@
 
     <footer id="footer">
 
-        <h2>Orumi</h2>
+        <h2>
+            ORUMI TRAVEL
+        </h2>
 
         <p>
             Slow journeys, lasting memories
         </p>
 
     </footer>
+
+    <!-- JS -->
 
     <script src="script.js"></script>
 
