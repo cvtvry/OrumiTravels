@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito:wght@300;400;500;600;700&display=swap');
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -16,24 +18,26 @@ body{
 
     font-family:'Nunito', sans-serif;
 
-    color:#f8f3ec;
-
     overflow-x:hidden;
 
-    background:
+    color:#fdf6f0;
 
+    background:
     linear-gradient(
         180deg,
-        #9d4565 0%,
-        #7e5b63 18%,
-        #5b8157 48%,
-        #3b3327 100%
+        #8f3f60 0%,
+        #b85d7c 18%,
+        #c97d87 40%,
+        #6f4d5d 72%,
+        #2f2327 100%
     );
 
     position:relative;
 }
 
-/* TEXTURA GRANITO */
+/* =========================
+   GRANITE TEXTURE
+========================= */
 
 body::before{
 
@@ -46,14 +50,16 @@ body::before{
     background-image:
     url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 
-    opacity:0.22;
+    opacity:0.18;
 
     pointer-events:none;
 
     z-index:9999;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
 
@@ -67,12 +73,12 @@ header{
     z-index:1000;
 
     background:
-    rgba(40,30,28,0.38);
+    rgba(58,35,49,0.42);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
     border-bottom:
-    1px solid rgba(255,255,255,0.05);
+    1px solid rgba(255,255,255,0.06);
 }
 
 .navbar{
@@ -86,7 +92,9 @@ header{
     padding:22px 8%;
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo-area{
 
@@ -106,7 +114,7 @@ header{
     object-fit:contain;
 
     filter:
-    drop-shadow(0 5px 10px rgba(0,0,0,0.18));
+    drop-shadow(0 5px 12px rgba(0,0,0,0.22));
 }
 
 .logo-area h1{
@@ -120,7 +128,9 @@ header{
     letter-spacing:1px;
 }
 
-/* NAV */
+/* =========================
+   NAV LINKS
+========================= */
 
 .nav-links{
 
@@ -135,7 +145,7 @@ header{
 
     text-decoration:none;
 
-    color:#f8f3ec;
+    color:#fff4ec;
 
     transition:0.3s;
 
@@ -144,7 +154,7 @@ header{
 
 .nav-links a:hover{
 
-    color:#eb756e;
+    color:#f08cab;
 }
 
 .menu-toggle{
@@ -158,7 +168,9 @@ header{
     cursor:pointer;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
 
@@ -179,8 +191,8 @@ header{
     background:
 
     linear-gradient(
-        rgba(25,18,15,0.42),
-        rgba(25,18,15,0.72)
+        rgba(30,18,20,0.42),
+        rgba(30,18,20,0.78)
     ),
 
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1970&auto=format&fit=crop');
@@ -189,7 +201,9 @@ header{
     background-position:center;
 }
 
-/* OVERLAY */
+/* =========================
+   HERO OVERLAY
+========================= */
 
 .hero-overlay{
 
@@ -201,12 +215,16 @@ header{
 
     radial-gradient(
         circle at top,
-        rgba(235,117,110,0.28),
+        rgba(214,109,136,0.36),
         transparent 35%
     );
+
+    mix-blend-mode:screen;
 }
 
-/* HERO CONTENT */
+/* =========================
+   HERO CONTENT
+========================= */
 
 .hero-content{
 
@@ -219,7 +237,9 @@ header{
     padding:140px 20px 20px;
 }
 
-/* HERO LOGO */
+/* =========================
+   HERO LOGO
+========================= */
 
 .hero-logo{
 
@@ -233,7 +253,9 @@ header{
     drop-shadow(0 10px 18px rgba(0,0,0,0.25));
 }
 
-/* TAG */
+/* =========================
+   HERO TAG
+========================= */
 
 .hero-tag{
 
@@ -249,7 +271,7 @@ header{
     border:
     1px solid rgba(255,255,255,0.08);
 
-    color:#f3ddc4;
+    color:#f6d9d9;
 
     margin-bottom:28px;
 
@@ -258,7 +280,9 @@ header{
     font-size:0.8rem;
 }
 
-/* TITULO */
+/* =========================
+   HERO TITLE
+========================= */
 
 .hero h2{
 
@@ -270,10 +294,15 @@ header{
 
     margin-bottom:28px;
 
-    color:#fff5eb;
+    color:#fff6ef;
+
+    text-shadow:
+    0 8px 25px rgba(0,0,0,0.25);
 }
 
-/* TEXTO */
+/* =========================
+   HERO TEXT
+========================= */
 
 .hero p{
 
@@ -288,7 +317,9 @@ header{
     color:#f3ddc4;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 .hero-buttons{
 
@@ -317,7 +348,7 @@ header{
 
 .btn-primary{
 
-    background:#eb756e;
+    background:#d66d88;
 
     color:white;
 
@@ -331,6 +362,9 @@ header{
     rgba(255,255,255,0.08);
 
     color:white;
+
+    border:
+    1px solid rgba(255,255,255,0.08);
 }
 
 .btn-primary:hover,
@@ -338,17 +372,21 @@ header{
 
     transform:translateY(-4px);
 
-    background:#d66d88;
+    background:#eb756e;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 section{
 
     padding:120px 8%;
 }
 
-/* TITLES */
+/* =========================
+   SECTION TITLES
+========================= */
 
 .section-title{
 
@@ -359,7 +397,7 @@ section{
 
 .section-title span{
 
-    color:#eb756e;
+    color:#f08cab;
 
     letter-spacing:2px;
 
@@ -377,7 +415,9 @@ section{
     color:#fff2e7;
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
 
 .cards{
 
@@ -391,7 +431,7 @@ section{
 
 .card{
 
-    background:#e7bf96;
+    background:#f0d3c7;
 
     border-radius:24px;
 
@@ -435,17 +475,19 @@ section{
 
     margin-bottom:12px;
 
-    color:#5f352e;
+    color:#6a2d47;
 }
 
 .card-content p{
 
-    color:#6a4b44;
+    color:#6b4c57;
 
     line-height:1.8;
 }
 
-/* BOXES */
+/* =========================
+   BOXES
+========================= */
 
 .offer-box,
 .booking-box{
@@ -460,12 +502,15 @@ section{
     text-align:center;
 
     backdrop-filter:blur(10px);
+
+    border:
+    1px solid rgba(255,255,255,0.05);
 }
 
 .offer-box span,
 .about-box span{
 
-    color:#eb756e;
+    color:#f08cab;
 
     letter-spacing:2px;
 
@@ -509,7 +554,7 @@ section{
 
     border:none;
 
-    background:#eb756e;
+    background:#d66d88;
 
     color:white;
 
@@ -525,12 +570,14 @@ section{
 .offer-box a:hover,
 .booking-box button:hover{
 
-    background:#d66d88;
+    background:#eb756e;
 
     transform:translateY(-4px);
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about-box{
 
@@ -541,7 +588,9 @@ section{
     text-align:center;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
 
@@ -549,7 +598,7 @@ footer{
 
     text-align:center;
 
-    background:#34131f;
+    background:#2a1720;
 }
 
 footer h2{
@@ -565,10 +614,12 @@ footer h2{
 
 footer p{
 
-    color:#d9bda4;
+    color:#e5c4c8;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:900px){
 
@@ -596,7 +647,7 @@ footer p{
 
         width:250px;
 
-        background:#3b3327;
+        background:#442633;
 
         flex-direction:column;
 
@@ -625,4 +676,11 @@ footer p{
         font-size:1rem;
     }
 
-    section
+    section{
+        padding:100px 6%;
+    }
+
+    .hero-logo{
+        width:70px;
+    }
+}
