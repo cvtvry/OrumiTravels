@@ -20,19 +20,22 @@ body{
 
     overflow-x:hidden;
 
-    color:#fdf6f0;
-
-    background:
-    linear-gradient(
-        180deg,
-        #8f3f60 0%,
-        #b85d7c 18%,
-        #c97d87 40%,
-        #6f4d5d 72%,
-        #2f2327 100%
-    );
+    color:#f7f1e7;
 
     position:relative;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #003b49 0%,
+        #145b63 18%,
+        #d84b44 36%,
+        #d28f2f 54%,
+        #90b47a 72%,
+        #005a3c 88%,
+        #7c2d00 100%
+    );
 }
 
 /* =========================
@@ -50,11 +53,33 @@ body::before{
     background-image:
     url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 
-    opacity:0.18;
+    opacity:0.38;
 
     pointer-events:none;
 
     z-index:9999;
+
+    mix-blend-mode:soft-light;
+}
+
+/* EXTRA GRAIN */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
+    opacity:0.12;
+
+    pointer-events:none;
+
+    z-index:9998;
 }
 
 /* =========================
@@ -73,9 +98,9 @@ header{
     z-index:1000;
 
     background:
-    rgba(58,35,49,0.42);
+    rgba(0,35,45,0.32);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(14px);
 
     border-bottom:
     1px solid rgba(255,255,255,0.06);
@@ -107,7 +132,7 @@ header{
 
 .logo-area img{
 
-    width:44px;
+    width:46px;
 
     height:auto;
 
@@ -121,15 +146,15 @@ header{
 
     font-family:'Marcellus', serif;
 
-    font-size:2.3rem;
+    font-size:2.4rem;
 
-    color:#f3ddc4;
+    color:#f3e4ca;
 
     letter-spacing:1px;
 }
 
 /* =========================
-   NAV LINKS
+   NAV
 ========================= */
 
 .nav-links{
@@ -145,7 +170,7 @@ header{
 
     text-decoration:none;
 
-    color:#fff4ec;
+    color:#fff8ee;
 
     transition:0.3s;
 
@@ -154,7 +179,7 @@ header{
 
 .nav-links a:hover{
 
-    color:#f08cab;
+    color:#ffb76d;
 }
 
 .menu-toggle{
@@ -191,8 +216,8 @@ header{
     background:
 
     linear-gradient(
-        rgba(30,18,20,0.42),
-        rgba(30,18,20,0.78)
+        rgba(0,20,25,0.28),
+        rgba(40,18,12,0.68)
     ),
 
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1970&auto=format&fit=crop');
@@ -202,7 +227,7 @@ header{
 }
 
 /* =========================
-   HERO OVERLAY
+   SUNSET OVERLAY
 ========================= */
 
 .hero-overlay{
@@ -215,11 +240,45 @@ header{
 
     radial-gradient(
         circle at top,
-        rgba(214,109,136,0.36),
+        rgba(255,170,80,0.32),
         transparent 35%
+    ),
+
+    radial-gradient(
+        circle at center,
+        rgba(216,75,68,0.20),
+        transparent 55%
     );
 
     mix-blend-mode:screen;
+}
+
+/* =========================
+   FLOATING LIGHTS
+========================= */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,196,110,0.14),
+        transparent 70%
+    );
+
+    top:-200px;
+    right:-150px;
+
+    filter:blur(40px);
 }
 
 /* =========================
@@ -243,11 +302,11 @@ header{
 
 .hero-logo{
 
-    width:82px;
+    width:84px;
 
-    margin-bottom:30px;
+    margin-bottom:32px;
 
-    opacity:0.96;
+    opacity:0.95;
 
     filter:
     drop-shadow(0 10px 18px rgba(0,0,0,0.25));
@@ -271,13 +330,13 @@ header{
     border:
     1px solid rgba(255,255,255,0.08);
 
-    color:#f6d9d9;
+    color:#f7e2c0;
 
     margin-bottom:28px;
 
     letter-spacing:1px;
 
-    font-size:0.8rem;
+    font-size:0.82rem;
 }
 
 /* =========================
@@ -288,16 +347,16 @@ header{
 
     font-family:'Marcellus', serif;
 
-    font-size:5rem;
+    font-size:5.3rem;
 
-    line-height:1.05;
+    line-height:1.02;
 
     margin-bottom:28px;
 
-    color:#fff6ef;
+    color:#fff7ef;
 
     text-shadow:
-    0 8px 25px rgba(0,0,0,0.25);
+    0 10px 25px rgba(0,0,0,0.25);
 }
 
 /* =========================
@@ -310,11 +369,11 @@ header{
 
     margin:auto auto 45px;
 
-    font-size:1.15rem;
+    font-size:1.16rem;
 
     line-height:1.9;
 
-    color:#f3ddc4;
+    color:#f5e0c6;
 }
 
 /* =========================
@@ -348,12 +407,12 @@ header{
 
 .btn-primary{
 
-    background:#d66d88;
+    background:#d84b44;
 
     color:white;
 
     box-shadow:
-    0 10px 25px rgba(0,0,0,0.18);
+    0 12px 25px rgba(0,0,0,0.22);
 }
 
 .btn-secondary{
@@ -372,7 +431,7 @@ header{
 
     transform:translateY(-4px);
 
-    background:#eb756e;
+    background:#ff9a5c;
 }
 
 /* =========================
@@ -385,7 +444,7 @@ section{
 }
 
 /* =========================
-   SECTION TITLES
+   TITLES
 ========================= */
 
 .section-title{
@@ -397,7 +456,7 @@ section{
 
 .section-title span{
 
-    color:#f08cab;
+    color:#ffb76d;
 
     letter-spacing:2px;
 
@@ -412,7 +471,7 @@ section{
 
     margin-top:18px;
 
-    color:#fff2e7;
+    color:#fff5eb;
 }
 
 /* =========================
@@ -431,19 +490,21 @@ section{
 
 .card{
 
-    background:#f0d3c7;
+    background:#e7d1af;
 
-    border-radius:24px;
+    border-radius:26px;
 
     overflow:hidden;
 
     transition:0.4s;
 
     box-shadow:
-    0 18px 35px rgba(0,0,0,0.22);
+    0 20px 40px rgba(0,0,0,0.22);
 
     border:
     1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(8px);
 }
 
 .card:hover{
@@ -475,18 +536,18 @@ section{
 
     margin-bottom:12px;
 
-    color:#6a2d47;
+    color:#8b402d;
 }
 
 .card-content p{
 
-    color:#6b4c57;
+    color:#5b4b3c;
 
     line-height:1.8;
 }
 
 /* =========================
-   BOXES
+   GLASS BOXES
 ========================= */
 
 .offer-box,
@@ -495,22 +556,25 @@ section{
     background:
     rgba(255,255,255,0.06);
 
-    border-radius:32px;
+    border-radius:34px;
 
     padding:90px;
 
     text-align:center;
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(14px);
 
     border:
-    1px solid rgba(255,255,255,0.05);
+    1px solid rgba(255,255,255,0.06);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.18);
 }
 
 .offer-box span,
 .about-box span{
 
-    color:#f08cab;
+    color:#ffb76d;
 
     letter-spacing:2px;
 
@@ -527,7 +591,7 @@ section{
 
     margin:22px 0;
 
-    color:#fff3e8;
+    color:#fff4e8;
 }
 
 .offer-box p,
@@ -540,7 +604,7 @@ section{
 
     line-height:1.9;
 
-    color:#f3ddc4;
+    color:#f3dfc6;
 }
 
 .offer-box a,
@@ -554,7 +618,7 @@ section{
 
     border:none;
 
-    background:#d66d88;
+    background:#d84b44;
 
     color:white;
 
@@ -570,7 +634,7 @@ section{
 .offer-box a:hover,
 .booking-box button:hover{
 
-    background:#eb756e;
+    background:#ff9a5c;
 
     transform:translateY(-4px);
 }
@@ -598,7 +662,7 @@ footer{
 
     text-align:center;
 
-    background:#2a1720;
+    background:#1c2d2c;
 }
 
 footer h2{
@@ -609,78 +673,4 @@ footer h2{
 
     margin-bottom:12px;
 
-    color:#f3ddc4;
-}
-
-footer p{
-
-    color:#e5c4c8;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:900px){
-
-    .hero h2{
-        font-size:4rem;
-    }
-
-    .section-title h2,
-    .offer-box h2,
-    .about-box h2,
-    .booking-box h2{
-        font-size:3rem;
-    }
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .nav-links{
-
-        position:absolute;
-
-        top:100%;
-        right:0;
-
-        width:250px;
-
-        background:#442633;
-
-        flex-direction:column;
-
-        padding:30px;
-
-        display:none;
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .offer-box,
-    .booking-box{
-        padding:50px 25px;
-    }
-}
-
-@media(max-width:600px){
-
-    .hero h2{
-        font-size:3rem;
-    }
-
-    .hero p{
-        font-size:1rem;
-    }
-
-    section{
-        padding:100px 6%;
-    }
-
-    .hero-logo{
-        width:70px;
-    }
-}
+    color:#f7e1c
