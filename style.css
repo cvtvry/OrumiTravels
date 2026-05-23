@@ -625,10 +625,30 @@ body{
   }
 
   .destinations{
-    padding:
-      100px 6%
-      120px;
-  }
+
+  position:relative;
+
+  padding:
+    130px 7%
+    140px;
+
+  overflow:hidden;
+
+  background:
+
+    linear-gradient(
+      rgba(247,241,231,0.82),
+      rgba(239,226,207,0.9)
+    ),
+
+    url('img/background-texture.jpg');
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-attachment:fixed;
+}
 
   .section-title{
     font-size:2.8rem;
