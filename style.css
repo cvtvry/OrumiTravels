@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Marcellus&family=Nunito:wght@300;400;500;600;700&display=swap');
 
-/* =========================
-RESET
-========================= */
+/* ==================================================
+   RESET
+================================================== */
 
 *{
     margin:0;
@@ -20,24 +20,25 @@ body{
 
     overflow-x:hidden;
 
-    color:#fff7f1;
+    color:#fff8f2;
+
+    position:relative;
 
     background:
     linear-gradient(
         180deg,
-        #f9c27d 0%,
-        #f09372 20%,
-        #d96d6c 40%,
-        #8d735f 72%,
+        #ffd6a5 0%,
+        #f7b38a 18%,
+        #ea8b73 38%,
+        #c76d6d 58%,
+        #7c705f 80%,
         #4f694d 100%
     );
-
-    position:relative;
 }
 
-/* =========================
-TEXTURA GRANITO
-========================= */
+/* ==================================================
+   GRANITE TEXTURE
+================================================== */
 
 body::before{
 
@@ -50,70 +51,58 @@ body::before{
     background-image:
     url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 
-    opacity:0.26;
+    opacity:0.28;
+
+    mix-blend-mode:soft-light;
 
     pointer-events:none;
 
     z-index:9999;
-
-    mix-blend-mode:soft-light;
 }
 
-/* =========================
-HOJAS FLOTANTES
-========================= */
+/* ==================================================
+   FLOATING LIGHTS
+================================================== */
 
-.floating-leaf{
+body::after{
+
+    content:"";
 
     position:fixed;
 
-    width:18px;
-    height:18px;
+    inset:0;
 
-    background:#ffe3a6;
+    background-image:
+    radial-gradient(
+        rgba(255,240,210,0.5) 1px,
+        transparent 1px
+    );
 
-    border-radius:50% 0;
+    background-size:140px 140px;
 
     opacity:0.18;
 
-    z-index:1;
+    animation:floatingLights 18s linear infinite;
 
-    animation:floatLeaf 14s linear infinite;
+    pointer-events:none;
+
+    z-index:2;
 }
 
-.leaf1{
-    top:20%;
-    left:10%;
-}
+@keyframes floatingLights{
 
-.leaf2{
-    top:60%;
-    right:12%;
-}
-
-.leaf3{
-    top:35%;
-    right:25%;
-}
-
-@keyframes floatLeaf{
-
-    0%{
-        transform:
-        translateY(0)
-        rotate(0deg);
+    from{
+        transform:translateY(0);
     }
 
-    100%{
-        transform:
-        translateY(-120px)
-        rotate(360deg);
+    to{
+        transform:translateY(-120px);
     }
 }
 
-/* =========================
-HEADER
-========================= */
+/* ==================================================
+   HEADER
+================================================== */
 
 header{
 
@@ -127,15 +116,17 @@ header{
     z-index:1000;
 
     background:
-    rgba(58,35,25,0.22);
+    rgba(60,35,25,0.18);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(14px);
 
     border-bottom:
     1px solid rgba(255,255,255,0.06);
 }
 
 .navbar{
+
+    width:100%;
 
     display:flex;
 
@@ -146,9 +137,9 @@ header{
     padding:22px 8%;
 }
 
-/* =========================
-BRAND MINI
-========================= */
+/* ==================================================
+   MINI BRAND
+================================================== */
 
 .brand-mini{
 
@@ -157,25 +148,36 @@ BRAND MINI
     align-items:center;
 
     gap:12px;
+
+    z-index:1001;
 }
 
 .brand-mini img{
 
     width:42px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 5px 10px rgba(0,0,0,0.25));
 }
 
 .brand-mini span{
 
     font-family:'Cherry Bomb One', cursive;
 
-    font-size:1.8rem;
+    font-size:1.9rem;
 
-    color:#fff0dd;
+    color:#fff0df;
+
+    letter-spacing:1px;
 }
 
-/* =========================
-NAV
-========================= */
+/* ==================================================
+   NAVIGATION
+================================================== */
 
 .nav-links{
 
@@ -190,17 +192,23 @@ NAV
 
     text-decoration:none;
 
-    color:#fff5ec;
+    color:#fff7ef;
 
     font-weight:600;
 
     transition:0.3s;
+
+    font-size:0.95rem;
 }
 
 .nav-links a:hover{
 
-    color:#ffe09c;
+    color:#ffe39f;
 }
+
+/* ==================================================
+   MOBILE MENU
+================================================== */
 
 .menu-toggle{
 
@@ -213,9 +221,9 @@ NAV
     cursor:pointer;
 }
 
-/* =========================
-HERO
-========================= */
+/* ==================================================
+   HERO
+================================================== */
 
 .hero{
 
@@ -223,11 +231,9 @@ HERO
 
     display:flex;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     align-items:center;
-
-    text-align:center;
 
     position:relative;
 
@@ -236,21 +242,24 @@ HERO
     background:
 
     linear-gradient(
-        rgba(35,20,15,0.22),
-        rgba(45,25,18,0.58)
+        rgba(35,20,12,0.16),
+        rgba(45,25,15,0.54)
     ),
 
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1970&auto=format&fit=crop');
 
     background-size:cover;
+
     background-position:center;
 }
 
-/* =========================
-OVERLAY
-========================= */
+/* ==================================================
+   SUNSET LIGHT
+================================================== */
 
-.hero-overlay{
+.hero::before{
+
+    content:"";
 
     position:absolute;
 
@@ -260,66 +269,43 @@ OVERLAY
 
     radial-gradient(
         circle at top,
-        rgba(255,220,120,0.34),
-        transparent 30%
+        rgba(255,220,130,0.38),
+        transparent 28%
     ),
 
     radial-gradient(
         circle at center,
-        rgba(255,150,100,0.18),
-        transparent 60%
+        rgba(255,170,110,0.18),
+        transparent 58%
     );
 
     mix-blend-mode:screen;
 }
 
-/* =========================
-SOL
-========================= */
-
-.sun-glow{
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(255,210,120,0.28),
-        transparent 70%
-    );
-
-    top:-150px;
-    right:-120px;
-
-    filter:blur(40px);
-}
-
-/* =========================
-LOGO
-========================= */
+/* ==================================================
+   HERO LOGO
+================================================== */
 
 .hero-logo{
 
     position:absolute;
 
-    top:100px;
+    top:24px;
 
     left:50%;
 
     transform:translateX(-50%);
 
-    width:82px;
+    width:58px;
 
     opacity:0.95;
 
-    z-index:10;
+    z-index:50;
 
     animation:floatLogo 5s ease-in-out infinite;
+
+    filter:
+    drop-shadow(0 8px 18px rgba(0,0,0,0.28));
 }
 
 @keyframes floatLogo{
@@ -343,9 +329,9 @@ LOGO
     }
 }
 
-/* =========================
-HERO CONTENT
-========================= */
+/* ==================================================
+   HERO CONTENT
+================================================== */
 
 .hero-content{
 
@@ -353,100 +339,115 @@ HERO CONTENT
 
     z-index:5;
 
-    max-width:950px;
+    max-width:650px;
 
-    padding:240px 20px 60px;
+    margin-left:8%;
+
+    margin-top:80px;
+
+    padding:70px;
+
+    border-radius:34px;
+
+    background:
+    rgba(255,245,230,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.18);
 }
 
-/* =========================
-SUBTITLE
-========================= */
+/* ==================================================
+   HERO SUBTITLE
+================================================== */
 
 .hero-subtitle{
 
     display:inline-block;
 
-    margin-bottom:20px;
-
-    color:#fff1dc;
-
-    letter-spacing:2px;
-
-    font-size:0.85rem;
-
-    background:
-    rgba(255,255,255,0.08);
+    margin-bottom:22px;
 
     padding:10px 18px;
 
     border-radius:999px;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    color:#fff2dc;
+
+    letter-spacing:2px;
+
+    font-size:0.78rem;
 }
 
-/* =========================
-TITLE
-========================= */
+/* ==================================================
+   BRAND
+================================================== */
 
 .hero h1{
 
     font-family:'Cherry Bomb One', cursive;
 
-    font-size:5.8rem;
+    font-size:5rem;
 
-    color:#fff4e4;
+    line-height:1;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
-    letter-spacing:3px;
+    color:#fff3e0;
+
+    letter-spacing:2px;
 
     text-shadow:
-    0 10px 25px rgba(0,0,0,0.22);
+    0 10px 25px rgba(0,0,0,0.18);
 }
 
-/* =========================
-HERO H2
-========================= */
+/* ==================================================
+   HERO TITLE
+================================================== */
 
 .hero h2{
 
     font-family:'Marcellus', serif;
 
-    font-size:4.6rem;
+    font-size:4rem;
 
     line-height:1.08;
 
-    margin-bottom:28px;
+    margin-bottom:26px;
 
-    color:#fffaf3;
+    color:#fff9f3;
 }
 
-/* =========================
-TEXT
-========================= */
+/* ==================================================
+   HERO TEXT
+================================================== */
 
 .hero p{
 
-    max-width:760px;
-
-    margin:auto auto 45px;
-
-    font-size:1.16rem;
+    font-size:1.08rem;
 
     line-height:1.9;
 
-    color:#fff0df;
+    color:#fff1df;
+
+    margin-bottom:40px;
 }
 
-/* =========================
-BUTTONS
-========================= */
+/* ==================================================
+   HERO BUTTONS
+================================================== */
 
 .hero-buttons{
 
     display:flex;
 
-    justify-content:center;
-
-    gap:20px;
+    gap:18px;
 
     flex-wrap:wrap;
 }
@@ -467,15 +468,18 @@ BUTTONS
 
 .btn-primary{
 
-    background:#de6c67;
+    background:#df6f67;
 
     color:white;
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,0.18);
 }
 
 .btn-secondary{
 
     background:
-    rgba(255,255,255,0.10);
+    rgba(255,255,255,0.08);
 
     color:white;
 
@@ -488,63 +492,21 @@ BUTTONS
 
     transform:translateY(-4px);
 
-    background:#ffbe78;
+    background:#ffbf7b;
 }
 
-/* =========================
-FLOWERS
-========================= */
-
-.flower{
-
-    position:absolute;
-
-    font-size:2rem;
-
-    color:#ffe8c5;
-
-    opacity:0.25;
-
-    animation:floatFlower 8s ease-in-out infinite;
-}
-
-.flower1{
-    left:8%;
-    bottom:12%;
-}
-
-.flower2{
-    right:10%;
-    top:22%;
-}
-
-@keyframes floatFlower{
-
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-12px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-}
-
-/* =========================
-SECTIONS
-========================= */
+/* ==================================================
+   SECTIONS
+================================================== */
 
 section{
 
     padding:120px 8%;
 }
 
-/* =========================
-TITLES
-========================= */
+/* ==================================================
+   SECTION TITLES
+================================================== */
 
 .section-title{
 
@@ -555,7 +517,7 @@ TITLES
 
 .section-title span{
 
-    color:#ffe09c;
+    color:#ffe39d;
 
     letter-spacing:2px;
 
@@ -568,14 +530,14 @@ TITLES
 
     font-size:4rem;
 
-    color:#fff8ef;
-
     margin-top:16px;
+
+    color:#fff8ef;
 }
 
-/* =========================
-CARDS
-========================= */
+/* ==================================================
+   DESTINATION CARDS
+================================================== */
 
 .cards{
 
@@ -589,7 +551,7 @@ CARDS
 
 .card{
 
-    background:#f7ddc2;
+    background:#f8dfc7;
 
     border-radius:28px;
 
@@ -598,7 +560,7 @@ CARDS
     transition:0.4s;
 
     box-shadow:
-    0 20px 40px rgba(0,0,0,0.18);
+    0 20px 40px rgba(0,0,0,0.16);
 }
 
 .card:hover{
@@ -624,11 +586,11 @@ CARDS
 
 .card-content i{
 
-    font-size:1.5rem;
+    font-size:1.4rem;
+
+    color:#df6f67;
 
     margin-bottom:18px;
-
-    color:#de6c67;
 }
 
 .card-content h3{
@@ -639,24 +601,29 @@ CARDS
 
     margin-bottom:12px;
 
-    color:#9b564a;
+    color:#9d584d;
 }
 
 .card-content p{
 
-    color:#6b5b50;
+    color:#6f5a4f;
 
     line-height:1.8;
 }
 
-/* =========================
-GLASS BOX
-========================= */
+/* ==================================================
+   GLASS BOXES
+================================================== */
 
 .glass-box{
 
     background:
     rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(14px);
+
+    border:
+    1px solid rgba(255,255,255,0.06);
 
     border-radius:34px;
 
@@ -664,15 +631,13 @@ GLASS BOX
 
     text-align:center;
 
-    backdrop-filter:blur(14px);
-
-    border:
-    1px solid rgba(255,255,255,0.06);
+    box-shadow:
+    0 18px 45px rgba(0,0,0,0.16);
 }
 
 .glass-box span{
 
-    color:#ffe09c;
+    color:#ffe39d;
 
     font-weight:700;
 
@@ -687,7 +652,7 @@ GLASS BOX
 
     margin:22px 0;
 
-    color:#fff7ef;
+    color:#fff7ee;
 }
 
 .glass-box p{
@@ -698,8 +663,12 @@ GLASS BOX
 
     line-height:1.9;
 
-    color:#fff0df;
+    color:#fff1de;
 }
+
+/* ==================================================
+   ACTION BUTTONS
+================================================== */
 
 .glass-box a,
 .glass-box button{
@@ -712,7 +681,7 @@ GLASS BOX
 
     border-radius:18px;
 
-    background:#de6c67;
+    background:#df6f67;
 
     color:white;
 
@@ -728,14 +697,14 @@ GLASS BOX
 .glass-box a:hover,
 .glass-box button:hover{
 
-    background:#ffbe78;
+    background:#ffbf7b;
 
     transform:translateY(-4px);
 }
 
-/* =========================
-FOOTER
-========================= */
+/* ==================================================
+   FOOTER
+================================================== */
 
 footer{
 
@@ -743,12 +712,12 @@ footer{
 
     text-align:center;
 
-    background:#51644a;
+    background:#55684f;
 }
 
 footer img{
 
-    width:65px;
+    width:58px;
 
     margin-bottom:18px;
 }
@@ -759,28 +728,42 @@ footer h2{
 
     font-size:3rem;
 
-    color:#fff0dc;
+    margin-bottom:12px;
 
-    margin-bottom:10px;
+    color:#fff0dd;
 }
 
 footer p{
 
-    color:#ffe4c9;
+    color:#ffe5c8;
 }
 
-/* =========================
-RESPONSIVE
-========================= */
+/* ==================================================
+   RESPONSIVE
+================================================== */
 
-@media(max-width:900px){
+@media(max-width:950px){
+
+    .hero{
+
+        justify-content:center;
+    }
+
+    .hero-content{
+
+        margin-left:0;
+
+        width:100%;
+
+        max-width:90%;
+    }
 
     .hero h1{
         font-size:4rem;
     }
 
     .hero h2{
-        font-size:3.4rem;
+        font-size:3.2rem;
     }
 
     .section-title h2,
@@ -801,7 +784,7 @@ RESPONSIVE
 
         width:260px;
 
-        background:#8f6555;
+        background:#8f6757;
 
         flex-direction:column;
 
@@ -813,20 +796,21 @@ RESPONSIVE
     .nav-links.active{
         display:flex;
     }
-
-    .glass-box{
-        padding:50px 25px;
-    }
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
+
+    .hero-content{
+
+        padding:40px 30px;
+    }
 
     .hero h1{
         font-size:2.8rem;
     }
 
     .hero h2{
-        font-size:2.5rem;
+        font-size:2.4rem;
     }
 
     .hero p{
@@ -834,10 +818,14 @@ RESPONSIVE
     }
 
     .hero-logo{
-        width:65px;
+        width:52px;
     }
 
     section{
         padding:100px 6%;
+    }
+
+    .glass-box{
+        padding:50px 25px;
     }
 }
