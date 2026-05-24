@@ -687,14 +687,22 @@ body{
   }
 
   .destinations{
-    padding:
-      100px 6%
-      120px;
 
-    background-attachment:
-      scroll,
-      scroll;
-  }
+  position:relative;
+
+  padding:
+    130px 7%
+    140px;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f7f1e7,
+      #efe2cf
+    );
+}
 
   .section-title{
     font-size:2.8rem;
