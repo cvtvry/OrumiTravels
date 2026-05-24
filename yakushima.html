@@ -1,1 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yakushima | Orumi Journeys</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================================================= */
+/* ===================== RESET ===================== */
+/* ================================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:'Nunito', sans-serif;
+
+  background:#2E3D49;
+
+  color:white;
+
+  overflow-x:hidden;
+}
+
+/* ================================================= */
+/* ================= BACKGROUND ==================== */
+/* ================================================= */
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-2;
+
+  background:
+
+    radial-gradient(
+      circle at top left,
+      rgba(170,184,194,0.10),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(111,129,145,0.12),
+      transparent 34%
+    ),
+
+    linear-gradient(
+      180deg,
+      #566D7F 0%,
+      #4F6678 22%,
+      #3E5364 54%,
+      #2E3D49 100%
+    );
+}
+
+/* ================================================= */
+/* ================= FILM GRAIN ==================== */
+/* ================================================= */
+
+body::after{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-1;
+
+  opacity:.06;
+
+  pointer-events:none;
+
+  mix-blend-mode:soft-light;
+
+  background-image:
+    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
+
+/* ================================================= */
+/* ===================== HEADER ==================== */
+/* ================================================= */
+
+.header{
+
+  position:fixed;
+
+  top:0;
+  width:100%;
+
+  display:flex;
+
+  justify-content:space-between;
+  align-items:center;
+
+  padding:22px 30px;
+
+  z-index:999;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(18,24,32,0.48),
+      transparent
+    );
+
+  backdrop-filter:blur(10px);
+}
+
+.logo{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2.3rem;
+
+  color:white;
+
+  text-decoration:none;
+}
+
+/* ================================================= */
+/* ====================== HERO ===================== */
+/* ================================================= */
+
+.hero{
+
+  position:relative;
+
+  min-height:100vh;
+
+  display:flex;
+
+  align-items:flex-end;
+
+  padding:
+    0 8%
+    100px;
+
+  overflow:hidden;
+}
+
+/* ================================================= */
+/* ================= HERO IMAGE ==================== */
+/* ================================================= */
+
+.hero-image{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:0;
+}
+
+.hero-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:
+    brightness(.82)
+    saturate(.92);
+}
+
+.hero-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      to top,
+      rgba(8,12,16,0.92) 0%,
+      rgba(18,24,32,0.55) 32%,
+      rgba(18,24,32,0.18) 58%,
+      transparent 82%
+    );
+}
+
+/* ================================================= */
+/* ================= AMBIENT FOG =================== */
+/* ================================================= */
+
+.fog{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  background:
+
+    radial-gradient(
+      circle at 30% 60%,
+      rgba(255,255,255,0.06),
+      transparent 36%
+    ),
+
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(255,255,255,0.04),
+      transparent 42%
+    );
+
+  filter:blur(40px);
+
+  animation:
+    fogMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes fogMove{
+
+  from{
+    transform:translateX(0px);
+  }
+
+  to{
+    transform:translateX(-18px);
+  }
+}
+
+/* ================================================= */
+/* ================= HERO CONTENT ================== */
+/* ================================================= */
+
+.hero-content{
+
+  position:relative;
+
+  z-index:3;
+
+  max-width:760px;
+}
+
+.location{
+
+  color:#CFAE72;
+
+  letter-spacing:5px;
+
+  text-transform:uppercase;
+
+  margin-bottom:22px;
+
+  font-size:.9rem;
+}
+
+.hero h1{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:7rem;
+
+  line-height:.95;
+
+  margin-bottom:28px;
+
+  text-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+}
+
+.hero p{
+
+  max-width:620px;
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.88);
+
+  font-size:1.1rem;
+
+  margin-bottom:40px;
+}
+
+/* ================================================= */
+/* ===================== BUTTON ==================== */
+/* ================================================= */
+
+.btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  padding:
+    16px 30px;
+
+  border-radius:50px;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.12),
+      rgba(255,255,255,0.06)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.10);
+
+  backdrop-filter:blur(10px);
+
+  color:white;
+
+  text-decoration:none;
+
+  transition:.5s;
+}
+
+.btn:hover{
+
+  transform:
+    translateY(-4px);
+
+  background:
+    rgba(255,255,255,0.16);
+}
+
+/* ================================================= */
+/* ==================== SECTION ==================== */
+/* ================================================= */
+
+.section{
+
+  padding:
+    140px 8%;
+}
+
+/* ================================================= */
+/* ================= INTRO SECTION ================= */
+/* ================================================= */
+
+.intro{
+
+  max-width:900px;
+
+  margin:auto;
+
+  text-align:center;
+}
+
+.intro h2{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:4rem;
+
+  margin-bottom:30px;
+}
+
+.intro p{
+
+  line-height:2;
+
+  color:rgba(255,255,255,0.82);
+
+  font-size:1.08rem;
+}
+
+/* ================================================= */
+/* ==================== GALLERY ==================== */
+/* ================================================= */
+
+.gallery{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap:28px;
+}
+
+.gallery img{
+
+  width:100%;
+
+  height:440px;
+
+  object-fit:cover;
+
+  border-radius:28px;
+
+  transition:1s;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.28);
+}
+
+.gallery img:hover{
+
+  transform:
+    translateY(-10px)
+    scale(1.02);
+}
+
+/* ================================================= */
+/* ================= EXPERIENCE ==================== */
+/* ================================================= */
+
+.experience{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+  gap:30px;
+}
+
+.experience-card{
+
+  padding:40px;
+
+  border-radius:30px;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.02)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(10px);
+}
+
+.experience-card h3{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2rem;
+
+  margin-bottom:18px;
+}
+
+.experience-card p{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.78);
+}
+
+/* ================================================= */
+/* ====================== CTA ====================== */
+/* ================================================= */
+
+.cta{
+
+  text-align:center;
+}
+
+.cta h2{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:4.5rem;
+
+  margin-bottom:30px;
+}
+
+/* ================================================= */
+/* ===================== FOOTER ==================== */
+/* ================================================= */
+
+.footer{
+
+  padding:50px 8%;
+
+  text-align:center;
+
+  color:rgba(255,255,255,0.55);
+
+  border-top:
+    1px solid rgba(255,255,255,0.06);
+}
+
+/* ================================================= */
+/* ==================== RESPONSIVE ================= */
+/* ================================================= */
+
+@media(max-width:768px){
+
+  .hero{
+
+    padding:
+      0 7%
+      70px;
+  }
+
+  .hero h1{
+    font-size:4.5rem;
+  }
+
+  .intro h2{
+    font-size:3rem;
+  }
+
+  .cta h2{
+    font-size:3.2rem;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================================================= -->
+<!-- ===================== HEADER ==================== -->
+<!-- ================================================= -->
+
+<header class="header">
+
+  <a href="index.html" class="logo">
+    Orumi Journeys
+  </a>
+
+</header>
+
+<!-- ================================================= -->
+<!-- ====================== HERO ===================== -->
+<!-- ================================================= -->
+
+<section class="hero">
+
+  <div class="hero-image">
+    <img src="img/yakushima.jpg" alt="Yakushima">
+  </div>
+
+  <div class="fog"></div>
+
+  <div class="hero-content">
+
+    <div class="location">
+      JAPAN • YAKUSHIMA
+    </div>
+
+    <h1>
+      Yakushima
+    </h1>
+
+    <p>
+      Bosques antiguos cubiertos de niebla, senderos silenciosos y una naturaleza viva que inspiró mundos mágicos y contemplativos.
+    </p>
+
+    <a href="#explore" class="btn">
+      Explorar experiencia →
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- ===================== INTRO ==================== -->
+<!-- ================================================= -->
+
+<section class="section intro" id="explore">
+
+  <h2>
+    Un bosque suspendido en el tiempo
+  </h2>
+
+  <p>
+    Yakushima es una isla donde la lluvia, la niebla y los cedros milenarios crean una atmósfera profundamente espiritual. Cada sendero parece esconder historias antiguas, sonidos suaves y paisajes que recuerdan escenas cinematográficas nacidas de la imaginación.
+  </p>
+
+</section>
+
+<!-- ================================================= -->
+<!-- ==================== GALLERY =================== -->
+<!-- ================================================= -->
+
+<section class="section">
+
+  <div class="gallery">
+
+    <img src="img/yakushima.jpg" alt="">
+    <img src="img/yakushima.jpg" alt="">
+    <img src="img/yakushima.jpg" alt="">
+
+  </div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- ================= EXPERIENCES ================== -->
+<!-- ================================================= -->
+
+<section class="section">
+
+  <div class="experience">
+
+    <div class="experience-card">
+
+      <h3>
+        Caminatas contemplativas
+      </h3>
+
+      <p>
+        Explora senderos cubiertos de niebla y bosques húmedos donde cada paso se siente como una escena viva de una película japonesa.
+      </p>
+
+    </div>
+
+    <div class="experience-card">
+
+      <h3>
+        Naturaleza viva
+      </h3>
+
+      <p>
+        Descubre cascadas ocultas, árboles ancestrales y una atmósfera silenciosa que invita a desconectarse del tiempo moderno.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- ======================= CTA ==================== -->
+<!-- ================================================= -->
+
+<section class="section cta">
+
+  <h2>
+    Descubre Yakushima
+  </h2>
+
+  <a href="index.html" class="btn">
+    Volver a Orumi →
+  </a>
+
+</section>
+
+<!-- ================================================= -->
+<!-- ===================== FOOTER =================== -->
+<!-- ================================================= -->
+
+<footer class="footer">
+
+  Slow journeys, lasting memories
+
+</footer>
+
+</body>
+</html>
