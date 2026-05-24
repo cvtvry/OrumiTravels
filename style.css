@@ -14,7 +14,7 @@ html{
 
 body{
   font-family:'Nunito', sans-serif;
-  background:#f4efe6;
+  background:#ece2d3;
   overflow-x:hidden;
   color:white;
 }
@@ -26,7 +26,7 @@ body{
 .loader{
   position:fixed;
   inset:0;
-  background:#f4efe6;
+  background:#ece2d3;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -84,7 +84,7 @@ body{
       transparent
     );
 
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
 }
 
 .logo{
@@ -165,7 +165,7 @@ body{
   background:
     linear-gradient(
       rgba(0,0,0,0.45),
-      rgba(0,0,0,0.5)
+      rgba(0,0,0,0.55)
     ),
     url('img/sunset-train.jpg');
 
@@ -192,7 +192,7 @@ body{
   bottom:-1px;
 
   width:100%;
-  height:220px;
+  height:240px;
 
   z-index:2;
 
@@ -200,11 +200,11 @@ body{
 
     linear-gradient(
       to bottom,
-      rgba(244,239,230,0) 0%,
-      rgba(244,239,230,0.15) 25%,
-      rgba(244,239,230,0.45) 55%,
-      rgba(244,239,230,0.82) 78%,
-      #f7f1e7 100%
+      rgba(236,226,211,0) 0%,
+      rgba(236,226,211,0.12) 20%,
+      rgba(236,226,211,0.4) 40%,
+      rgba(236,226,211,0.82) 72%,
+      #ece2d3 100%
     );
 
   pointer-events:none;
@@ -419,50 +419,42 @@ body{
   position:relative;
 
   padding:
-    130px 7%
-    140px;
+    140px 7%
+    150px;
 
   overflow:hidden;
 
   background:
+
+    radial-gradient(
+      circle at top left,
+      rgba(255,255,255,0.55),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(255,210,170,0.22),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.16),
+      transparent 60%
+    ),
+
     linear-gradient(
-      to bottom,
-      #f7f1e7,
-      #efe2cf
+      180deg,
+      #ece2d3 0%,
+      #e5d7c4 45%,
+      #dfcfba 100%
     );
 }
 
-/* ================= BACKGROUND IMAGE ================= */
-
-.destinations-background{
-
-  position:absolute;
-
-  inset:0;
-
-  z-index:0;
-
-  overflow:hidden;
-}
-
-.destinations-background img{
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  opacity:.06;
-
-  filter:
-    blur(14px)
-    saturate(80%)
-    brightness(110%);
-
-  transform:scale(1.12);
-}
-
-/* ================= LIGHT ================= */
+/* ================================================= */
+/* ================= TEXTURE LAYER ================= */
+/* ================================================= */
 
 .destinations::before{
 
@@ -474,22 +466,24 @@ body{
 
   background:
 
-    radial-gradient(
-      circle at top left,
-      rgba(255,255,255,0.35),
-      transparent 30%
-    ),
+    url("https://www.transparenttextures.com/patterns/rice-paper-3.png"),
 
     radial-gradient(
-      circle at bottom right,
-      rgba(255,210,170,0.12),
-      transparent 35%
+      circle at top,
+      rgba(255,255,255,0.12),
+      transparent 40%
     );
+
+  opacity:.45;
+
+  mix-blend-mode:soft-light;
 
   pointer-events:none;
 }
 
-/* ================= FILM GRAIN ================= */
+/* ================================================= */
+/* ================= AMBIENT LIGHT ================= */
+/* ================================================= */
 
 .destinations::after{
 
@@ -499,17 +493,45 @@ body{
 
   inset:0;
 
-  background-image:
-    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+  background:
 
-  opacity:.12;
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255,240,220,0.22),
+      transparent 20%
+    ),
 
-  mix-blend-mode:soft-light;
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255,220,180,0.16),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.06),
+      transparent 60%
+    );
+
+  animation:ambientMove 14s ease-in-out infinite alternate;
 
   pointer-events:none;
 }
 
-/* ================= INTRO ================= */
+@keyframes ambientMove{
+
+  from{
+    transform:translateY(0px);
+  }
+
+  to{
+    transform:translateY(-12px);
+  }
+}
+
+/* ================================================= */
+/* ====================== INTRO ==================== */
+/* ================================================= */
 
 .section-intro{
 
@@ -522,7 +544,7 @@ body{
 
   text-align:center;
 
-  margin-bottom:80px;
+  margin-bottom:90px;
 }
 
 .section-mini{
@@ -535,19 +557,21 @@ body{
 
 .section-title{
   font-family:'Cormorant Garamond', serif;
-  font-size:4.3rem;
+  font-size:4.4rem;
   line-height:1.1;
   color:#2f241d;
-  margin-bottom:25px;
+  margin-bottom:30px;
 }
 
 .section-text{
   color:#5f5650;
   line-height:1.9;
-  font-size:1.05rem;
+  font-size:1.08rem;
 }
 
-/* ================= GRID ================= */
+/* ================================================= */
+/* ======================= GRID ==================== */
+/* ================================================= */
 
 .destination-grid{
 
@@ -562,7 +586,9 @@ body{
   z-index:2;
 }
 
-/* ================= CARD ================= */
+/* ================================================= */
+/* ======================= CARD ==================== */
+/* ================================================= */
 
 .destination-card{
   position:relative;
@@ -592,7 +618,9 @@ body{
     0 30px 70px rgba(0,0,0,0.14);
 }
 
-/* ================= IMAGE ================= */
+/* ================================================= */
+/* ======================= IMAGE =================== */
+/* ================================================= */
 
 .destination-image{
   position:absolute;
@@ -608,7 +636,7 @@ body{
   background:
     linear-gradient(
       to top,
-      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.72),
       transparent 50%
     );
 }
@@ -624,7 +652,9 @@ body{
   transform:scale(1.08);
 }
 
-/* ================= CONTENT ================= */
+/* ================================================= */
+/* ====================== CONTENT ================== */
+/* ================================================= */
 
 .destination-content{
   position:absolute;
@@ -648,7 +678,9 @@ body{
   margin-bottom:25px;
 }
 
-/* ================= BUTTON ================= */
+/* ================================================= */
+/* ====================== BUTTON =================== */
+/* ================================================= */
 
 .destination-btn{
   display:inline-flex;
