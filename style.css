@@ -1008,33 +1008,36 @@ body{
 
   position:absolute;
 
-  left:0;
-  bottom:0;
+  left:24px;
+  right:24px;
+  bottom:24px;
 
-  width:100%;
+  padding:26px;
 
-  padding:
-    0 34px 42px;
+  border-radius:26px;
 
-  z-index:3;
-
-  display:flex;
-
-  flex-direction:column;
-
-  justify-content:flex-end;
-
-  height:100%;
+  z-index:4;
 
   background:
 
     linear-gradient(
-      to top,
-      rgba(8,12,16,0.82) 0%,
-      rgba(18,24,32,0.38) 34%,
-      transparent 62%
+      to bottom,
+      rgba(18,24,32,0.42),
+      rgba(10,14,18,0.72)
     );
+
+  backdrop-filter:blur(14px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 10px 30px rgba(0,0,0,0.22),
+
+    inset 0 0 0 1px rgba(255,255,255,0.03);
 }
+
 /* ================================================= */
 /* ================= TEXT BACKDROP ================= */
 /* ================================================= */
@@ -1070,32 +1073,29 @@ body{
 
   font-family:'Cormorant Garamond', serif;
 
-  font-size:2.8rem;
+  font-size:2.6rem;
+
+  line-height:1.05;
 
   margin-bottom:14px;
 
   color:white;
 
-  line-height:1;
-
   text-shadow:
 
-    0 8px 24px rgba(0,0,0,0.42);
+    0 6px 18px rgba(0,0,0,0.55);
 }
 
 .destination-content p{
 
   color:rgba(255,255,255,0.92);
 
-  line-height:1.8;
+  line-height:1.7;
 
-  margin-bottom:28px;
-
-  max-width:92%;
+  margin-bottom:24px;
 
   text-shadow:
-
-    0 4px 18px rgba(0,0,0,0.38);
+    0 4px 12px rgba(0,0,0,0.45);
 }
 
 /* ================================================= */
@@ -1103,8 +1103,11 @@ body{
 /* ================================================= */
 
 .destination-btn{
+
   display:inline-flex;
+
   align-items:center;
+
   gap:10px;
 
   padding:
@@ -1113,9 +1116,9 @@ body{
   border-radius:50px;
 
   background:
-    rgba(255,255,255,0.12);
+    rgba(255,255,255,0.10);
 
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(10px);
 
   color:white;
 
@@ -1123,6 +1126,8 @@ body{
 
   border:
     1px solid rgba(255,255,255,0.08);
+
+  width:fit-content;
 }
 
 .destination-btn:hover{
