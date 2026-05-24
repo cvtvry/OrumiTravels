@@ -963,14 +963,32 @@ body{
 
   background:
 
+    /* ================= TOP ATMOSPHERE ================= */
+
+    linear-gradient(
+      to bottom,
+      rgba(18,24,32,0.08),
+      transparent 22%
+    ),
+
+    /* ================= CENTER SOFT FOG ================= */
+
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(18,24,32,0.18),
+      transparent 45%
+    ),
+
+    /* ================= MAIN CINEMATIC SHADOW ================= */
+
     linear-gradient(
       to top,
-      rgba(18,24,32,0.82),
-      rgba(18,24,32,0.18) 45%,
-      transparent 72%
+      rgba(10,14,18,0.92) 0%,
+      rgba(18,24,32,0.76) 28%,
+      rgba(18,24,32,0.22) 58%,
+      transparent 78%
     );
 }
-
 .destination-image img{
   width:100%;
   height:100%;
@@ -995,19 +1013,66 @@ body{
   z-index:3;
 }
 
+/* ================================================= */
+/* ================= TEXT BACKDROP ================= */
+/* ================================================= */
+
+.destination-content::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:-10%;
+  bottom:-20px;
+
+  width:120%;
+  height:220px;
+
+  background:
+
+    radial-gradient(
+      ellipse at center,
+      rgba(10,14,18,0.55),
+      transparent 72%
+    );
+
+  filter:blur(24px);
+
+  z-index:-1;
+
+  pointer-events:none;
+}
+
 .destination-content h3{
+
   font-family:'Cormorant Garamond', serif;
-  font-size:2.5rem;
-  margin-bottom:12px;
+
+  font-size:2.7rem;
+
+  margin-bottom:14px;
+
   color:white;
+
+  text-shadow:
+
+    0 4px 14px rgba(0,0,0,0.42),
+
+    0 2px 6px rgba(0,0,0,0.28);
 }
 
 .destination-content p{
-  color:rgba(255,255,255,0.88);
-  line-height:1.7;
-  margin-bottom:25px;
-}
 
+  color:rgba(255,255,255,0.92);
+
+  line-height:1.8;
+
+  margin-bottom:26px;
+
+  text-shadow:
+
+    0 3px 10px rgba(0,0,0,0.38);
+}
 /* ================================================= */
 /* ====================== BUTTON =================== */
 /* ================================================= */
