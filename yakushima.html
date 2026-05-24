@@ -7,6 +7,8 @@
 
 <title>Yakushima | Orumi Journeys</title>
 
+<!-- ================= FUENTES ================= -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -89,7 +91,7 @@ body::after{
 
   z-index:-2;
 
-  opacity:.06;
+  opacity:.05;
 
   mix-blend-mode:soft-light;
 
@@ -123,7 +125,7 @@ body::after{
 
     linear-gradient(
       to bottom,
-      rgba(8,12,16,0.55),
+      rgba(8,12,16,0.58),
       transparent
     );
 
@@ -139,6 +141,8 @@ body::after{
   color:white;
 
   text-decoration:none;
+
+  letter-spacing:1px;
 }
 
 /* ================================================= */
@@ -157,7 +161,7 @@ body::after{
 
   padding:
     0 8%
-    100px;
+    110px;
 
   overflow:hidden;
 }
@@ -183,7 +187,7 @@ body::after{
   object-fit:cover;
 
   filter:
-    brightness(.7)
+    brightness(.65)
     saturate(.92);
 }
 
@@ -199,10 +203,10 @@ body::after{
 
     linear-gradient(
       to top,
-      rgba(6,10,12,0.96) 0%,
-      rgba(18,24,20,0.72) 28%,
-      rgba(18,24,20,0.28) 54%,
-      transparent 80%
+      rgba(6,10,12,0.98) 0%,
+      rgba(18,24,20,0.76) 28%,
+      rgba(18,24,20,0.26) 56%,
+      transparent 82%
     );
 }
 
@@ -250,6 +254,92 @@ body::after{
 }
 
 /* ================================================= */
+/* ================= LEAF PARTICLES ================ */
+/* ================================================= */
+
+.leaves{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:2;
+
+  overflow:hidden;
+
+  pointer-events:none;
+}
+
+.leaves span{
+
+  position:absolute;
+
+  width:14px;
+  height:14px;
+
+  border-radius:60% 40% 70% 30%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(180,210,170,0.8),
+      rgba(120,160,120,0.4)
+    );
+
+  animation:
+    floatLeaf linear infinite;
+}
+
+.leaves span:nth-child(1){
+  left:10%;
+  animation-duration:18s;
+}
+
+.leaves span:nth-child(2){
+  left:26%;
+  animation-duration:22s;
+}
+
+.leaves span:nth-child(3){
+  left:42%;
+  animation-duration:20s;
+}
+
+.leaves span:nth-child(4){
+  left:58%;
+  animation-duration:26s;
+}
+
+.leaves span:nth-child(5){
+  left:74%;
+  animation-duration:19s;
+}
+
+.leaves span:nth-child(6){
+  left:88%;
+  animation-duration:24s;
+}
+
+@keyframes floatLeaf{
+
+  from{
+    transform:
+      translateY(-10vh)
+      rotate(0deg);
+
+    opacity:0;
+  }
+
+  to{
+    transform:
+      translateY(120vh)
+      rotate(360deg);
+
+    opacity:.35;
+  }
+}
+
+/* ================================================= */
 /* ================= HERO CONTENT ================== */
 /* ================================================= */
 
@@ -281,12 +371,12 @@ body::after{
 
   font-size:7rem;
 
-  line-height:.95;
+  line-height:.92;
 
   margin-bottom:28px;
 
   text-shadow:
-    0 12px 35px rgba(0,0,0,0.35);
+    0 12px 35px rgba(0,0,0,0.45);
 }
 
 .hero p{
@@ -299,7 +389,10 @@ body::after{
 
   font-size:1.08rem;
 
-  margin-bottom:40px;
+  margin-bottom:42px;
+
+  text-shadow:
+    0 4px 14px rgba(0,0,0,0.4);
 }
 
 /* ================================================= */
@@ -323,12 +416,12 @@ body::after{
 
     linear-gradient(
       to bottom,
-      rgba(255,255,255,0.12),
+      rgba(255,255,255,0.14),
       rgba(255,255,255,0.06)
     );
 
   border:
-    1px solid rgba(255,255,255,0.08);
+    1px solid rgba(255,255,255,0.10);
 
   backdrop-filter:blur(10px);
 
@@ -366,16 +459,18 @@ body::after{
 
   font-family:'Cormorant Garamond', serif;
 
-  font-size:4.4rem;
+  font-size:4.6rem;
 
-  margin-bottom:30px;
+  margin-bottom:34px;
 
   text-align:center;
+
+  line-height:1;
 }
 
 .section-text{
 
-  max-width:900px;
+  max-width:920px;
 
   margin:auto;
 
@@ -384,6 +479,8 @@ body::after{
   line-height:2;
 
   color:rgba(255,255,255,0.82);
+
+  font-size:1.05rem;
 }
 
 /* ================================================= */
@@ -397,14 +494,14 @@ body::after{
   grid-template-columns:
     repeat(auto-fit,minmax(280px,1fr));
 
-  gap:28px;
+  gap:30px;
 }
 
 .gallery img{
 
   width:100%;
 
-  height:440px;
+  height:460px;
 
   object-fit:cover;
 
@@ -432,32 +529,57 @@ body::after{
   display:grid;
 
   grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+    repeat(auto-fit,minmax(300px,1fr));
 
-  gap:30px;
+  gap:34px;
 }
 
 .activity-card{
 
-  padding:40px;
+  overflow:hidden;
 
-  border-radius:30px;
+  border-radius:32px;
 
   background:
 
     linear-gradient(
       to bottom,
-      rgba(255,255,255,0.06),
-      rgba(255,255,255,0.02)
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
     );
 
   border:
-    1px solid rgba(255,255,255,0.06);
+    1px solid rgba(255,255,255,0.08);
 
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
+
+  transition:.7s;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.25);
 }
 
-.activity-card h3{
+.activity-card:hover{
+
+  transform:
+    translateY(-10px);
+}
+
+.activity-card img{
+
+  width:100%;
+
+  height:260px;
+
+  object-fit:cover;
+}
+
+.activity-content{
+
+  padding:34px;
+}
+
+.activity-content h3{
 
   font-family:'Cormorant Garamond', serif;
 
@@ -466,7 +588,7 @@ body::after{
   margin-bottom:18px;
 }
 
-.activity-card p{
+.activity-content p{
 
   line-height:1.9;
 
@@ -488,7 +610,7 @@ body::after{
 
   margin-bottom:40px;
 
-  padding:34px;
+  padding:36px;
 
   border-left:
     2px solid rgba(214,191,132,0.4);
@@ -497,6 +619,8 @@ body::after{
     rgba(255,255,255,0.03);
 
   border-radius:0 24px 24px 0;
+
+  backdrop-filter:blur(8px);
 }
 
 .day h3{
@@ -533,7 +657,7 @@ body::after{
 
 .info-card{
 
-  padding:36px;
+  padding:38px;
 
   border-radius:30px;
 
@@ -542,6 +666,8 @@ body::after{
 
   border:
     1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(10px);
 }
 
 .info-card h3{
@@ -584,7 +710,7 @@ body::after{
 
   overflow:hidden;
 
-  border-radius:34px;
+  border-radius:36px;
 
   background:
 
@@ -600,7 +726,7 @@ body::after{
   backdrop-filter:blur(12px);
 
   box-shadow:
-    0 25px 70px rgba(0,0,0,0.28);
+    0 25px 70px rgba(0,0,0,0.30);
 
   transition:.7s;
 }
@@ -615,23 +741,25 @@ body::after{
 
   width:100%;
 
-  height:300px;
+  height:320px;
 
   object-fit:cover;
 }
 
 .package-content{
 
-  padding:34px;
+  padding:36px;
 }
 
 .package-content h3{
 
   font-family:'Cormorant Garamond', serif;
 
-  font-size:2.5rem;
+  font-size:2.4rem;
 
-  margin-bottom:16px;
+  margin-bottom:18px;
+
+  line-height:1.1;
 }
 
 .package-content p{
@@ -643,13 +771,27 @@ body::after{
   margin-bottom:20px;
 }
 
+.package-content ul{
+
+  padding-left:18px;
+
+  margin-bottom:24px;
+}
+
+.package-content li{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.82);
+}
+
 .price{
 
   font-size:2rem;
 
   color:#d6bf84;
 
-  margin-bottom:24px;
+  margin-bottom:26px;
 }
 
 /* ================================================= */
@@ -658,7 +800,7 @@ body::after{
 
 .footer{
 
-  padding:50px 8%;
+  padding:60px 8%;
 
   text-align:center;
 
@@ -682,11 +824,15 @@ body::after{
   }
 
   .hero h1{
-    font-size:4.5rem;
+    font-size:4.6rem;
   }
 
   .section-title{
     font-size:3rem;
+  }
+
+  .gallery img{
+    height:320px;
   }
 
 }
@@ -696,6 +842,10 @@ body::after{
 
 <body>
 
+<!-- ================================================= -->
+<!-- ===================== HEADER ==================== -->
+<!-- ================================================= -->
+
 <header class="header">
 
   <a href="index.html" class="logo">
@@ -704,13 +854,28 @@ body::after{
 
 </header>
 
+<!-- ================================================= -->
+<!-- ====================== HERO ===================== -->
+<!-- ================================================= -->
+
 <section class="hero">
 
   <div class="hero-image">
-    <img src="img/yakushima.jpg" alt="">
+    <img src="imgyakushima/fullscreeny.jpg" alt="">
   </div>
 
   <div class="fog"></div>
+
+  <div class="leaves">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </div>
 
   <div class="hero-content">
 
@@ -723,7 +888,7 @@ body::after{
     </h1>
 
     <p>
-      Una isla cubierta por bosques ancestrales, lluvia constante y senderos envueltos en niebla que inspiraron el espíritu de Princess Mononoke.
+      Una isla cubierta por bosques ancestrales, lluvia constante y senderos envueltos en niebla que inspiraron el espíritu de Princess Mononoke y el universo cinematográfico de Studio Ghibli.
     </p>
 
     <a href="#packages" class="btn">
@@ -734,6 +899,10 @@ body::after{
 
 </section>
 
+<!-- ================================================= -->
+<!-- ==================== INTRO ===================== -->
+<!-- ================================================= -->
+
 <section class="section">
 
   <h2 class="section-title">
@@ -741,22 +910,30 @@ body::after{
   </h2>
 
   <p class="section-text">
-    Yakushima es un lugar donde la naturaleza parece respirar lentamente. Los cedros milenarios, el sonido constante de la lluvia y la niebla suspendida entre montañas crean una experiencia profundamente contemplativa y cinematográfica.
+    Yakushima es una isla donde la naturaleza parece respirar lentamente. Los cedros milenarios, la niebla suspendida entre montañas y la lluvia constante crean una experiencia profundamente contemplativa y cinematográfica.
   </p>
 
 </section>
+
+<!-- ================================================= -->
+<!-- ==================== GALLERY =================== -->
+<!-- ================================================= -->
 
 <section class="section">
 
   <div class="gallery">
 
-    <img src="img/yakushima.jpg" alt="">
-    <img src="img/yakushima.jpg" alt="">
-    <img src="img/yakushima.jpg" alt="">
+    <img src="imgyakushima/1landy.jpg" alt="">
+    <img src="imgyakushima/2landy.jpg" alt="">
+    <img src="imgyakushima/3landy.jpg" alt="">
 
   </div>
 
 </section>
+
+<!-- ================================================= -->
+<!-- ================== ACTIVITIES ================== -->
+<!-- ================================================= -->
 
 <section class="section">
 
@@ -768,43 +945,65 @@ body::after{
 
     <div class="activity-card">
 
-      <h3>
-        Trekking entre cedros
-      </h3>
+      <img src="imgyakushima/trekky.jpg" alt="">
 
-      <p>
-        Senderos cubiertos de musgo, raíces gigantes y atmósferas húmedas que parecen sacadas de una película de Studio Ghibli.
-      </p>
+      <div class="activity-content">
 
-    </div>
+        <h3>
+          Trekking entre cedros
+        </h3>
 
-    <div class="activity-card">
+        <p>
+          Senderos cubiertos de musgo, raíces gigantes y atmósferas húmedas que parecen escenas vivas de Princess Mononoke.
+        </p>
 
-      <h3>
-        Ryokan y onsen
-      </h3>
-
-      <p>
-        Hospedaje tradicional japonés, baños termales naturales y noches silenciosas acompañadas por lluvia suave.
-      </p>
+      </div>
 
     </div>
 
     <div class="activity-card">
 
-      <h3>
-        Fotografía contemplativa
-      </h3>
+      <img src="imgyakushima/hostely.jpg" alt="">
 
-      <p>
-        Paisajes cinematográficos, niebla y naturaleza viva ideales para capturar una estética melancólica y mágica.
-      </p>
+      <div class="activity-content">
+
+        <h3>
+          Ryokan y onsen
+        </h3>
+
+        <p>
+          Hospedaje tradicional japonés, baños termales naturales y noches silenciosas acompañadas por lluvia suave.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="activity-card">
+
+      <img src="imgyakushima/contemy.jpg" alt="">
+
+      <div class="activity-content">
+
+        <h3>
+          Fotografía contemplativa
+        </h3>
+
+        <p>
+          Paisajes cinematográficos, niebla y naturaleza viva ideales para capturar una estética melancólica y mágica.
+        </p>
+
+      </div>
 
     </div>
 
   </div>
 
 </section>
+
+<!-- ================================================= -->
+<!-- =================== ITINERARY ================== -->
+<!-- ================================================= -->
 
 <section class="section">
 
@@ -857,7 +1056,7 @@ body::after{
       </h3>
 
       <p>
-        Recorrido panorámico por playas, faros y pequeños pueblos isleños.
+        Recorrido panorámico por playas, cascadas, faros y pequeños pueblos isleños.
       </p>
 
     </div>
@@ -877,6 +1076,10 @@ body::after{
   </div>
 
 </section>
+
+<!-- ================================================= -->
+<!-- ================= PRACTICAL INFO =============== -->
+<!-- ================================================= -->
 
 <section class="section">
 
@@ -931,6 +1134,10 @@ body::after{
 
 </section>
 
+<!-- ================================================= -->
+<!-- ==================== PACKAGE =================== -->
+<!-- ================================================= -->
+
 <section class="section" id="packages">
 
   <h2 class="section-title">
@@ -941,7 +1148,7 @@ body::after{
 
     <div class="package-card">
 
-      <img src="img/yakushima.jpg" alt="">
+      <img src="imgyakushima/packagey.jpg" alt="">
 
       <div class="package-content">
 
@@ -953,9 +1160,16 @@ body::after{
           5 días / 4 noches explorando bosques ancestrales, ryokan tradicionales y senderos inspirados en Princess Mononoke.
         </p>
 
-        <p>
-          Incluye ferry, hospedaje, desayunos, cenas, trekking guiado, onsen y transporte local.
-        </p>
+        <ul>
+
+          <li>Ferry ida y vuelta desde Kagoshima</li>
+          <li>4 noches en ryokan japonés</li>
+          <li>Desayunos y cenas tradicionales</li>
+          <li>Trekking guiado</li>
+          <li>Onsen natural</li>
+          <li>Kit impermeable y mapa ilustrado</li>
+
+        </ul>
 
         <div class="price">
           USD 1,200
@@ -972,6 +1186,10 @@ body::after{
   </div>
 
 </section>
+
+<!-- ================================================= -->
+<!-- ===================== FOOTER =================== -->
+<!-- ================================================= -->
 
 <footer class="footer">
 
