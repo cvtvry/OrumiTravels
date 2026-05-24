@@ -431,7 +431,7 @@ body{
       rgba(239,226,207,0.88)
     ),
 
-    url("img/background.jpg");
+    url("img/background.jpg") ;
 
   background-size:
     cover,
