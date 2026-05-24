@@ -14,7 +14,7 @@ html{
 
 body{
   font-family:'Nunito', sans-serif;
-  background:#4F5F6E;
+  background:#3E5364;
   overflow-x:hidden;
   color:white;
 }
@@ -26,7 +26,7 @@ body{
 .loader{
   position:fixed;
   inset:0;
-  background:#4F5F6E;
+  background:#3E5364;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -43,7 +43,7 @@ body{
 .flower{
   width:70px;
   height:70px;
-  border:3px solid #D6B98A;
+  border:3px solid #B99763;
   border-top-color:transparent;
   border-radius:50%;
   animation:spin 2s linear infinite;
@@ -58,7 +58,7 @@ body{
 
 .loader p{
   font-family:'Cormorant Garamond', serif;
-  color:#E7D8C7;
+  color:#AAB8C2;
   font-size:1.4rem;
   letter-spacing:2px;
 }
@@ -80,7 +80,7 @@ body{
   background:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,0.35),
+      rgba(18,24,32,0.42),
       transparent
     );
 
@@ -120,7 +120,7 @@ body{
   height:100vh;
 
   background:
-    rgba(15,15,15,0.96);
+    rgba(18,24,32,0.95);
 
   backdrop-filter:blur(20px);
 
@@ -144,7 +144,7 @@ body{
 }
 
 .menu a:hover{
-  background:rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.06);
   padding-left:55px;
 }
 
@@ -164,8 +164,8 @@ body{
 
   background:
     linear-gradient(
-      rgba(0,0,0,0.48),
-      rgba(0,0,0,0.58)
+      rgba(18,24,32,0.42),
+      rgba(18,24,32,0.58)
     ),
     url('img/sunset-train.jpg');
 
@@ -200,11 +200,11 @@ body{
 
     linear-gradient(
       to bottom,
-      rgba(79,95,110,0) 0%,
-      rgba(79,95,110,0.12) 20%,
-      rgba(79,95,110,0.42) 48%,
-      rgba(79,95,110,0.82) 72%,
-      #4F5F6E 100%
+      rgba(62,83,100,0) 0%,
+      rgba(62,83,100,0.15) 18%,
+      rgba(62,83,100,0.42) 42%,
+      rgba(62,83,100,0.78) 68%,
+      #3E5364 100%
     );
 
   pointer-events:none;
@@ -221,13 +221,13 @@ body{
   background:
     radial-gradient(
       circle at 30% 60%,
-      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.05),
       transparent 40%
     ),
 
     radial-gradient(
       circle at 80% 40%,
-      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.04),
       transparent 40%
     );
 
@@ -260,7 +260,7 @@ body{
   background:
     radial-gradient(
       circle at 50% 70%,
-      rgba(231,216,199,0.12),
+      rgba(170,184,194,0.10),
       transparent 45%
     );
 
@@ -288,7 +288,7 @@ body{
   font-family:'Cormorant Garamond', serif;
   font-size:2rem;
   margin-bottom:20px;
-  color:#E7D8C7;
+  color:#D7E1E8;
 }
 
 .hero h1{
@@ -306,20 +306,20 @@ body{
   padding:16px 40px;
   border:none;
   border-radius:50px;
-  background:#D6B98A;
+  background:#B99763;
   color:white;
   cursor:pointer;
   transition:.4s;
 
   box-shadow:
-    0 15px 30px rgba(0,0,0,0.25);
+    0 15px 30px rgba(18,24,32,0.28);
 
   font-size:1rem;
 }
 
 .btn:hover{
   transform:translateY(-6px);
-  background:#c6a36e;
+  background:#CFAE72;
 }
 
 /* ================================================= */
@@ -337,7 +337,7 @@ body{
 .particles span{
   width:6px;
   height:6px;
-  background:rgba(255,255,255,0.35);
+  background:rgba(255,255,255,0.25);
 }
 
 @keyframes float{
@@ -365,11 +365,13 @@ body{
   background:
     radial-gradient(
       circle,
-      #d6b0c1,
-      #9b7486
+      #748592,
+      #5E6C79
     );
 
   border-radius:60% 40% 70% 30%;
+
+  opacity:.35;
 
   animation:leafFall linear infinite;
 }
@@ -389,7 +391,7 @@ body{
       translateY(120vh)
       rotate(360deg);
 
-    opacity:1;
+    opacity:.35;
   }
 }
 
@@ -428,19 +430,36 @@ body{
 
   background:
 
+    radial-gradient(
+      circle at top left,
+      rgba(170,184,194,0.10),
+      transparent 24%
+    ),
+
+    radial-gradient(
+      circle at bottom right,
+      rgba(111,129,145,0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.025),
+      transparent 55%
+    ),
+
     linear-gradient(
       180deg,
-      #748392 0%,
-      #667585 18%,
-      #5c6977 38%,
-      #5a6170 55%,
-      #644d60 78%,
-      #5B4154 100%
+      #4F6678 0%,
+      #5E6C79 24%,
+      #666A78 52%,
+      #3E5364 78%,
+      #32424F 100%
     );
 }
 
 /* ================================================= */
-/* ================= WASHI PAPER =================== */
+/* ================= WASHI TEXTURE ================= */
 /* ================================================= */
 
 .destinations::before{
@@ -453,8 +472,6 @@ body{
 
   z-index:0;
 
-  opacity:.34;
-
   background:
 
     repeating-radial-gradient(
@@ -462,18 +479,28 @@ body{
       rgba(255,255,255,0.018) 0px,
       rgba(255,255,255,0.018) 1px,
       transparent 2px,
-      transparent 7px
+      transparent 9px
     ),
 
     repeating-linear-gradient(
       90deg,
-      rgba(255,255,255,0.012) 0px,
-      rgba(255,255,255,0.012) 1px,
+      rgba(255,255,255,0.01) 0px,
+      rgba(255,255,255,0.01) 1px,
       transparent 2px,
       transparent 5px
     ),
 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.015) 0px,
+      rgba(0,0,0,0.015) 1px,
+      transparent 3px,
+      transparent 7px
+    ),
+
     url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+
+  opacity:.4;
 
   mix-blend-mode:soft-light;
 
@@ -494,41 +521,41 @@ body{
 
   z-index:0;
 
-  opacity:.95;
-
-  filter:blur(80px);
-
   background:
 
     radial-gradient(
-      circle at 15% 20%,
-      rgba(150,175,185,0.20),
+      circle at 12% 20%,
+      rgba(111,129,145,0.18),
       transparent 28%
     ),
 
     radial-gradient(
-      circle at 80% 25%,
-      rgba(85,101,117,0.22),
-      transparent 35%
-    ),
-
-    radial-gradient(
-      circle at 78% 72%,
-      rgba(110,79,99,0.24),
+      circle at 82% 72%,
+      rgba(170,184,194,0.10),
       transparent 32%
     ),
 
     radial-gradient(
-      circle at 50% 50%,
-      rgba(231,216,199,0.10),
-      transparent 45%
+      circle at 50% 40%,
+      rgba(62,83,100,0.16),
+      transparent 50%
     ),
 
     radial-gradient(
-      circle at center,
-      rgba(255,255,255,0.06),
-      transparent 60%
+      circle at 72% 18%,
+      rgba(207,174,114,0.06),
+      transparent 12%
+    ),
+
+    radial-gradient(
+      circle at 22% 78%,
+      rgba(185,151,99,0.05),
+      transparent 16%
     );
+
+  filter:blur(70px);
+
+  opacity:.95;
 
   animation:
     atmosphereMove 26s ease-in-out infinite alternate;
@@ -536,19 +563,135 @@ body{
   pointer-events:none;
 }
 
+@keyframes atmosphereMove{
+
+  from{
+    transform:
+      translateY(0px)
+      translateX(0px)
+      scale(1);
+  }
+
+  to{
+    transform:
+      translateY(-10px)
+      translateX(6px)
+      scale(1.03);
+  }
+}
+
+/* ================================================= */
+/* ================= FILM GRAIN ==================== */
+/* ================================================= */
+
+.film-grain{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  opacity:.06;
+
+  mix-blend-mode:soft-light;
+
+  background-image:
+    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
+  pointer-events:none;
+
+  animation:
+    grainMove .25s steps(2) infinite;
+}
+
+@keyframes grainMove{
+
+  0%{
+    transform:translate(0,0);
+  }
+
+  25%{
+    transform:translate(-1px,1px);
+  }
+
+  50%{
+    transform:translate(1px,-1px);
+  }
+
+  75%{
+    transform:translate(1px,1px);
+  }
+
+  100%{
+    transform:translate(0,0);
+  }
+}
+
+/* ================================================= */
+/* ================= AMBIENT FOG =================== */
+/* ================================================= */
+
+.ambient-fog{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  background:
+
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(255,255,255,0.04),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(255,255,255,0.025),
+      transparent 38%
+    );
+
+  filter:blur(40px);
+
+  animation:
+    fogMoveAmbient 20s ease-in-out infinite alternate;
+
+  pointer-events:none;
+}
+
+@keyframes fogMoveAmbient{
+
+  from{
+    transform:translateX(0px);
+  }
+
+  to{
+    transform:translateX(-12px);
+  }
+}
+
 /* ================================================= */
 /* ================= GOLD PARTICLES ================ */
 /* ================================================= */
 
 .gold-particles{
+
   position:absolute;
+
   inset:0;
+
   z-index:1;
+
   overflow:hidden;
+
   pointer-events:none;
 }
 
 .gold-particles span{
+
   position:absolute;
 
   width:2px;
@@ -556,25 +699,25 @@ body{
 
   border-radius:50%;
 
-  background:#D6B98A;
-
-  opacity:.55;
+  background:#CFAE72;
 
   box-shadow:
-    0 0 8px rgba(214,185,138,0.45);
+    0 0 8px rgba(207,174,114,0.25);
+
+  opacity:.6;
 
   animation:
     particleFloat linear infinite;
 }
 
 .gold-particles span:nth-child(1){
-  top:14%;
+  top:12%;
   left:18%;
   animation-duration:18s;
 }
 
 .gold-particles span:nth-child(2){
-  top:26%;
+  top:24%;
   left:72%;
   animation-duration:22s;
 }
@@ -603,64 +746,27 @@ body{
   animation-duration:19s;
 }
 
-.gold-particles span:nth-child(7){
-  top:74%;
-  left:10%;
-  animation-duration:23s;
-}
+@keyframes particleFloat{
 
-.gold-particles span:nth-child(8){
-  top:36%;
-  left:90%;
-  animation-duration:21s;
-}
+  from{
+    transform:
+      translateY(0px)
+      scale(1);
 
-/* ================================================= */
-/* ================= FILM GRAIN ==================== */
-/* ================================================= */
+    opacity:.2;
+  }
 
-.film-grain{
+  50%{
+    opacity:.7;
+  }
 
-  position:absolute;
+  to{
+    transform:
+      translateY(-12px)
+      scale(1.25);
 
-  inset:0;
-
-  z-index:1;
-
-  opacity:.07;
-
-  mix-blend-mode:soft-light;
-
-  background-image:
-    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-
-  pointer-events:none;
-
-  animation:
-    grainMove .25s steps(2) infinite;
-}
-
-/* ================================================= */
-/* ==================== VIGNETTE =================== */
-/* ================================================= */
-
-.vignette{
-
-  position:absolute;
-
-  inset:0;
-
-  z-index:1;
-
-  pointer-events:none;
-
-  background:
-
-    radial-gradient(
-      circle,
-      transparent 42%,
-      rgba(0,0,0,0.16) 100%
-    );
+    opacity:.18;
+  }
 }
 
 /* ================================================= */
@@ -670,7 +776,6 @@ body{
 .section-intro{
 
   position:relative;
-
   z-index:2;
 
   max-width:850px;
@@ -683,7 +788,7 @@ body{
 }
 
 .section-mini{
-  color:#D6B98A;
+  color:#CFAE72;
   letter-spacing:4px;
   text-transform:uppercase;
   font-size:.85rem;
@@ -694,12 +799,12 @@ body{
   font-family:'Cormorant Garamond', serif;
   font-size:4.4rem;
   line-height:1.1;
-  color:#ffffff;
+  color:#F2F5F7;
   margin-bottom:30px;
 }
 
 .section-text{
-  color:rgba(255,255,255,0.78);
+  color:#D5DDE3;
   line-height:1.9;
   font-size:1.08rem;
 }
@@ -739,7 +844,7 @@ body{
   text-decoration:none;
 
   box-shadow:
-    0 15px 40px rgba(0,0,0,0.18);
+    0 15px 40px rgba(18,24,32,0.28);
 
   transition:.7s;
 }
@@ -750,7 +855,7 @@ body{
     scale(1.01);
 
   box-shadow:
-    0 30px 70px rgba(0,0,0,0.24);
+    0 30px 70px rgba(18,24,32,0.42);
 }
 
 /* ================================================= */
@@ -771,7 +876,7 @@ body{
   background:
     linear-gradient(
       to top,
-      rgba(0,0,0,0.72),
+      rgba(18,24,32,0.72),
       transparent 50%
     );
 }
@@ -828,7 +933,7 @@ body{
   border-radius:50px;
 
   background:
-    rgba(255,255,255,0.14);
+    rgba(255,255,255,0.12);
 
   backdrop-filter:blur(12px);
 
@@ -837,81 +942,14 @@ body{
   transition:.4s;
 
   border:
-    1px solid rgba(255,255,255,0.16);
+    1px solid rgba(255,255,255,0.08);
 }
 
 .destination-btn:hover{
   background:
-    rgba(255,255,255,0.24);
+    rgba(255,255,255,0.18);
 
   transform:translateX(5px);
-}
-
-/* ================================================= */
-/* ==================== ANIMATIONS ================= */
-/* ================================================= */
-
-@keyframes atmosphereMove{
-
-  from{
-    transform:
-      translateY(0px)
-      translateX(0px)
-      scale(1);
-  }
-
-  to{
-    transform:
-      translateY(-14px)
-      translateX(8px)
-      scale(1.04);
-  }
-}
-
-@keyframes grainMove{
-
-  0%{
-    transform:translate(0,0);
-  }
-
-  25%{
-    transform:translate(-1px,1px);
-  }
-
-  50%{
-    transform:translate(1px,-1px);
-  }
-
-  75%{
-    transform:translate(1px,1px);
-  }
-
-  100%{
-    transform:translate(0,0);
-  }
-}
-
-@keyframes particleFloat{
-
-  from{
-    transform:
-      translateY(0px)
-      scale(1);
-
-    opacity:.3;
-  }
-
-  50%{
-    opacity:.85;
-  }
-
-  to{
-    transform:
-      translateY(-14px)
-      scale(1.2);
-
-    opacity:.2;
-  }
 }
 
 /* ================================================= */
