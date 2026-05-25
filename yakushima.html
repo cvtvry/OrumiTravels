@@ -58,55 +58,61 @@ body::before{
   background:
 
     /* ============================================ */
-    /* ============ LIGHT ATMOSPHERE ============== */
+    /* ============ ORGANIC ATMOSPHERE ============ */
     /* ============================================ */
 
     radial-gradient(
-      circle at 18% 12%,
-      rgba(139,148,140,0.12),
+      circle at 14% 12%,
+      rgba(138,143,136,0.10),
       transparent 22%
     ),
 
     radial-gradient(
-      circle at 82% 24%,
-      rgba(93,116,98,0.16),
+      circle at 82% 18%,
+      rgba(91,107,93,0.16),
       transparent 28%
     ),
 
     radial-gradient(
-      circle at 50% 82%,
-      rgba(68,91,74,0.18),
-      transparent 36%
+      circle at 70% 72%,
+      rgba(76,61,50,0.16),
+      transparent 30%
     ),
 
     radial-gradient(
-      circle at 72% 68%,
-      rgba(90,70,56,0.12),
-      transparent 28%
+      circle at 26% 68%,
+      rgba(90,70,55,0.14),
+      transparent 26%
     ),
 
     radial-gradient(
-      circle at 30% 60%,
-      rgba(122,62,58,0.06),
+      circle at 52% 38%,
+      rgba(122,47,43,0.08),
       transparent 24%
     ),
 
+    radial-gradient(
+      circle at 40% 90%,
+      rgba(91,35,33,0.10),
+      transparent 28%
+    ),
+
     /* ============================================ */
-    /* =============== MAIN DEPTH ================= */
+    /* ================ MAIN DEPTH ================ */
     /* ============================================ */
 
     linear-gradient(
       180deg,
 
-      #5D7462 0%,
+      #5B6B5D 0%,
 
-      #445B4A 18%,
+      #445646 18%,
 
-      #2F4638 42%,
+      #2D3F34 42%,
 
-      #24362D 68%,
+      #243229 68%,
 
-      #1B2721 100%
+      #171F1A 100%
     );
 }
   
@@ -124,7 +130,7 @@ body::after{
 
   z-index:-4;
 
-  opacity:.12;
+  opacity:.14;
 
   pointer-events:none;
 
@@ -133,13 +139,13 @@ body::after{
   background:
 
     /* ============================================ */
-    /* ============= WASHI TEXTURE ================ */
+    /* ============== WASHI FIBERS ================ */
     /* ============================================ */
 
     repeating-radial-gradient(
       circle at 20% 30%,
-      rgba(255,255,255,0.03) 0px,
-      rgba(255,255,255,0.03) 1px,
+      rgba(255,255,255,0.025) 0px,
+      rgba(255,255,255,0.025) 1px,
       transparent 2px,
       transparent 10px
     ),
@@ -149,20 +155,42 @@ body::after{
       rgba(255,255,255,0.018) 0px,
       rgba(255,255,255,0.018) 1px,
       transparent 2px,
-      transparent 6px
+      transparent 7px
     ),
 
     repeating-linear-gradient(
       0deg,
-      rgba(0,0,0,0.018) 0px,
-      rgba(0,0,0,0.018) 1px,
+      rgba(0,0,0,0.02) 0px,
+      rgba(0,0,0,0.02) 1px,
       transparent 3px,
       transparent 8px
     ),
 
+    /* ============================================ */
+    /* ============== WET INK STAINS ============== */
+    /* ============================================ */
+
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(0,0,0,0.08),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 72% 68%,
+      rgba(91,35,33,0.06),
+      transparent 24%
+    ),
+
+    radial-gradient(
+      circle at 54% 24%,
+      rgba(76,61,50,0.08),
+      transparent 26%
+    ),
+
     url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
 }
-
+  
 /* ================================================= */
 /* ================= FOREST ATMOSPHERE ============= */
 /* ================================================= */
