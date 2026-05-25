@@ -1043,7 +1043,96 @@ body::after{
 
   color:rgba(255,255,255,0.78);
 }
+  
+/* ================================================= */
+/* ================= ITINERARY GRID ================ */
+/* ================================================= */
 
+.itinerary-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
+
+  gap:38px;
+
+  margin-top:70px;
+}
+
+.experience-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:34px;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.02)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.34);
+
+  backdrop-filter:blur(10px);
+
+  transition:.7s;
+}
+
+.experience-card:hover{
+
+  transform:
+    translateY(-10px)
+    scale(1.02);
+}
+
+.experience-card img{
+
+  width:100%;
+
+  height:260px;
+
+  object-fit:cover;
+}
+
+.experience-content{
+
+  padding:34px;
+}
+
+.experience-content h3{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:2.2rem;
+
+  margin-bottom:24px;
+
+  line-height:1.1;
+}
+
+.experience-content ul{
+
+  padding-left:18px;
+}
+
+.experience-content li{
+
+  margin-bottom:14px;
+
+  color:rgba(255,255,255,0.82);
+
+  line-height:1.7;
+}
+  
 /* ================================================= */
 /* ==================== PACKAGE ==================== */
 /* ================================================= */
@@ -1363,609 +1452,166 @@ body::after{
 <section class="section" id="itinerary">
 
   <h2 class="section-title">
-    Itinerario  
+    Experiencias por Día
   </h2>
 
-  <div class="itinerary">
+  <p class="section-text">
 
-    <!-- ================================================= -->
-    <!-- ===================== DÍA 1 ===================== -->
-    <!-- ================================================= -->
+    Una travesía lenta entre bosques ancestrales, lluvia suave, ryokans tradicionales y paisajes que parecen salidos de una película de Studio Ghibli.
 
-    <div class="day">
+  </p>
 
-      <div class="day-image">
-        <img src="imgyokushima/1landy.jpg" alt="">
-      </div>
+  <div class="itinerary-grid">
 
-      <div class="day-content">
+    <!-- ================= DAY 1 ================= -->
+
+    <div class="experience-card">
+
+      <img src="imgyokushima/hostely.jpg" alt="">
+
+      <div class="experience-content">
 
         <h3>
-          Día 1 — Llegada a la isla escondida
+          Día 1 — Llegada a la Isla
         </h3>
 
-        <div class="time-block">
+        <ul>
 
-          <h4>
-            08:00 — Salida desde Kagoshima
-          </h4>
+          <li>Viaje en ferry hacia Yakushima</li>
 
-          <p>
-            Recepción en puerto o aeropuerto de Kagoshima.
-            Viaje en ferry rápido hacia Yakushima.
-          </p>
+          <li>Check-in en ryokan tradicional</li>
 
-          <p>
-            Durante el trayecto:
-          </p>
+          <li>Recorrido por el pueblo</li>
 
-          <ul>
-            <li>vistas oceánicas</li>
-            <li>montañas cubiertas de niebla</li>
-            <li>pequeñas islas</li>
-            <li>ambiente tranquilo y cinematográfico</li>
-          </ul>
+          <li>Visita a cafeterías y santuarios</li>
 
-        </div>
+          <li>Cena japonesa tradicional</li>
 
-        <div class="time-block">
+          <li>Onsen y descanso nocturno</li>
 
-          <h4>
-            11:00 — Llegada a Yakushima
-          </h4>
-
-          <p>
-            Recepción y traslado al ryokan tradicional.
-          </p>
-
-          <p>
-            Check-in incluye:
-          </p>
-
-          <ul>
-            <li>bebida de bienvenida</li>
-            <li>habitación tatami</li>
-            <li>futón japonés</li>
-            <li>vista al bosque o montaña</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            13:00 — Almuerzo libre
-          </h4>
-
-          <p>
-            Recomendaciones:
-          </p>
-
-          <ul>
-            <li>ramen local</li>
-            <li>curry japonés</li>
-            <li>pescado fresco</li>
-            <li>té artesanal</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            15:00 — Paseo de adaptación
-          </h4>
-
-          <p>
-            Recorrido suave por:
-          </p>
-
-          <ul>
-            <li>calles tranquilas</li>
-            <li>pequeños santuarios</li>
-            <li>cafeterías escondidas</li>
-            <li>tiendas artesanales</li>
-          </ul>
-
-          <p>
-            Tiempo ideal para fotografía y descanso.
-          </p>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            19:00 — Cena tradicional japonesa
-          </h4>
-
-          <p>
-            Menú típico:
-          </p>
-
-          <ul>
-            <li>arroz</li>
-            <li>sopa miso</li>
-            <li>vegetales de montaña</li>
-            <li>pescado local</li>
-            <li>té caliente</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            21:00 — Noche contemplativa
-          </h4>
-
-          <p>
-            Tiempo libre:
-          </p>
-
-          <ul>
-            <li>journaling</li>
-            <li>onsen</li>
-            <li>observación de lluvia y bosque</li>
-          </ul>
-
-        </div>
+        </ul>
 
       </div>
 
     </div>
 
-    <!-- ================================================= -->
-    <!-- ===================== DÍA 2 ===================== -->
-    <!-- ================================================= -->
+    <!-- ================= DAY 2 ================= -->
 
-    <div class="day">
+    <div class="experience-card">
 
-      <div class="day-image">
-        <img src="imgyokushima/2landy.jpg" alt="">
-      </div>
+      <img src="imgyokushima/trekky.jpg" alt="">
 
-      <div class="day-content">
+      <div class="experience-content">
 
         <h3>
-          Día 2 — Bosque de Shiratani Unsuikyo
+          Día 2 — Bosque de Mononoke
         </h3>
 
-        <div class="time-block">
+        <ul>
 
-          <h4>
-            06:30 — Desayuno japonés
-          </h4>
+          <li>Trekking en Shiratani Unsuikyo</li>
 
-          <p>
-            Incluye:
-          </p>
+          <li>Caminata entre bosques de musgo y cedros</li>
 
-          <ul>
-            <li>arroz</li>
-            <li>pescado</li>
-            <li>sopa miso</li>
-            <li>huevo</li>
-            <li>té verde</li>
-          </ul>
+          <li>Picnic tipo bento</li>
 
-        </div>
+          <li>Fotografía de naturaleza</li>
 
-        <div class="time-block">
+          <li>Relajación en onsen natural</li>
 
-          <h4>
-            07:30 — Salida al bosque
-          </h4>
-
-          <p>
-            Traslado hacia Shiratani Unsuikyo.
-          </p>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            08:30 – 14:00 — Trekking guiado
-          </h4>
-
-          <p>
-            Ruta moderada entre:
-          </p>
-
-          <ul>
-            <li>cedros gigantes</li>
-            <li>musgo brillante</li>
-            <li>puentes de madera</li>
-            <li>ríos cristalinos</li>
-            <li>niebla espesa</li>
-          </ul>
-
-          <p>
-            Puntos destacados:
-          </p>
-
-          <ul>
-            <li>Bosque de musgo</li>
-            <li>Kusugawa Trail</li>
-            <li>miradores naturales</li>
-            <li>zonas inspiradoras de Princess Mononoke</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            12:00 — Almuerzo tipo bento
-          </h4>
-
-          <p>
-            Picnic en área natural protegida.
-          </p>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            15:30 — Regreso al alojamiento
-          </h4>
-
-          <p>
-            Tiempo libre para:
-          </p>
-
-          <ul>
-            <li>ducha caliente</li>
-            <li>descanso</li>
-            <li>cafetería local</li>
-            <li>fotografía</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            18:30 — Cena + Onsen
-          </h4>
-
-          <p>
-            Experiencia relajante en aguas termales naturales.
-          </p>
-
-        </div>
+        </ul>
 
       </div>
 
     </div>
 
-    <!-- ================================================= -->
-    <!-- ===================== DÍA 3 ===================== -->
-    <!-- ================================================= -->
+    <!-- ================= DAY 3 ================= -->
 
-    <div class="day">
+    <div class="experience-card">
 
-      <div class="day-image">
-        <img src="imgyokushima/trekky.jpg" alt="">
-      </div>
+      <img src="imgyokushima/1landy.jpg" alt="">
 
-      <div class="day-content">
+      <div class="experience-content">
 
         <h3>
-          Día 3 — Senderos ancestrales y cedros gigantes
+          Día 3 — Cedros Ancestrales
         </h3>
 
-        <div class="time-block">
+        <ul>
 
-          <h4>
-            06:00 — Desayuno temprano
-          </h4>
+          <li>Senderismo por antiguas rutas ferroviarias</li>
 
-        </div>
+          <li>Exploración de bosques milenarios</li>
 
-        <div class="time-block">
+          <li>Almuerzo de montaña</li>
 
-          <h4>
-            07:00 — Inicio de excursión
-          </h4>
+          <li>Té japonés y cafetería local</li>
 
-          <p>
-            Ruta por antiguos senderos ferroviarios cubiertos por vegetación.
-          </p>
+          <li>Cena temática “Sabores del Bosque”</li>
 
-          <p>
-            Ambiente:
-          </p>
-
-          <ul>
-            <li>misterioso</li>
-            <li>silencioso</li>
-            <li>húmedo</li>
-            <li>profundamente natural</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            Durante la caminata
-          </h4>
-
-          <p>
-            Visita a:
-          </p>
-
-          <ul>
-            <li>Wilson Stump</li>
-            <li>puentes antiguos</li>
-            <li>riachuelos</li>
-            <li>bosques profundos</li>
-          </ul>
-
-          <p>
-            Sensación de exploración lenta inspirada en películas Ghibli.
-          </p>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            12:30 — Almuerzo de montaña
-          </h4>
-
-          <p>
-            Bento tradicional japonés.
-          </p>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            15:00 — Regreso y descanso
-          </h4>
-
-          <p>
-            Tiempo libre en ryokan.
-          </p>
-
-          <p>
-            Opcional:
-          </p>
-
-          <ul>
-            <li>siesta</li>
-            <li>journaling</li>
-            <li>lectura</li>
-            <li>fotografía</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            17:30 — Café escondido entre montañas
-          </h4>
-
-          <p>
-            Degustación:
-          </p>
-
-          <ul>
-            <li>postres artesanales</li>
-            <li>matcha</li>
-            <li>té japonés</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            19:30 — Cena temática
-          </h4>
-
-          <p>
-            Cena “Sabores del Bosque”:
-          </p>
-
-          <ul>
-            <li>ingredientes locales</li>
-            <li>iluminación cálida</li>
-            <li>ambiente íntimo</li>
-          </ul>
-
-        </div>
+        </ul>
 
       </div>
 
     </div>
 
-    <!-- ================================================= -->
-    <!-- ===================== DÍA 4 ===================== -->
-    <!-- ================================================= -->
+    <!-- ================= DAY 4 ================= -->
 
-    <div class="day">
+    <div class="experience-card">
 
-      <div class="day-image">
-        <img src="imgyokushima/3landy.jpg" alt="">
-      </div>
+      <img src="imgyokushima/3landy.jpg" alt="">
 
-      <div class="day-content">
+      <div class="experience-content">
 
         <h3>
-          Día 4 — Ruta costera y cascadas
+          Día 4 — Costa y Cascadas
         </h3>
 
-        <div class="time-block">
+        <ul>
 
-          <h4>
-            08:00 — Desayuno
-          </h4>
+          <li>Ruta panorámica costera</li>
 
-        </div>
+          <li>Visita a Senpiro Falls</li>
 
-        <div class="time-block">
+          <li>Visita a Ohko Waterfall</li>
 
-          <h4>
-            09:00 — Ruta panorámica por la isla
-          </h4>
+          <li>Paseo por Inakahama Beach</li>
 
-          <p>
-            Recorrido escénico en vehículo.
-          </p>
+          <li>Observación de fauna local</li>
 
-          <p>
-            Paradas principales:
-          </p>
+          <li>Tiempo libre y compras artesanales</li>
 
-          <ul>
-            <li>Senpiro Falls</li>
-            <li>Ohko Waterfall</li>
-            <li>Inakahama Beach</li>
-          </ul>
+          <li>Cena de despedida</li>
 
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            Experiencias del día
-          </h4>
-
-          <ul>
-            <li>observación de monos y ciervos</li>
-            <li>fotografía costera</li>
-            <li>contemplación del océano</li>
-            <li>pequeños pueblos pesqueros</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            13:00 — Almuerzo libre
-          </h4>
-
-          <p>
-            Especialidades locales:
-          </p>
-
-          <ul>
-            <li>sashimi</li>
-            <li>curry japonés</li>
-            <li>pescado grillado</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            15:00 — Tiempo libre
-          </h4>
-
-          <p>
-            Opciones:
-          </p>
-
-          <ul>
-            <li>compras artesanales</li>
-            <li>dibujo</li>
-            <li>cafeterías</li>
-            <li>paseo tranquilo</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            18:00 — Última noche en Yakushima
-          </h4>
-
-          <p>
-            Cena relajada con ambiente cálido y música instrumental japonesa.
-          </p>
-
-        </div>
+        </ul>
 
       </div>
 
     </div>
 
-    <!-- ================================================= -->
-    <!-- ===================== DÍA 5 ===================== -->
-    <!-- ================================================= -->
+    <!-- ================= DAY 5 ================= -->
 
-    <div class="day">
+    <div class="experience-card">
 
-      <div class="day-image">
-        <img src="imgyokushima/contemy.jpg" alt="">
-      </div>
+      <img src="imgyokushima/contemy.jpg" alt="">
 
-      <div class="day-content">
+      <div class="experience-content">
 
         <h3>
-          Día 5 — Despedida de la isla
+          Día 5 — Regreso
         </h3>
 
-        <div class="time-block">
+        <ul>
 
-          <h4>
-            08:00 — Desayuno final
-          </h4>
+          <li>Desayuno tradicional</li>
 
-        </div>
+          <li>Paseo final por el puerto</li>
 
-        <div class="time-block">
+          <li>Fotografía y recuerdos</li>
 
-          <h4>
-            09:00 — Tiempo libre
-          </h4>
+          <li>Regreso en ferry a Kagoshima</li>
 
-          <p>
-            Ideal para:
-          </p>
-
-          <ul>
-            <li>fotografías</li>
-            <li>recuerdos</li>
-            <li>café final</li>
-            <li>paseo corto por el puerto</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            11:00 — Check-out y traslado
-          </h4>
-
-          <p>
-            Salida hacia terminal de ferry o aeropuerto.
-          </p>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            13:00 — Regreso a Kagoshima
-          </h4>
-
-          <p>
-            Fin de la experiencia.
-          </p>
-
-        </div>
+        </ul>
 
       </div>
 
@@ -1974,7 +1620,7 @@ body::after{
   </div>
 
 </section>
-
+  
 <!-- ================================================= -->
 <!-- ================= PACKAGE SECTION =============== -->
 <!-- ================================================= -->
