@@ -7,7 +7,9 @@
 
 <title>Yakushima | Orumi Journeys</title>
 
-<!-- ================= FUENTES ================= -->
+<!-- ================================================= -->
+<!-- ===================== FUENTES =================== -->
+<!-- ================================================= -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,11 +40,13 @@ body{
 
   color:white;
 
-  background:#24313a;
+  background:#1a1f1d;
+
+  position:relative;
 }
 
 /* ================================================= */
-/* ================= BACKGROUND ==================== */
+/* ================= MAIN BACKGROUND =============== */
 /* ================================================= */
 
 body::before{
@@ -53,71 +57,65 @@ body::before{
 
   inset:0;
 
-  z-index:-5;
+  z-index:-10;
 
   background:
 
-    /* ============================================ */
-    /* ============ ORGANIC ATMOSPHERE ============ */
-    /* ============================================ */
-
     radial-gradient(
-      circle at 14% 12%,
-      rgba(138,143,136,0.10),
-      transparent 22%
-    ),
-
-    radial-gradient(
-      circle at 82% 18%,
-      rgba(91,107,93,0.16),
-      transparent 28%
-    ),
-
-    radial-gradient(
-      circle at 70% 72%,
-      rgba(76,61,50,0.16),
-      transparent 30%
-    ),
-
-    radial-gradient(
-      circle at 26% 68%,
-      rgba(90,70,55,0.14),
-      transparent 26%
-    ),
-
-    radial-gradient(
-      circle at 52% 38%,
-      rgba(122,47,43,0.08),
+      circle at 18% 12%,
+      rgba(122,47,43,0.20),
       transparent 24%
     ),
 
     radial-gradient(
-      circle at 40% 90%,
-      rgba(91,35,33,0.10),
+      circle at 82% 22%,
+      rgba(91,35,33,0.18),
       transparent 28%
     ),
 
-    /* ============================================ */
-    /* ================ MAIN DEPTH ================ */
-    /* ============================================ */
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(68,86,70,0.24),
+      transparent 36%
+    ),
+
+    radial-gradient(
+      circle at 20% 72%,
+      rgba(76,61,50,0.24),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 72% 74%,
+      rgba(91,107,93,0.22),
+      transparent 34%
+    ),
+
+    radial-gradient(
+      circle at 38% 36%,
+      rgba(110,115,112,0.12),
+      transparent 24%
+    ),
 
     linear-gradient(
       180deg,
 
-      #5B6B5D 0%,
+      #6E7370 0%,
 
-      #445646 18%,
+      #5B6B5D 16%,
 
-      #2D3F34 42%,
+      #445646 34%,
 
-      #243229 68%,
+      #2D3F34 56%,
 
-      #171F1A 100%
+      #242D28 78%,
+
+      #171C19 100%
     );
 }
-  
+
 /* ================================================= */
-/* ================= FILM GRAIN ==================== */
+/* ================= FABRIC TEXTURE ================ */
 /* ================================================= */
 
 body::after{
@@ -128,9 +126,9 @@ body::after{
 
   inset:0;
 
-  z-index:-4;
+  z-index:-9;
 
-  opacity:.14;
+  opacity:.26;
 
   pointer-events:none;
 
@@ -138,61 +136,45 @@ body::after{
 
   background:
 
-    /* ============================================ */
-    /* ============== WASHI FIBERS ================ */
-    /* ============================================ */
-
-    repeating-radial-gradient(
-      circle at 20% 30%,
-      rgba(255,255,255,0.025) 0px,
-      rgba(255,255,255,0.025) 1px,
-      transparent 2px,
-      transparent 10px
-    ),
-
     repeating-linear-gradient(
       90deg,
-      rgba(255,255,255,0.018) 0px,
-      rgba(255,255,255,0.018) 1px,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
       transparent 2px,
       transparent 7px
     ),
 
     repeating-linear-gradient(
       0deg,
-      rgba(0,0,0,0.02) 0px,
-      rgba(0,0,0,0.02) 1px,
+      rgba(0,0,0,0.04) 0px,
+      rgba(0,0,0,0.04) 1px,
       transparent 3px,
-      transparent 8px
-    ),
-
-    /* ============================================ */
-    /* ============== WET INK STAINS ============== */
-    /* ============================================ */
-
-    radial-gradient(
-      circle at 30% 40%,
-      rgba(0,0,0,0.08),
-      transparent 28%
+      transparent 9px
     ),
 
     radial-gradient(
-      circle at 72% 68%,
-      rgba(91,35,33,0.06),
+      circle at 20% 30%,
+      rgba(255,255,255,0.04),
+      transparent 20%
+    ),
+
+    radial-gradient(
+      circle at 76% 62%,
+      rgba(0,0,0,0.10),
       transparent 24%
     ),
 
     radial-gradient(
-      circle at 54% 24%,
-      rgba(76,61,50,0.08),
-      transparent 26%
+      circle at 52% 44%,
+      rgba(122,47,43,0.08),
+      transparent 18%
     ),
 
-    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+    url("https://www.transparenttextures.com/patterns/black-felt.png");
 }
-  
+
 /* ================================================= */
-/* ================= FOREST ATMOSPHERE ============= */
+/* ================ FOREST ATMOSPHERE ============= */
 /* ================================================= */
 
 .forest-atmosphere{
@@ -201,7 +183,7 @@ body::after{
 
   inset:0;
 
-  z-index:-3;
+  z-index:-8;
 
   overflow:hidden;
 
@@ -209,7 +191,7 @@ body::after{
 }
 
 /* ================================================= */
-/* ================= FOREST FOG ==================== */
+/* =================== FOREST FOG ================== */
 /* ================================================= */
 
 .forest-fog{
@@ -221,29 +203,41 @@ body::after{
   background:
 
     radial-gradient(
-      circle at 20% 30%,
+      circle at 18% 24%,
+      rgba(255,255,255,0.06),
+      transparent 24%
+    ),
+
+    radial-gradient(
+      circle at 80% 34%,
       rgba(255,255,255,0.05),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 52% 76%,
+      rgba(255,255,255,0.04),
+      transparent 36%
+    ),
+
+    radial-gradient(
+      circle at 40% 52%,
+      rgba(91,35,33,0.14),
       transparent 26%
     ),
 
     radial-gradient(
-      circle at 80% 40%,
-      rgba(255,255,255,0.04),
-      transparent 34%
-    ),
-
-    radial-gradient(
-      circle at 50% 80%,
-      rgba(255,255,255,0.03),
-      transparent 38%
+      circle at 68% 68%,
+      rgba(68,86,70,0.16),
+      transparent 30%
     );
 
-  filter:blur(90px);
+  filter:blur(120px);
 
-  opacity:.9;
+  opacity:.95;
 
   animation:
-    forestFogMove 30s ease-in-out infinite alternate;
+    forestFogMove 40s ease-in-out infinite alternate;
 }
 
 @keyframes forestFogMove{
@@ -259,14 +253,14 @@ body::after{
   to{
 
     transform:
-      translateX(-20px)
-      translateY(-10px)
-      scale(1.03);
+      translateX(-28px)
+      translateY(-12px)
+      scale(1.04);
   }
 }
 
 /* ================================================= */
-/* ================= GOLD PARTICLES ================ */
+/* =============== GOLD PARTICLES ================== */
 /* ================================================= */
 
 .gold-particles{
@@ -289,49 +283,49 @@ body::after{
 
   background:#B89A63;
 
-  opacity:.45;
+  opacity:.28;
 
   box-shadow:
-    0 0 8px rgba(184,154,99,0.28);
+    0 0 12px rgba(184,154,99,0.28);
 
   animation:
     goldFloat linear infinite;
 }
 
 .gold-particles span:nth-child(1){
-  top:12%;
+  top:14%;
   left:18%;
-  animation-duration:18s;
+  animation-duration:20s;
 }
 
 .gold-particles span:nth-child(2){
   top:28%;
-  left:74%;
-  animation-duration:22s;
-}
-
-.gold-particles span:nth-child(3){
-  top:62%;
-  left:42%;
+  left:72%;
   animation-duration:24s;
 }
 
+.gold-particles span:nth-child(3){
+  top:58%;
+  left:42%;
+  animation-duration:28s;
+}
+
 .gold-particles span:nth-child(4){
-  top:78%;
-  left:86%;
+  top:74%;
+  left:82%;
   animation-duration:26s;
 }
 
 .gold-particles span:nth-child(5){
   top:48%;
   left:12%;
-  animation-duration:20s;
+  animation-duration:22s;
 }
 
 .gold-particles span:nth-child(6){
   top:22%;
   left:52%;
-  animation-duration:17s;
+  animation-duration:18s;
 }
 
 @keyframes goldFloat{
@@ -342,11 +336,11 @@ body::after{
       translateY(0px)
       scale(1);
 
-    opacity:.2;
+    opacity:.16;
   }
 
   50%{
-    opacity:.55;
+    opacity:.5;
   }
 
   to{
@@ -358,9 +352,9 @@ body::after{
     opacity:.18;
   }
 }
-  
+
 /* ================================================= */
-/* ===================== HEADER ==================== */
+/* ==================== HEADER ===================== */
 /* ================================================= */
 
 .header{
@@ -383,11 +377,11 @@ body::after{
 
     linear-gradient(
       to bottom,
-      rgba(8,12,16,0.58),
+      rgba(10,12,10,0.58),
       transparent
     );
 
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
 }
 
 .logo{
@@ -424,10 +418,6 @@ body::after{
   overflow:hidden;
 }
 
-/* ================================================= */
-/* ================= HERO IMAGE ==================== */
-/* ================================================= */
-
 .hero-image{
 
   position:absolute;
@@ -445,8 +435,9 @@ body::after{
   object-fit:cover;
 
   filter:
-    brightness(.65)
-    saturate(.92);
+    brightness(.55)
+    saturate(.88)
+    contrast(1.06);
 }
 
 .hero-image::after{
@@ -461,16 +452,12 @@ body::after{
 
     linear-gradient(
       to top,
-      rgba(6,10,12,0.98) 0%,
-      rgba(18,24,20,0.76) 28%,
-      rgba(18,24,20,0.26) 56%,
-      transparent 82%
+      rgba(6,10,8,0.98) 0%,
+      rgba(16,20,18,0.82) 28%,
+      rgba(18,24,20,0.36) 54%,
+      transparent 84%
     );
 }
-
-/* ================================================= */
-/* ===================== FOG ======================= */
-/* ================================================= */
 
 .fog{
 
@@ -494,7 +481,7 @@ body::after{
       transparent 42%
     );
 
-  filter:blur(40px);
+  filter:blur(50px);
 
   animation:
     fogMove 18s ease-in-out infinite alternate;
@@ -511,96 +498,6 @@ body::after{
   }
 }
 
-/* ================================================= */
-/* ================= LEAF PARTICLES ================ */
-/* ================================================= */
-
-.leaves{
-
-  position:absolute;
-
-  inset:0;
-
-  z-index:2;
-
-  overflow:hidden;
-
-  pointer-events:none;
-}
-
-.leaves span{
-
-  position:absolute;
-
-  width:14px;
-  height:14px;
-
-  border-radius:60% 40% 70% 30%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(180,210,170,0.8),
-      rgba(120,160,120,0.4)
-    );
-
-  animation:
-    floatLeaf linear infinite;
-}
-
-.leaves span:nth-child(1){
-  left:10%;
-  animation-duration:18s;
-}
-
-.leaves span:nth-child(2){
-  left:26%;
-  animation-duration:22s;
-}
-
-.leaves span:nth-child(3){
-  left:42%;
-  animation-duration:20s;
-}
-
-.leaves span:nth-child(4){
-  left:58%;
-  animation-duration:26s;
-}
-
-.leaves span:nth-child(5){
-  left:74%;
-  animation-duration:19s;
-}
-
-.leaves span:nth-child(6){
-  left:88%;
-  animation-duration:24s;
-}
-
-@keyframes floatLeaf{
-
-  from{
-    transform:
-      translateY(-10vh)
-      rotate(0deg);
-
-    opacity:0;
-  }
-
-  to{
-    transform:
-      translateY(120vh)
-      rotate(360deg);
-
-    opacity:.35;
-  }
-}
-
-/* ================================================= */
-/* ================= HERO CONTENT ================== */
-/* ================================================= */
-
 .hero-content{
 
   position:relative;
@@ -612,7 +509,7 @@ body::after{
 
 .location{
 
-  color:#d6bf84;
+  color:#B89A63;
 
   letter-spacing:5px;
 
@@ -634,7 +531,7 @@ body::after{
   margin-bottom:28px;
 
   text-shadow:
-    0 12px 35px rgba(0,0,0,0.45);
+    0 12px 40px rgba(0,0,0,0.5);
 }
 
 .hero p{
@@ -648,9 +545,6 @@ body::after{
   font-size:1.08rem;
 
   margin-bottom:42px;
-
-  text-shadow:
-    0 4px 14px rgba(0,0,0,0.4);
 }
 
 /* ================================================= */
@@ -675,13 +569,13 @@ body::after{
     linear-gradient(
       to bottom,
       rgba(255,255,255,0.14),
-      rgba(255,255,255,0.06)
+      rgba(255,255,255,0.05)
     );
 
   border:
-    1px solid rgba(255,255,255,0.10);
+    1px solid rgba(255,255,255,0.08);
 
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
 
   color:white;
 
@@ -696,7 +590,7 @@ body::after{
     translateY(-4px);
 
   background:
-    rgba(255,255,255,0.16);
+    rgba(255,255,255,0.14);
 }
 
 /* ================================================= */
@@ -708,10 +602,6 @@ body::after{
   padding:
     140px 8%;
 }
-
-/* ================================================= */
-/* ==================== TITLES ===================== */
-/* ================================================= */
 
 .section-title{
 
@@ -768,7 +658,7 @@ body::after{
   transition:1s;
 
   box-shadow:
-    0 25px 60px rgba(0,0,0,0.28);
+    0 25px 60px rgba(0,0,0,0.32);
 }
 
 .gallery img:hover{
@@ -807,14 +697,14 @@ body::after{
     );
 
   border:
-    1px solid rgba(255,255,255,0.08);
+    1px solid rgba(255,255,255,0.06);
 
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
 
   transition:.7s;
 
   box-shadow:
-    0 25px 70px rgba(0,0,0,0.25);
+    0 25px 70px rgba(0,0,0,0.32);
 }
 
 .activity-card:hover{
@@ -826,7 +716,6 @@ body::after{
 .activity-card img{
 
   width:100%;
-
   height:260px;
 
   object-fit:cover;
@@ -870,10 +759,6 @@ body::after{
   gap:40px;
 }
 
-/* ================================================= */
-/* ===================== DAY CARD ================== */
-/* ================================================= */
-
 .day{
 
   display:grid;
@@ -894,12 +779,12 @@ body::after{
     );
 
   border:
-    1px solid rgba(255,255,255,0.08);
+    1px solid rgba(255,255,255,0.06);
 
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(14px);
 
   box-shadow:
-    0 25px 70px rgba(0,0,0,0.24);
+    0 25px 70px rgba(0,0,0,0.34);
 
   transition:.7s;
 }
@@ -909,10 +794,6 @@ body::after{
   transform:
     translateY(-6px);
 }
-
-/* ================================================= */
-/* ==================== DAY IMAGE ================== */
-/* ================================================= */
 
 .day-image{
 
@@ -929,27 +810,6 @@ body::after{
   object-fit:cover;
 }
 
-.day-image::after{
-
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-
-    linear-gradient(
-      to top,
-      rgba(6,10,12,0.35),
-      transparent
-    );
-}
-
-/* ================================================= */
-/* ==================== DAY CONTENT ================ */
-/* ================================================= */
-
 .day-content{
 
   padding:42px;
@@ -963,12 +823,8 @@ body::after{
 
   margin-bottom:26px;
 
-  color:#d6bf84;
+  color:#B89A63;
 }
-
-/* ================================================= */
-/* ==================== TIME BLOCK ================= */
-/* ================================================= */
 
 .time-block{
 
@@ -1014,203 +870,19 @@ body::after{
 @media(max-width:900px){
 
   .day{
-
-    grid-template-columns:
-      1fr;
+    grid-template-columns:1fr;
   }
 
   .day-image{
-
     height:280px;
   }
 
 }
 
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.82);
-}
-
-/* ================================================= */
-/* ================= PRACTICAL INFO ================ */
-/* ================================================= */
-
-.info-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
-
-  gap:30px;
-}
-
-.info-card{
-
-  padding:38px;
-
-  border-radius:30px;
-
-  background:
-    rgba(255,255,255,0.04);
-
-  border:
-    1px solid rgba(255,255,255,0.06);
-
-  backdrop-filter:blur(10px);
-}
-
-.info-card h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:2rem;
-
-  margin-bottom:18px;
-}
-
-.info-card p,
-.info-card li{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.82);
-}
-
-.info-card ul{
-
-  padding-left:18px;
-}
-
-/* ================================================= */
-/* ==================== PACKAGE ==================== */
-/* ================================================= */
-
-.package-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(340px,1fr));
-
-  gap:40px;
-}
-
-.package-card{
-
-  overflow:hidden;
-
-  border-radius:36px;
-
-  background:
-
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.03)
-    );
-
-  border:
-    1px solid rgba(255,255,255,0.08);
-
-  backdrop-filter:blur(12px);
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.30);
-
-  transition:.7s;
-}
-
-.package-card:hover{
-
-  transform:
-    translateY(-10px);
-}
-
-.package-card img{
-
-  width:100%;
-
-  height:320px;
-
-  object-fit:cover;
-}
-
-.package-content{
-
-  padding:36px;
-}
-
-.package-content h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:2.4rem;
-
-  margin-bottom:18px;
-
-  line-height:1.1;
-}
-
-.package-content p{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.82);
-
-  margin-bottom:20px;
-}
-
-.package-content ul{
-
-  padding-left:18px;
-
-  margin-bottom:24px;
-}
-
-.package-content li{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.82);
-}
-
-.price{
-
-  font-size:2rem;
-
-  color:#d6bf84;
-
-  margin-bottom:26px;
-}
-
-/* ================================================= */
-/* ==================== FOOTER ===================== */
-/* ================================================= */
-
-.footer{
-
-  padding:60px 8%;
-
-  text-align:center;
-
-  color:rgba(255,255,255,0.55);
-
-  border-top:
-    1px solid rgba(255,255,255,0.06);
-}
-
-/* ================================================= */
-/* ==================== MOBILE ===================== */
-/* ================================================= */
-
 @media(max-width:768px){
 
   .hero{
-
-    padding:
-      0 7%
-      80px;
+    padding:0 7% 80px;
   }
 
   .hero h1{
@@ -1231,7 +903,7 @@ body::after{
 </head>
 
 <body>
-  
+
 <div class="forest-atmosphere">
 
   <div class="forest-fog"></div>
@@ -1248,10 +920,6 @@ body::after{
   </div>
 
 </div>
-  
-<!-- ================================================= -->
-<!-- ===================== HEADER ==================== -->
-<!-- ================================================= -->
 
 <header class="header">
 
@@ -1261,10 +929,6 @@ body::after{
 
 </header>
 
-<!-- ================================================= -->
-<!-- ====================== HERO ===================== -->
-<!-- ================================================= -->
-
 <section class="hero">
 
   <div class="hero-image">
@@ -1272,17 +936,6 @@ body::after{
   </div>
 
   <div class="fog"></div>
-
-  <div class="leaves">
-
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-
-  </div>
 
   <div class="hero-content">
 
@@ -1295,36 +948,28 @@ body::after{
     </h1>
 
     <p>
-      Una isla cubierta por bosques ancestrales, lluvia constante y senderos envueltos en niebla que inspiraron el espíritu de Princess Mononoke y el universo cinematográfico de Studio Ghibli.
+      Una isla cubierta por bosques ancestrales, lluvia constante y senderos envueltos en niebla que inspiraron el espíritu de Princess Mononoke.
     </p>
 
-    <a href="#packages" class="btn">
-      Ver paquetes →
+    <a href="#itinerary" class="btn">
+      Explorar itinerario →
     </a>
 
   </div>
 
 </section>
 
-<!-- ================================================= -->
-<!-- ==================== INTRO ===================== -->
-<!-- ================================================= -->
-
 <section class="section">
 
   <h2 class="section-title">
-    Naturaleza viva y espiritual
+    Naturaleza espiritual
   </h2>
 
   <p class="section-text">
-    Yakushima es una isla donde la naturaleza parece respirar lentamente. Los cedros milenarios, la niebla suspendida entre montañas y la lluvia constante crean una experiencia profundamente contemplativa y cinematográfica.
+    Yakushima es un lugar donde la lluvia, el musgo y los cedros gigantes crean una atmósfera profundamente cinematográfica y contemplativa.
   </p>
 
 </section>
-
-<!-- ================================================= -->
-<!-- ==================== GALLERY =================== -->
-<!-- ================================================= -->
 
 <section class="section">
 
@@ -1337,10 +982,6 @@ body::after{
   </div>
 
 </section>
-
-<!-- ================================================= -->
-<!-- ================== ACTIVITIES ================== -->
-<!-- ================================================= -->
 
 <section class="section">
 
@@ -1361,7 +1002,7 @@ body::after{
         </h3>
 
         <p>
-          Senderos cubiertos de musgo, raíces gigantes y atmósferas húmedas que parecen escenas vivas de Princess Mononoke.
+          Senderos cubiertos de musgo, puentes antiguos y atmósferas húmedas inspiradas en Princess Mononoke.
         </p>
 
       </div>
@@ -1379,7 +1020,7 @@ body::after{
         </h3>
 
         <p>
-          Hospedaje tradicional japonés, baños termales naturales y noches silenciosas acompañadas por lluvia suave.
+          Hospedaje tradicional japonés, aguas termales naturales y noches silenciosas bajo lluvia suave.
         </p>
 
       </div>
@@ -1397,7 +1038,7 @@ body::after{
         </h3>
 
         <p>
-          Paisajes cinematográficos, niebla y naturaleza viva ideales para capturar una estética melancólica y mágica.
+          Paisajes cinematográficos, niebla viva y naturaleza salvaje ideales para fotografía emocional.
         </p>
 
       </div>
@@ -1408,11 +1049,7 @@ body::after{
 
 </section>
 
-<!-- ================================================= -->
-<!-- =================== ITINERARY ================== -->
-<!-- ================================================= -->
-
-<section class="section">
+<section class="section" id="itinerary">
 
   <h2 class="section-title">
     Itinerario cinematográfico
@@ -1420,14 +1057,12 @@ body::after{
 
   <div class="itinerary">
 
-    <!-- ================================================= -->
-    <!-- ===================== DAY 1 ===================== -->
-    <!-- ================================================= -->
+    <!-- DÍA 1 -->
 
     <div class="day">
 
       <div class="day-image">
-        <img src="imgyakushima/1landy.jpg" alt="">
+        <img src="imgyokushima/1landy.jpg" alt="">
       </div>
 
       <div class="day-content">
@@ -1443,258 +1078,15 @@ body::after{
           </h4>
 
           <p>
-            Recepción en puerto o aeropuerto de Kagoshima y viaje en ferry rápido hacia Yakushima.
+            Recepción en puerto o aeropuerto de Kagoshima y ferry rápido hacia Yakushima.
           </p>
 
           <ul>
             <li>vistas oceánicas</li>
             <li>montañas cubiertas de niebla</li>
             <li>pequeñas islas</li>
-            <li>ambiente tranquilo y cinematográfico</li>
+            <li>ambiente cinematográfico</li>
           </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            11:00 — Llegada a Yakushima
-          </h4>
-
-          <p>
-            Recepción y traslado al ryokan tradicional.
-          </p>
-
-          <ul>
-            <li>bebida de bienvenida</li>
-            <li>habitación tatami</li>
-            <li>futón japonés</li>
-            <li>vista al bosque o montaña</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            15:00 — Paseo de adaptación
-          </h4>
-
-          <p>
-            Recorrido suave por calles tranquilas, pequeños santuarios, cafeterías escondidas y tiendas artesanales.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- ================================================= -->
-    <!-- ===================== DAY 2 ===================== -->
-    <!-- ================================================= -->
-
-    <div class="day">
-
-      <div class="day-image">
-        <img src="imgyakushima/2landy.jpg" alt="">
-      </div>
-
-      <div class="day-content">
-
-        <h3>
-          Día 2 — Bosque de Shiratani Unsuikyo
-        </h3>
-
-        <div class="time-block">
-
-          <h4>
-            07:30 — Salida al bosque
-          </h4>
-
-          <p>
-            Traslado hacia Shiratani Unsuikyo.
-          </p>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            08:30 – 14:00 — Trekking guiado
-          </h4>
-
-          <ul>
-            <li>cedros gigantes</li>
-            <li>musgo brillante</li>
-            <li>puentes de madera</li>
-            <li>ríos cristalinos</li>
-            <li>niebla espesa</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            15:30 — Regreso al alojamiento
-          </h4>
-
-          <p>
-            Tiempo libre para descanso, fotografía y cafetería local.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- ================================================= -->
-    <!-- ===================== DAY 3 ===================== -->
-    <!-- ================================================= -->
-
-    <div class="day">
-
-      <div class="day-image">
-        <img src="imgyakushima/trekky.jpg" alt="">
-      </div>
-
-      <div class="day-content">
-
-        <h3>
-          Día 3 — Senderos ancestrales
-        </h3>
-
-        <div class="time-block">
-
-          <h4>
-            07:00 — Inicio de excursión
-          </h4>
-
-          <p>
-            Ruta por antiguos senderos ferroviarios cubiertos por vegetación.
-          </p>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            Durante la caminata
-          </h4>
-
-          <ul>
-            <li>Wilson Stump</li>
-            <li>puentes antiguos</li>
-            <li>riachuelos</li>
-            <li>bosques profundos</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            19:30 — Cena temática
-          </h4>
-
-          <p>
-            Cena “Sabores del Bosque” con ingredientes locales e iluminación cálida.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- ================================================= -->
-    <!-- ===================== DAY 4 ===================== -->
-    <!-- ================================================= -->
-
-    <div class="day">
-
-      <div class="day-image">
-        <img src="imgyakushima/3landy.jpg" alt="">
-      </div>
-
-      <div class="day-content">
-
-        <h3>
-          Día 4 — Ruta costera y cascadas
-        </h3>
-
-        <div class="time-block">
-
-          <h4>
-            09:00 — Ruta panorámica
-          </h4>
-
-          <ul>
-            <li>Senpiro Falls</li>
-            <li>Ohko Waterfall</li>
-            <li>Inakahama Beach</li>
-          </ul>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            Experiencias del día
-          </h4>
-
-          <ul>
-            <li>observación de monos y ciervos</li>
-            <li>fotografía costera</li>
-            <li>contemplación del océano</li>
-            <li>pequeños pueblos pesqueros</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- ================================================= -->
-    <!-- ===================== DAY 5 ===================== -->
-    <!-- ================================================= -->
-
-    <div class="day">
-
-      <div class="day-image">
-        <img src="imgyakushima/contemy.jpg" alt="">
-      </div>
-
-      <div class="day-content">
-
-        <h3>
-          Día 5 — Despedida de la isla
-        </h3>
-
-        <div class="time-block">
-
-          <h4>
-            09:00 — Tiempo libre
-          </h4>
-
-          <p>
-            Fotografías, recuerdos, café final y paseo corto por el puerto.
-          </p>
-
-        </div>
-
-        <div class="time-block">
-
-          <h4>
-            13:00 — Regreso a Kagoshima
-          </h4>
-
-          <p>
-            Fin de la experiencia.
-          </p>
 
         </div>
 
@@ -1705,126 +1097,6 @@ body::after{
   </div>
 
 </section>
-  
-<!-- ================================================= -->
-<!-- ================= PRACTICAL INFO =============== -->
-<!-- ================================================= -->
-
-<section class="section">
-
-  <h2 class="section-title">
-    Información práctica
-  </h2>
-
-  <div class="info-grid">
-
-    <div class="info-card">
-
-      <h3>
-        Mejor temporada
-      </h3>
-
-      <p>
-        Primavera, verano lluvioso y otoño.
-      </p>
-
-    </div>
-
-    <div class="info-card">
-
-      <h3>
-        Nivel físico
-      </h3>
-
-      <p>
-        Moderado.
-      </p>
-
-    </div>
-
-    <div class="info-card">
-
-      <h3>
-        Recomendaciones
-      </h3>
-
-      <ul>
-
-        <li>Impermeable</li>
-        <li>Botas trekking</li>
-        <li>Ropa de secado rápido</li>
-        <li>Mochila resistente al agua</li>
-
-      </ul>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================================================= -->
-<!-- ==================== PACKAGE =================== -->
-<!-- ================================================= -->
-
-<section class="section" id="packages">
-
-  <h2 class="section-title">
-    Paquetes disponibles
-  </h2>
-
-  <div class="package-grid">
-
-    <div class="package-card">
-
-      <img src="imgyokushima/packagey.jpg" alt="">
-
-      <div class="package-content">
-
-        <h3>
-          Yakushima — Viaje inspirado en el mundo Ghibli
-        </h3>
-
-        <p>
-          5 días / 4 noches explorando bosques ancestrales, ryokan tradicionales y senderos inspirados en Princess Mononoke.
-        </p>
-
-        <ul>
-
-          <li>Ferry ida y vuelta desde Kagoshima</li>
-          <li>4 noches en ryokan japonés</li>
-          <li>Desayunos y cenas tradicionales</li>
-          <li>Trekking guiado</li>
-          <li>Onsen natural</li>
-          <li>Kit impermeable y mapa ilustrado</li>
-
-        </ul>
-
-        <div class="price">
-          USD 1,200
-        </div>
-
-        <a href="#" class="btn">
-          Reservar experiencia →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================================================= -->
-<!-- ===================== FOOTER =================== -->
-<!-- ================================================= -->
-
-<footer class="footer">
-
-  Slow journeys, lasting memories
-
-</footer>
 
 </body>
 </html>
