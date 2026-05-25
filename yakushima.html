@@ -360,6 +360,159 @@ body::after{
 }
 
 /* ================================================= */
+/* ================= SOFT SCALES =================== */
+/* ================================================= */
+
+.soft-scales{
+
+  position:absolute;
+
+  inset:0;
+
+  overflow:hidden;
+
+  z-index:-5;
+
+  pointer-events:none;
+}
+
+.soft-scales span{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(80px);
+
+  mix-blend-mode:screen;
+
+  opacity:.10;
+
+  animation:
+    softScaleFloat linear infinite alternate;
+}
+
+/* ESCALA 1 */
+
+.soft-scales span:nth-child(1){
+
+  width:520px;
+  height:520px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.12),
+      rgba(170,180,185,0.05),
+      transparent 72%
+    );
+
+  top:-120px;
+  left:-120px;
+
+  animation-duration:28s;
+}
+
+/* ESCALA 2 */
+
+.soft-scales span:nth-child(2){
+
+  width:420px;
+  height:420px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(91,107,93,0.14),
+      transparent 72%
+    );
+
+  top:30%;
+  left:65%;
+
+  animation-duration:32s;
+}
+
+/* ESCALA 3 */
+
+.soft-scales span:nth-child(3){
+
+  width:340px;
+  height:340px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(122,47,43,0.12),
+      transparent 72%
+    );
+
+  bottom:10%;
+  left:18%;
+
+  animation-duration:36s;
+}
+
+/* ESCALA 4 */
+
+.soft-scales span:nth-child(4){
+
+  width:620px;
+  height:620px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.08),
+      transparent 72%
+    );
+
+  top:40%;
+  left:-180px;
+
+  animation-duration:40s;
+}
+
+/* ESCALA 5 */
+
+.soft-scales span:nth-child(5){
+
+  width:460px;
+  height:460px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(184,154,99,0.08),
+      transparent 72%
+    );
+
+  bottom:-120px;
+  right:-120px;
+
+  animation-duration:30s;
+}
+
+@keyframes softScaleFloat{
+
+  from{
+
+    transform:
+      translateY(0px)
+      translateX(0px)
+      scale(1);
+  }
+
+  to{
+
+    transform:
+      translateY(-30px)
+      translateX(20px)
+      scale(1.08);
+  }
+}
+  
+/* ================================================= */
 /* ==================== HEADER ===================== */
 /* ================================================= */
 
@@ -1029,6 +1182,16 @@ body::after{
 <body>
 
 <div class="forest-atmosphere">
+
+  <div class="soft-scales">
+
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+
+</div>
 
   <div class="forest-fog"></div>
 
