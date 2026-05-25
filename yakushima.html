@@ -601,40 +601,172 @@ body::after{
 
 .itinerary{
 
-  max-width:1000px;
+  max-width:1200px;
 
   margin:auto;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:40px;
 }
+
+/* ================================================= */
+/* ===================== DAY CARD ================== */
+/* ================================================= */
 
 .day{
 
-  margin-bottom:40px;
+  display:grid;
 
-  padding:36px;
+  grid-template-columns:
+    320px 1fr;
 
-  border-left:
-    2px solid rgba(214,191,132,0.4);
+  overflow:hidden;
+
+  border-radius:34px;
 
   background:
-    rgba(255,255,255,0.03);
 
-  border-radius:0 24px 24px 0;
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
 
-  backdrop-filter:blur(8px);
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.24);
+
+  transition:.7s;
 }
 
-.day h3{
+.day:hover{
+
+  transform:
+    translateY(-6px);
+}
+
+/* ================================================= */
+/* ==================== DAY IMAGE ================== */
+/* ================================================= */
+
+.day-image{
+
+  position:relative;
+
+  height:100%;
+}
+
+.day-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.day-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      to top,
+      rgba(6,10,12,0.35),
+      transparent
+    );
+}
+
+/* ================================================= */
+/* ==================== DAY CONTENT ================ */
+/* ================================================= */
+
+.day-content{
+
+  padding:42px;
+}
+
+.day-content h3{
 
   font-family:'Cormorant Garamond', serif;
 
-  font-size:2rem;
+  font-size:2.6rem;
 
-  margin-bottom:14px;
+  margin-bottom:26px;
 
   color:#d6bf84;
 }
 
-.day p{
+/* ================================================= */
+/* ==================== TIME BLOCK ================= */
+/* ================================================= */
+
+.time-block{
+
+  margin-bottom:28px;
+}
+
+.time-block h4{
+
+  font-size:1.1rem;
+
+  color:white;
+
+  margin-bottom:12px;
+
+  letter-spacing:1px;
+}
+
+.time-block p{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.84);
+
+  margin-bottom:10px;
+}
+
+.time-block ul{
+
+  padding-left:18px;
+}
+
+.time-block li{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.78);
+}
+
+/* ================================================= */
+/* ==================== MOBILE ===================== */
+/* ================================================= */
+
+@media(max-width:900px){
+
+  .day{
+
+    grid-template-columns:
+      1fr;
+  }
+
+  .day-image{
+
+    height:280px;
+  }
+
+}
 
   line-height:1.9;
 
@@ -1008,75 +1140,297 @@ body::after{
 <section class="section">
 
   <h2 class="section-title">
-    Itinerario
+    Itinerario cinematográfico
   </h2>
 
   <div class="itinerary">
 
+    <!-- ================================================= -->
+    <!-- ===================== DAY 1 ===================== -->
+    <!-- ================================================= -->
+
     <div class="day">
 
-      <h3>
-        Día 1 — Llegada a la isla
-      </h3>
+      <div class="day-image">
+        <img src="imgyakushima/1landy.jpg" alt="">
+      </div>
 
-      <p>
-        Viaje en ferry, check-in en ryokan ecológico y recorrido tranquilo por el pueblo.
-      </p>
+      <div class="day-content">
+
+        <h3>
+          Día 1 — Llegada a la isla escondida
+        </h3>
+
+        <div class="time-block">
+
+          <h4>
+            08:00 — Salida desde Kagoshima
+          </h4>
+
+          <p>
+            Recepción en puerto o aeropuerto de Kagoshima y viaje en ferry rápido hacia Yakushima.
+          </p>
+
+          <ul>
+            <li>vistas oceánicas</li>
+            <li>montañas cubiertas de niebla</li>
+            <li>pequeñas islas</li>
+            <li>ambiente tranquilo y cinematográfico</li>
+          </ul>
+
+        </div>
+
+        <div class="time-block">
+
+          <h4>
+            11:00 — Llegada a Yakushima
+          </h4>
+
+          <p>
+            Recepción y traslado al ryokan tradicional.
+          </p>
+
+          <ul>
+            <li>bebida de bienvenida</li>
+            <li>habitación tatami</li>
+            <li>futón japonés</li>
+            <li>vista al bosque o montaña</li>
+          </ul>
+
+        </div>
+
+        <div class="time-block">
+
+          <h4>
+            15:00 — Paseo de adaptación
+          </h4>
+
+          <p>
+            Recorrido suave por calles tranquilas, pequeños santuarios, cafeterías escondidas y tiendas artesanales.
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
+    <!-- ================================================= -->
+    <!-- ===================== DAY 2 ===================== -->
+    <!-- ================================================= -->
+
     <div class="day">
 
-      <h3>
-        Día 2 — Bosque Shiratani Unsuikyo
-      </h3>
+      <div class="day-image">
+        <img src="imgyakushima/2landy.jpg" alt="">
+      </div>
 
-      <p>
-        Exploración del bosque que inspiró escenarios de Princess Mononoke.
-      </p>
+      <div class="day-content">
+
+        <h3>
+          Día 2 — Bosque de Shiratani Unsuikyo
+        </h3>
+
+        <div class="time-block">
+
+          <h4>
+            07:30 — Salida al bosque
+          </h4>
+
+          <p>
+            Traslado hacia Shiratani Unsuikyo.
+          </p>
+
+        </div>
+
+        <div class="time-block">
+
+          <h4>
+            08:30 – 14:00 — Trekking guiado
+          </h4>
+
+          <ul>
+            <li>cedros gigantes</li>
+            <li>musgo brillante</li>
+            <li>puentes de madera</li>
+            <li>ríos cristalinos</li>
+            <li>niebla espesa</li>
+          </ul>
+
+        </div>
+
+        <div class="time-block">
+
+          <h4>
+            15:30 — Regreso al alojamiento
+          </h4>
+
+          <p>
+            Tiempo libre para descanso, fotografía y cafetería local.
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
+    <!-- ================================================= -->
+    <!-- ===================== DAY 3 ===================== -->
+    <!-- ================================================= -->
+
     <div class="day">
 
-      <h3>
-        Día 3 — Cedros milenarios
-      </h3>
+      <div class="day-image">
+        <img src="imgyakushima/trekky.jpg" alt="">
+      </div>
 
-      <p>
-        Caminata entre senderos ferroviarios antiguos y bosques húmedos cubiertos de niebla.
-      </p>
+      <div class="day-content">
+
+        <h3>
+          Día 3 — Senderos ancestrales
+        </h3>
+
+        <div class="time-block">
+
+          <h4>
+            07:00 — Inicio de excursión
+          </h4>
+
+          <p>
+            Ruta por antiguos senderos ferroviarios cubiertos por vegetación.
+          </p>
+
+        </div>
+
+        <div class="time-block">
+
+          <h4>
+            Durante la caminata
+          </h4>
+
+          <ul>
+            <li>Wilson Stump</li>
+            <li>puentes antiguos</li>
+            <li>riachuelos</li>
+            <li>bosques profundos</li>
+          </ul>
+
+        </div>
+
+        <div class="time-block">
+
+          <h4>
+            19:30 — Cena temática
+          </h4>
+
+          <p>
+            Cena “Sabores del Bosque” con ingredientes locales e iluminación cálida.
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
+    <!-- ================================================= -->
+    <!-- ===================== DAY 4 ===================== -->
+    <!-- ================================================= -->
+
     <div class="day">
 
-      <h3>
-        Día 4 — Ruta costera y cascadas
-      </h3>
+      <div class="day-image">
+        <img src="imgyakushima/3landy.jpg" alt="">
+      </div>
 
-      <p>
-        Recorrido panorámico por playas, cascadas, faros y pequeños pueblos isleños.
-      </p>
+      <div class="day-content">
+
+        <h3>
+          Día 4 — Ruta costera y cascadas
+        </h3>
+
+        <div class="time-block">
+
+          <h4>
+            09:00 — Ruta panorámica
+          </h4>
+
+          <ul>
+            <li>Senpiro Falls</li>
+            <li>Ohko Waterfall</li>
+            <li>Inakahama Beach</li>
+          </ul>
+
+        </div>
+
+        <div class="time-block">
+
+          <h4>
+            Experiencias del día
+          </h4>
+
+          <ul>
+            <li>observación de monos y ciervos</li>
+            <li>fotografía costera</li>
+            <li>contemplación del océano</li>
+            <li>pequeños pueblos pesqueros</li>
+          </ul>
+
+        </div>
+
+      </div>
 
     </div>
 
+    <!-- ================================================= -->
+    <!-- ===================== DAY 5 ===================== -->
+    <!-- ================================================= -->
+
     <div class="day">
 
-      <h3>
-        Día 5 — Despedida de Yakushima
-      </h3>
+      <div class="day-image">
+        <img src="imgyakushima/contemy.jpg" alt="">
+      </div>
 
-      <p>
-        Mañana libre y regreso en ferry hacia Kagoshima.
-      </p>
+      <div class="day-content">
+
+        <h3>
+          Día 5 — Despedida de la isla
+        </h3>
+
+        <div class="time-block">
+
+          <h4>
+            09:00 — Tiempo libre
+          </h4>
+
+          <p>
+            Fotografías, recuerdos, café final y paseo corto por el puerto.
+          </p>
+
+        </div>
+
+        <div class="time-block">
+
+          <h4>
+            13:00 — Regreso a Kagoshima
+          </h4>
+
+          <p>
+            Fin de la experiencia.
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
   </div>
 
 </section>
-
+  
 <!-- ================================================= -->
 <!-- ================= PRACTICAL INFO =============== -->
 <!-- ================================================= -->
