@@ -1,1 +1,1339 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Book Your Journey | Orumi Journeys
+  </title>
+
+  <!-- ================= FUENTES ================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Nunito:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* ================================================= */
+    /* ================= RESET ========================= */
+    /* ================================================= */
+
+    * {
+
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+    body {
+
+      background:
+        #101820;
+
+      color: white;
+
+      font-family:
+        'Nunito',
+        sans-serif;
+
+      overflow-x: hidden;
+
+    }
+
+    a {
+
+      text-decoration: none;
+      color: inherit;
+
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+
+      font-family:
+        'Nunito',
+        sans-serif;
+
+    }
+
+    /* ================================================= */
+    /* ================= HEADER ======================== */
+    /* ================================================= */
+
+    .header {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      padding:
+        24px 7vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      z-index: 1000;
+
+      background:
+        rgba(10,15,20,0.35);
+
+      backdrop-filter: blur(14px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.06);
+
+    }
+
+    .logo {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size: 2rem;
+
+    }
+
+    .menu {
+
+      display: flex;
+      gap: 34px;
+
+    }
+
+    .menu a {
+
+      opacity: 0.7;
+
+      transition:
+        opacity 0.4s ease;
+
+    }
+
+    .menu a:hover,
+    .menu a.active {
+
+      opacity: 1;
+
+    }
+
+    /* ================================================= */
+    /* ================= HERO ========================== */
+    /* ================================================= */
+
+    .hero {
+
+      position: relative;
+
+      height: 60vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      overflow: hidden;
+
+      background-image:
+        url("img/jeju.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(10,15,20,0.45),
+          rgba(10,15,20,0.88)
+        );
+
+    }
+
+    .hero-content {
+
+      position: relative;
+      z-index: 2;
+
+      padding:
+        0 20px;
+
+    }
+
+    .hero-mini {
+
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+
+      font-size: 0.85rem;
+
+      opacity: 0.7;
+
+      margin-bottom: 20px;
+
+    }
+
+    .hero h1 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(3rem, 7vw, 5.5rem);
+
+      line-height: 1.05;
+
+      margin-bottom: 20px;
+
+    }
+
+    .hero p {
+
+      max-width: 700px;
+
+      margin: auto;
+
+      line-height: 1.8;
+
+      opacity: 0.85;
+
+    }
+
+    /* ================================================= */
+    /* ================= MAIN ========================== */
+    /* ================================================= */
+
+    .booking-section {
+
+      padding:
+        100px 7vw;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #101820,
+          #17232d
+        );
+
+    }
+
+    .booking-container {
+
+      display: grid;
+
+      grid-template-columns:
+        1.4fr 0.8fr;
+
+      gap: 40px;
+
+    }
+
+    /* ================================================= */
+    /* ================= FORM ========================== */
+    /* ================================================= */
+
+    .booking-form {
+
+      padding:
+        40px;
+
+      border-radius: 32px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      backdrop-filter: blur(16px);
+
+      border:
+        1px solid rgba(255,255,255,0.06);
+
+    }
+
+    .step-indicator {
+
+      display: flex;
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+      flex-wrap: wrap;
+
+    }
+
+    .step {
+
+      padding:
+        10px 18px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      font-size: 0.85rem;
+
+    }
+
+    .progress-bar {
+
+      width: 100%;
+      height: 8px;
+
+      border-radius: 999px;
+
+      overflow: hidden;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      margin-bottom: 40px;
+
+    }
+
+    .progress {
+
+      width: 65%;
+      height: 100%;
+
+      background:
+        linear-gradient(
+          to right,
+          #a5c8e1,
+          #ffffff
+        );
+
+    }
+
+    .form-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(240px,1fr));
+
+      gap: 24px;
+
+    }
+
+    .field {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+
+    }
+
+    .field label {
+
+      font-size: 0.9rem;
+
+      opacity: 0.8;
+
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+
+      padding:
+        16px 18px;
+
+      border-radius: 18px;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+        rgba(255,255,255,0.06);
+
+      color: white;
+
+      outline: none;
+
+      transition:
+        0.4s ease;
+
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+
+      border:
+        1px solid rgba(255,255,255,0.25);
+
+      background:
+        rgba(255,255,255,0.1);
+
+    }
+
+    textarea {
+
+      min-height: 140px;
+
+      resize: vertical;
+
+    }
+
+    /* ================================================= */
+    /* ================= SUMMARY ======================= */
+    /* ================================================= */
+
+    .summary {
+
+      margin-top: 40px;
+
+      padding:
+        30px;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid rgba(255,255,255,0.06);
+
+    }
+
+    .summary h3 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size: 2rem;
+
+      margin-bottom: 20px;
+
+    }
+
+    .summary-list {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 14px;
+
+    }
+
+    .summary-item {
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      opacity: 0.85;
+
+    }
+
+    /* ================================================= */
+    /* ================= BUTTONS ======================= */
+    /* ================================================= */
+
+    .buttons {
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 16px;
+
+      margin-top: 40px;
+
+    }
+
+    .btn {
+
+      padding:
+        16px 28px;
+
+      border-radius: 999px;
+
+      border: none;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+
+    }
+
+    .btn:hover {
+
+      transform:
+        translateY(-2px);
+
+    }
+
+    .btn-primary {
+
+      background:
+        white;
+
+      color:
+        #101820;
+
+    }
+
+    .btn-secondary {
+
+      background:
+        rgba(255,255,255,0.1);
+
+      color: white;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+    }
+
+    /* ================================================= */
+    /* ================= SIDEBAR ======================= */
+    /* ================================================= */
+
+    .sidebar {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 24px;
+
+    }
+
+    .sidebar-card {
+
+      padding:
+        30px;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid rgba(255,255,255,0.06);
+
+      backdrop-filter: blur(12px);
+
+    }
+
+    .sidebar-card h3 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size: 2rem;
+
+      margin-bottom: 18px;
+
+    }
+
+    .sidebar-card p {
+
+      line-height: 1.8;
+
+      opacity: 0.8;
+
+    }
+
+    .list {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 14px;
+
+      margin-top: 20px;
+
+    }
+
+    .list div {
+
+      padding:
+        14px 16px;
+
+      border-radius: 16px;
+
+      background:
+        rgba(255,255,255,0.06);
+
+    }
+
+    /* ================================================= */
+    /* ================= WHATSAPP ====================== */
+    /* ================================================= */
+
+    .whatsapp-float {
+
+      position: fixed;
+
+      right: 25px;
+      bottom: 25px;
+
+      width: 70px;
+      height: 70px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        #25D366;
+
+      color: white;
+
+      font-size: 1.6rem;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+
+      z-index: 999;
+
+      transition:
+        transform 0.4s ease;
+
+    }
+
+    .whatsapp-float:hover {
+
+      transform:
+        scale(1.08);
+
+    }
+
+    /* ================================================= */
+    /* ================= CONFIRMATION ================== */
+    /* ================================================= */
+
+    .confirmation {
+
+      margin-top: 30px;
+
+      padding:
+        18px 22px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      display: none;
+
+    }
+
+    .confirmation.active {
+
+      display: block;
+
+      animation:
+        fadeIn 0.6s ease;
+
+    }
+
+    @keyframes fadeIn {
+
+      from {
+
+        opacity: 0;
+        transform:
+          translateY(10px);
+
+      }
+
+      to {
+
+        opacity: 1;
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+    /* ================================================= */
+    /* ================= RESPONSIVE ==================== */
+    /* ================================================= */
+
+    @media (max-width: 1100px) {
+
+      .booking-container {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+    }
+
+    @media (max-width: 800px) {
+
+      .menu {
+
+        display: none;
+
+      }
+
+      .booking-form {
+
+        padding:
+          28px;
+
+      }
+
+      .hero {
+
+        height: 70vh;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ================================================= -->
+  <!-- ================= HEADER ======================== -->
+  <!-- ================================================= -->
+
+  <header class="header">
+
+    <div class="logo">
+      Orumi Journeys
+    </div>
+
+    <nav class="menu">
+
+      <a href="index.html">
+        Inicio
+      </a>
+
+      <a href="destinations.html">
+        Destinos
+      </a>
+
+      <a
+        href="book-now.html"
+        class="active"
+      >
+        Reserva
+      </a>
+
+      <a href="nosotros.html">
+        Sobre Nosotros
+      </a>
+
+      <a href="contacto.html">
+        Contacto
+      </a>
+
+    </nav>
+
+  </header>
+
+  <!-- ================================================= -->
+  <!-- ================= HERO ========================== -->
+  <!-- ================================================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <p class="hero-mini">
+        Reserve Your Journey
+      </p>
+
+      <h1>
+        Diseñemos juntos
+        <br>
+        tu próxima experiencia
+      </h1>
+
+      <p>
+
+        Viajes lentos, cinematográficos y emocionales
+        inspirados en paisajes mágicos de Asia.
+
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= BOOKING ======================= -->
+  <!-- ================================================= -->
+
+  <section class="booking-section">
+
+    <div class="booking-container">
+
+      <!-- ================= FORM ================= -->
+
+      <div class="booking-form">
+
+        <div class="step-indicator">
+
+          <div class="step">
+            1. Datos
+          </div>
+
+          <div class="step">
+            2. Preferencias
+          </div>
+
+          <div class="step">
+            3. Confirmación
+          </div>
+
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+
+        <div class="form-grid">
+
+          <div class="field">
+
+            <label>
+              Tipo de paquete
+            </label>
+
+            <select>
+
+              <option>
+                Tradicional
+              </option>
+
+              <option>
+                Personalizado
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              Destino seleccionado
+            </label>
+
+            <select>
+
+              <option>
+                Yakushima
+              </option>
+
+              <option>
+                Ginzan Onsen
+              </option>
+
+              <option>
+                Jeju Island
+              </option>
+
+              <option>
+                Jiufen
+              </option>
+
+              <option>
+                Hoi An
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              Fechas de viaje
+            </label>
+
+            <input type="date">
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              Cantidad de viajeros
+            </label>
+
+            <input
+              type="number"
+              placeholder="2"
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              Alojamiento preferido
+            </label>
+
+            <select>
+
+              <option>
+                Ryokan
+              </option>
+
+              <option>
+                Boutique Hotel
+              </option>
+
+              <option>
+                Resort
+              </option>
+
+              <option>
+                Cabaña Natural
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              Presupuesto aproximado
+            </label>
+
+            <select>
+
+              <option>
+                $1.000 - $2.000 USD
+              </option>
+
+              <option>
+                $2.000 - $4.000 USD
+              </option>
+
+              <option>
+                $4.000+ USD
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              Tipo de experiencia
+            </label>
+
+            <select>
+
+              <option>
+                Relax
+              </option>
+
+              <option>
+                Cultural
+              </option>
+
+              <option>
+                Naturaleza
+              </option>
+
+              <option>
+                Aventura
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              Transporte
+            </label>
+
+            <select>
+
+              <option>
+                Avión + Traslados
+              </option>
+
+              <option>
+                Solo alojamiento
+              </option>
+
+              <option>
+                Experiencia completa
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              Correo electrónico
+            </label>
+
+            <input
+              type="email"
+              placeholder="tu@email.com"
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              WhatsApp / Teléfono
+            </label>
+
+            <input
+              type="text"
+              placeholder="+56..."
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              Idioma
+            </label>
+
+            <select>
+
+              <option>
+                Español
+              </option>
+
+              <option>
+                English
+              </option>
+
+              <option>
+                Português
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label>
+              ¿Cómo conociste Orumi?
+            </label>
+
+            <input
+              type="text"
+              placeholder="Instagram, TikTok..."
+            >
+
+          </div>
+
+        </div>
+
+        <div
+          class="field"
+          style="margin-top: 24px;"
+        >
+
+          <label>
+            Solicitudes especiales
+          </label>
+
+          <textarea
+            placeholder="Cuéntanos cómo imaginas tu viaje..."
+          ></textarea>
+
+        </div>
+
+        <!-- ================= SUMMARY ================= -->
+
+        <div class="summary">
+
+          <h3>
+            Resumen del paquete
+          </h3>
+
+          <div class="summary-list">
+
+            <div class="summary-item">
+              <span>Destino</span>
+              <span>Yakushima</span>
+            </div>
+
+            <div class="summary-item">
+              <span>Duración</span>
+              <span>5 días</span>
+            </div>
+
+            <div class="summary-item">
+              <span>Incluye</span>
+              <span>Hotel + tours</span>
+            </div>
+
+            <div class="summary-item">
+              <span>No incluye</span>
+              <span>Vuelos internacionales</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= BUTTONS ================= -->
+
+        <div class="buttons">
+
+          <button
+            class="btn btn-primary"
+            id="sendBtn"
+          >
+            Enviar formulario
+          </button>
+
+          <a
+            href="https://wa.me/"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            Enviar a WhatsApp
+          </a>
+
+          <button class="btn btn-secondary">
+            Guardar PDF
+          </button>
+
+          <button class="btn btn-secondary">
+            Agendar videollamada
+          </button>
+
+        </div>
+
+        <!-- ================= CONFIRMATION ================= -->
+
+        <div
+          class="confirmation"
+          id="confirmation"
+        >
+
+          Tu solicitud fue enviada correctamente.
+          Nuestro equipo responderá dentro de 24 horas.
+
+        </div>
+
+      </div>
+
+      <!-- ================= SIDEBAR ================= -->
+
+      <div class="sidebar">
+
+        <div class="sidebar-card">
+
+          <h3>
+            Incluye
+          </h3>
+
+          <div class="list">
+
+            <div>
+              Hoteles seleccionados
+            </div>
+
+            <div>
+              Experiencias guiadas
+            </div>
+
+            <div>
+              Soporte personalizado
+            </div>
+
+            <div>
+              Asistencia durante el viaje
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-card">
+
+          <h3>
+            Política flexible
+          </h3>
+
+          <p>
+
+            Cambios gratuitos hasta
+            15 días antes del viaje.
+
+          </p>
+
+        </div>
+
+        <div class="sidebar-card">
+
+          <h3>
+            Seguridad y privacidad
+          </h3>
+
+          <p>
+
+            Tus datos son protegidos
+            y utilizados únicamente
+            para gestionar tu reserva.
+
+          </p>
+
+        </div>
+
+        <div class="sidebar-card">
+
+          <h3>
+            Testimonios
+          </h3>
+
+          <p>
+
+            “La experiencia más
+            cinematográfica y tranquila
+            que hemos vivido.”
+
+          </p>
+
+        </div>
+
+        <div class="sidebar-card">
+
+          <h3>
+            FAQ rápida
+          </h3>
+
+          <div class="list">
+
+            <div>
+              ¿Cuánto demora la respuesta?
+            </div>
+
+            <div>
+              ¿Puedo personalizar todo?
+            </div>
+
+            <div>
+              ¿Incluye vuelos?
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= WHATSAPP ====================== -->
+  <!-- ================================================= -->
+
+  <a
+    href="https://wa.me/"
+    target="_blank"
+    class="whatsapp-float"
+  >
+    ✦
+  </a>
+
+  <!-- ================================================= -->
+  <!-- ================= JAVASCRIPT ==================== -->
+  <!-- ================================================= -->
+
+  <script>
+
+    // ================================================
+    // CONFIRMATION MESSAGE
+    // ================================================
+
+    const sendBtn =
+      document.getElementById('sendBtn');
+
+    const confirmation =
+      document.getElementById('confirmation');
+
+    sendBtn.addEventListener('click', () => {
+
+      confirmation.classList.add('active');
+
+      window.scrollTo({
+
+        top:
+          confirmation.offsetTop - 120,
+
+        behavior:
+          'smooth'
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>
