@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,12 +8,18 @@
 
 <title>Hoi An | Orumi Journeys</title>
 
+<!-- ================= GOOGLE FONTS ================= -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* ================================================= */
+/* ====================== RESET ==================== */
+/* ================================================= */
 
 *{
 margin:0;
@@ -25,49 +32,103 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Nunito', sans-serif;
-overflow-x:hidden;
+
+font-family:'Nunito',sans-serif;
+
+background:#101714;
+
 color:white;
-background:#0f1412;
+
+overflow-x:hidden;
+
+position:relative;
 }
 
-/* ================= BACKGROUND ================= */
+/* ================================================= */
+/* ================= BACKGROUND ==================== */
+/* ================================================= */
 
 body::before{
+
 content:"";
+
 position:fixed;
+
 inset:0;
+
 z-index:-10;
 
 background:
 
-radial-gradient(circle at 20% 20%, rgba(255,180,90,.15), transparent 25%),
-radial-gradient(circle at 80% 30%, rgba(255,140,60,.12), transparent 30%),
-radial-gradient(circle at 50% 80%, rgba(255,210,120,.08), transparent 35%),
+radial-gradient(
+circle at 20% 20%,
+rgba(255,185,120,.18),
+transparent 25%
+),
+
+radial-gradient(
+circle at 80% 30%,
+rgba(255,140,80,.10),
+transparent 30%
+),
+
+radial-gradient(
+circle at 50% 90%,
+rgba(255,220,150,.08),
+transparent 35%
+),
 
 linear-gradient(
 180deg,
-#38453e 0%,
-#243028 30%,
-#182019 65%,
-#0d1210 100%
+#39453f 0%,
+#243028 32%,
+#18211c 64%,
+#0b100d 100%
 );
 
 background-attachment:fixed;
 }
 
-/* ================= HEADER ================= */
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+z-index:-9;
+
+opacity:.12;
+
+background-image:
+url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+
+pointer-events:none;
+}
+
+/* ================================================= */
+/* ===================== HEADER ==================== */
+/* ================================================= */
 
 .header{
+
 position:fixed;
+
 top:0;
+left:0;
+
 width:100%;
-padding:24px 42px;
+
+padding:24px 50px;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
+
 z-index:999;
-backdrop-filter:blur(16px);
 
 background:
 linear-gradient(
@@ -75,69 +136,108 @@ to bottom,
 rgba(0,0,0,.55),
 transparent
 );
+
+backdrop-filter:blur(14px);
 }
 
 .logo{
-font-family:'Cormorant Garamond', serif;
-font-size:2.3rem;
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:2.4rem;
+
 text-decoration:none;
+
 color:white;
+
 letter-spacing:1px;
 }
 
 .nav{
+
 display:flex;
+
 gap:28px;
+
+flex-wrap:wrap;
 }
 
 .nav a{
-color:white;
+
 text-decoration:none;
+
+color:white;
+
 font-size:.95rem;
+
 letter-spacing:1px;
+
 transition:.4s;
+
 position:relative;
 }
 
 .nav a::after{
+
 content:"";
+
 position:absolute;
+
 left:0;
 bottom:-6px;
+
 width:0%;
+
 height:1px;
-background:#d8b36c;
+
+background:#d9b26f;
+
 transition:.4s;
 }
 
 .nav a:hover{
-color:#d8b36c;
+
+color:#d9b26f;
 }
 
 .nav a:hover::after{
+
 width:100%;
 }
 
-/* ================= HERO ================= */
+/* ================================================= */
+/* ====================== HERO ===================== */
+/* ================================================= */
 
 .hero{
+
 position:relative;
+
 min-height:100vh;
+
 display:flex;
+
 align-items:flex-end;
-padding:0 8% 100px;
+
+padding:0 8% 110px;
+
 overflow:hidden;
 }
 
 .hero-image{
+
 position:absolute;
+
 inset:0;
+
 z-index:0;
 }
 
 .hero-image img{
+
 width:100%;
 height:100%;
+
 object-fit:cover;
 
 filter:
@@ -147,56 +247,91 @@ saturate(1.1);
 }
 
 .hero-image::after{
+
 content:"";
+
 position:absolute;
+
 inset:0;
 
 background:
+
 linear-gradient(
 to top,
-rgba(6,10,8,0.96) 0%,
-rgba(10,14,12,0.6) 35%,
-transparent 70%
+rgba(5,8,6,.96) 0%,
+rgba(12,18,14,.60) 35%,
+transparent 75%
 );
 }
 
 .hero-content{
+
 position:relative;
-z-index:3;
+
+z-index:2;
+
 max-width:760px;
 }
 
 .location{
-color:#d8b36c;
+
+color:#d9b26f;
+
 letter-spacing:5px;
+
 text-transform:uppercase;
-margin-bottom:20px;
+
 font-size:.9rem;
+
+margin-bottom:20px;
 }
 
 .hero h1{
-font-family:'Cormorant Garamond', serif;
+
+font-family:'Cormorant Garamond',serif;
+
 font-size:7rem;
+
 line-height:.92;
+
 margin-bottom:28px;
+
+text-shadow:
+0 10px 30px rgba(0,0,0,.45);
 }
 
 .hero p{
+
+font-size:1.08rem;
+
+line-height:2;
+
+color:rgba(255,255,255,.86);
+
 max-width:650px;
-line-height:1.9;
-color:rgba(255,255,255,0.88);
-font-size:1.05rem;
+
 margin-bottom:42px;
 }
 
-/* ================= BUTTON ================= */
+/* ================================================= */
+/* ====================== BUTTON =================== */
+/* ================================================= */
 
 .btn{
+
 display:inline-flex;
+
 align-items:center;
-gap:10px;
-padding:16px 30px;
+
+gap:12px;
+
+padding:16px 32px;
+
 border-radius:50px;
+
+text-decoration:none;
+
+color:white;
 
 background:
 rgba(255,255,255,.08);
@@ -204,79 +339,116 @@ rgba(255,255,255,.08);
 border:
 1px solid rgba(255,255,255,.08);
 
-backdrop-filter:blur(12px);
+backdrop-filter:blur(10px);
 
-color:white;
-text-decoration:none;
 transition:.5s;
 }
 
 .btn:hover{
-transform:translateY(-4px);
-background:rgba(255,255,255,.16);
+
+transform:
+translateY(-4px);
+
+background:
+rgba(255,255,255,.15);
 }
 
-/* ================= SECTION ================= */
+/* ================================================= */
+/* ===================== SECTION =================== */
+/* ================================================= */
 
 .section{
+
 padding:140px 8%;
 }
 
 .section-title{
-font-family:'Cormorant Garamond', serif;
-font-size:4.6rem;
-margin-bottom:30px;
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:4.8rem;
+
 text-align:center;
+
+margin-bottom:34px;
+
+line-height:1;
 }
 
 .section-text{
-max-width:900px;
+
+max-width:920px;
+
 margin:auto;
+
 text-align:center;
+
 line-height:2;
+
+font-size:1.05rem;
+
 color:rgba(255,255,255,.82);
 }
 
-/* ================= GALLERY ================= */
+/* ================================================= */
+/* ===================== GALLERY =================== */
+/* ================================================= */
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+
 margin-top:70px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
 }
 
 .gallery img{
+
 width:100%;
-height:450px;
+
+height:460px;
+
 object-fit:cover;
-border-radius:28px;
+
+border-radius:30px;
 
 transition:1s;
 
 box-shadow:
-0 20px 60px rgba(0,0,0,.35);
+0 25px 60px rgba(0,0,0,.35);
 }
 
 .gallery img:hover{
+
 transform:
 translateY(-10px)
 scale(1.02);
 }
 
-/* ================= EXPERIENCE ================= */
+/* ================================================= */
+/* ==================== ACTIVITIES ================= */
+/* ================================================= */
 
 .activities{
+
+margin-top:70px;
+
 display:grid;
+
 grid-template-columns:
 repeat(auto-fit,minmax(300px,1fr));
 
 gap:34px;
-margin-top:60px;
 }
 
 .activity-card{
+
 overflow:hidden;
+
 border-radius:32px;
 
 background:
@@ -288,47 +460,68 @@ border:
 backdrop-filter:blur(10px);
 
 transition:.6s;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.30);
 }
 
 .activity-card:hover{
-transform:translateY(-8px);
+
+transform:
+translateY(-10px);
 }
 
 .activity-card img{
+
 width:100%;
+
 height:260px;
+
 object-fit:cover;
 }
 
 .activity-content{
+
 padding:34px;
 }
 
 .activity-content h3{
-font-family:'Cormorant Garamond', serif;
+
+font-family:'Cormorant Garamond',serif;
+
 font-size:2rem;
+
 margin-bottom:18px;
 }
 
 .activity-content p{
+
 line-height:1.9;
-color:rgba(255,255,255,.78);
+
+color:rgba(255,255,255,.80);
 }
 
-/* ================= ITINERARY ================= */
+/* ================================================= */
+/* ==================== ITINERARY ================== */
+/* ================================================= */
 
 .itinerary-grid{
+
+margin-top:70px;
+
 display:grid;
+
 grid-template-columns:
 repeat(auto-fit,minmax(340px,1fr));
 
 gap:38px;
-margin-top:70px;
 }
 
 .experience-card{
+
 overflow:hidden;
-border-radius:32px;
+
+border-radius:34px;
 
 background:
 rgba(255,255,255,.05);
@@ -336,51 +529,75 @@ rgba(255,255,255,.05);
 border:
 1px solid rgba(255,255,255,.06);
 
-transition:.6s;
+transition:.7s;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.34);
 }
 
 .experience-card:hover{
+
 transform:
 translateY(-10px)
 scale(1.02);
 }
 
 .experience-card img{
+
 width:100%;
+
 height:260px;
+
 object-fit:cover;
 }
 
 .experience-content{
+
 padding:34px;
 }
 
 .experience-content h3{
-font-family:'Cormorant Garamond', serif;
+
+font-family:'Cormorant Garamond',serif;
+
 font-size:2.2rem;
+
 margin-bottom:24px;
 }
 
 .experience-content ul{
+
 padding-left:18px;
 }
 
 .experience-content li{
-margin-bottom:14px;
-line-height:1.7;
+
+line-height:1.8;
+
+margin-bottom:12px;
+
 color:rgba(255,255,255,.82);
 }
 
-/* ================= FOOTER ================= */
+/* ================================================= */
+/* ===================== FOOTER ==================== */
+/* ================================================= */
 
 .footer{
-padding:60px 8%;
+
+padding:70px 8%;
+
 text-align:center;
-color:rgba(255,255,255,.6);
-border-top:1px solid rgba(255,255,255,.08);
+
+border-top:
+1px solid rgba(255,255,255,.08);
+
+color:rgba(255,255,255,.55);
 }
 
-/* ================= MOBILE ================= */
+/* ================================================= */
+/* ===================== MOBILE ==================== */
+/* ================================================= */
 
 @media(max-width:900px){
 
@@ -388,44 +605,55 @@ border-top:1px solid rgba(255,255,255,.08);
 font-size:5rem;
 }
 
+.header{
+
+padding:20px 24px;
+
+flex-direction:column;
+
+gap:20px;
+}
+
 .nav{
-gap:16px;
-flex-wrap:wrap;
-justify-content:flex-end;
+
+justify-content:center;
 }
 
 }
 
 @media(max-width:768px){
 
-.header{
-padding:20px;
-flex-direction:column;
-gap:20px;
-}
-
 .hero{
+
 padding:0 7% 80px;
 }
 
 .hero h1{
+
 font-size:4rem;
 }
 
 .section-title{
+
 font-size:3rem;
 }
 
 .gallery img{
+
 height:320px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
+
+<!-- ================================================= -->
+<!-- ===================== HEADER ==================== -->
+<!-- ================================================= -->
 
 <header class="header">
 
@@ -449,13 +677,15 @@ Orumi Journeys
 
 </header>
 
-<!-- HERO -->
+<!-- ================================================= -->
+<!-- ====================== HERO ===================== -->
+<!-- ================================================= -->
 
 <section class="hero">
 
 <div class="hero-image">
 
-<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1800&auto=format&fit=crop" alt="Hoi An">
+<img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=1800&auto=format&fit=crop" alt="Hoi An">
 
 </div>
 
@@ -471,7 +701,7 @@ Hoi An
 
 <p>
 
-Faroles dorados, arquitectura ancestral y callejones junto al río crean una atmósfera cálida y nostálgica en una de las ciudades más mágicas de Vietnam.
+Una ciudad iluminada por faroles dorados, arquitectura ancestral y callejones junto al río donde la tradición vietnamita se mezcla con una atmósfera cálida y nostálgica.
 
 </p>
 
@@ -483,7 +713,9 @@ Explorar experiencia →
 
 </section>
 
-<!-- INTRO -->
+<!-- ================================================= -->
+<!-- ====================== INTRO ==================== -->
+<!-- ================================================= -->
 
 <section class="section">
 
@@ -493,13 +725,15 @@ La ciudad de los faroles
 
 <p class="section-text">
 
-Hoi An mezcla historia, cultura y espiritualidad en un escenario lleno de luces cálidas, mercados flotantes y arquitectura vietnamita tradicional. Cada rincón parece suspendido entre el pasado y la fantasía.
+Hoi An es uno de los destinos más mágicos de Vietnam. Entre templos antiguos, mercados flotantes, cafés escondidos y calles iluminadas por faroles, la ciudad ofrece una experiencia lenta, cinematográfica y profundamente cultural.
 
 </p>
 
 </section>
 
-<!-- GALLERY -->
+<!-- ================================================= -->
+<!-- ===================== GALLERY =================== -->
+<!-- ================================================= -->
 
 <section class="section">
 
@@ -509,17 +743,19 @@ Galería
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop" alt="Hoi An Lanterns">
 
-<img src="https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop" alt="Hoi An Streets">
 
-<img src="https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Vietnam River">
 
 </div>
 
 </section>
 
-<!-- EXPERIENCIAS -->
+<!-- ================================================= -->
+<!-- ==================== EXPERIENCIAS =============== -->
+<!-- ================================================= -->
 
 <section class="section">
 
@@ -531,7 +767,7 @@ Experiencias
 
 <div class="activity-card">
 
-<img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop" alt="Lanterns">
 
 <div class="activity-content">
 
@@ -541,7 +777,7 @@ Faroles nocturnos
 
 <p>
 
-Recorre las calles iluminadas por cientos de faroles tradicionales reflejados sobre el río Thu Bon.
+Recorre las calles iluminadas por cientos de faroles reflejados sobre el río Thu Bon.
 
 </p>
 
@@ -551,17 +787,17 @@ Recorre las calles iluminadas por cientos de faroles tradicionales reflejados so
 
 <div class="activity-card">
 
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Vietnam Food">
 
 <div class="activity-content">
 
 <h3>
-Mercados y gastronomía
+Sabores vietnamitas
 </h3>
 
 <p>
 
-Descubre sabores vietnamitas auténticos entre mercados locales, cafés ocultos y comida callejera.
+Explora mercados tradicionales y disfruta comida callejera auténtica junto a cafeterías escondidas.
 
 </p>
 
@@ -571,17 +807,17 @@ Descubre sabores vietnamitas auténticos entre mercados locales, cafés ocultos 
 
 <div class="activity-card">
 
-<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop" alt="Temple">
 
 <div class="activity-content">
 
 <h3>
-Templos y tradición
+Historia y templos
 </h3>
 
 <p>
 
-Explora antiguas casas mercantes, templos chinos y arquitectura histórica junto al río.
+Descubre templos chinos, antiguas casas mercantes y rincones históricos llenos de tradición.
 
 </p>
 
@@ -593,7 +829,9 @@ Explora antiguas casas mercantes, templos chinos y arquitectura histórica junto
 
 </section>
 
-<!-- ITINERARY -->
+<!-- ================================================= -->
+<!-- ==================== ITINERARY ================== -->
+<!-- ================================================= -->
 
 <section class="section" id="itinerary">
 
@@ -601,11 +839,17 @@ Explora antiguas casas mercantes, templos chinos y arquitectura histórica junto
 Experiencias por Día
 </h2>
 
+<p class="section-text">
+
+Un viaje inmersivo entre faroles, arquitectura tradicional, cultura vietnamita y noches mágicas junto al río.
+
+</p>
+
 <div class="itinerary-grid">
 
 <div class="experience-card">
 
-<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=1200&auto=format&fit=crop" alt="Hoi An Night">
 
 <div class="experience-content">
 
@@ -631,7 +875,7 @@ Día 1 — Llegada a Hoi An
 
 <div class="experience-card">
 
-<img src="https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop" alt="River Boat">
 
 <div class="experience-content">
 
@@ -647,7 +891,7 @@ Día 2 — Cultura y Río
 
 <li>Clase de cocina vietnamita</li>
 
-<li>Fotografía urbana</li>
+<li>Fotografía urbana nocturna</li>
 
 </ul>
 
@@ -657,7 +901,7 @@ Día 2 — Cultura y Río
 
 <div class="experience-card">
 
-<img src="https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop" alt="Hoi An Relax">
 
 <div class="experience-content">
 
@@ -685,42 +929,54 @@ Día 3 — Relax y despedida
 
 </section>
 
+<!-- ================================================= -->
+<!-- ====================== FOOTER =================== -->
+<!-- ================================================= -->
+
 <footer class="footer">
 
 <p>
+
 Orumi Journeys • Hoi An Experience
+
 </p>
 
 </footer>
 
+<!-- ================================================= -->
+<!-- ====================== SCRIPT =================== -->
+<!-- ================================================= -->
+
 <script>
 
-/* Smooth reveal animation */
+const revealElements = document.querySelectorAll(
+'.activity-card, .experience-card, .gallery img'
+);
 
-const cards = document.querySelectorAll('.activity-card, .experience-card, .gallery img');
+const revealObserver = new IntersectionObserver((entries)=>{
 
-const observer = new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
+entries.forEach((entry)=>{
 
 if(entry.isIntersecting){
 
 entry.target.style.opacity = "1";
-entry.target.style.transform = "translateY(0px)";
 
+entry.target.style.transform = "translateY(0px)";
 }
 
 });
 
-},{threshold:.15});
+},{threshold:0.15});
 
-cards.forEach(card=>{
+revealElements.forEach((el)=>{
 
-card.style.opacity="0";
-card.style.transform="translateY(40px)";
-card.style.transition="1s";
+el.style.opacity = "0";
 
-observer.observe(card);
+el.style.transform = "translateY(40px)";
+
+el.style.transition = "1s";
+
+revealObserver.observe(el);
 
 });
 
