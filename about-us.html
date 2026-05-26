@@ -25,7 +25,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Nunito:wght@300;400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   >
 
@@ -51,14 +51,19 @@
 
     body {
 
-      background:
-        #151b18;
-
-      color: white;
-
       font-family:
         'Nunito',
         sans-serif;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #18211c,
+          #20261f,
+          #2b2923
+        );
+
+      color: white;
 
       overflow-x: hidden;
 
@@ -71,8 +76,14 @@
 
     }
 
+    img {
+
+      display: block;
+
+    }
+
     /* ================================================= */
-    /* ================= BACKGROUND ==================== */
+    /* ================= FILM GRAIN ==================== */
     /* ================================================= */
 
     body::before {
@@ -91,11 +102,11 @@
       background-size:
         4px 4px;
 
-      opacity: 0.25;
+      opacity: 0.18;
 
       pointer-events: none;
 
-      z-index: -1;
+      z-index: 9999;
 
     }
 
@@ -113,7 +124,7 @@
       width: 100%;
 
       padding:
-        24px 7vw;
+        26px 7vw;
 
       display: flex;
       justify-content: space-between;
@@ -122,9 +133,9 @@
       z-index: 1000;
 
       background:
-        rgba(12,16,14,0.35);
+        rgba(12,16,14,0.28);
 
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
 
       border-bottom:
         1px solid rgba(255,255,255,0.05);
@@ -139,6 +150,8 @@
 
       font-size: 2rem;
 
+      letter-spacing: 1px;
+
     }
 
     .menu {
@@ -150,10 +163,12 @@
 
     .menu a {
 
-      opacity: 0.7;
+      opacity: 0.72;
 
       transition:
         opacity 0.4s ease;
+
+      position: relative;
 
     }
 
@@ -161,6 +176,22 @@
     .menu a.active {
 
       opacity: 1;
+
+    }
+
+    .menu a.active::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -8px;
+
+      width: 100%;
+      height: 1px;
+
+      background: white;
 
     }
 
@@ -200,7 +231,7 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(8,12,10,0.45),
+          rgba(8,12,10,0.35),
           rgba(8,12,10,0.88)
         );
 
@@ -211,13 +242,13 @@
       position: relative;
       z-index: 2;
 
-      max-width: 900px;
+      max-width: 1000px;
 
       padding:
         0 20px;
 
       animation:
-        fadeUp 1.4s ease;
+        fadeUp 1.5s ease;
 
     }
 
@@ -229,7 +260,7 @@
 
       opacity: 0.7;
 
-      margin-bottom: 20px;
+      margin-bottom: 22px;
 
       font-size: 0.85rem;
 
@@ -242,34 +273,51 @@
         serif;
 
       font-size:
-        clamp(3rem, 8vw, 6rem);
+        clamp(3.5rem, 8vw, 7rem);
 
-      line-height: 1.05;
+      line-height: 0.95;
 
-      margin-bottom: 30px;
+      margin-bottom: 35px;
+
+      font-weight: 600;
 
     }
 
     .hero p {
 
-      font-size: 1.15rem;
+      max-width: 760px;
 
-      line-height: 1.9;
+      margin: auto;
 
-      opacity: 0.85;
+      line-height: 2;
+
+      font-size: 1.1rem;
+
+      opacity: 0.82;
 
     }
 
     /* ================================================= */
-    /* ================= SECTIONS ====================== */
+    /* ================= GENERAL ======================= */
     /* ================================================= */
 
     section {
 
-      padding:
-        110px 7vw;
-
       position: relative;
+
+    }
+
+    .section-mini {
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      font-size: 0.78rem;
+
+      opacity: 0.6;
+
+      margin-bottom: 20px;
 
     }
 
@@ -280,42 +328,75 @@
         serif;
 
       font-size:
-        clamp(2.5rem,5vw,4.5rem);
+        clamp(3rem,5vw,5.5rem);
 
-      margin-bottom: 25px;
+      line-height: 1;
+
+      margin-bottom: 35px;
 
     }
 
     .section-text {
 
-      max-width: 900px;
+      line-height: 2.1;
 
-      line-height: 2;
-
-      opacity: 0.85;
+      opacity: 0.82;
 
       font-size: 1.05rem;
+
+      max-width: 900px;
 
     }
 
     /* ================================================= */
-    /* ================= GLASS CARD ==================== */
+    /* ================= STORY ========================= */
     /* ================================================= */
 
-    .glass {
+    .story-section {
 
       padding:
-        40px;
+        160px 7vw;
 
-      border-radius: 30px;
+    }
 
-      background:
-        rgba(255,255,255,0.05);
+    .story-layout {
 
-      backdrop-filter: blur(14px);
+      display: grid;
 
-      border:
-        1px solid rgba(255,255,255,0.06);
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 80px;
+
+      align-items: center;
+
+    }
+
+    .story-image {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 36px;
+
+    }
+
+    .story-image img {
+
+      width: 100%;
+      height: 760px;
+
+      object-fit: cover;
+
+      transition:
+        transform 1.6s ease;
+
+    }
+
+    .story-image:hover img {
+
+      transform: scale(1.04);
 
     }
 
@@ -323,23 +404,30 @@
     /* ================= VALUES ======================== */
     /* ================================================= */
 
-    .grid {
+    .values-section {
+
+      padding:
+        100px 7vw;
+
+    }
+
+    .values-grid {
 
       display: grid;
 
       grid-template-columns:
-        repeat(auto-fit,minmax(240px,1fr));
+        repeat(auto-fit,minmax(220px,1fr));
 
-      gap: 24px;
+      gap: 22px;
 
       margin-top: 50px;
 
     }
 
-    .card {
+    .value {
 
       padding:
-        30px;
+        26px 28px;
 
       border-radius: 24px;
 
@@ -349,77 +437,144 @@
       border:
         1px solid rgba(255,255,255,0.05);
 
+      backdrop-filter: blur(12px);
+
       transition:
-        transform 0.6s ease,
-        background 0.6s ease;
+        transform 0.5s ease,
+        background 0.5s ease;
 
     }
 
-    .card:hover {
+    .value:hover {
 
       transform:
-        translateY(-8px);
+        translateY(-6px);
 
       background:
         rgba(255,255,255,0.08);
 
     }
 
-    .card h3 {
+    /* ================================================= */
+    /* ================= IMAGE SECTION ================= */
+    /* ================================================= */
 
-      font-family:
-        'Cormorant Garamond',
-        serif;
+    .image-break {
 
-      font-size: 2rem;
+      height: 80vh;
 
-      margin-bottom: 15px;
+      background-image:
+        url("img/forest-fog.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      background-attachment: fixed;
+
+      position: relative;
 
     }
 
-    .card p {
+    .image-break::before {
 
-      opacity: 0.8;
+      content: "";
 
-      line-height: 1.8;
+      position: absolute;
+      inset: 0;
+
+      background:
+        rgba(10,12,10,0.45);
 
     }
 
     /* ================================================= */
-    /* ================= QUOTE ========================= */
+    /* ================= DIFFERENCE ==================== */
     /* ================================================= */
 
-    .quote {
-
-      text-align: center;
+    .difference-section {
 
       padding:
-        140px 20px;
+        140px 7vw;
 
     }
 
-    .quote h2 {
+    .difference-content {
+
+      max-width: 950px;
+
+    }
+
+    .difference-list {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 24px;
+
+      margin-top: 45px;
+
+    }
+
+    .difference-item {
+
+      padding-left: 24px;
+
+      position: relative;
+
+      line-height: 2;
+
+      opacity: 0.84;
+
+    }
+
+    .difference-item::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 14px;
+
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.65);
+
+    }
+
+    /* ================================================= */
+    /* ================= FOUNDERS ====================== */
+    /* ================================================= */
+
+    .founders-section {
+
+      padding:
+        140px 7vw;
+
+    }
+
+    .founders-title {
 
       font-family:
         'Cormorant Garamond',
         serif;
 
       font-size:
-        clamp(2.8rem,6vw,5rem);
+        clamp(3rem,5vw,5rem);
 
-      line-height: 1.2;
+      line-height: 1;
 
-      max-width: 1000px;
+      max-width: 700px;
 
-      margin: auto;
+      margin-bottom: 70px;
 
     }
 
-    /* ================================================= */
-    /* ================= TEAM ========================== */
-    /* ================================================= */
-
-    .team {
+    .founders-grid {
 
       display: grid;
 
@@ -428,55 +583,46 @@
 
       gap: 40px;
 
-      margin-top: 50px;
+    }
+
+    .founder {
+
+      position: relative;
 
     }
 
-    .team-card {
-
-      overflow: hidden;
-
-      border-radius: 28px;
-
-      background:
-        rgba(255,255,255,0.05);
-
-      border:
-        1px solid rgba(255,255,255,0.06);
-
-    }
-
-    .team-card img {
+    .founder img {
 
       width: 100%;
-      height: 420px;
+      height: 650px;
 
       object-fit: cover;
 
-    }
-
-    .team-content {
-
-      padding:
-        30px;
+      border-radius: 32px;
 
     }
 
-    .team-content h3 {
+    .founder-text {
+
+      padding-top: 25px;
+
+    }
+
+    .founder-text h3 {
 
       font-family:
         'Cormorant Garamond',
         serif;
 
-      font-size: 2rem;
+      font-size: 2.2rem;
 
-      margin-bottom: 15px;
+      margin-bottom: 18px;
 
     }
 
-    .team-content p {
+    .founder-text p {
 
-      line-height: 1.8;
+      line-height: 2;
 
       opacity: 0.82;
 
@@ -486,10 +632,30 @@
     /* ================= TESTIMONIALS ================== */
     /* ================================================= */
 
+    .testimonials {
+
+      padding:
+        140px 7vw;
+
+    }
+
+    .testimonial-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+      gap: 30px;
+
+      margin-top: 60px;
+
+    }
+
     .testimonial {
 
       padding:
-        35px;
+        34px;
 
       border-radius: 28px;
 
@@ -499,68 +665,94 @@
       border:
         1px solid rgba(255,255,255,0.05);
 
-    }
-
-    .testimonial p {
-
       line-height: 2;
 
-      opacity: 0.82;
-
-      margin-bottom: 20px;
+      opacity: 0.85;
 
     }
 
     .testimonial span {
 
-      opacity: 0.65;
+      display: block;
+
+      margin-top: 24px;
+
+      opacity: 0.6;
 
     }
 
     /* ================================================= */
-    /* ================= CTA =========================== */
+    /* ================= FINAL CTA ===================== */
     /* ================================================= */
 
-    .cta {
+    .final-cta {
 
-      text-align: center;
+      position: relative;
 
       padding:
-        160px 20px;
+        180px 7vw;
+
+      overflow: hidden;
+
+      background-image:
+        url("img/jiufen.jpg");
+
+      background-size: cover;
+      background-position: center;
 
     }
 
-    .cta h2 {
+    .cta-overlay {
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        rgba(8,10,8,0.72);
+
+      backdrop-filter: blur(3px);
+
+    }
+
+    .cta-content {
+
+      position: relative;
+      z-index: 2;
+
+      max-width: 900px;
+
+    }
+
+    .cta-content h2 {
 
       font-family:
         'Cormorant Garamond',
         serif;
 
       font-size:
-        clamp(3rem,6vw,5rem);
+        clamp(3rem,6vw,5.8rem);
 
-      margin-bottom: 25px;
+      line-height: 0.98;
+
+      margin-bottom: 30px;
 
     }
 
-    .cta p {
+    .cta-content p {
 
       max-width: 700px;
 
-      margin: auto;
+      line-height: 2;
 
-      line-height: 1.9;
+      opacity: 0.82;
 
-      opacity: 0.8;
-
-      margin-bottom: 40px;
+      margin-bottom: 45px;
 
     }
 
     .cta-buttons {
 
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
 
       gap: 20px;
@@ -614,13 +806,13 @@
     footer {
 
       padding:
-        80px 7vw;
+        90px 7vw;
+
+      background:
+        #141815;
 
       border-top:
         1px solid rgba(255,255,255,0.05);
-
-      background:
-        #101412;
 
     }
 
@@ -631,7 +823,7 @@
       grid-template-columns:
         repeat(auto-fit,minmax(220px,1fr));
 
-      gap: 40px;
+      gap: 50px;
 
     }
 
@@ -643,7 +835,7 @@
 
       font-size: 2rem;
 
-      margin-bottom: 18px;
+      margin-bottom: 20px;
 
     }
 
@@ -656,20 +848,20 @@
 
     }
 
-    .footer-column a,
-    .footer-column p {
+    .footer-column p,
+    .footer-column a {
 
-      opacity: 0.75;
+      opacity: 0.74;
 
     }
 
     .footer-bottom {
 
-      margin-top: 60px;
-
-      opacity: 0.55;
+      margin-top: 70px;
 
       text-align: center;
+
+      opacity: 0.55;
 
     }
 
@@ -701,6 +893,23 @@
     /* ================= RESPONSIVE ==================== */
     /* ================================================= */
 
+    @media (max-width: 1000px) {
+
+      .story-layout {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+      .story-image img {
+
+        height: 520px;
+
+      }
+
+    }
+
     @media (max-width: 900px) {
 
       .menu {
@@ -709,16 +918,39 @@
 
       }
 
-      section {
-
-        padding:
-          90px 24px;
-
-      }
-
       .hero {
 
         height: 90vh;
+
+      }
+
+      section {
+
+        overflow: hidden;
+
+      }
+
+      .story-section,
+      .difference-section,
+      .founders-section,
+      .testimonials,
+      .values-section {
+
+        padding:
+          100px 24px;
+
+      }
+
+      .final-cta {
+
+        padding:
+          140px 24px;
+
+      }
+
+      .founder img {
+
+        height: 500px;
 
       }
 
@@ -788,9 +1020,10 @@
 
       <p>
 
-        Naturaleza, nostalgia, pequeños pueblos,
-        lluvia suave y caminos que se sienten
-        como escenas de una película.
+        Creamos experiencias inspiradas
+        en bosques antiguos, lluvia suave,
+        pequeños pueblos y la sensación
+        de recorrer un paisaje imposible de olvidar.
 
       </p>
 
@@ -802,76 +1035,61 @@
   <!-- ================= STORY ========================= -->
   <!-- ================================================= -->
 
-  <section>
+  <section class="story-section">
 
-    <div class="glass">
+    <div class="story-layout">
 
-      <h2 class="section-title">
-        Nuestra Historia
-      </h2>
+      <div class="story-image">
 
-      <p class="section-text">
-
-        Dos amigas apasionadas por los viajes,
-        la naturaleza y la magia de las películas
-        de Studio Ghibli estudiaron Administración
-        Turística con el sueño de crear experiencias
-        diferentes a las agencias tradicionales.
-
-        Inspiradas por mundos como Princess Mononoke
-        y Spirited Away, decidieron unir el turismo
-        con la sensibilidad artística, emocional y
-        contemplativa que transmiten esas historias.
-
-        Así nació Orumi Journeys: un espacio donde
-        cada viaje busca sentirse como una aventura
-        viva, íntima y transformadora.
-
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- ================================================= -->
-  <!-- ================= MISSION ======================= -->
-  <!-- ================================================= -->
-
-  <section>
-
-    <div class="grid">
-
-      <div class="card">
-
-        <h3>
-          Misión
-        </h3>
-
-        <p>
-
-          Crear experiencias de viaje inmersivas
-          y humanas que conecten a las personas
-          con la naturaleza, la cultura y la emoción
-          de descubrir el mundo de una forma
-          auténtica y memorable.
-
-        </p>
+        <img
+          src="img/about-story.jpg"
+          alt="Historia Orumi"
+        >
 
       </div>
 
-      <div class="card">
+      <div class="story-content">
 
-        <h3>
-          Visión
-        </h3>
+        <p class="section-mini">
+          Nuestra Historia
+        </p>
 
-        <p>
+        <h2 class="section-title">
+          Viajar como si
+          estuviéramos dentro
+          de un recuerdo.
+        </h2>
 
-          Convertirse en una agencia reconocida
-          por transformar viajes en experiencias
-          cinematográficas y emocionales inspiradas
-          en la contemplación, la aventura y la
-          conexión humana.
+        <p class="section-text">
+
+          Dos amigas apasionadas por los viajes,
+          la naturaleza y la magia de las películas
+          de Studio Ghibli estudiaron Administración
+          Turística con el sueño de crear experiencias
+          diferentes a las agencias tradicionales.
+
+        </p>
+
+        <br>
+
+        <p class="section-text">
+
+          Inspiradas por mundos como
+          Princess Mononoke y Spirited Away,
+          decidieron unir el turismo con la sensibilidad
+          artística, emocional y contemplativa
+          que transmiten esas historias.
+
+        </p>
+
+        <br>
+
+        <p class="section-text">
+
+          Así nació Orumi Journeys:
+          un espacio donde cada viaje busca sentirse
+          como una aventura íntima,
+          cálida y transformadora.
 
         </p>
 
@@ -885,44 +1103,48 @@
   <!-- ================= VALUES ======================== -->
   <!-- ================================================= -->
 
-  <section>
+  <section class="values-section">
+
+    <p class="section-mini">
+      Nuestra esencia
+    </p>
 
     <h2 class="section-title">
-      Valores de la marca
+      Lo que guía cada experiencia
     </h2>
 
-    <div class="grid">
+    <div class="values-grid">
 
-      <div class="card">
-        <h3>Autenticidad</h3>
+      <div class="value">
+        Autenticidad
       </div>
 
-      <div class="card">
-        <h3>Conexión humana</h3>
+      <div class="value">
+        Conexión humana
       </div>
 
-      <div class="card">
-        <h3>Turismo consciente</h3>
+      <div class="value">
+        Turismo consciente
       </div>
 
-      <div class="card">
-        <h3>Creatividad</h3>
+      <div class="value">
+        Creatividad
       </div>
 
-      <div class="card">
-        <h3>Naturaleza</h3>
+      <div class="value">
+        Naturaleza y contemplación
       </div>
 
-      <div class="card">
-        <h3>Sensibilidad cultural</h3>
+      <div class="value">
+        Sensibilidad cultural
       </div>
 
-      <div class="card">
-        <h3>Experiencias personalizadas</h3>
+      <div class="value">
+        Experiencias personalizadas
       </div>
 
-      <div class="card">
-        <h3>Nostalgia y emoción</h3>
+      <div class="value">
+        Nostalgia y emoción
       </div>
 
     </div>
@@ -930,109 +1152,62 @@
   </section>
 
   <!-- ================================================= -->
-  <!-- ================= CONCEPT ======================= -->
+  <!-- ================= IMAGE BREAK =================== -->
   <!-- ================================================= -->
 
-  <section>
-
-    <div class="glass">
-
-      <h2 class="section-title">
-        Concepto de la agencia
-      </h2>
-
-      <p class="section-text">
-
-        Una agencia inspirada en la sensación
-        de recorrer un mundo mágico:
-        bosques antiguos, pequeños pueblos,
-        trenes entre montañas, lluvia suave,
-        comida tradicional y paisajes contemplativos.
-
-      </p>
-
-    </div>
-
-  </section>
+  <section class="image-break"></section>
 
   <!-- ================================================= -->
   <!-- ================= DIFFERENCE ==================== -->
   <!-- ================================================= -->
 
-  <section>
+  <section class="difference-section">
 
-    <h2 class="section-title">
-      Qué hace diferente a Orumi
-    </h2>
+    <div class="difference-content">
 
-    <div class="grid">
+      <p class="section-mini">
+        Qué hace diferente a Orumi
+      </p>
 
-      <div class="card">
-        <p>Experiencias inspiradas en emociones y atmósferas</p>
-      </div>
+      <h2 class="section-title">
+        No diseñamos viajes rápidos.
+        Diseñamos atmósferas.
+      </h2>
 
-      <div class="card">
-        <p>Diseño visual artístico y cinematográfico</p>
-      </div>
+      <p class="section-text">
 
-      <div class="card">
-        <p>Viajes personalizados</p>
-      </div>
+        Nuestra agencia nace desde la emoción,
+        la contemplación y el cariño por descubrir
+        lugares que transmiten algo real.
 
-      <div class="card">
-        <p>Enfoque inmersivo y sensorial</p>
-      </div>
+      </p>
 
-      <div class="card">
-        <p>Turismo lento y consciente</p>
-      </div>
+      <div class="difference-list">
 
-      <div class="card">
-        <p>Destinos seleccionados por su identidad cultural y natural</p>
-      </div>
+        <div class="difference-item">
+          Experiencias inspiradas en emociones y atmósferas
+        </div>
 
-    </div>
+        <div class="difference-item">
+          Diseño visual artístico y cinematográfico
+        </div>
 
-  </section>
+        <div class="difference-item">
+          Viajes personalizados y humanos
+        </div>
 
-  <!-- ================================================= -->
-  <!-- ================= EXPERIENCES =================== -->
-  <!-- ================================================= -->
+        <div class="difference-item">
+          Turismo lento y consciente
+        </div>
 
-  <section>
+        <div class="difference-item">
+          Destinos seleccionados por su identidad cultural y natural
+        </div>
 
-    <h2 class="section-title">
-      Experiencias que ofrecemos
-    </h2>
+        <div class="difference-item">
+          Experiencias inmersivas y sensoriales
+        </div>
 
-    <div class="grid">
-
-      <div class="card">
-        <p>Viajes contemplativos</p>
-      </div>
-
-      <div class="card">
-        <p>Turismo cultural</p>
-      </div>
-
-      <div class="card">
-        <p>Trekking y naturaleza</p>
-      </div>
-
-      <div class="card">
-        <p>Ryokan y onsen tradicionales</p>
-      </div>
-
-      <div class="card">
-        <p>Experiencias gastronómicas locales</p>
-      </div>
-
-      <div class="card">
-        <p>Rutas inspiradas en paisajes de fantasía</p>
-      </div>
-
-      <div class="card">
-        <p>Viajes personalizados y emocionales</p>
       </div>
 
     </div>
@@ -1040,74 +1215,30 @@
   </section>
 
   <!-- ================================================= -->
-  <!-- ================= QUOTE ========================= -->
+  <!-- ================= FOUNDERS ====================== -->
   <!-- ================================================= -->
 
-  <section class="quote">
+  <section class="founders-section">
 
-    <h2>
-      “No vendemos destinos,
-      creamos mundos por descubrir.”
-    </h2>
-
-  </section>
-
-  <!-- ================================================= -->
-  <!-- ================= WHY US ======================= -->
-  <!-- ================================================= -->
-
-  <section>
-
-    <h2 class="section-title">
-      Por qué viajar con nosotras
-    </h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <p>Atención cercana y personalizada</p>
-      </div>
-
-      <div class="card">
-        <p>Diseño de experiencias únicas</p>
-      </div>
-
-      <div class="card">
-        <p>Inspiración artística y narrativa</p>
-      </div>
-
-      <div class="card">
-        <p>Itinerarios humanos y flexibles</p>
-      </div>
-
-      <div class="card">
-        <p>Amor genuino por el viaje y la cultura</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ================================================= -->
-  <!-- ================= TEAM ========================== -->
-  <!-- ================================================= -->
-
-  <section>
-
-    <h2 class="section-title">
+    <p class="section-mini">
       Fundadoras
+    </p>
+
+    <h2 class="founders-title">
+      Creamos los viajes
+      que soñábamos vivir.
     </h2>
 
-    <div class="team">
+    <div class="founders-grid">
 
-      <div class="team-card">
+      <div class="founder">
 
         <img
-          src="img/team1.jpg"
+          src="img/founder1.jpg"
           alt="Fundadora"
         >
 
-        <div class="team-content">
+        <div class="founder-text">
 
           <h3>
             Dirección Creativa
@@ -1115,9 +1246,10 @@
 
           <p>
 
-            Administradora turística apasionada
-            por la narrativa visual, la naturaleza
-            y el diseño de experiencias memorables.
+            Apasionada por la narrativa visual,
+            los bosques antiguos y los viajes
+            que transmiten emociones reales,
+            calma y conexión con la naturaleza.
 
           </p>
 
@@ -1125,14 +1257,14 @@
 
       </div>
 
-      <div class="team-card">
+      <div class="founder">
 
         <img
-          src="img/team2.jpg"
+          src="img/founder2.jpg"
           alt="Fundadora"
         >
 
-        <div class="team-content">
+        <div class="founder-text">
 
           <h3>
             Diseño de Experiencias
@@ -1140,78 +1272,15 @@
 
           <p>
 
-            Especializada en turismo cultural,
-            contemplativo y experiencias
-            inspiradas en emociones y paisajes.
+            Especializada en crear rutas
+            contemplativas inspiradas en cultura,
+            gastronomía local y pequeños momentos
+            que permanecen en la memoria.
 
           </p>
 
         </div>
 
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ================================================= -->
-  <!-- ================= COMMITMENT ==================== -->
-  <!-- ================================================= -->
-
-  <section>
-
-    <div class="glass">
-
-      <h2 class="section-title">
-        Compromiso con el turismo
-      </h2>
-
-      <p class="section-text">
-
-        Promovemos viajes respetuosos con las
-        culturas locales, la naturaleza y el ritmo
-        auténtico de cada destino.
-
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- ================================================= -->
-  <!-- ================= EMOTIONS ====================== -->
-  <!-- ================================================= -->
-
-  <section>
-
-    <h2 class="section-title">
-      Emociones que buscamos transmitir
-    </h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <p>Nostalgia</p>
-      </div>
-
-      <div class="card">
-        <p>Asombro</p>
-      </div>
-
-      <div class="card">
-        <p>Calma</p>
-      </div>
-
-      <div class="card">
-        <p>Exploración</p>
-      </div>
-
-      <div class="card">
-        <p>Conexión con la naturaleza</p>
-      </div>
-
-      <div class="card">
-        <p>Aventura tranquila</p>
       </div>
 
     </div>
@@ -1222,23 +1291,24 @@
   <!-- ================= TESTIMONIALS ================== -->
   <!-- ================================================= -->
 
-  <section>
+  <section class="testimonials">
+
+    <p class="section-mini">
+      Historias de viajeros
+    </p>
 
     <h2 class="section-title">
-      Historias de viajeros
+      Recuerdos que siguen viviendo
+      después del viaje.
     </h2>
 
-    <div class="grid">
+    <div class="testimonial-grid">
 
       <div class="testimonial">
 
-        <p>
-
-          “No sentí que estaba viajando,
-          sentí que estaba viviendo
-          dentro de una película.”
-
-        </p>
+        “No sentí que estaba haciendo turismo.
+        Sentí que estaba viviendo dentro
+        de una película tranquila y hermosa.”
 
         <span>
           — Camila, Chile
@@ -1248,13 +1318,9 @@
 
       <div class="testimonial">
 
-        <p>
-
-          “La calma de los paisajes,
-          los pequeños detalles y la atmósfera
-          hicieron inolvidable el viaje.”
-
-        </p>
+        “Los paisajes, la música,
+        la lluvia y la calma del viaje
+        hicieron que todo se sintiera mágico.”
 
         <span>
           — Martina, Argentina
@@ -1264,12 +1330,8 @@
 
       <div class="testimonial">
 
-        <p>
-
-          “Orumi transformó completamente
-          mi forma de experimentar un destino.”
-
-        </p>
+        “Nunca había conectado emocionalmente
+        con un destino de esta forma.”
 
         <span>
           — Sofía, México
@@ -1282,38 +1344,50 @@
   </section>
 
   <!-- ================================================= -->
-  <!-- ================= CTA =========================== -->
+  <!-- ================= FINAL CTA ===================== -->
   <!-- ================================================= -->
 
-  <section class="cta">
+  <section class="final-cta">
 
-    <h2>
-      Comienza tu propia historia.
-    </h2>
+    <div class="cta-overlay"></div>
 
-    <p>
+    <div class="cta-content">
 
-      Descubre experiencias cinematográficas,
-      contemplativas y emocionales inspiradas
-      en los mundos más mágicos de Asia.
+      <p class="section-mini">
+        Orumi Journeys
+      </p>
 
-    </p>
+      <h2>
+        Cada viaje puede sentirse
+        como una historia inolvidable.
+      </h2>
 
-    <div class="cta-buttons">
+      <p>
 
-      <a
-        href="destinations.html"
-        class="btn btn-primary"
-      >
-        Explorar destinos
-      </a>
+        No buscamos llenar itinerarios.
+        Buscamos crear recuerdos,
+        atmósferas y momentos
+        que permanezcan contigo.
 
-      <a
-        href="book-now.html"
-        class="btn btn-secondary"
-      >
-        Crear mi viaje
-      </a>
+      </p>
+
+      <div class="cta-buttons">
+
+        <a
+          href="destinations.html"
+          class="btn btn-primary"
+        >
+          Explorar destinos
+        </a>
+
+        <a
+          href="book-now.html"
+          class="btn btn-secondary"
+        >
+          Crear mi viaje
+        </a>
+
+      </div>
 
     </div>
 
@@ -1387,11 +1461,11 @@
         </a>
 
         <a href="#">
-          TikTok
+          Pinterest
         </a>
 
         <a href="#">
-          Pinterest
+          TikTok
         </a>
 
       </div>
