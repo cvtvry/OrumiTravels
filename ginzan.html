@@ -14,6 +14,10 @@
 
 <style>
 
+/* ================================================= */
+/* ====================== RESET ==================== */
+/* ================================================= */
+
 *{
   margin:0;
   padding:0;
@@ -25,12 +29,21 @@ html{
 }
 
 body{
+
   font-family:'Nunito', sans-serif;
+
   overflow-x:hidden;
+
   color:white;
+
   background:#1f2527;
+
   position:relative;
 }
+
+/* ================================================= */
+/* ================= MAIN BACKGROUND =============== */
+/* ================================================= */
 
 body::before{
 
@@ -119,6 +132,10 @@ body::after{
   pointer-events:none;
 }
 
+/* ================================================= */
+/* ==================== VIGNETTE =================== */
+/* ================================================= */
+
 .vignette{
 
   position:fixed;
@@ -140,6 +157,327 @@ body::after{
 
   mix-blend-mode:multiply;
 }
+
+/* ================================================= */
+/* ================= MAGIC FIREFLIES =============== */
+/* ================================================= */
+
+.magic-fireflies{
+
+  position:fixed;
+
+  inset:0;
+
+  overflow:hidden;
+
+  pointer-events:none;
+
+  z-index:-6;
+}
+
+.magic-fireflies span{
+
+  position:absolute;
+
+  width:4px;
+  height:4px;
+
+  border-radius:50%;
+
+  background:#F6D28B;
+
+  box-shadow:
+    0 0 10px rgba(246,210,139,0.9),
+    0 0 24px rgba(246,210,139,0.6),
+    0 0 42px rgba(255,255,255,0.4);
+
+  opacity:.5;
+
+  animation:
+    fireflyFloat linear infinite;
+}
+
+.magic-fireflies span:nth-child(1){
+  top:12%;
+  left:18%;
+  animation-duration:18s;
+}
+
+.magic-fireflies span:nth-child(2){
+  top:30%;
+  left:70%;
+  animation-duration:22s;
+}
+
+.magic-fireflies span:nth-child(3){
+  top:60%;
+  left:40%;
+  animation-duration:20s;
+}
+
+.magic-fireflies span:nth-child(4){
+  top:82%;
+  left:78%;
+  animation-duration:26s;
+}
+
+.magic-fireflies span:nth-child(5){
+  top:70%;
+  left:12%;
+  animation-duration:24s;
+}
+
+.magic-fireflies span:nth-child(6){
+  top:20%;
+  left:52%;
+  animation-duration:19s;
+}
+
+.magic-fireflies span:nth-child(7){
+  top:45%;
+  left:84%;
+  animation-duration:23s;
+}
+
+.magic-fireflies span:nth-child(8){
+  top:58%;
+  left:22%;
+  animation-duration:27s;
+}
+
+@keyframes fireflyFloat{
+
+  0%{
+
+    transform:
+      translateY(0px)
+      translateX(0px)
+      scale(1);
+
+    opacity:.15;
+  }
+
+  25%{
+    opacity:.8;
+  }
+
+  50%{
+
+    transform:
+      translateY(-30px)
+      translateX(18px)
+      scale(1.5);
+  }
+
+  75%{
+    opacity:.5;
+  }
+
+  100%{
+
+    transform:
+      translateY(-60px)
+      translateX(-12px)
+      scale(.8);
+
+    opacity:.08;
+  }
+}
+
+/* ================================================= */
+/* ================= FLOATING PETALS =============== */
+/* ================================================= */
+
+.floating-petals{
+
+  position:fixed;
+
+  inset:0;
+
+  overflow:hidden;
+
+  pointer-events:none;
+
+  z-index:-4;
+}
+
+.floating-petals span{
+
+  position:absolute;
+
+  width:18px;
+  height:18px;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255,255,255,0.95),
+      rgba(255,220,230,0.4),
+      transparent 72%
+    );
+
+  border-radius:
+    70% 30% 70% 30%;
+
+  opacity:.22;
+
+  animation:
+    petalsFall linear infinite;
+}
+
+.floating-petals span:nth-child(1){
+  left:8%;
+  animation-duration:18s;
+}
+
+.floating-petals span:nth-child(2){
+  left:22%;
+  animation-duration:22s;
+}
+
+.floating-petals span:nth-child(3){
+  left:38%;
+  animation-duration:20s;
+}
+
+.floating-petals span:nth-child(4){
+  left:52%;
+  animation-duration:24s;
+}
+
+.floating-petals span:nth-child(5){
+  left:66%;
+  animation-duration:19s;
+}
+
+.floating-petals span:nth-child(6){
+  left:82%;
+  animation-duration:25s;
+}
+
+@keyframes petalsFall{
+
+  0%{
+
+    transform:
+      translateY(-120px)
+      rotate(0deg)
+      translateX(0px);
+
+    opacity:0;
+  }
+
+  10%{
+    opacity:.22;
+  }
+
+  50%{
+
+    transform:
+      translateY(50vh)
+      rotate(180deg)
+      translateX(30px);
+  }
+
+  100%{
+
+    transform:
+      translateY(110vh)
+      rotate(360deg)
+      translateX(-20px);
+
+    opacity:0;
+  }
+}
+
+/* ================================================= */
+/* ================= SPIRIT MIST =================== */
+/* ================================================= */
+
+.spirit-mist{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-7;
+
+  overflow:hidden;
+
+  pointer-events:none;
+}
+
+.spirit-mist span{
+
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  border-radius:50%;
+
+  filter:blur(120px);
+
+  opacity:.10;
+
+  mix-blend-mode:screen;
+
+  animation:
+    spiritMove linear infinite alternate;
+}
+
+.spirit-mist span:nth-child(1){
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(170,210,255,0.18),
+      transparent 72%
+    );
+
+  top:-120px;
+  left:-120px;
+
+  animation-duration:28s;
+}
+
+.spirit-mist span:nth-child(2){
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,220,180,0.12),
+      transparent 72%
+    );
+
+  bottom:-180px;
+  right:-120px;
+
+  animation-duration:34s;
+}
+
+@keyframes spiritMove{
+
+  from{
+
+    transform:
+      translateX(0px)
+      translateY(0px)
+      scale(1);
+  }
+
+  to{
+
+    transform:
+      translateX(40px)
+      translateY(-20px)
+      scale(1.08);
+  }
+}
+
+/* ================================================= */
+/* ==================== HEADER ===================== */
+/* ================================================= */
 
 .header{
 
@@ -179,6 +517,10 @@ body::after{
 
   letter-spacing:1px;
 }
+
+/* ================================================= */
+/* ====================== HERO ===================== */
+/* ================================================= */
 
 .hero{
 
@@ -235,6 +577,62 @@ body::after{
       rgba(18,24,28,0.36) 54%,
       transparent 84%
     );
+}
+
+.lantern-glow{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:2;
+
+  pointer-events:none;
+}
+
+.lantern-glow::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  top:18%;
+  right:8%;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,210,140,0.16),
+      rgba(255,180,90,0.08),
+      transparent 72%
+    );
+
+  filter:blur(40px);
+
+  animation:
+    lanternPulse 8s ease-in-out infinite;
+}
+
+@keyframes lanternPulse{
+
+  from{
+
+    transform:scale(1);
+
+    opacity:.4;
+  }
+
+  to{
+
+    transform:scale(1.12);
+
+    opacity:.75;
+  }
 }
 
 .fog{
@@ -310,6 +708,34 @@ body::after{
 
   text-shadow:
     0 12px 40px rgba(0,0,0,0.5);
+
+  animation:
+    titleFade 2.4s ease;
+}
+
+@keyframes titleFade{
+
+  from{
+
+    opacity:0;
+
+    transform:
+      translateY(30px)
+      scale(.96);
+
+    filter:blur(8px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+      translateY(0px)
+      scale(1);
+
+    filter:blur(0px);
+  }
 }
 
 .hero p{
@@ -324,6 +750,10 @@ body::after{
 
   margin-bottom:42px;
 }
+
+/* ================================================= */
+/* ===================== BUTTON ==================== */
+/* ================================================= */
 
 .btn{
 
@@ -355,6 +785,44 @@ body::after{
   text-decoration:none;
 
   transition:.5s;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.btn::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-2px;
+
+  border-radius:50px;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.24),
+      transparent
+    );
+
+  transform:
+    translateX(-120%);
+
+  animation:
+    buttonShine 5s linear infinite;
+}
+
+@keyframes buttonShine{
+
+  to{
+
+    transform:
+      translateX(120%);
+  }
 }
 
 .btn:hover{
@@ -365,6 +833,10 @@ body::after{
   background:
     rgba(255,255,255,0.14);
 }
+
+/* ================================================= */
+/* ==================== SECTION ==================== */
+/* ================================================= */
 
 .section{
 
@@ -400,70 +872,9 @@ body::after{
   font-size:1.05rem;
 }
 
-.gallery-intro{
-
-  text-align:center;
-
-  max-width:900px;
-
-  margin:
-    0 auto 70px auto;
-}
-
-.gallery-label{
-
-  display:block;
-
-  margin-bottom:22px;
-
-  letter-spacing:6px;
-
-  font-size:.82rem;
-
-  color:#D6B17B;
-
-  opacity:.9;
-}
-
-.gallery-intro h2{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:5rem;
-
-  font-weight:300;
-
-  margin-bottom:24px;
-
-  color:#F4F1EA;
-}
-
-.gallery-line{
-
-  width:120px;
-
-  height:1px;
-
-  margin:
-    0 auto 34px auto;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(214,177,123,0.9),
-      transparent
-    );
-}
-
-.gallery-intro p{
-
-  font-size:1.08rem;
-
-  line-height:2;
-
-  color:rgba(255,255,255,0.70);
-}
+/* ================================================= */
+/* ==================== GALLERY ==================== */
+/* ================================================= */
 
 .gallery{
 
@@ -487,8 +898,19 @@ body::after{
 
   transition:1s;
 
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.32);
+  animation:
+    gentleFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes gentleFloat{
+
+  from{
+    transform:translateY(0px);
+  }
+
+  to{
+    transform:translateY(-8px);
+  }
 }
 
 .gallery img:hover{
@@ -498,270 +920,6 @@ body::after{
     scale(1.02);
 }
 
-.activities{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
-
-  gap:34px;
-}
-
-.activity-card{
-
-  overflow:hidden;
-
-  border-radius:32px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.03)
-    );
-
-  border:
-    1px solid rgba(255,255,255,0.06);
-
-  backdrop-filter:blur(14px);
-
-  transition:.7s;
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.32);
-}
-
-.activity-card:hover{
-
-  transform:
-    translateY(-10px);
-}
-
-.activity-card img{
-
-  width:100%;
-  height:260px;
-
-  object-fit:cover;
-}
-
-.activity-content{
-
-  padding:34px;
-}
-
-.activity-content h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:2rem;
-
-  margin-bottom:18px;
-}
-
-.activity-content p{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.78);
-}
-
-.itinerary-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(340px,1fr));
-
-  gap:38px;
-
-  margin-top:70px;
-}
-
-.experience-card{
-
-  overflow:hidden;
-
-  border-radius:34px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.06),
-      rgba(255,255,255,0.02)
-    );
-
-  border:
-    1px solid rgba(255,255,255,0.08);
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.34);
-
-  backdrop-filter:blur(10px);
-
-  transition:.7s;
-}
-
-.experience-card:hover{
-
-  transform:
-    translateY(-10px)
-    scale(1.02);
-}
-
-.experience-card img{
-
-  width:100%;
-
-  height:260px;
-
-  object-fit:cover;
-}
-
-.experience-content{
-
-  padding:34px;
-}
-
-.experience-content h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:2.2rem;
-
-  margin-bottom:24px;
-
-  line-height:1.1;
-}
-
-.experience-content ul{
-
-  padding-left:18px;
-}
-
-.experience-content li{
-
-  margin-bottom:14px;
-
-  color:rgba(255,255,255,0.82);
-
-  line-height:1.7;
-}
-
-.package-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(340px,1fr));
-
-  gap:40px;
-
-  margin-top:60px;
-}
-
-.package-card{
-
-  overflow:hidden;
-
-  border-radius:38px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.03)
-    );
-
-  border:
-    1px solid rgba(255,255,255,0.06);
-
-  backdrop-filter:blur(14px);
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.34);
-
-  transition:.7s;
-}
-
-.package-card:hover{
-
-  transform:
-    translateY(-10px);
-}
-
-.package-card img{
-
-  width:100%;
-
-  height:420px;
-
-  object-fit:cover;
-}
-
-.package-content{
-
-  padding:42px;
-}
-
-.package-content h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:3rem;
-
-  margin-bottom:20px;
-
-  line-height:1;
-}
-
-.package-content h4{
-
-  margin-top:34px;
-
-  margin-bottom:18px;
-
-  color:#D6B17B;
-
-  font-size:1.1rem;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
-}
-
-.package-content p{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.82);
-
-  margin-bottom:18px;
-}
-
-.package-content ul{
-
-  padding-left:18px;
-}
-
-.package-content li{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.78);
-}
-
-.price{
-
-  font-size:2.5rem;
-
-  color:#D6B17B;
-
-  margin:
-    38px 0 20px;
-}
-
 @media(max-width:768px){
 
   .hero h1{
@@ -769,10 +927,6 @@ body::after{
   }
 
   .section-title{
-    font-size:3rem;
-  }
-
-  .gallery-intro h2{
     font-size:3rem;
   }
 
@@ -789,6 +943,43 @@ body::after{
 
 <div class="vignette"></div>
 
+<!-- MAGIC FIREFLIES -->
+
+<div class="magic-fireflies">
+
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+
+</div>
+
+<!-- FLOATING PETALS -->
+
+<div class="floating-petals">
+
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+
+</div>
+
+<!-- SPIRIT MIST -->
+
+<div class="spirit-mist">
+
+  <span></span>
+  <span></span>
+
+</div>
+
 <header class="header">
 
   <a href="index.html" class="logo">
@@ -798,6 +989,8 @@ body::after{
 </header>
 
 <section class="hero">
+
+  <div class="lantern-glow"></div>
 
   <div class="hero-image">
     <img src="imgginzan/fullscreen.jpg" alt="">
@@ -822,362 +1015,6 @@ body::after{
     <a href="#itinerary" class="btn">
       Explorar itinerario →
     </a>
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <h2 class="section-title">
-    Invierno cinematográfico
-  </h2>
-
-  <p class="section-text">
-    Ginzan Onsen mezcla arquitectura tradicional japonesa, calles iluminadas por faroles y aguas termales rodeadas de montañas nevadas.
-  </p>
-
-</section>
-
-<section class="section">
-
-<div class="gallery-intro">
-
-  <span class="gallery-label">
-    VISUAL JOURNEY
-  </span>
-
-  <h2>
-    Galería
-  </h2>
-
-  <div class="gallery-line"></div>
-
-  <p>
-
-    Calles silenciosas cubiertas de nieve, puentes antiguos y ryokans iluminados por la noche crean una atmósfera mágica inspirada en El Viaje de Chihiro.
-
-  </p>
-
-</div>
-
-  <div class="gallery">
-
-    <img src="imgginzan/1.jpg" alt="">
-    <img src="imgginzan/2.jpg" alt="">
-    <img src="imgginzan/3.jpg" alt="">
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <h2 class="section-title">
-    Experiencias
-  </h2>
-
-  <div class="activities">
-
-    <div class="activity-card">
-
-      <img src="imgginzan/onsen.jpg" alt="">
-
-      <div class="activity-content">
-
-        <h3>
-          Onsen bajo la nieve
-        </h3>
-
-        <p>
-          Relájate en aguas termales tradicionales rodeadas por paisajes nevados y arquitectura histórica japonesa.
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="activity-card">
-
-      <img src="imgginzan/night.jpg" alt="">
-
-      <div class="activity-content">
-
-        <h3>
-          Paseos nocturnos
-        </h3>
-
-        <p>
-          Camina entre faroles cálidos y puentes de madera mientras la nieve cae lentamente sobre el pueblo.
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="activity-card">
-
-      <img src="imgginzan/food.jpg" alt="">
-
-      <div class="activity-content">
-
-        <h3>
-          Cultura tradicional
-        </h3>
-
-        <p>
-          Disfruta cenas kaiseki, ryokans históricos y una atmósfera tranquila inspirada en el Japón antiguo.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section" id="itinerary">
-
-  <h2 class="section-title">
-    Experiencias por Día
-  </h2>
-
-  <p class="section-text">
-
-    Un viaje lento entre nieve, aguas termales y noches iluminadas por faroles tradicionales japoneses.
-
-  </p>
-
-  <div class="itinerary-grid">
-
-    <div class="experience-card">
-
-      <img src="imgginzan/day1.jpg" alt="">
-
-      <div class="experience-content">
-
-        <h3>
-          Día 1 — Llegada a Ginzan
-        </h3>
-
-        <ul>
-
-          <li>Viaje hacia Yamagata</li>
-
-          <li>Traslado al pueblo termal</li>
-
-          <li>Check-in en ryokan tradicional</li>
-
-          <li>Paseo inicial por las calles nevadas</li>
-
-          <li>Cena japonesa kaiseki</li>
-
-          <li>Onsen nocturno</li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-    <div class="experience-card">
-
-      <img src="imgginzan/day2.jpg" alt="">
-
-      <div class="experience-content">
-
-        <h3>
-          Día 2 — Calles de Chihiro
-        </h3>
-
-        <ul>
-
-          <li>Fotografía del pueblo al amanecer</li>
-
-          <li>Exploración de puentes y callejones históricos</li>
-
-          <li>Visita a cafeterías tradicionales</li>
-
-          <li>Tiempo libre en onsen privado</li>
-
-          <li>Caminata nocturna bajo la nieve</li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-    <div class="experience-card">
-
-      <img src="imgginzan/day3.jpg" alt="">
-
-      <div class="experience-content">
-
-        <h3>
-          Día 3 — Montañas y tranquilidad
-        </h3>
-
-        <ul>
-
-          <li>Excursión panorámica invernal</li>
-
-          <li>Visita a templos y miradores</li>
-
-          <li>Degustación de dulces japoneses</li>
-
-          <li>Tiempo de contemplación y fotografía</li>
-
-          <li>Cena de despedida</li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-    <div class="experience-card">
-
-      <img src="imgginzan/day4.jpg" alt="">
-
-      <div class="experience-content">
-
-        <h3>
-          Día 4 — Regreso
-        </h3>
-
-        <ul>
-
-          <li>Desayuno tradicional</li>
-
-          <li>Paseo final junto al río</li>
-
-          <li>Compras artesanales</li>
-
-          <li>Regreso hacia Tokio</li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section" id="packages">
-
-  <h2 class="section-title">
-    Vive Ginzan
-  </h2>
-
-  <p class="section-text">
-
-    Descubre uno de los pueblos termales más mágicos de Japón en una experiencia inspirada en las atmósferas de Studio Ghibli.
-
-  </p>
-
-  <div class="package-grid">
-
-    <div class="package-card">
-
-      <img src="imgginzan/package.jpg" alt="">
-
-      <div class="package-content">
-
-        <h3>
-          Ginzan Onsen — Escape Invernal Ghibli
-        </h3>
-
-        <p>
-
-          4 Días / 3 Noches
-
-        </p>
-
-        <p>
-
-          Una experiencia inmersiva entre ryokans históricos, nieve constante y calles iluminadas que evocan el mundo de El Viaje de Chihiro.
-
-        </p>
-
-        <h4>
-          Qué incluye
-        </h4>
-
-        <ul>
-
-          <li>3 noches en ryokan tradicional</li>
-
-          <li>Desayunos y cenas japonesas</li>
-
-          <li>Acceso a onsen</li>
-
-          <li>Transporte local</li>
-
-          <li>Experiencias culturales</li>
-
-          <li>Mapa ilustrado del pueblo</li>
-
-        </ul>
-
-        <h4>
-          Experiencia
-        </h4>
-
-        <ul>
-
-          <li>Ambientes acogedores y nevados</li>
-
-          <li>Slow travel japonés</li>
-
-          <li>Fotografía cinematográfica</li>
-
-          <li>Inspiración Studio Ghibli</li>
-
-          <li>Cultura tradicional japonesa</li>
-
-        </ul>
-
-        <h4>
-          Información práctica
-        </h4>
-
-        <ul>
-
-          <li>Mejor temporada: invierno</li>
-
-          <li>Ropa térmica recomendada</li>
-
-          <li>Nivel físico: bajo</li>
-
-          <li>Ideal para fotografía y relajación</li>
-
-        </ul>
-
-        <div class="price">
-
-          USD 980 por persona
-
-        </div>
-
-        <p>
-
-          No incluye vuelos internacionales.
-
-        </p>
-
-        <a href="#" class="btn">
-
-          Reservar experiencia →
-
-        </a>
-
-      </div>
-
-    </div>
 
   </div>
 
