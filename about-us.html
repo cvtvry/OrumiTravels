@@ -1,1 +1,1412 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Sobre Nosotras | Orumi Journeys
+  </title>
+
+  <!-- ================= FUENTES ================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Nunito:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* ================================================= */
+    /* ================= RESET ========================= */
+    /* ================================================= */
+
+    * {
+
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+    body {
+
+      background:
+        #151b18;
+
+      color: white;
+
+      font-family:
+        'Nunito',
+        sans-serif;
+
+      overflow-x: hidden;
+
+    }
+
+    a {
+
+      text-decoration: none;
+      color: inherit;
+
+    }
+
+    /* ================================================= */
+    /* ================= BACKGROUND ==================== */
+    /* ================================================= */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      background-image:
+        radial-gradient(
+          rgba(255,255,255,0.03) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        4px 4px;
+
+      opacity: 0.25;
+
+      pointer-events: none;
+
+      z-index: -1;
+
+    }
+
+    /* ================================================= */
+    /* ================= HEADER ======================== */
+    /* ================================================= */
+
+    .header {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      padding:
+        24px 7vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      z-index: 1000;
+
+      background:
+        rgba(12,16,14,0.35);
+
+      backdrop-filter: blur(14px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.05);
+
+    }
+
+    .logo {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size: 2rem;
+
+    }
+
+    .menu {
+
+      display: flex;
+      gap: 34px;
+
+    }
+
+    .menu a {
+
+      opacity: 0.7;
+
+      transition:
+        opacity 0.4s ease;
+
+    }
+
+    .menu a:hover,
+    .menu a.active {
+
+      opacity: 1;
+
+    }
+
+    /* ================================================= */
+    /* ================= HERO ========================== */
+    /* ================================================= */
+
+    .hero {
+
+      position: relative;
+
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      overflow: hidden;
+
+      background-image:
+        url("img/yakushima.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(8,12,10,0.45),
+          rgba(8,12,10,0.88)
+        );
+
+    }
+
+    .hero-content {
+
+      position: relative;
+      z-index: 2;
+
+      max-width: 900px;
+
+      padding:
+        0 20px;
+
+      animation:
+        fadeUp 1.4s ease;
+
+    }
+
+    .hero-mini {
+
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+
+      opacity: 0.7;
+
+      margin-bottom: 20px;
+
+      font-size: 0.85rem;
+
+    }
+
+    .hero h1 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(3rem, 8vw, 6rem);
+
+      line-height: 1.05;
+
+      margin-bottom: 30px;
+
+    }
+
+    .hero p {
+
+      font-size: 1.15rem;
+
+      line-height: 1.9;
+
+      opacity: 0.85;
+
+    }
+
+    /* ================================================= */
+    /* ================= SECTIONS ====================== */
+    /* ================================================= */
+
+    section {
+
+      padding:
+        110px 7vw;
+
+      position: relative;
+
+    }
+
+    .section-title {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(2.5rem,5vw,4.5rem);
+
+      margin-bottom: 25px;
+
+    }
+
+    .section-text {
+
+      max-width: 900px;
+
+      line-height: 2;
+
+      opacity: 0.85;
+
+      font-size: 1.05rem;
+
+    }
+
+    /* ================================================= */
+    /* ================= GLASS CARD ==================== */
+    /* ================================================= */
+
+    .glass {
+
+      padding:
+        40px;
+
+      border-radius: 30px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      backdrop-filter: blur(14px);
+
+      border:
+        1px solid rgba(255,255,255,0.06);
+
+    }
+
+    /* ================================================= */
+    /* ================= VALUES ======================== */
+    /* ================================================= */
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+      gap: 24px;
+
+      margin-top: 50px;
+
+    }
+
+    .card {
+
+      padding:
+        30px;
+
+      border-radius: 24px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid rgba(255,255,255,0.05);
+
+      transition:
+        transform 0.6s ease,
+        background 0.6s ease;
+
+    }
+
+    .card:hover {
+
+      transform:
+        translateY(-8px);
+
+      background:
+        rgba(255,255,255,0.08);
+
+    }
+
+    .card h3 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size: 2rem;
+
+      margin-bottom: 15px;
+
+    }
+
+    .card p {
+
+      opacity: 0.8;
+
+      line-height: 1.8;
+
+    }
+
+    /* ================================================= */
+    /* ================= QUOTE ========================= */
+    /* ================================================= */
+
+    .quote {
+
+      text-align: center;
+
+      padding:
+        140px 20px;
+
+    }
+
+    .quote h2 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(2.8rem,6vw,5rem);
+
+      line-height: 1.2;
+
+      max-width: 1000px;
+
+      margin: auto;
+
+    }
+
+    /* ================================================= */
+    /* ================= TEAM ========================== */
+    /* ================================================= */
+
+    .team {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit,minmax(320px,1fr));
+
+      gap: 40px;
+
+      margin-top: 50px;
+
+    }
+
+    .team-card {
+
+      overflow: hidden;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid rgba(255,255,255,0.06);
+
+    }
+
+    .team-card img {
+
+      width: 100%;
+      height: 420px;
+
+      object-fit: cover;
+
+    }
+
+    .team-content {
+
+      padding:
+        30px;
+
+    }
+
+    .team-content h3 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size: 2rem;
+
+      margin-bottom: 15px;
+
+    }
+
+    .team-content p {
+
+      line-height: 1.8;
+
+      opacity: 0.82;
+
+    }
+
+    /* ================================================= */
+    /* ================= TESTIMONIALS ================== */
+    /* ================================================= */
+
+    .testimonial {
+
+      padding:
+        35px;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid rgba(255,255,255,0.05);
+
+    }
+
+    .testimonial p {
+
+      line-height: 2;
+
+      opacity: 0.82;
+
+      margin-bottom: 20px;
+
+    }
+
+    .testimonial span {
+
+      opacity: 0.65;
+
+    }
+
+    /* ================================================= */
+    /* ================= CTA =========================== */
+    /* ================================================= */
+
+    .cta {
+
+      text-align: center;
+
+      padding:
+        160px 20px;
+
+    }
+
+    .cta h2 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(3rem,6vw,5rem);
+
+      margin-bottom: 25px;
+
+    }
+
+    .cta p {
+
+      max-width: 700px;
+
+      margin: auto;
+
+      line-height: 1.9;
+
+      opacity: 0.8;
+
+      margin-bottom: 40px;
+
+    }
+
+    .cta-buttons {
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 20px;
+
+    }
+
+    .btn {
+
+      padding:
+        18px 34px;
+
+      border-radius: 999px;
+
+      transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+
+    }
+
+    .btn:hover {
+
+      transform:
+        translateY(-3px);
+
+    }
+
+    .btn-primary {
+
+      background:
+        white;
+
+      color:
+        #151b18;
+
+    }
+
+    .btn-secondary {
+
+      background:
+        rgba(255,255,255,0.08);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+    }
+
+    /* ================================================= */
+    /* ================= FOOTER ======================== */
+    /* ================================================= */
+
+    footer {
+
+      padding:
+        80px 7vw;
+
+      border-top:
+        1px solid rgba(255,255,255,0.05);
+
+      background:
+        #101412;
+
+    }
+
+    .footer-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+      gap: 40px;
+
+    }
+
+    .footer-title {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size: 2rem;
+
+      margin-bottom: 18px;
+
+    }
+
+    .footer-column {
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 14px;
+
+    }
+
+    .footer-column a,
+    .footer-column p {
+
+      opacity: 0.75;
+
+    }
+
+    .footer-bottom {
+
+      margin-top: 60px;
+
+      opacity: 0.55;
+
+      text-align: center;
+
+    }
+
+    /* ================================================= */
+    /* ================= ANIMATIONS ==================== */
+    /* ================================================= */
+
+    @keyframes fadeUp {
+
+      from {
+
+        opacity: 0;
+        transform:
+          translateY(30px);
+
+      }
+
+      to {
+
+        opacity: 1;
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+    /* ================================================= */
+    /* ================= RESPONSIVE ==================== */
+    /* ================================================= */
+
+    @media (max-width: 900px) {
+
+      .menu {
+
+        display: none;
+
+      }
+
+      section {
+
+        padding:
+          90px 24px;
+
+      }
+
+      .hero {
+
+        height: 90vh;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ================================================= -->
+  <!-- ================= HEADER ======================== -->
+  <!-- ================================================= -->
+
+  <header class="header">
+
+    <div class="logo">
+      Orumi Journeys
+    </div>
+
+    <nav class="menu">
+
+      <a href="index.html">
+        Inicio
+      </a>
+
+      <a href="destinations.html">
+        Destinos
+      </a>
+
+      <a href="book-now.html">
+        Reserva
+      </a>
+
+      <a
+        href="about-us.html"
+        class="active"
+      >
+        Sobre Nosotras
+      </a>
+
+      <a href="contacto.html">
+        Contacto
+      </a>
+
+    </nav>
+
+  </header>
+
+  <!-- ================================================= -->
+  <!-- ================= HERO ========================== -->
+  <!-- ================================================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <p class="hero-mini">
+        Orumi Journeys
+      </p>
+
+      <h1>
+        Viajes que parecen
+        recuerdos de otro mundo.
+      </h1>
+
+      <p>
+
+        Naturaleza, nostalgia, pequeños pueblos,
+        lluvia suave y caminos que se sienten
+        como escenas de una película.
+
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= STORY ========================= -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <div class="glass">
+
+      <h2 class="section-title">
+        Nuestra Historia
+      </h2>
+
+      <p class="section-text">
+
+        Dos amigas apasionadas por los viajes,
+        la naturaleza y la magia de las películas
+        de Studio Ghibli estudiaron Administración
+        Turística con el sueño de crear experiencias
+        diferentes a las agencias tradicionales.
+
+        Inspiradas por mundos como Princess Mononoke
+        y Spirited Away, decidieron unir el turismo
+        con la sensibilidad artística, emocional y
+        contemplativa que transmiten esas historias.
+
+        Así nació Orumi Journeys: un espacio donde
+        cada viaje busca sentirse como una aventura
+        viva, íntima y transformadora.
+
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= MISSION ======================= -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Misión
+        </h3>
+
+        <p>
+
+          Crear experiencias de viaje inmersivas
+          y humanas que conecten a las personas
+          con la naturaleza, la cultura y la emoción
+          de descubrir el mundo de una forma
+          auténtica y memorable.
+
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Visión
+        </h3>
+
+        <p>
+
+          Convertirse en una agencia reconocida
+          por transformar viajes en experiencias
+          cinematográficas y emocionales inspiradas
+          en la contemplación, la aventura y la
+          conexión humana.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= VALUES ======================== -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <h2 class="section-title">
+      Valores de la marca
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Autenticidad</h3>
+      </div>
+
+      <div class="card">
+        <h3>Conexión humana</h3>
+      </div>
+
+      <div class="card">
+        <h3>Turismo consciente</h3>
+      </div>
+
+      <div class="card">
+        <h3>Creatividad</h3>
+      </div>
+
+      <div class="card">
+        <h3>Naturaleza</h3>
+      </div>
+
+      <div class="card">
+        <h3>Sensibilidad cultural</h3>
+      </div>
+
+      <div class="card">
+        <h3>Experiencias personalizadas</h3>
+      </div>
+
+      <div class="card">
+        <h3>Nostalgia y emoción</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= CONCEPT ======================= -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <div class="glass">
+
+      <h2 class="section-title">
+        Concepto de la agencia
+      </h2>
+
+      <p class="section-text">
+
+        Una agencia inspirada en la sensación
+        de recorrer un mundo mágico:
+        bosques antiguos, pequeños pueblos,
+        trenes entre montañas, lluvia suave,
+        comida tradicional y paisajes contemplativos.
+
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= DIFFERENCE ==================== -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <h2 class="section-title">
+      Qué hace diferente a Orumi
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <p>Experiencias inspiradas en emociones y atmósferas</p>
+      </div>
+
+      <div class="card">
+        <p>Diseño visual artístico y cinematográfico</p>
+      </div>
+
+      <div class="card">
+        <p>Viajes personalizados</p>
+      </div>
+
+      <div class="card">
+        <p>Enfoque inmersivo y sensorial</p>
+      </div>
+
+      <div class="card">
+        <p>Turismo lento y consciente</p>
+      </div>
+
+      <div class="card">
+        <p>Destinos seleccionados por su identidad cultural y natural</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= EXPERIENCES =================== -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <h2 class="section-title">
+      Experiencias que ofrecemos
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <p>Viajes contemplativos</p>
+      </div>
+
+      <div class="card">
+        <p>Turismo cultural</p>
+      </div>
+
+      <div class="card">
+        <p>Trekking y naturaleza</p>
+      </div>
+
+      <div class="card">
+        <p>Ryokan y onsen tradicionales</p>
+      </div>
+
+      <div class="card">
+        <p>Experiencias gastronómicas locales</p>
+      </div>
+
+      <div class="card">
+        <p>Rutas inspiradas en paisajes de fantasía</p>
+      </div>
+
+      <div class="card">
+        <p>Viajes personalizados y emocionales</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= QUOTE ========================= -->
+  <!-- ================================================= -->
+
+  <section class="quote">
+
+    <h2>
+      “No vendemos destinos,
+      creamos mundos por descubrir.”
+    </h2>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= WHY US ======================= -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <h2 class="section-title">
+      Por qué viajar con nosotras
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <p>Atención cercana y personalizada</p>
+      </div>
+
+      <div class="card">
+        <p>Diseño de experiencias únicas</p>
+      </div>
+
+      <div class="card">
+        <p>Inspiración artística y narrativa</p>
+      </div>
+
+      <div class="card">
+        <p>Itinerarios humanos y flexibles</p>
+      </div>
+
+      <div class="card">
+        <p>Amor genuino por el viaje y la cultura</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= TEAM ========================== -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <h2 class="section-title">
+      Fundadoras
+    </h2>
+
+    <div class="team">
+
+      <div class="team-card">
+
+        <img
+          src="img/team1.jpg"
+          alt="Fundadora"
+        >
+
+        <div class="team-content">
+
+          <h3>
+            Dirección Creativa
+          </h3>
+
+          <p>
+
+            Administradora turística apasionada
+            por la narrativa visual, la naturaleza
+            y el diseño de experiencias memorables.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="team-card">
+
+        <img
+          src="img/team2.jpg"
+          alt="Fundadora"
+        >
+
+        <div class="team-content">
+
+          <h3>
+            Diseño de Experiencias
+          </h3>
+
+          <p>
+
+            Especializada en turismo cultural,
+            contemplativo y experiencias
+            inspiradas en emociones y paisajes.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= COMMITMENT ==================== -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <div class="glass">
+
+      <h2 class="section-title">
+        Compromiso con el turismo
+      </h2>
+
+      <p class="section-text">
+
+        Promovemos viajes respetuosos con las
+        culturas locales, la naturaleza y el ritmo
+        auténtico de cada destino.
+
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= EMOTIONS ====================== -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <h2 class="section-title">
+      Emociones que buscamos transmitir
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <p>Nostalgia</p>
+      </div>
+
+      <div class="card">
+        <p>Asombro</p>
+      </div>
+
+      <div class="card">
+        <p>Calma</p>
+      </div>
+
+      <div class="card">
+        <p>Exploración</p>
+      </div>
+
+      <div class="card">
+        <p>Conexión con la naturaleza</p>
+      </div>
+
+      <div class="card">
+        <p>Aventura tranquila</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= TESTIMONIALS ================== -->
+  <!-- ================================================= -->
+
+  <section>
+
+    <h2 class="section-title">
+      Historias de viajeros
+    </h2>
+
+    <div class="grid">
+
+      <div class="testimonial">
+
+        <p>
+
+          “No sentí que estaba viajando,
+          sentí que estaba viviendo
+          dentro de una película.”
+
+        </p>
+
+        <span>
+          — Camila, Chile
+        </span>
+
+      </div>
+
+      <div class="testimonial">
+
+        <p>
+
+          “La calma de los paisajes,
+          los pequeños detalles y la atmósfera
+          hicieron inolvidable el viaje.”
+
+        </p>
+
+        <span>
+          — Martina, Argentina
+        </span>
+
+      </div>
+
+      <div class="testimonial">
+
+        <p>
+
+          “Orumi transformó completamente
+          mi forma de experimentar un destino.”
+
+        </p>
+
+        <span>
+          — Sofía, México
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= CTA =========================== -->
+  <!-- ================================================= -->
+
+  <section class="cta">
+
+    <h2>
+      Comienza tu propia historia.
+    </h2>
+
+    <p>
+
+      Descubre experiencias cinematográficas,
+      contemplativas y emocionales inspiradas
+      en los mundos más mágicos de Asia.
+
+    </p>
+
+    <div class="cta-buttons">
+
+      <a
+        href="destinations.html"
+        class="btn btn-primary"
+      >
+        Explorar destinos
+      </a>
+
+      <a
+        href="book-now.html"
+        class="btn btn-secondary"
+      >
+        Crear mi viaje
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ================================================= -->
+  <!-- ================= FOOTER ======================== -->
+  <!-- ================================================= -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-column">
+
+        <div class="footer-title">
+          Orumi Journeys
+        </div>
+
+        <p>
+          Viajes inspirados en emociones,
+          naturaleza y mundos contemplativos.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <div class="footer-title">
+          Navegación
+        </div>
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="destinations.html">
+          Destinos
+        </a>
+
+        <a href="book-now.html">
+          Reserva
+        </a>
+
+      </div>
+
+      <div class="footer-column">
+
+        <div class="footer-title">
+          Contacto
+        </div>
+
+        <p>
+          contacto@orumijourneys.com
+        </p>
+
+        <p>
+          WhatsApp: +56 9 0000 0000
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <div class="footer-title">
+          Redes sociales
+        </div>
+
+        <a href="#">
+          Instagram
+        </a>
+
+        <a href="#">
+          TikTok
+        </a>
+
+        <a href="#">
+          Pinterest
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      “Cada viaje debería sentirse
+      como un recuerdo imposible de olvidar.”
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
