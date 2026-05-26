@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,12 +7,14 @@
 
 <title>Jeju | Orumi Journeys</title>
 
-<!-- ================= GOOGLE FONTS ================= -->
+<!-- ================================================= -->
+<!-- ===================== FUENTES =================== -->
+<!-- ================================================= -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -22,187 +23,333 @@
 /* ================================================= */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
 
-font-family:'Nunito',sans-serif;
+  font-family:'Nunito', sans-serif;
 
-background:#0f1513;
+  overflow-x:hidden;
 
-color:white;
+  color:white;
 
-overflow-x:hidden;
+  background:#111816;
 
-position:relative;
+  position:relative;
 }
 
 /* ================================================= */
-/* ================= BACKGROUND ==================== */
+/* ================= MAIN BACKGROUND =============== */
 /* ================================================= */
 
 body::before{
 
-content:"";
+  content:"";
 
-position:fixed;
+  position:fixed;
 
-inset:0;
+  inset:0;
 
-z-index:-10;
+  z-index:-10;
 
-background:
+  background:
 
-radial-gradient(
-circle at 20% 20%,
-rgba(90,180,160,.18),
-transparent 25%
-),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(130,190,170,0.18),
+      transparent 26%
+    ),
 
-radial-gradient(
-circle at 80% 30%,
-rgba(120,200,170,.12),
-transparent 30%
-),
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(85,150,135,0.14),
+      transparent 30%
+    ),
 
-radial-gradient(
-circle at 50% 90%,
-rgba(255,255,255,.05),
-transparent 35%
-),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(255,255,255,0.05),
+      transparent 35%
+    ),
 
-linear-gradient(
-180deg,
-#3d5148 0%,
-#26352f 32%,
-#18231f 64%,
-#0a0f0d 100%
-);
+    linear-gradient(
+      180deg,
+      #4E5E58 0%,
+      #38443F 28%,
+      #25302C 56%,
+      #151D1A 100%
+    );
 
-background-attachment:fixed;
+  background-attachment:fixed;
 }
+  
+/* ================================================= */
+/* ================= FABRIC TEXTURE ================ */
+/* ================================================= */
 
 body::after{
 
-content:"";
+  content:"";
 
-position:fixed;
+  position:fixed;
 
-inset:0;
+  inset:0;
 
-z-index:-9;
+  z-index:-9;
 
-opacity:.12;
+  opacity:.12;
 
-background-image:
-url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+  background-image:
+    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
 
-pointer-events:none;
+  mix-blend-mode:soft-light;
+
+  pointer-events:none;
+}
+  
+/* ================================================= */
+/* =================== ATMOSPHERE ================== */
+/* ================================================= */
+
+.atmosphere{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-8;
+
+  overflow:hidden;
+
+  pointer-events:none;
 }
 
 /* ================================================= */
-/* ===================== HEADER ==================== */
+/* ===================== FOG ======================= */
+/* ================================================= */
+
+.fog-layer{
+
+  position:absolute;
+
+  inset:-10%;
+
+  background:
+
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255,255,255,0.06),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(255,255,255,0.04),
+      transparent 32%
+    ),
+
+    radial-gradient(
+      circle at 50% 70%,
+      rgba(255,255,255,0.03),
+      transparent 36%
+    );
+
+  filter:blur(120px);
+
+  animation:
+    fogMove 30s ease-in-out infinite alternate;
+}
+
+@keyframes fogMove{
+
+  from{
+    transform:
+      translateX(0px)
+      translateY(0px);
+  }
+
+  to{
+    transform:
+      translateX(-30px)
+      translateY(-15px);
+  }
+}
+
+/* ================================================= */
+/* ==================== PARTICLES ================== */
+/* ================================================= */
+
+.particles{
+
+  position:absolute;
+
+  inset:0;
+}
+
+.particles span{
+
+  position:absolute;
+
+  width:3px;
+  height:3px;
+
+  border-radius:50%;
+
+  background:#BFE7D6;
+
+  opacity:.3;
+
+  animation:
+    particleFloat linear infinite;
+}
+
+.particles span:nth-child(1){
+  top:15%;
+  left:20%;
+  animation-duration:20s;
+}
+
+.particles span:nth-child(2){
+  top:30%;
+  left:70%;
+  animation-duration:24s;
+}
+
+.particles span:nth-child(3){
+  top:55%;
+  left:40%;
+  animation-duration:28s;
+}
+
+.particles span:nth-child(4){
+  top:75%;
+  left:80%;
+  animation-duration:22s;
+}
+
+.particles span:nth-child(5){
+  top:45%;
+  left:10%;
+  animation-duration:18s;
+}
+
+@keyframes particleFloat{
+
+  from{
+    transform:
+      translateY(0px)
+      scale(1);
+  }
+
+  to{
+    transform:
+      translateY(-20px)
+      scale(1.4);
+  }
+}
+
+/* ================================================= */
+/* ==================== HEADER ===================== */
 /* ================================================= */
 
 .header{
 
-position:fixed;
+  position:fixed;
 
-top:0;
-left:0;
+  top:0;
+  width:100%;
 
-width:100%;
+  padding:24px 40px;
 
-padding:24px 50px;
+  display:flex;
 
-display:flex;
+  justify-content:space-between;
+  align-items:center;
 
-justify-content:space-between;
+  z-index:999;
 
-align-items:center;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(10,12,10,0.6),
+      transparent
+    );
 
-z-index:999;
-
-background:
-linear-gradient(
-to bottom,
-rgba(0,0,0,.55),
-transparent
-);
-
-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
 }
 
 .logo{
 
-font-family:'Cormorant Garamond',serif;
+  font-family:'Cormorant Garamond', serif;
 
-font-size:2.4rem;
+  font-size:2.3rem;
 
-text-decoration:none;
+  color:white;
 
-color:white;
+  text-decoration:none;
 
-letter-spacing:1px;
+  letter-spacing:1px;
 }
+
+/* ================= MENU ================= */
 
 .nav{
 
-display:flex;
+  display:flex;
 
-gap:28px;
+  gap:28px;
 
-flex-wrap:wrap;
+  flex-wrap:wrap;
 }
 
 .nav a{
 
-text-decoration:none;
+  color:white;
 
-color:white;
+  text-decoration:none;
 
-font-size:.95rem;
+  font-size:.95rem;
 
-letter-spacing:1px;
+  letter-spacing:1px;
 
-transition:.4s;
+  transition:.4s;
 
-position:relative;
+  position:relative;
 }
 
 .nav a::after{
 
-content:"";
+  content:"";
 
-position:absolute;
+  position:absolute;
 
-left:0;
-bottom:-6px;
+  left:0;
+  bottom:-6px;
 
-width:0%;
+  width:0%;
 
-height:1px;
+  height:1px;
 
-background:#8ed0bb;
+  background:#9ED8C4;
 
-transition:.4s;
+  transition:.4s;
 }
 
 .nav a:hover{
 
-color:#8ed0bb;
+  color:#9ED8C4;
 }
 
 .nav a:hover::after{
 
-width:100%;
+  width:100%;
 }
 
 /* ================================================= */
@@ -211,746 +358,953 @@ width:100%;
 
 .hero{
 
-position:relative;
+  position:relative;
 
-min-height:100vh;
+  min-height:100vh;
 
-display:flex;
+  display:flex;
 
-align-items:flex-end;
+  align-items:flex-end;
 
-padding:0 8% 110px;
+  padding:
+    0 8%
+    110px;
 
-overflow:hidden;
+  overflow:hidden;
 }
 
 .hero-image{
 
-position:absolute;
+  position:absolute;
 
-inset:0;
+  inset:0;
 
-z-index:0;
+  z-index:0;
 }
 
 .hero-image img{
 
-width:100%;
-height:100%;
+  width:100%;
+  height:100%;
 
-object-fit:cover;
+  object-fit:cover;
 
-filter:
-brightness(.55)
-contrast(1.05)
-saturate(1.1);
+  filter:
+    brightness(.55)
+    saturate(.95)
+    contrast(1.05);
 }
 
 .hero-image::after{
 
-content:"";
+  content:"";
 
-position:absolute;
+  position:absolute;
 
-inset:0;
+  inset:0;
 
-background:
+  background:
 
-linear-gradient(
-to top,
-rgba(5,8,6,.96) 0%,
-rgba(12,18,14,.60) 35%,
-transparent 75%
-);
+    linear-gradient(
+      to top,
+      rgba(5,8,6,0.96) 0%,
+      rgba(12,18,14,0.74) 30%,
+      transparent 80%
+    );
 }
 
 .hero-content{
 
-position:relative;
+  position:relative;
 
-z-index:2;
+  z-index:3;
 
-max-width:760px;
+  max-width:760px;
 }
 
 .location{
 
-color:#8ed0bb;
+  color:#9ED8C4;
 
-letter-spacing:5px;
+  letter-spacing:5px;
 
-text-transform:uppercase;
+  text-transform:uppercase;
 
-font-size:.9rem;
+  margin-bottom:20px;
 
-margin-bottom:20px;
+  font-size:.9rem;
 }
 
 .hero h1{
 
-font-family:'Cormorant Garamond',serif;
+  font-family:'Cormorant Garamond', serif;
 
-font-size:7rem;
+  font-size:7rem;
 
-line-height:.92;
+  line-height:.92;
 
-margin-bottom:28px;
+  margin-bottom:28px;
 
-text-shadow:
-0 10px 30px rgba(0,0,0,.45);
+  text-shadow:
+    0 12px 40px rgba(0,0,0,0.5);
 }
 
 .hero p{
 
-font-size:1.08rem;
+  max-width:620px;
 
-line-height:2;
+  line-height:1.9;
 
-color:rgba(255,255,255,.86);
+  color:rgba(255,255,255,0.88);
 
-max-width:650px;
+  font-size:1.08rem;
 
-margin-bottom:42px;
+  margin-bottom:42px;
 }
 
 /* ================================================= */
-/* ====================== BUTTON =================== */
+/* ===================== BUTTON ==================== */
 /* ================================================= */
 
 .btn{
 
-display:inline-flex;
+  display:inline-flex;
 
-align-items:center;
+  align-items:center;
 
-gap:12px;
+  gap:12px;
 
-padding:16px 32px;
+  padding:
+    16px 30px;
 
-border-radius:50px;
+  border-radius:50px;
 
-text-decoration:none;
+  background:
 
-color:white;
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.14),
+      rgba(255,255,255,0.05)
+    );
 
-background:
-rgba(255,255,255,.08);
+  border:
+    1px solid rgba(255,255,255,0.08);
 
-border:
-1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
 
-backdrop-filter:blur(10px);
+  color:white;
 
-transition:.5s;
+  text-decoration:none;
+
+  transition:.5s;
 }
 
 .btn:hover{
 
-transform:
-translateY(-4px);
+  transform:
+    translateY(-4px);
 
-background:
-rgba(255,255,255,.15);
+  background:
+    rgba(255,255,255,0.14);
 }
 
 /* ================================================= */
-/* ===================== SECTION =================== */
+/* ==================== SECTION ==================== */
 /* ================================================= */
 
 .section{
 
-padding:140px 8%;
+  padding:
+    140px 8%;
 }
 
 .section-title{
 
-font-family:'Cormorant Garamond',serif;
+  font-family:'Cormorant Garamond', serif;
 
-font-size:4.8rem;
+  font-size:4.6rem;
 
-text-align:center;
+  margin-bottom:34px;
 
-margin-bottom:34px;
+  text-align:center;
 
-line-height:1;
+  line-height:1;
 }
 
 .section-text{
 
-max-width:920px;
+  max-width:920px;
 
-margin:auto;
+  margin:auto;
 
-text-align:center;
+  text-align:center;
 
-line-height:2;
+  line-height:2;
 
-font-size:1.05rem;
+  color:rgba(255,255,255,0.82);
 
-color:rgba(255,255,255,.82);
+  font-size:1.05rem;
 }
 
 /* ================================================= */
-/* ===================== GALLERY =================== */
+/* ==================== GALLERY ==================== */
 /* ================================================= */
 
 .gallery{
 
-margin-top:70px;
+  display:grid;
 
-display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
 
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 
-gap:30px;
+  margin-top:70px;
 }
 
 .gallery img{
 
-width:100%;
+  width:100%;
 
-height:460px;
+  height:460px;
 
-object-fit:cover;
+  object-fit:cover;
 
-border-radius:30px;
+  border-radius:30px;
 
-transition:1s;
+  transition:1s;
 
-box-shadow:
-0 25px 60px rgba(0,0,0,.35);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.32);
 }
 
 .gallery img:hover{
 
-transform:
-translateY(-10px)
-scale(1.02);
+  transform:
+    translateY(-10px)
+    scale(1.02);
 }
 
 /* ================================================= */
-/* ==================== ACTIVITIES ================= */
+/* ================= ACTIVITIES ==================== */
 /* ================================================= */
 
 .activities{
 
-margin-top:70px;
+  display:grid;
 
-display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
 
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
+  gap:34px;
 
-gap:34px;
+  margin-top:70px;
 }
 
 .activity-card{
 
-overflow:hidden;
+  overflow:hidden;
 
-border-radius:32px;
+  border-radius:32px;
 
-background:
-rgba(255,255,255,.05);
+  background:
 
-border:
-1px solid rgba(255,255,255,.06);
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
 
-backdrop-filter:blur(10px);
+  border:
+    1px solid rgba(255,255,255,0.06);
 
-transition:.6s;
+  backdrop-filter:blur(14px);
 
-box-shadow:
-0 20px 50px rgba(0,0,0,.30);
+  transition:.7s;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.32);
 }
 
 .activity-card:hover{
 
-transform:
-translateY(-10px);
+  transform:
+    translateY(-10px);
 }
 
 .activity-card img{
 
-width:100%;
+  width:100%;
+  height:260px;
 
-height:260px;
-
-object-fit:cover;
+  object-fit:cover;
 }
 
 .activity-content{
 
-padding:34px;
+  padding:34px;
 }
 
 .activity-content h3{
 
-font-family:'Cormorant Garamond',serif;
+  font-family:'Cormorant Garamond', serif;
 
-font-size:2rem;
+  font-size:2rem;
 
-margin-bottom:18px;
+  margin-bottom:18px;
 }
 
 .activity-content p{
 
-line-height:1.9;
+  line-height:1.9;
 
-color:rgba(255,255,255,.80);
+  color:rgba(255,255,255,0.78);
 }
 
 /* ================================================= */
-/* ==================== ITINERARY ================== */
+/* ================= ITINERARY GRID ================ */
 /* ================================================= */
 
 .itinerary-grid{
 
-margin-top:70px;
+  display:grid;
 
-display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
 
-grid-template-columns:
-repeat(auto-fit,minmax(340px,1fr));
+  gap:38px;
 
-gap:38px;
+  margin-top:70px;
 }
 
 .experience-card{
 
-overflow:hidden;
+  overflow:hidden;
 
-border-radius:34px;
+  border-radius:34px;
 
-background:
-rgba(255,255,255,.05);
+  background:
 
-border:
-1px solid rgba(255,255,255,.06);
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.02)
+    );
 
-transition:.7s;
+  border:
+    1px solid rgba(255,255,255,0.08);
 
-box-shadow:
-0 20px 60px rgba(0,0,0,.34);
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.34);
+
+  backdrop-filter:blur(10px);
+
+  transition:.7s;
 }
 
 .experience-card:hover{
 
-transform:
-translateY(-10px)
-scale(1.02);
+  transform:
+    translateY(-10px)
+    scale(1.02);
 }
 
 .experience-card img{
 
-width:100%;
+  width:100%;
 
-height:260px;
+  height:260px;
 
-object-fit:cover;
+  object-fit:cover;
 }
 
 .experience-content{
 
-padding:34px;
+  padding:34px;
 }
 
 .experience-content h3{
 
-font-family:'Cormorant Garamond',serif;
+  font-family:'Cormorant Garamond', serif;
 
-font-size:2.2rem;
+  font-size:2.2rem;
 
-margin-bottom:24px;
+  margin-bottom:24px;
 }
 
 .experience-content ul{
 
-padding-left:18px;
+  padding-left:18px;
 }
 
 .experience-content li{
 
-line-height:1.8;
+  margin-bottom:14px;
 
-margin-bottom:12px;
+  color:rgba(255,255,255,0.82);
 
-color:rgba(255,255,255,.82);
+  line-height:1.7;
 }
 
 /* ================================================= */
-/* ===================== FOOTER ==================== */
+/* ==================== PACKAGE ==================== */
 /* ================================================= */
 
-.footer{
+.package-grid{
 
-padding:70px 8%;
+  display:grid;
 
-text-align:center;
+  grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
 
-border-top:
-1px solid rgba(255,255,255,.08);
+  gap:40px;
 
-color:rgba(255,255,255,.55);
+  margin-top:60px;
+}
+
+.package-card{
+
+  overflow:hidden;
+
+  border-radius:38px;
+
+  background:
+
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.34);
+
+  transition:.7s;
+}
+
+.package-card:hover{
+
+  transform:
+    translateY(-10px);
+}
+
+.package-card img{
+
+  width:100%;
+
+  height:420px;
+
+  object-fit:cover;
+}
+
+.package-content{
+
+  padding:42px;
+}
+
+.package-content h3{
+
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:3rem;
+
+  margin-bottom:20px;
+}
+
+.package-content h4{
+
+  margin-top:34px;
+
+  margin-bottom:18px;
+
+  color:#9ED8C4;
+
+  font-size:1.1rem;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+}
+
+.package-content p{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.82);
+
+  margin-bottom:18px;
+}
+
+.package-content ul{
+
+  padding-left:18px;
+}
+
+.package-content li{
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.78);
+}
+
+.price{
+
+  font-size:2.5rem;
+
+  color:#9ED8C4;
+
+  margin:
+    38px 0 20px;
 }
 
 /* ================================================= */
-/* ===================== MOBILE ==================== */
+/* ==================== MOBILE ===================== */
 /* ================================================= */
 
 @media(max-width:900px){
 
-.hero h1{
-font-size:5rem;
-}
+  .header{
 
-.header{
+    flex-direction:column;
 
-padding:20px 24px;
+    gap:20px;
+  }
 
-flex-direction:column;
+  .nav{
 
-gap:20px;
-}
-
-.nav{
-
-justify-content:center;
-}
+    justify-content:center;
+  }
 
 }
 
 @media(max-width:768px){
 
-.hero{
+  .hero{
+    padding:0 7% 80px;
+  }
 
-padding:0 7% 80px;
-}
+  .hero h1{
+    font-size:4.5rem;
+  }
 
-.hero h1{
+  .section-title{
+    font-size:3rem;
+  }
 
-font-size:4rem;
-}
-
-.section-title{
-
-font-size:3rem;
-}
-
-.gallery img{
-
-height:320px;
-}
+  .gallery img{
+    height:320px;
+  }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
+<div class="atmosphere">
+
+<div class="fog-layer"></div>
+
+<div class="particles">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+</div>
+
 <!-- ================================================= -->
-<!-- ===================== HEADER ==================== -->
+<!-- ==================== HEADER ==================== -->
 <!-- ================================================= -->
 
 <header class="header">
 
-<a href="index.html" class="logo">
-Orumi Journeys
-</a>
+  <a href="index.html" class="logo">
+    Orumi Journeys
+  </a>
 
-<nav class="nav">
+  <nav class="nav">
 
-<a href="index.html">Home</a>
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="book-now.html">Book Now</a>
+    <a href="about-us.html">About Us</a>
+    <a href="contact-us.html">Contact</a>
 
-<a href="destinations.html">Destinations</a>
-
-<a href="book-now.html">Book Now</a>
-
-<a href="about-us.html">About Us</a>
-
-<a href="contact-us.html">Contact</a>
-
-</nav>
+  </nav>
 
 </header>
 
 <!-- ================================================= -->
-<!-- ====================== HERO ===================== -->
+<!-- ====================== HERO ==================== -->
 <!-- ================================================= -->
 
 <section class="hero">
 
-<div class="hero-image">
+  <div class="hero-image">
 
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1800&auto=format&fit=crop" alt="Jeju">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1800&auto=format&fit=crop" alt="Jeju">
 
-</div>
+  </div>
 
-<div class="hero-content">
+  <div class="hero-content">
 
-<div class="location">
-SOUTH KOREA • JEJU
-</div>
+    <div class="location">
+      SOUTH KOREA • JEJU
+    </div>
 
-<h1>
-Jeju
-</h1>
+    <h1>
+      Jeju
+    </h1>
 
-<p>
+    <p>
 
-Una isla volcánica rodeada de acantilados, campos verdes, senderos costeros y paisajes contemplativos donde la naturaleza y la calma crean una experiencia profundamente inmersiva.
+      Una isla volcánica rodeada de océano, senderos costeros, bosques húmedos y paisajes contemplativos donde la naturaleza coreana se siente tranquila, cinematográfica y profundamente inmersiva.
 
-</p>
+    </p>
 
-<a href="#itinerary" class="btn">
-Explorar experiencia →
-</a>
+    <a href="#itinerary" class="btn">
+      Explorar itinerario →
+    </a>
 
-</div>
-
-</section>
-
-<!-- ================================================= -->
-<!-- ====================== INTRO ==================== -->
-<!-- ================================================= -->
-
-<section class="section">
-
-<h2 class="section-title">
-La isla volcánica de Corea
-</h2>
-
-<p class="section-text">
-
-Jeju combina naturaleza salvaje, cultura coreana y paisajes oceánicos en un destino lleno de tranquilidad. Entre volcanes, cascadas, playas negras y cafés minimalistas, la isla ofrece una experiencia visual y emocional única.
-
-</p>
+  </div>
 
 </section>
 
 <!-- ================================================= -->
-<!-- ===================== GALLERY =================== -->
+<!-- ==================== INTRO ===================== -->
 <!-- ================================================= -->
 
 <section class="section">
 
-<h2 class="section-title">
-Galería
-</h2>
+  <h2 class="section-title">
+    Naturaleza oceánica
+  </h2>
+
+  <p class="section-text">
+
+    Jeju combina volcanes, acantilados, playas negras, cascadas y cafés minimalistas frente al mar en una experiencia contemplativa inspirada en la calma y la belleza natural de Corea del Sur.
+
+  </p>
+
+</section>
+
+<!-- ================================================= -->
+<!-- ==================== GALLERY =================== -->
+<!-- ================================================= -->
+
+<section class="section">
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop" alt="Jeju Coast">
+  <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop" alt="">
 
-<img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop" alt="Jeju Nature">
+  <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop" alt="">
 
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Jeju Landscape">
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="">
 
 </div>
 
 </section>
 
 <!-- ================================================= -->
-<!-- ==================== EXPERIENCIAS =============== -->
+<!-- ================= EXPERIENCIAS ================= -->
 <!-- ================================================= -->
 
 <section class="section">
 
-<h2 class="section-title">
-Experiencias
-</h2>
+  <h2 class="section-title">
+    Experiencias
+  </h2>
 
-<div class="activities">
+  <div class="activities">
 
-<div class="activity-card">
+    <div class="activity-card">
 
-<img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop" alt="Jeju Sunrise">
+      <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop" alt="">
 
-<div class="activity-content">
+      <div class="activity-content">
 
-<h3>
-Senderos volcánicos
-</h3>
+        <h3>
+          Senderos volcánicos
+        </h3>
 
-<p>
+        <p>
 
-Explora rutas costeras y montañas volcánicas rodeadas de océano y naturaleza salvaje.
+          Caminatas entre acantilados, rutas oceánicas y paisajes creados por antiguos volcanes.
 
-</p>
+        </p>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-<div class="activity-card">
+    <div class="activity-card">
 
-<img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop" alt="Jeju Forest">
+      <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop" alt="">
 
-<div class="activity-content">
+      <div class="activity-content">
 
-<h3>
-Bosques y cascadas
-</h3>
+        <h3>
+          Bosques y cascadas
+        </h3>
 
-<p>
+        <p>
 
-Descubre bosques húmedos, cascadas escondidas y paisajes contemplativos entre niebla y vegetación.
+          Explora bosques húmedos, cascadas escondidas y paisajes verdes llenos de calma y niebla.
 
-</p>
+        </p>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-<div class="activity-card">
+    <div class="activity-card">
 
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Jeju Cafe">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="">
 
-<div class="activity-content">
+      <div class="activity-content">
 
-<h3>
-Cafés y cultura coreana
-</h3>
+        <h3>
+          Cafés junto al mar
+        </h3>
 
-<p>
+        <p>
 
-Relájate en cafés minimalistas frente al mar y disfruta gastronomía tradicional coreana.
+          Descubre cafeterías minimalistas coreanas con vistas panorámicas al océano y puestas de sol.
 
-</p>
+        </p>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 <!-- ================================================= -->
-<!-- ==================== ITINERARY ================== -->
+<!-- ================= ITINERARIO =================== -->
 <!-- ================================================= -->
 
 <section class="section" id="itinerary">
 
-<h2 class="section-title">
-Experiencias por Día
-</h2>
+  <h2 class="section-title">
+    Experiencias por Día
+  </h2>
 
-<p class="section-text">
+  <p class="section-text">
 
-Un viaje contemplativo entre volcanes, océano, senderos costeros y rincones tranquilos inspirados en la naturaleza de Corea del Sur.
+    Un viaje lento entre volcanes, océano, naturaleza y rincones tranquilos inspirados en la serenidad de Jeju.
 
-</p>
+  </p>
 
-<div class="itinerary-grid">
+  <div class="itinerary-grid">
 
-<div class="experience-card">
+    <div class="experience-card">
 
-<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop" alt="Jeju Coast">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="">
 
-<div class="experience-content">
+      <div class="experience-content">
 
-<h3>
-Día 1 — Llegada a Jeju
-</h3>
+        <h3>
+          Día 1 — Llegada a Jeju
+        </h3>
 
-<ul>
+        <ul>
 
-<li>Check-in en hotel frente al mar</li>
+          <li>Check-in en hotel frente al océano</li>
 
-<li>Paseo costero al atardecer</li>
+          <li>Paseo costero al atardecer</li>
 
-<li>Cena coreana tradicional</li>
+          <li>Cena coreana tradicional</li>
 
-<li>Exploración nocturna de cafés</li>
+          <li>Exploración nocturna de cafés</li>
 
-</ul>
+        </ul>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-<div class="experience-card">
+    <div class="experience-card">
 
-<img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop" alt="Jeju Forest">
+      <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop" alt="">
 
-<div class="experience-content">
+      <div class="experience-content">
 
-<h3>
-Día 2 — Naturaleza volcánica
-</h3>
+        <h3>
+          Día 2 — Naturaleza volcánica
+        </h3>
 
-<ul>
+        <ul>
 
-<li>Visita al Hallasan</li>
+          <li>Visita al Hallasan</li>
 
-<li>Senderismo entre bosques</li>
+          <li>Senderismo entre bosques</li>
 
-<li>Fotografía de paisajes</li>
+          <li>Fotografía de paisajes</li>
 
-<li>Visita a cascadas y acantilados</li>
+          <li>Visita a cascadas y acantilados</li>
 
-</ul>
+        </ul>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-<div class="experience-card">
+    <div class="experience-card">
 
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Jeju Relax">
+      <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop" alt="">
 
-<div class="experience-content">
+      <div class="experience-content">
 
-<h3>
-Día 3 — Relax y despedida
-</h3>
+        <h3>
+          Día 3 — Relax y despedida
+        </h3>
 
-<ul>
+        <ul>
 
-<li>Mañana libre junto al mar</li>
+          <li>Mañana libre frente al mar</li>
 
-<li>Compras artesanales</li>
+          <li>Compras artesanales</li>
 
-<li>Visita a cafeterías panorámicas</li>
+          <li>Cafeterías panorámicas</li>
 
-<li>Cena de despedida frente al océano</li>
+          <li>Cena de despedida frente al océano</li>
 
-</ul>
+        </ul>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 <!-- ================================================= -->
-<!-- ====================== FOOTER =================== -->
+<!-- ==================== PACKAGE =================== -->
 <!-- ================================================= -->
 
-<footer class="footer">
+<section class="section">
 
-<p>
+  <h2 class="section-title">
+    Vive Jeju
+  </h2>
 
-Orumi Journeys • Jeju Experience
+  <p class="section-text">
 
-</p>
+    Descubre una isla donde volcanes, océano y naturaleza crean una experiencia coreana relajante y cinematográfica.
 
-</footer>
+  </p>
+
+  <div class="package-grid">
+
+    <div class="package-card">
+
+      <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1400&auto=format&fit=crop" alt="">
+
+      <div class="package-content">
+
+        <h3>
+          Jeju — Escape Oceánico Coreano
+        </h3>
+
+        <p>
+
+          4 Días / 3 Noches
+
+        </p>
+
+        <p>
+
+          Una experiencia inmersiva en Jeju entre naturaleza volcánica, cafés frente al mar, senderos contemplativos y cultura coreana tradicional.
+
+        </p>
+
+        <h4>
+          Qué incluye
+        </h4>
+
+        <ul>
+
+          <li>3 noches en hotel boutique</li>
+
+          <li>Desayunos coreanos</li>
+
+          <li>Excursiones guiadas</li>
+
+          <li>Transporte local</li>
+
+          <li>Ruta panorámica costera</li>
+
+          <li>Visita a Hallasan</li>
+
+        </ul>
+
+        <h4>
+          Experiencia
+        </h4>
+
+        <ul>
+
+          <li>Slow travel</li>
+
+          <li>Fotografía y contemplación</li>
+
+          <li>Nature healing</li>
+
+          <li>Cultura coreana</li>
+
+          <li>Océano y volcanes</li>
+
+        </ul>
+
+        <div class="price">
+
+          USD 1,350 por persona
+
+        </div>
+
+        <p>
+
+          No incluye vuelos internacionales.
+
+        </p>
+
+        <a href="#" class="btn">
+
+          Reservar experiencia →
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 <!-- ================================================= -->
-<!-- ====================== SCRIPT =================== -->
+<!-- ====================== SCRIPT ================== -->
 <!-- ================================================= -->
 
 <script>
 
 const revealElements = document.querySelectorAll(
-'.activity-card, .experience-card, .gallery img'
+'.activity-card, .experience-card, .gallery img, .package-card'
 );
 
 const revealObserver = new IntersectionObserver((entries)=>{
