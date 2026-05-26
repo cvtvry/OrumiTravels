@@ -43,6 +43,12 @@
 
     }
 
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
     body {
 
       background:
@@ -281,6 +287,8 @@
 
       cursor: pointer;
 
+      transform-style: preserve-3d;
+
     }
 
     .destination-card:hover {
@@ -313,8 +321,7 @@
       object-fit: cover;
 
       transition:
-        transform 1.6s ease,
-        opacity 0.8s ease;
+        transform 1.6s ease;
 
     }
 
@@ -367,12 +374,6 @@
       gap: 18px;
 
       flex-wrap: wrap;
-
-    }
-
-    .icon {
-
-      font-size: 1.7rem;
 
     }
 
@@ -671,19 +672,12 @@
 
   <section class="destinations">
 
-    <!-- ================================================= -->
-    <!-- ================= YAKUSHIMA ===================== -->
-    <!-- ================================================= -->
+    <!-- ================= YAKUSHIMA ================= -->
 
     <article class="destination-card">
 
       <div class="destination-bg">
-
-        <img
-          src="img/yakushima.jpg"
-          alt="Yakushima"
-        >
-
+        <img src="img/yakushima.jpg" alt="Yakushima">
       </div>
 
       <div class="destination-overlay"></div>
@@ -691,33 +685,21 @@
       <div class="destination-content">
 
         <div class="top-row">
-
-          <div class="icon">
-            🌲
-          </div>
-
-          <div class="badge">
-            Most Popular
-          </div>
-
+          <div class="badge">Most Popular</div>
         </div>
 
-        <h2>
-          Yakushima
-        </h2>
+        <h2>Yakushima</h2>
 
         <p class="subtitle">
           Ancient Forest Escape
         </p>
 
         <div class="meta">
-
           <span>Japón</span>
           <span>•</span>
           <span>Slow Nature Journey</span>
           <span>•</span>
           <span>5 días</span>
-
         </div>
 
         <p class="description">
@@ -732,19 +714,19 @@
         <div class="details">
 
           <div class="detail">
-            ✦ Hiking espiritual
+            Hiking espiritual
           </div>
 
           <div class="detail">
-            ✦ Bosques milenarios
+            Bosques milenarios
           </div>
 
           <div class="detail">
-            ✦ Ambiente contemplativo
+            Ambiente contemplativo
           </div>
 
           <div class="detail">
-            ✦ Mejor temporada: otoño
+            Mejor temporada: otoño
           </div>
 
         </div>
@@ -777,49 +759,30 @@
 
     </article>
 
-    <!-- ================================================= -->
-    <!-- ================= GINZAN ======================== -->
-    <!-- ================================================= -->
+    <!-- ================= GINZAN ================= -->
 
     <article class="destination-card">
 
       <div class="destination-bg">
-
-        <img
-          src="img/ginzan.jpg"
-          alt="Ginzan Onsen"
-        >
-
+        <img src="img/ginzan.jpg" alt="Ginzan Onsen">
       </div>
 
       <div class="destination-overlay"></div>
 
       <div class="destination-content">
 
-        <div class="top-row">
-
-          <div class="icon">
-            🏮
-          </div>
-
-        </div>
-
-        <h2>
-          Ginzan Onsen
-        </h2>
+        <h2>Ginzan Onsen</h2>
 
         <p class="subtitle">
           Timeless Winter Town
         </p>
 
         <div class="meta">
-
           <span>Japón</span>
           <span>•</span>
           <span>Onsen Experience</span>
           <span>•</span>
           <span>3 días</span>
-
         </div>
 
         <p class="description">
@@ -833,19 +796,19 @@
         <div class="details">
 
           <div class="detail">
-            ✦ Ryokan tradicional
+            Ryokan tradicional
           </div>
 
           <div class="detail">
-            ✦ Aguas termales
+            Aguas termales
           </div>
 
           <div class="detail">
-            ✦ Ambiente nostálgico
+            Ambiente nostálgico
           </div>
 
           <div class="detail">
-            ✦ Mejor temporada: invierno
+            Mejor temporada: invierno
           </div>
 
         </div>
@@ -877,6 +840,262 @@
 
     </article>
 
+    <!-- ================= JEJU ================= -->
+
+    <article class="destination-card">
+
+      <div class="destination-bg">
+        <img src="img/jeju.jpg" alt="Jeju Island">
+      </div>
+
+      <div class="destination-overlay"></div>
+
+      <div class="destination-content">
+
+        <h2>Jeju Island</h2>
+
+        <p class="subtitle">
+          Windy Coastal Escape
+        </p>
+
+        <div class="meta">
+          <span>Corea del Sur</span>
+          <span>•</span>
+          <span>Island Retreat</span>
+          <span>•</span>
+          <span>4 días</span>
+        </div>
+
+        <p class="description">
+
+          Acantilados volcánicos,
+          caminos costeros y campos infinitos
+          crean una atmósfera silenciosa
+          y contemplativa frente al océano.
+
+        </p>
+
+        <div class="details">
+
+          <div class="detail">
+            Caminatas costeras
+          </div>
+
+          <div class="detail">
+            Paisajes volcánicos
+          </div>
+
+          <div class="detail">
+            Sensación de calma
+          </div>
+
+          <div class="detail">
+            Mejor temporada: primavera
+          </div>
+
+        </div>
+
+        <div class="tags">
+
+          <span>Island</span>
+          <span>Ocean</span>
+          <span>Nature</span>
+          <span>Slow Travel</span>
+
+        </div>
+
+        <div class="bottom-row">
+
+          <a
+            href="jeju.html"
+            class="explore-btn"
+          >
+            Explorar destino
+          </a>
+
+          <div class="price">
+            Desde $1.620 USD
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- ================= JIUFEN ================= -->
+
+    <article class="destination-card">
+
+      <div class="destination-bg">
+        <img src="img/jiufen.jpg" alt="Jiufen">
+      </div>
+
+      <div class="destination-overlay"></div>
+
+      <div class="destination-content">
+
+        <div class="top-row">
+          <div class="badge">Cinematic Favorite</div>
+        </div>
+
+        <h2>Jiufen</h2>
+
+        <p class="subtitle">
+          Lantern Alley Memories
+        </p>
+
+        <div class="meta">
+          <span>Taiwán</span>
+          <span>•</span>
+          <span>Cultural Escape</span>
+          <span>•</span>
+          <span>3 días</span>
+        </div>
+
+        <p class="description">
+
+          Calles estrechas iluminadas por faroles,
+          casas suspendidas en la montaña
+          y una atmósfera melancólica
+          inspirada en Spirited Away.
+
+        </p>
+
+        <div class="details">
+
+          <div class="detail">
+            Casas de té tradicionales
+          </div>
+
+          <div class="detail">
+            Calles cinematográficas
+          </div>
+
+          <div class="detail">
+            Ambiente nostálgico
+          </div>
+
+          <div class="detail">
+            Mejor temporada: otoño
+          </div>
+
+        </div>
+
+        <div class="tags">
+
+          <span>Lanterns</span>
+          <span>Mountain Town</span>
+          <span>Cinema</span>
+
+        </div>
+
+        <div class="bottom-row">
+
+          <a
+            href="jiufen.html"
+            class="explore-btn"
+          >
+            Explorar destino
+          </a>
+
+          <div class="price">
+            Desde $1.390 USD
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- ================= HOI AN ================= -->
+
+    <article class="destination-card">
+
+      <div class="destination-bg">
+        <img src="img/hoian.jpg" alt="Hoi An">
+      </div>
+
+      <div class="destination-overlay"></div>
+
+      <div class="destination-content">
+
+        <div class="top-row">
+          <div class="badge">Hidden Gem</div>
+        </div>
+
+        <h2>Hoi An</h2>
+
+        <p class="subtitle">
+          Floating Lantern Dreams
+        </p>
+
+        <div class="meta">
+          <span>Vietnam</span>
+          <span>•</span>
+          <span>Historic Town Experience</span>
+          <span>•</span>
+          <span>4 días</span>
+        </div>
+
+        <p class="description">
+
+          Faroles flotando sobre el río,
+          arquitectura amarilla tradicional
+          y noches tranquilas llenas
+          de luces cálidas y nostalgia.
+
+        </p>
+
+        <div class="details">
+
+          <div class="detail">
+            Paseos nocturnos
+          </div>
+
+          <div class="detail">
+            Mercado tradicional
+          </div>
+
+          <div class="detail">
+            Ambiente romántico
+          </div>
+
+          <div class="detail">
+            Mejor temporada: verano
+          </div>
+
+        </div>
+
+        <div class="tags">
+
+          <span>Lanterns</span>
+          <span>Historic Town</span>
+          <span>Culture</span>
+          <span>River</span>
+
+        </div>
+
+        <div class="bottom-row">
+
+          <a
+            href="hoian.html"
+            class="explore-btn"
+          >
+            Explorar destino
+          </a>
+
+          <div class="price">
+            Desde $1.280 USD
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
   </section>
 
   <!-- ================================================= -->
@@ -886,7 +1105,7 @@
   <script>
 
     // ================================================
-    // CARD HOVER PARALLAX
+    // CARD PARALLAX EFFECT
     // ================================================
 
     const cards =
@@ -906,10 +1125,10 @@
           e.clientY - rect.top;
 
         const moveX =
-          (x - rect.width / 2) / 35;
+          (x - rect.width / 2) / 40;
 
         const moveY =
-          (y - rect.height / 2) / 35;
+          (y - rect.height / 2) / 40;
 
         card.style.transform =
           `
