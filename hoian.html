@@ -14,1026 +14,411 @@
 
 <style>
 
-/* ================================================= */
-/* ====================== RESET ==================== */
-/* ================================================= */
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-
-  font-family:'Nunito', sans-serif;
-
-  overflow-x:hidden;
-
-  color:white;
-
-  background:#1d1b1a;
-
-  position:relative;
+font-family:'Nunito', sans-serif;
+overflow-x:hidden;
+color:white;
+background:#0f1412;
 }
 
-/* ================================================= */
-/* ================= MAIN BACKGROUND =============== */
-/* ================================================= */
+/* ================= BACKGROUND ================= */
 
 body::before{
+content:"";
+position:fixed;
+inset:0;
+z-index:-10;
 
-  content:"";
+background:
 
-  position:fixed;
+radial-gradient(circle at 20% 20%, rgba(255,180,90,.15), transparent 25%),
+radial-gradient(circle at 80% 30%, rgba(255,140,60,.12), transparent 30%),
+radial-gradient(circle at 50% 80%, rgba(255,210,120,.08), transparent 35%),
 
-  inset:0;
+linear-gradient(
+180deg,
+#38453e 0%,
+#243028 30%,
+#182019 65%,
+#0d1210 100%
+);
 
-  z-index:-10;
-
-  background:
-
-    radial-gradient(
-      circle at 50% -10%,
-      rgba(255,220,170,0.18),
-      transparent 38%
-    ),
-
-    radial-gradient(
-      circle at 0% 50%,
-      rgba(50,34,24,0.34),
-      transparent 44%
-    ),
-
-    radial-gradient(
-      circle at 100% 50%,
-      rgba(30,20,16,0.30),
-      transparent 42%
-    ),
-
-    radial-gradient(
-      circle at 24% 72%,
-      rgba(180,110,60,0.18),
-      transparent 32%
-    ),
-
-    radial-gradient(
-      circle at 82% 38%,
-      rgba(255,190,120,0.14),
-      transparent 24%
-    ),
-
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(255,255,255,0.05),
-      transparent 56%
-    ),
-
-    linear-gradient(
-      180deg,
-
-      #8A674B 0%,
-      #73563E 18%,
-      #624633 36%,
-      #51392A 52%,
-      #3D2A21 70%,
-      #241813 100%
-    );
-
-  background-attachment:fixed;
+background-attachment:fixed;
 }
 
-body::after{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  z-index:-9;
-
-  opacity:.14;
-
-  background-image:
-    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
-
-  mix-blend-mode:soft-light;
-
-  pointer-events:none;
-}
-
-/* ================================================= */
-/* ================= ATMOSPHERE ==================== */
-/* ================================================= */
-
-.forest-atmosphere{
-
-  position:fixed;
-
-  inset:0;
-
-  z-index:-8;
-
-  overflow:hidden;
-
-  pointer-events:none;
-}
-
-.forest-fog{
-
-  position:absolute;
-
-  inset:-10%;
-
-  background:
-
-    radial-gradient(
-      circle at 18% 24%,
-      rgba(255,220,180,0.08),
-      transparent 24%
-    ),
-
-    radial-gradient(
-      circle at 80% 34%,
-      rgba(255,180,120,0.05),
-      transparent 30%
-    ),
-
-    radial-gradient(
-      circle at 52% 76%,
-      rgba(255,255,255,0.04),
-      transparent 36%
-    );
-
-  filter:blur(120px);
-
-  opacity:.95;
-
-  animation:
-    forestFogMove 40s ease-in-out infinite alternate;
-}
-
-@keyframes forestFogMove{
-
-  from{
-    transform:
-      translateX(0px)
-      translateY(0px)
-      scale(1);
-  }
-
-  to{
-    transform:
-      translateX(-28px)
-      translateY(-12px)
-      scale(1.04);
-  }
-}
-
-/* ================================================= */
-/* ================= LANTERN LIGHTS ================ */
-/* ================================================= */
-
-.gold-particles{
-
-  position:absolute;
-
-  inset:0;
-
-  overflow:hidden;
-}
-
-.gold-particles span{
-
-  position:absolute;
-
-  width:4px;
-  height:4px;
-
-  border-radius:50%;
-
-  background:#FFD08A;
-
-  opacity:.5;
-
-  box-shadow:
-    0 0 18px rgba(255,208,138,0.7);
-
-  animation:
-    goldFloat linear infinite;
-}
-
-.gold-particles span:nth-child(1){
-  top:14%;
-  left:18%;
-  animation-duration:20s;
-}
-
-.gold-particles span:nth-child(2){
-  top:28%;
-  left:72%;
-  animation-duration:24s;
-}
-
-.gold-particles span:nth-child(3){
-  top:58%;
-  left:42%;
-  animation-duration:28s;
-}
-
-.gold-particles span:nth-child(4){
-  top:74%;
-  left:82%;
-  animation-duration:26s;
-}
-
-.gold-particles span:nth-child(5){
-  top:48%;
-  left:12%;
-  animation-duration:22s;
-}
-
-.gold-particles span:nth-child(6){
-  top:22%;
-  left:52%;
-  animation-duration:18s;
-}
-
-@keyframes goldFloat{
-
-  from{
-
-    transform:
-      translateY(0px)
-      scale(1);
-
-    opacity:.2;
-  }
-
-  50%{
-    opacity:.8;
-  }
-
-  to{
-
-    transform:
-      translateY(-20px)
-      scale(1.5);
-
-    opacity:.18;
-  }
-}
-
-/* ================================================= */
-/* ==================== HEADER ===================== */
-/* ================================================= */
+/* ================= HEADER ================= */
 
 .header{
+position:fixed;
+top:0;
+width:100%;
+padding:24px 42px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+backdrop-filter:blur(16px);
 
-  position:fixed;
-
-  top:0;
-  width:100%;
-
-  padding:22px 32px;
-
-  display:flex;
-
-  justify-content:space-between;
-  align-items:center;
-
-  z-index:999;
-
-  background:
-
-    linear-gradient(
-      to bottom,
-      rgba(10,12,10,0.58),
-      transparent
-    );
-
-  backdrop-filter:blur(14px);
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.55),
+transparent
+);
 }
 
 .logo{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:2.3rem;
-
-  color:white;
-
-  text-decoration:none;
-
-  letter-spacing:1px;
+font-family:'Cormorant Garamond', serif;
+font-size:2.3rem;
+text-decoration:none;
+color:white;
+letter-spacing:1px;
 }
 
-/* ================================================= */
-/* ====================== MENU ===================== */
-/* ================================================= */
-
-.nav-menu{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:18px;
+.nav{
+display:flex;
+gap:28px;
 }
 
-.nav-menu a{
-
-  color:white;
-
-  text-decoration:none;
-
-  font-size:.95rem;
-
-  letter-spacing:1px;
-
-  padding:10px 18px;
-
-  border-radius:30px;
-
-  transition:.4s;
-
-  background:
-    rgba(255,255,255,0.04);
-
-  border:
-    1px solid rgba(255,255,255,0.06);
-
-  backdrop-filter:blur(10px);
+.nav a{
+color:white;
+text-decoration:none;
+font-size:.95rem;
+letter-spacing:1px;
+transition:.4s;
+position:relative;
 }
 
-.nav-menu a:hover{
-
-  background:
-    rgba(255,255,255,0.12);
-
-  transform:
-    translateY(-2px);
+.nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:1px;
+background:#d8b36c;
+transition:.4s;
 }
 
-/* ================================================= */
-/* ====================== HERO ===================== */
-/* ================================================= */
+.nav a:hover{
+color:#d8b36c;
+}
+
+.nav a:hover::after{
+width:100%;
+}
+
+/* ================= HERO ================= */
 
 .hero{
-
-  position:relative;
-
-  min-height:100vh;
-
-  display:flex;
-
-  align-items:flex-end;
-
-  padding:
-    0 8%
-    110px;
-
-  overflow:hidden;
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:flex-end;
+padding:0 8% 100px;
+overflow:hidden;
 }
 
 .hero-image{
-
-  position:absolute;
-
-  inset:0;
-
-  z-index:0;
+position:absolute;
+inset:0;
+z-index:0;
 }
 
 .hero-image img{
+width:100%;
+height:100%;
+object-fit:cover;
 
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  filter:
-    brightness(.55)
-    saturate(.95)
-    contrast(1.06);
+filter:
+brightness(.55)
+contrast(1.05)
+saturate(1.1);
 }
 
 .hero-image::after{
+content:"";
+position:absolute;
+inset:0;
 
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-
-    linear-gradient(
-      to top,
-      rgba(6,10,8,0.98) 0%,
-      rgba(16,20,18,0.82) 28%,
-      rgba(18,24,20,0.36) 54%,
-      transparent 84%
-    );
-}
-
-.fog{
-
-  position:absolute;
-
-  inset:0;
-
-  z-index:1;
-
-  background:
-
-    radial-gradient(
-      circle at 30% 50%,
-      rgba(255,220,180,0.08),
-      transparent 36%
-    ),
-
-    radial-gradient(
-      circle at 80% 40%,
-      rgba(255,200,120,0.06),
-      transparent 42%
-    );
-
-  filter:blur(50px);
-
-  animation:
-    fogMove 18s ease-in-out infinite alternate;
-}
-
-@keyframes fogMove{
-
-  from{
-    transform:translateX(0px);
-  }
-
-  to{
-    transform:translateX(-20px);
-  }
+background:
+linear-gradient(
+to top,
+rgba(6,10,8,0.96) 0%,
+rgba(10,14,12,0.6) 35%,
+transparent 70%
+);
 }
 
 .hero-content{
-
-  position:relative;
-
-  z-index:3;
-
-  max-width:760px;
+position:relative;
+z-index:3;
+max-width:760px;
 }
 
 .location{
-
-  color:#FFD08A;
-
-  letter-spacing:5px;
-
-  text-transform:uppercase;
-
-  margin-bottom:20px;
-
-  font-size:.9rem;
+color:#d8b36c;
+letter-spacing:5px;
+text-transform:uppercase;
+margin-bottom:20px;
+font-size:.9rem;
 }
 
 .hero h1{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:7rem;
-
-  line-height:.92;
-
-  margin-bottom:28px;
-
-  text-shadow:
-    0 12px 40px rgba(0,0,0,0.5);
+font-family:'Cormorant Garamond', serif;
+font-size:7rem;
+line-height:.92;
+margin-bottom:28px;
 }
 
 .hero p{
-
-  max-width:620px;
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.88);
-
-  font-size:1.08rem;
-
-  margin-bottom:42px;
+max-width:650px;
+line-height:1.9;
+color:rgba(255,255,255,0.88);
+font-size:1.05rem;
+margin-bottom:42px;
 }
 
-/* ================================================= */
-/* ===================== BUTTON ==================== */
-/* ================================================= */
+/* ================= BUTTON ================= */
 
 .btn{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:16px 30px;
+border-radius:50px;
 
-  display:inline-flex;
+background:
+rgba(255,255,255,.08);
 
-  align-items:center;
+border:
+1px solid rgba(255,255,255,.08);
 
-  gap:12px;
+backdrop-filter:blur(12px);
 
-  padding:
-    16px 30px;
-
-  border-radius:50px;
-
-  background:
-
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.14),
-      rgba(255,255,255,0.05)
-    );
-
-  border:
-    1px solid rgba(255,255,255,0.08);
-
-  backdrop-filter:blur(12px);
-
-  color:white;
-
-  text-decoration:none;
-
-  transition:.5s;
+color:white;
+text-decoration:none;
+transition:.5s;
 }
 
 .btn:hover{
-
-  transform:
-    translateY(-4px);
-
-  background:
-    rgba(255,255,255,0.14);
+transform:translateY(-4px);
+background:rgba(255,255,255,.16);
 }
 
-/* ================================================= */
-/* ==================== SECTION ==================== */
-/* ================================================= */
+/* ================= SECTION ================= */
 
 .section{
-
-  padding:
-    140px 8%;
+padding:140px 8%;
 }
 
 .section-title{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:4.6rem;
-
-  margin-bottom:34px;
-
-  text-align:center;
-
-  line-height:1;
+font-family:'Cormorant Garamond', serif;
+font-size:4.6rem;
+margin-bottom:30px;
+text-align:center;
 }
 
 .section-text{
-
-  max-width:920px;
-
-  margin:auto;
-
-  text-align:center;
-
-  line-height:2;
-
-  color:rgba(255,255,255,0.82);
-
-  font-size:1.05rem;
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:2;
+color:rgba(255,255,255,.82);
 }
 
-/* ================================================= */
-/* ================= GALLERY INTRO ================= */
-/* ================================================= */
-
-.gallery-intro{
-
-  text-align:center;
-
-  max-width:900px;
-
-  margin:
-    0 auto 70px auto;
-}
-
-.gallery-label{
-
-  display:block;
-
-  margin-bottom:22px;
-
-  letter-spacing:6px;
-
-  font-size:.82rem;
-
-  color:#FFD08A;
-
-  opacity:.9;
-}
-
-.gallery-intro h2{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:5rem;
-
-  font-weight:300;
-
-  margin-bottom:24px;
-
-  color:#F4F1EA;
-}
-
-.gallery-line{
-
-  width:120px;
-
-  height:1px;
-
-  margin:
-    0 auto 34px auto;
-
-  background:
-
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(255,208,138,0.9),
-      transparent
-    );
-}
-
-.gallery-intro p{
-
-  font-size:1.08rem;
-
-  line-height:2;
-
-  color:rgba(255,255,255,0.70);
-}
-
-/* ================================================= */
-/* ==================== GALLERY ==================== */
-/* ================================================= */
+/* ================= GALLERY ================= */
 
 .gallery{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
-  gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:70px;
 }
 
 .gallery img{
+width:100%;
+height:450px;
+object-fit:cover;
+border-radius:28px;
 
-  width:100%;
+transition:1s;
 
-  height:460px;
-
-  object-fit:cover;
-
-  border-radius:30px;
-
-  transition:1s;
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.32);
+box-shadow:
+0 20px 60px rgba(0,0,0,.35);
 }
 
 .gallery img:hover{
-
-  transform:
-    translateY(-10px)
-    scale(1.02);
+transform:
+translateY(-10px)
+scale(1.02);
 }
 
-/* ================================================= */
-/* ================= ACTIVITIES ==================== */
-/* ================================================= */
+/* ================= EXPERIENCE ================= */
 
 .activities{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
 
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
-
-  gap:34px;
+gap:34px;
+margin-top:60px;
 }
 
 .activity-card{
+overflow:hidden;
+border-radius:32px;
 
-  overflow:hidden;
+background:
+rgba(255,255,255,.05);
 
-  border-radius:32px;
+border:
+1px solid rgba(255,255,255,.06);
 
-  background:
+backdrop-filter:blur(10px);
 
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.03)
-    );
-
-  border:
-    1px solid rgba(255,255,255,0.06);
-
-  backdrop-filter:blur(14px);
-
-  transition:.7s;
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.32);
+transition:.6s;
 }
 
 .activity-card:hover{
-
-  transform:
-    translateY(-10px);
+transform:translateY(-8px);
 }
 
 .activity-card img{
-
-  width:100%;
-  height:260px;
-
-  object-fit:cover;
+width:100%;
+height:260px;
+object-fit:cover;
 }
 
 .activity-content{
-
-  padding:34px;
+padding:34px;
 }
 
 .activity-content h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:2rem;
-
-  margin-bottom:18px;
+font-family:'Cormorant Garamond', serif;
+font-size:2rem;
+margin-bottom:18px;
 }
 
 .activity-content p{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.78);
+line-height:1.9;
+color:rgba(255,255,255,.78);
 }
 
-/* ================================================= */
-/* ================= ITINERARY GRID ================ */
-/* ================================================= */
+/* ================= ITINERARY ================= */
 
 .itinerary-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(340px,1fr));
 
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(340px,1fr));
-
-  gap:38px;
-
-  margin-top:70px;
+gap:38px;
+margin-top:70px;
 }
 
 .experience-card{
+overflow:hidden;
+border-radius:32px;
 
-  overflow:hidden;
+background:
+rgba(255,255,255,.05);
 
-  border-radius:34px;
+border:
+1px solid rgba(255,255,255,.06);
 
-  background:
-
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.06),
-      rgba(255,255,255,0.02)
-    );
-
-  border:
-    1px solid rgba(255,255,255,0.08);
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.34);
-
-  backdrop-filter:blur(10px);
-
-  transition:.7s;
+transition:.6s;
 }
 
 .experience-card:hover{
-
-  transform:
-    translateY(-10px)
-    scale(1.02);
+transform:
+translateY(-10px)
+scale(1.02);
 }
 
 .experience-card img{
-
-  width:100%;
-
-  height:260px;
-
-  object-fit:cover;
+width:100%;
+height:260px;
+object-fit:cover;
 }
 
 .experience-content{
-
-  padding:34px;
+padding:34px;
 }
 
 .experience-content h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:2.2rem;
-
-  margin-bottom:24px;
-
-  line-height:1.1;
+font-family:'Cormorant Garamond', serif;
+font-size:2.2rem;
+margin-bottom:24px;
 }
 
 .experience-content ul{
-
-  padding-left:18px;
+padding-left:18px;
 }
 
 .experience-content li{
-
-  margin-bottom:14px;
-
-  color:rgba(255,255,255,0.82);
-
-  line-height:1.7;
+margin-bottom:14px;
+line-height:1.7;
+color:rgba(255,255,255,.82);
 }
 
-/* ================================================= */
-/* ==================== PACKAGE ==================== */
-/* ================================================= */
+/* ================= FOOTER ================= */
 
-.package-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(340px,1fr));
-
-  gap:40px;
-
-  margin-top:60px;
+.footer{
+padding:60px 8%;
+text-align:center;
+color:rgba(255,255,255,.6);
+border-top:1px solid rgba(255,255,255,.08);
 }
 
-.package-card{
+/* ================= MOBILE ================= */
 
-  overflow:hidden;
+@media(max-width:900px){
 
-  border-radius:38px;
-
-  background:
-
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.03)
-    );
-
-  border:
-    1px solid rgba(255,255,255,0.06);
-
-  backdrop-filter:blur(14px);
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.34);
-
-  transition:.7s;
+.hero h1{
+font-size:5rem;
 }
 
-.package-card:hover{
-
-  transform:
-    translateY(-10px);
+.nav{
+gap:16px;
+flex-wrap:wrap;
+justify-content:flex-end;
 }
 
-.package-card img{
-
-  width:100%;
-
-  height:420px;
-
-  object-fit:cover;
 }
-
-.package-content{
-
-  padding:42px;
-}
-
-.package-content h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:3rem;
-
-  margin-bottom:20px;
-
-  line-height:1;
-}
-
-.package-content h4{
-
-  margin-top:34px;
-
-  margin-bottom:18px;
-
-  color:#FFD08A;
-
-  font-size:1.1rem;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
-}
-
-.package-content p{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.82);
-
-  margin-bottom:18px;
-}
-
-.package-content ul{
-
-  padding-left:18px;
-}
-
-.package-content li{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.78);
-}
-
-.price{
-
-  font-size:2.5rem;
-
-  color:#FFD08A;
-
-  margin:
-    38px 0 20px;
-}
-
-/* ================================================= */
-/* ==================== MOBILE ===================== */
-/* ================================================= */
 
 @media(max-width:768px){
 
-  .header{
-    padding:18px 20px;
-  }
+.header{
+padding:20px;
+flex-direction:column;
+gap:20px;
+}
 
-  .nav-menu a{
-    padding:8px 14px;
-    font-size:.85rem;
-  }
+.hero{
+padding:0 7% 80px;
+}
 
-  .hero{
-    padding:0 7% 80px;
-  }
+.hero h1{
+font-size:4rem;
+}
 
-  .hero h1{
-    font-size:4.6rem;
-  }
+.section-title{
+font-size:3rem;
+}
 
-  .section-title{
-    font-size:3rem;
-  }
-
-  .gallery-intro h2{
-    font-size:3.2rem;
-  }
-
-  .gallery img{
-    height:320px;
-  }
+.gallery img{
+height:320px;
+}
 
 }
 
@@ -1042,114 +427,301 @@ body::after{
 
 <body>
 
-<div class="forest-atmosphere">
-
-  <div class="forest-fog"></div>
-
-  <div class="gold-particles">
-
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-
-  </div>
-
-</div>
-
 <header class="header">
 
-  <a href="index.html" class="logo">
-    Orumi Journeys
-  </a>
+<a href="index.html" class="logo">
+Orumi Journeys
+</a>
 
-  <nav class="nav-menu">
-    <a href="index.html">Inicio</a>
-  </nav>
+<nav class="nav">
+
+<a href="index.html">Home</a>
+
+<a href="destinations.html">Destinations</a>
+
+<a href="book-now.html">Book Now</a>
+
+<a href="about-us.html">About Us</a>
+
+<a href="contact-us.html">Contact</a>
+
+</nav>
 
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
 
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1600&auto=format&fit=crop" alt="">
-  </div>
+<div class="hero-image">
 
-  <div class="fog"></div>
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1800&auto=format&fit=crop" alt="Hoi An">
 
-  <div class="hero-content">
+</div>
 
-    <div class="location">
-      VIETNAM • HOI AN
-    </div>
+<div class="hero-content">
 
-    <h1>
-      Hoi An
-    </h1>
+<div class="location">
+VIETNAM • HOI AN
+</div>
 
-    <p>
-      Una ciudad antigua iluminada por faroles dorados, calles amarillas y noches junto al río que parecen sacadas de un sueño nostálgico.
-    </p>
+<h1>
+Hoi An
+</h1>
 
-    <a href="#itinerary" class="btn">
-      Explorar itinerario →
-    </a>
+<p>
 
-  </div>
+Faroles dorados, arquitectura ancestral y callejones junto al río crean una atmósfera cálida y nostálgica en una de las ciudades más mágicas de Vietnam.
+
+</p>
+
+<a href="#itinerary" class="btn">
+Explorar experiencia →
+</a>
+
+</div>
 
 </section>
 
-<!-- RESTO DEL CONTENIDO EXACTAMENTE IGUAL -->
+<!-- INTRO -->
+
+<section class="section">
+
+<h2 class="section-title">
+La ciudad de los faroles
+</h2>
+
+<p class="section-text">
+
+Hoi An mezcla historia, cultura y espiritualidad en un escenario lleno de luces cálidas, mercados flotantes y arquitectura vietnamita tradicional. Cada rincón parece suspendido entre el pasado y la fantasía.
+
+</p>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="section">
+
+<h2 class="section-title">
+Galería
+</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- EXPERIENCIAS -->
+
+<section class="section">
+
+<h2 class="section-title">
+Experiencias
+</h2>
+
+<div class="activities">
+
+<div class="activity-card">
+
+<img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop">
+
+<div class="activity-content">
+
+<h3>
+Faroles nocturnos
+</h3>
+
+<p>
+
+Recorre las calles iluminadas por cientos de faroles tradicionales reflejados sobre el río Thu Bon.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+
+<div class="activity-content">
+
+<h3>
+Mercados y gastronomía
+</h3>
+
+<p>
+
+Descubre sabores vietnamitas auténticos entre mercados locales, cafés ocultos y comida callejera.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
+
+<div class="activity-content">
+
+<h3>
+Templos y tradición
+</h3>
+
+<p>
+
+Explora antiguas casas mercantes, templos chinos y arquitectura histórica junto al río.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ITINERARY -->
+
+<section class="section" id="itinerary">
+
+<h2 class="section-title">
+Experiencias por Día
+</h2>
+
+<div class="itinerary-grid">
+
+<div class="experience-card">
+
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
+
+<div class="experience-content">
+
+<h3>
+Día 1 — Llegada a Hoi An
+</h3>
+
+<ul>
+
+<li>Check-in en boutique hotel</li>
+
+<li>Paseo por Ancient Town</li>
+
+<li>Cena vietnamita tradicional</li>
+
+<li>Recorrido nocturno entre faroles</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="experience-card">
+
+<img src="https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=1200&auto=format&fit=crop">
+
+<div class="experience-content">
+
+<h3>
+Día 2 — Cultura y Río
+</h3>
+
+<ul>
+
+<li>Paseo en bote tradicional</li>
+
+<li>Mercados locales</li>
+
+<li>Clase de cocina vietnamita</li>
+
+<li>Fotografía urbana</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="experience-card">
+
+<img src="https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=1200&auto=format&fit=crop">
+
+<div class="experience-content">
+
+<h3>
+Día 3 — Relax y despedida
+</h3>
+
+<ul>
+
+<li>Mañana libre en cafés</li>
+
+<li>Visita a An Bang Beach</li>
+
+<li>Compras artesanales</li>
+
+<li>Cena de despedida junto al río</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<p>
+Orumi Journeys • Hoi An Experience
+</p>
+
+</footer>
 
 <script>
 
-/* ================================================= */
-/* ============== PARALLAX ATMOSPHERE ============== */
-/* ================================================= */
+/* Smooth reveal animation */
 
-document.addEventListener("mousemove",(e)=>{
+const cards = document.querySelectorAll('.activity-card, .experience-card, .gallery img');
 
-  const fog=document.querySelector(".forest-fog");
+const observer = new IntersectionObserver((entries)=>{
 
-  const x=(e.clientX/window.innerWidth)*10;
-  const y=(e.clientY/window.innerHeight)*10;
+entries.forEach(entry=>{
 
-  fog.style.transform=`translate(${-x}px,${-y}px)`;
+if(entry.isIntersecting){
+
+entry.target.style.opacity = "1";
+entry.target.style.transform = "translateY(0px)";
+
+}
+
 });
 
-/* ================================================= */
-/* ================= SCROLL REVEAL ================= */
-/* ================================================= */
-
-const cards=document.querySelectorAll(
-  ".activity-card,.experience-card,.package-card,.gallery img"
-);
-
-const observer=new IntersectionObserver((entries)=>{
-
-  entries.forEach(entry=>{
-
-    if(entry.isIntersecting){
-
-      entry.target.style.opacity="1";
-      entry.target.style.transform="translateY(0px)";
-    }
-
-  });
-
-},{
-  threshold:.15
-});
+},{threshold:.15});
 
 cards.forEach(card=>{
 
-  card.style.opacity="0";
-  card.style.transform="translateY(40px)";
-  card.style.transition="1s ease";
+card.style.opacity="0";
+card.style.transform="translateY(40px)";
+card.style.transition="1s";
 
-  observer.observe(card);
+observer.observe(card);
+
 });
 
 </script>
