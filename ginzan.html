@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ginzan Onsen | Orumi Journeys</title>
+<title>Jeju | Orumi Journeys</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,26 +19,26 @@
 /* ================================================= */
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
 
-  font-family:'Nunito', sans-serif;
+font-family:'Nunito',sans-serif;
 
-  overflow-x:hidden;
+overflow-x:hidden;
 
-  color:white;
+color:white;
 
-  background:#1b2027;
+background:#111816;
 
-  position:relative;
+position:relative;
 }
 
 /* ================================================= */
@@ -47,252 +47,127 @@ body{
 
 body::before{
 
-  content:"";
+content:"";
 
-  position:fixed;
+position:fixed;
 
-  inset:0;
+inset:0;
 
-  z-index:-10;
+z-index:-10;
 
-  background:
+background:
 
-    radial-gradient(
-      circle at 50% -10%,
-      rgba(255,255,255,0.18),
-      transparent 38%
-    ),
+radial-gradient(
+circle at 20% 20%,
+rgba(130,190,170,0.18),
+transparent 26%
+),
 
-    radial-gradient(
-      circle at 0% 50%,
-      rgba(20,28,38,0.34),
-      transparent 44%
-    ),
+radial-gradient(
+circle at 80% 40%,
+rgba(85,150,135,0.14),
+transparent 30%
+),
 
-    radial-gradient(
-      circle at 100% 50%,
-      rgba(18,22,32,0.30),
-      transparent 42%
-    ),
+radial-gradient(
+circle at 40% 80%,
+rgba(255,255,255,0.05),
+transparent 35%
+),
 
-    radial-gradient(
-      circle at 24% 72%,
-      rgba(90,110,138,0.18),
-      transparent 32%
-    ),
+linear-gradient(
+180deg,
+#4E5E58 0%,
+#38443F 28%,
+#25302C 56%,
+#151D1A 100%
+);
 
-    radial-gradient(
-      circle at 82% 38%,
-      rgba(255,190,120,0.08),
-      transparent 24%
-    ),
-
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(255,255,255,0.05),
-      transparent 56%
-    ),
-
-    linear-gradient(
-      180deg,
-
-      #75879A 0%,
-      #667789 18%,
-      #566779 36%,
-      #465565 52%,
-      #394553 70%,
-      #232C36 100%
-    );
-
-  background-attachment:fixed;
+background-attachment:fixed;
 }
 
 body::after{
 
-  content:"";
+content:"";
 
-  position:fixed;
+position:fixed;
 
-  inset:0;
+inset:0;
 
-  z-index:-9;
+z-index:-9;
 
-  opacity:.12;
+opacity:.12;
 
-  background-image:
-    url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
+background-image:
+url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
 
-  mix-blend-mode:soft-light;
+mix-blend-mode:soft-light;
 
-  pointer-events:none;
+pointer-events:none;
 }
 
 /* ================================================= */
 /* ================= ATMOSPHERE ==================== */
 /* ================================================= */
 
-.forest-atmosphere{
+.atmosphere{
 
-  position:fixed;
+position:fixed;
 
-  inset:0;
+inset:0;
 
-  z-index:-8;
+z-index:-8;
 
-  overflow:hidden;
+overflow:hidden;
 
-  pointer-events:none;
+pointer-events:none;
 }
 
-.forest-fog{
+.fog{
 
-  position:absolute;
+position:absolute;
 
-  inset:-10%;
+inset:-10%;
 
-  background:
+background:
 
-    radial-gradient(
-      circle at 18% 24%,
-      rgba(255,255,255,0.07),
-      transparent 24%
-    ),
+radial-gradient(
+circle at 20% 20%,
+rgba(255,255,255,0.06),
+transparent 25%
+),
 
-    radial-gradient(
-      circle at 80% 34%,
-      rgba(255,255,255,0.05),
-      transparent 30%
-    ),
+radial-gradient(
+circle at 80% 30%,
+rgba(255,255,255,0.04),
+transparent 32%
+),
 
-    radial-gradient(
-      circle at 52% 76%,
-      rgba(255,255,255,0.04),
-      transparent 36%
-    ),
+radial-gradient(
+circle at 50% 70%,
+rgba(255,255,255,0.03),
+transparent 36%
+);
 
-    radial-gradient(
-      circle at 40% 52%,
-      rgba(255,220,160,0.08),
-      transparent 26%
-    );
+filter:blur(120px);
 
-  filter:blur(120px);
-
-  opacity:.95;
-
-  animation:
-    forestFogMove 40s ease-in-out infinite alternate;
+animation:
+fogMove 30s ease-in-out infinite alternate;
 }
 
-@keyframes forestFogMove{
+@keyframes fogMove{
 
-  from{
-    transform:
-      translateX(0px)
-      translateY(0px)
-      scale(1);
-  }
-
-  to{
-    transform:
-      translateX(-28px)
-      translateY(-12px)
-      scale(1.04);
-  }
+from{
+transform:
+translateX(0px)
+translateY(0px);
 }
 
-/* ================================================= */
-/* ================= GOLD PARTICLES ================= */
-/* ================================================= */
-
-.gold-particles{
-
-  position:absolute;
-
-  inset:0;
-
-  overflow:hidden;
+to{
+transform:
+translateX(-30px)
+translateY(-15px);
 }
-
-.gold-particles span{
-
-  position:absolute;
-
-  width:2px;
-  height:2px;
-
-  border-radius:50%;
-
-  background:#E6C58A;
-
-  opacity:.28;
-
-  box-shadow:
-    0 0 12px rgba(230,197,138,0.28);
-
-  animation:
-    goldFloat linear infinite;
-}
-
-.gold-particles span:nth-child(1){
-  top:14%;
-  left:18%;
-  animation-duration:20s;
-}
-
-.gold-particles span:nth-child(2){
-  top:28%;
-  left:72%;
-  animation-duration:24s;
-}
-
-.gold-particles span:nth-child(3){
-  top:58%;
-  left:42%;
-  animation-duration:28s;
-}
-
-.gold-particles span:nth-child(4){
-  top:74%;
-  left:82%;
-  animation-duration:26s;
-}
-
-.gold-particles span:nth-child(5){
-  top:48%;
-  left:12%;
-  animation-duration:22s;
-}
-
-.gold-particles span:nth-child(6){
-  top:22%;
-  left:52%;
-  animation-duration:18s;
-}
-
-@keyframes goldFloat{
-
-  from{
-
-    transform:
-      translateY(0px)
-      scale(1);
-
-    opacity:.16;
-  }
-
-  50%{
-    opacity:.5;
-  }
-
-  to{
-
-    transform:
-      translateY(-16px)
-      scale(1.3);
-
-    opacity:.18;
-  }
 }
 
 /* ================================================= */
@@ -301,42 +176,95 @@ body::after{
 
 .header{
 
-  position:fixed;
+position:fixed;
 
-  top:0;
-  width:100%;
+top:0;
+width:100%;
 
-  padding:22px 32px;
+padding:24px 40px;
 
-  display:flex;
+display:flex;
 
-  justify-content:space-between;
-  align-items:center;
+justify-content:space-between;
+align-items:center;
 
-  z-index:999;
+z-index:999;
 
-  background:
+background:
+linear-gradient(
+to bottom,
+rgba(10,12,10,0.6),
+transparent
+);
 
-    linear-gradient(
-      to bottom,
-      rgba(10,12,10,0.58),
-      transparent
-    );
-
-  backdrop-filter:blur(14px);
+backdrop-filter:blur(14px);
 }
 
 .logo{
 
-  font-family:'Cormorant Garamond', serif;
+font-family:'Cormorant Garamond', serif;
 
-  font-size:2.3rem;
+font-size:2.3rem;
 
-  color:white;
+color:white;
 
-  text-decoration:none;
+text-decoration:none;
 
-  letter-spacing:1px;
+letter-spacing:1px;
+}
+
+/* ================= MENU ================= */
+
+.nav{
+
+display:flex;
+
+gap:28px;
+
+flex-wrap:wrap;
+}
+
+.nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:.95rem;
+
+letter-spacing:1px;
+
+transition:.4s;
+
+position:relative;
+}
+
+.nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-6px;
+
+width:0%;
+
+height:1px;
+
+background:#9ED8C4;
+
+transition:.4s;
+}
+
+.nav a:hover{
+
+color:#9ED8C4;
+}
+
+.nav a:hover::after{
+
+width:100%;
 }
 
 /* ================================================= */
@@ -345,148 +273,108 @@ body::after{
 
 .hero{
 
-  position:relative;
+position:relative;
 
-  min-height:100vh;
+min-height:100vh;
 
-  display:flex;
+display:flex;
 
-  align-items:flex-end;
+align-items:flex-end;
 
-  padding:
-    0 8%
-    110px;
+padding:
+0 8%
+110px;
 
-  overflow:hidden;
+overflow:hidden;
 }
 
 .hero-image{
 
-  position:absolute;
+position:absolute;
 
-  inset:0;
+inset:0;
 
-  z-index:0;
+z-index:0;
 }
 
 .hero-image img{
 
-  width:100%;
-  height:100%;
+width:100%;
+height:100%;
 
-  object-fit:cover;
+object-fit:cover;
 
-  filter:
-    brightness(.55)
-    saturate(.90)
-    contrast(1.06);
+filter:
+brightness(.55)
+saturate(.95)
+contrast(1.05);
 }
 
 .hero-image::after{
 
-  content:"";
+content:"";
 
-  position:absolute;
+position:absolute;
 
-  inset:0;
+inset:0;
 
-  background:
+background:
 
-    linear-gradient(
-      to top,
-      rgba(6,10,8,0.98) 0%,
-      rgba(16,20,18,0.82) 28%,
-      rgba(18,24,20,0.36) 54%,
-      transparent 84%
-    );
-}
-
-.fog{
-
-  position:absolute;
-
-  inset:0;
-
-  z-index:1;
-
-  background:
-
-    radial-gradient(
-      circle at 30% 50%,
-      rgba(255,255,255,0.06),
-      transparent 36%
-    ),
-
-    radial-gradient(
-      circle at 80% 40%,
-      rgba(255,255,255,0.04),
-      transparent 42%
-    );
-
-  filter:blur(50px);
-
-  animation:
-    fogMove 18s ease-in-out infinite alternate;
-}
-
-@keyframes fogMove{
-
-  from{
-    transform:translateX(0px);
-  }
-
-  to{
-    transform:translateX(-20px);
-  }
+linear-gradient(
+to top,
+rgba(5,8,6,0.96) 0%,
+rgba(12,18,14,0.74) 30%,
+transparent 80%
+);
 }
 
 .hero-content{
 
-  position:relative;
+position:relative;
 
-  z-index:3;
+z-index:3;
 
-  max-width:760px;
+max-width:760px;
 }
 
 .location{
 
-  color:#E6C58A;
+color:#9ED8C4;
 
-  letter-spacing:5px;
+letter-spacing:5px;
 
-  text-transform:uppercase;
+text-transform:uppercase;
 
-  margin-bottom:20px;
+margin-bottom:20px;
 
-  font-size:.9rem;
+font-size:.9rem;
 }
 
 .hero h1{
 
-  font-family:'Cormorant Garamond', serif;
+font-family:'Cormorant Garamond', serif;
 
-  font-size:7rem;
+font-size:7rem;
 
-  line-height:.92;
+line-height:.92;
 
-  margin-bottom:28px;
+margin-bottom:28px;
 
-  text-shadow:
-    0 12px 40px rgba(0,0,0,0.5);
+text-shadow:
+0 12px 40px rgba(0,0,0,0.5);
 }
 
 .hero p{
 
-  max-width:620px;
+max-width:620px;
 
-  line-height:1.9;
+line-height:1.9;
 
-  color:rgba(255,255,255,0.88);
+color:rgba(255,255,255,0.88);
 
-  font-size:1.08rem;
+font-size:1.08rem;
 
-  margin-bottom:42px;
+margin-bottom:42px;
 }
 
 /* ================================================= */
@@ -495,44 +383,44 @@ body::after{
 
 .btn{
 
-  display:inline-flex;
+display:inline-flex;
 
-  align-items:center;
+align-items:center;
 
-  gap:12px;
+gap:12px;
 
-  padding:
-    16px 30px;
+padding:
+16px 30px;
 
-  border-radius:50px;
+border-radius:50px;
 
-  background:
+background:
 
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.14),
-      rgba(255,255,255,0.05)
-    );
+linear-gradient(
+to bottom,
+rgba(255,255,255,0.14),
+rgba(255,255,255,0.05)
+);
 
-  border:
-    1px solid rgba(255,255,255,0.08);
+border:
+1px solid rgba(255,255,255,0.08);
 
-  backdrop-filter:blur(12px);
+backdrop-filter:blur(12px);
 
-  color:white;
+color:white;
 
-  text-decoration:none;
+text-decoration:none;
 
-  transition:.5s;
+transition:.5s;
 }
 
 .btn:hover{
 
-  transform:
-    translateY(-4px);
+transform:
+translateY(-4px);
 
-  background:
-    rgba(255,255,255,0.14);
+background:
+rgba(255,255,255,0.14);
 }
 
 /* ================================================= */
@@ -541,106 +429,36 @@ body::after{
 
 .section{
 
-  padding:
-    140px 8%;
+padding:
+140px 8%;
 }
 
 .section-title{
 
-  font-family:'Cormorant Garamond', serif;
+font-family:'Cormorant Garamond', serif;
 
-  font-size:4.6rem;
+font-size:4.6rem;
 
-  margin-bottom:34px;
+margin-bottom:34px;
 
-  text-align:center;
+text-align:center;
 
-  line-height:1;
+line-height:1;
 }
 
 .section-text{
 
-  max-width:920px;
+max-width:920px;
 
-  margin:auto;
+margin:auto;
 
-  text-align:center;
+text-align:center;
 
-  line-height:2;
+line-height:2;
 
-  color:rgba(255,255,255,0.82);
+color:rgba(255,255,255,0.82);
 
-  font-size:1.05rem;
-}
-
-/* ================================================= */
-/* ================= GALLERY INTRO ================= */
-/* ================================================= */
-
-.gallery-intro{
-
-  text-align:center;
-
-  max-width:900px;
-
-  margin:
-    0 auto 70px auto;
-}
-
-.gallery-label{
-
-  display:block;
-
-  margin-bottom:22px;
-
-  letter-spacing:6px;
-
-  font-size:.82rem;
-
-  color:#E6C58A;
-
-  opacity:.9;
-}
-
-.gallery-intro h2{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:5rem;
-
-  font-weight:300;
-
-  margin-bottom:24px;
-
-  color:#F4F1EA;
-}
-
-.gallery-line{
-
-  width:120px;
-
-  height:1px;
-
-  margin:
-    0 auto 34px auto;
-
-  background:
-
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(230,197,138,0.9),
-      transparent
-    );
-}
-
-.gallery-intro p{
-
-  font-size:1.08rem;
-
-  line-height:2;
-
-  color:rgba(255,255,255,0.70);
+font-size:1.05rem;
 }
 
 /* ================================================= */
@@ -649,35 +467,37 @@ body::after{
 
 .gallery{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
 
-  gap:30px;
+gap:30px;
+
+margin-top:70px;
 }
 
 .gallery img{
 
-  width:100%;
+width:100%;
 
-  height:460px;
+height:460px;
 
-  object-fit:cover;
+object-fit:cover;
 
-  border-radius:30px;
+border-radius:30px;
 
-  transition:1s;
+transition:1s;
 
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.32);
+box-shadow:
+0 25px 60px rgba(0,0,0,0.32);
 }
 
 .gallery img:hover{
 
-  transform:
-    translateY(-10px)
-    scale(1.02);
+transform:
+translateY(-10px)
+scale(1.02);
 }
 
 /* ================================================= */
@@ -686,72 +506,74 @@ body::after{
 
 .activities{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
 
-  gap:34px;
+gap:34px;
+
+margin-top:70px;
 }
 
 .activity-card{
 
-  overflow:hidden;
+overflow:hidden;
 
-  border-radius:32px;
+border-radius:32px;
 
-  background:
+background:
 
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.03)
-    );
+linear-gradient(
+to bottom,
+rgba(255,255,255,0.08),
+rgba(255,255,255,0.03)
+);
 
-  border:
-    1px solid rgba(255,255,255,0.06);
+border:
+1px solid rgba(255,255,255,0.06);
 
-  backdrop-filter:blur(14px);
+backdrop-filter:blur(14px);
 
-  transition:.7s;
+transition:.7s;
 
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.32);
+box-shadow:
+0 25px 70px rgba(0,0,0,0.32);
 }
 
 .activity-card:hover{
 
-  transform:
-    translateY(-10px);
+transform:
+translateY(-10px);
 }
 
 .activity-card img{
 
-  width:100%;
-  height:260px;
+width:100%;
+height:260px;
 
-  object-fit:cover;
+object-fit:cover;
 }
 
 .activity-content{
 
-  padding:34px;
+padding:34px;
 }
 
 .activity-content h3{
 
-  font-family:'Cormorant Garamond', serif;
+font-family:'Cormorant Garamond', serif;
 
-  font-size:2rem;
+font-size:2rem;
 
-  margin-bottom:18px;
+margin-bottom:18px;
 }
 
 .activity-content p{
 
-  line-height:1.9;
+line-height:1.9;
 
-  color:rgba(255,255,255,0.78);
+color:rgba(255,255,255,0.78);
 }
 
 /* ================================================= */
@@ -760,232 +582,122 @@ body::after{
 
 .itinerary-grid{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-    repeat(auto-fit,minmax(340px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(340px,1fr));
 
-  gap:38px;
+gap:38px;
 
-  margin-top:70px;
+margin-top:70px;
 }
 
 .experience-card{
 
-  position:relative;
+overflow:hidden;
 
-  overflow:hidden;
+border-radius:34px;
 
-  border-radius:34px;
+background:
 
-  background:
+linear-gradient(
+to bottom,
+rgba(255,255,255,0.06),
+rgba(255,255,255,0.02)
+);
 
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.06),
-      rgba(255,255,255,0.02)
-    );
+border:
+1px solid rgba(255,255,255,0.08);
 
-  border:
-    1px solid rgba(255,255,255,0.08);
+box-shadow:
+0 25px 70px rgba(0,0,0,0.34);
 
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.34);
+backdrop-filter:blur(10px);
 
-  backdrop-filter:blur(10px);
-
-  transition:.7s;
+transition:.7s;
 }
 
 .experience-card:hover{
 
-  transform:
-    translateY(-10px)
-    scale(1.02);
+transform:
+translateY(-10px)
+scale(1.02);
 }
 
 .experience-card img{
 
-  width:100%;
+width:100%;
 
-  height:260px;
+height:260px;
 
-  object-fit:cover;
+object-fit:cover;
 }
 
 .experience-content{
 
-  padding:34px;
+padding:34px;
 }
 
 .experience-content h3{
 
-  font-family:'Cormorant Garamond', serif;
+font-family:'Cormorant Garamond', serif;
 
-  font-size:2.2rem;
+font-size:2.2rem;
 
-  margin-bottom:24px;
-
-  line-height:1.1;
+margin-bottom:24px;
 }
 
 .experience-content ul{
 
-  padding-left:18px;
+padding-left:18px;
 }
 
 .experience-content li{
 
-  margin-bottom:14px;
+margin-bottom:14px;
 
-  color:rgba(255,255,255,0.82);
+color:rgba(255,255,255,0.82);
 
-  line-height:1.7;
-}
-
-/* ================================================= */
-/* ==================== PACKAGE ==================== */
-/* ================================================= */
-
-.package-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(340px,1fr));
-
-  gap:40px;
-
-  margin-top:60px;
-}
-
-.package-card{
-
-  overflow:hidden;
-
-  border-radius:38px;
-
-  background:
-
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.03)
-    );
-
-  border:
-    1px solid rgba(255,255,255,0.06);
-
-  backdrop-filter:blur(14px);
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.34);
-
-  transition:.7s;
-}
-
-.package-card:hover{
-
-  transform:
-    translateY(-10px);
-}
-
-.package-card img{
-
-  width:100%;
-
-  height:420px;
-
-  object-fit:cover;
-}
-
-.package-content{
-
-  padding:42px;
-}
-
-.package-content h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:3rem;
-
-  margin-bottom:20px;
-
-  line-height:1;
-}
-
-.package-content h4{
-
-  margin-top:34px;
-
-  margin-bottom:18px;
-
-  color:#E6C58A;
-
-  font-size:1.1rem;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
-}
-
-.package-content p{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.82);
-
-  margin-bottom:18px;
-}
-
-.package-content ul{
-
-  padding-left:18px;
-}
-
-.package-content li{
-
-  line-height:1.9;
-
-  color:rgba(255,255,255,0.78);
-}
-
-.price{
-
-  font-size:2.5rem;
-
-  color:#E6C58A;
-
-  margin:
-    38px 0 20px;
+line-height:1.7;
 }
 
 /* ================================================= */
 /* ==================== MOBILE ===================== */
 /* ================================================= */
 
+@media(max-width:900px){
+
+.header{
+
+flex-direction:column;
+
+gap:20px;
+}
+
+.nav{
+
+justify-content:center;
+}
+
+}
+
 @media(max-width:768px){
 
-  .hero{
-    padding:0 7% 80px;
-  }
+.hero{
+padding:0 7% 80px;
+}
 
-  .hero h1{
-    font-size:4.6rem;
-  }
+.hero h1{
+font-size:4.5rem;
+}
 
-  .section-title{
-    font-size:3rem;
-  }
+.section-title{
+font-size:3rem;
+}
 
-  .gallery-intro h2{
-    font-size:3.2rem;
-  }
-
-  .gallery img{
-    height:320px;
-  }
+.gallery img{
+height:320px;
+}
 
 }
 
@@ -994,440 +706,313 @@ body::after{
 
 <body>
 
-<div class="forest-atmosphere">
-
-  <div class="forest-fog"></div>
-
-  <div class="gold-particles">
-
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-
-  </div>
-
+<div class="atmosphere">
+<div class="fog"></div>
 </div>
+
+<!-- ================================================= -->
+<!-- ==================== HEADER ==================== -->
+<!-- ================================================= -->
 
 <header class="header">
 
-  <a href="index.html" class="logo">
-    Orumi Journeys
-  </a>
+<a href="index.html" class="logo">
+Orumi Journeys
+</a>
+
+<nav class="nav">
+
+<a href="index.html">index.html</a>
+<a href="destinations.html">destinations.html</a>
+<a href="book-now.html">book-now.html</a>
+<a href="about-us.html">about-us.html</a>
+<a href="contact-us.html">contact-us.html</a>
+
+</nav>
 
 </header>
 
+<!-- ================================================= -->
+<!-- ====================== HERO ==================== -->
+<!-- ================================================= -->
+
 <section class="hero">
 
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1600&auto=format&fit=crop" alt="">
-  </div>
+<div class="hero-image">
 
-  <div class="fog"></div>
-
-  <div class="hero-content">
-
-    <div class="location">
-      JAPAN • GINZAN ONSEN
-    </div>
-
-    <h1>
-      Ginzan Onsen
-    </h1>
-
-    <p>
-      Un pueblo termal escondido entre montañas nevadas y faroles antiguos, donde las calles iluminadas parecen una escena viva de El Viaje de Chihiro.
-    </p>
-
-    <a href="#itinerary" class="btn">
-      Explorar itinerario →
-    </a>
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <h2 class="section-title">
-    Un pueblo detenido en el tiempo
-  </h2>
-
-  <p class="section-text">
-    Ginzan Onsen es uno de los pueblos termales más mágicos de Japón. Sus ryokan tradicionales, puentes de madera, vapor saliendo del río y luces cálidas crean una atmósfera cinematográfica inspirada en el universo Ghibli.
-  </p>
-
-</section>
-
-<section class="section">
-
-<div class="gallery-intro">
-
-  <span class="gallery-label">
-    VISUAL JOURNEY
-  </span>
-
-  <h2>
-    Galería
-  </h2>
-
-  <div class="gallery-line"></div>
-
-  <p>
-
-    Calles cubiertas de nieve, ryokans iluminados y paisajes silenciosos que parecen existir entre los sueños y la nostalgia japonesa.
-
-  </p>
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1800&auto=format&fit=crop" alt="Jeju Island">
 
 </div>
 
-  <div class="gallery">
+<div class="hero-content">
 
-    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop" alt="">
+<div class="location">
+SOUTH KOREA • JEJU
+</div>
 
-    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1200&auto=format&fit=crop" alt="">
+<h1>
+Jeju
+</h1>
 
-    <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=1200&auto=format&fit=crop" alt="">
+<p>
 
-  </div>
+Una isla volcánica rodeada de océano, senderos costeros, bosques húmedos y paisajes contemplativos donde la naturaleza coreana se siente tranquila y profundamente inmersiva.
+
+</p>
+
+<a href="#itinerary" class="btn">
+Explorar itinerario →
+</a>
+
+</div>
 
 </section>
+
+<!-- ================================================= -->
+<!-- ==================== INTRO ===================== -->
+<!-- ================================================= -->
 
 <section class="section">
 
-  <h2 class="section-title">
-    Experiencias
-  </h2>
+<h2 class="section-title">
+Naturaleza oceánica
+</h2>
 
-  <div class="activities">
+<p class="section-text">
 
-    <div class="activity-card">
+Jeju combina volcanes, acantilados, playas negras, cascadas y cafés minimalistas frente al mar en una experiencia contemplativa inspirada en la calma y la belleza natural de Corea del Sur.
 
-      <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1200&auto=format&fit=crop" alt="">
-
-      <div class="activity-content">
-
-        <h3>
-          Ryokan tradicional
-        </h3>
-
-        <p>
-          Hospedaje japonés clásico con tatamis, yukatas, baños termales privados y cenas kaiseki tradicionales.
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="activity-card">
-
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="">
-
-      <div class="activity-content">
-
-        <h3>
-          Paseos nocturnos
-        </h3>
-
-        <p>
-          Caminatas entre faroles cálidos, puentes nevados y vapor termal bajo una atmósfera silenciosa y mágica.
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="activity-card">
-
-      <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1200&auto=format&fit=crop" alt="">
-
-      <div class="activity-content">
-
-        <h3>
-          Fotografía atmosférica
-        </h3>
-
-        <p>
-          Escenarios ideales para fotografía cinematográfica inspirada en Studio Ghibli y la nostalgia japonesa.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
+</p>
 
 </section>
+
+<!-- ================================================= -->
+<!-- ==================== GALLERY =================== -->
+<!-- ================================================= -->
+
+<section class="section">
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Acantilados de Jeju">
+
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200&auto=format&fit=crop" alt="Bosques de Jeju">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Paisaje volcánico de Jeju">
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- ================= EXPERIENCIAS ================= -->
+<!-- ================================================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+Experiencias
+</h2>
+
+<div class="activities">
+
+<div class="activity-card">
+
+<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop" alt="Senderos Jeju">
+
+<div class="activity-content">
+
+<h3>
+Senderos volcánicos
+</h3>
+
+<p>
+
+Caminatas entre acantilados, rutas oceánicas y paisajes creados por antiguos volcanes.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop" alt="Bosques Jeju">
+
+<div class="activity-content">
+
+<h3>
+Bosques y cascadas
+</h3>
+
+<p>
+
+Explora bosques húmedos, cascadas escondidas y paisajes verdes llenos de calma y niebla.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop" alt="Cafe Jeju">
+
+<div class="activity-content">
+
+<h3>
+Cafés junto al mar
+</h3>
+
+<p>
+
+Descubre cafeterías minimalistas coreanas con vistas panorámicas al océano y puestas de sol.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- ================= ITINERARIO =================== -->
+<!-- ================================================= -->
 
 <section class="section" id="itinerary">
 
-  <h2 class="section-title">
-    Experiencias por Día
-  </h2>
+<h2 class="section-title">
+Experiencias por Día
+</h2>
 
-  <p class="section-text">
+<p class="section-text">
 
-    Una travesía lenta entre montañas nevadas, aguas termales, ryokans históricos y noches iluminadas por faroles japoneses.
+Un viaje lento entre volcanes, océano, naturaleza y rincones tranquilos inspirados en la serenidad de Jeju.
 
-  </p>
+</p>
 
-  <div class="itinerary-grid">
+<div class="itinerary-grid">
 
-    <div class="experience-card">
+<div class="experience-card">
 
-      <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop" alt="">
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop" alt="Costa Jeju">
 
-      <div class="experience-content">
+<div class="experience-content">
 
-        <h3>
-          Día 1 — Llegada a Ginzan
-        </h3>
+<h3>
+Día 1 — Llegada a Jeju
+</h3>
 
-        <ul>
+<ul>
 
-          <li>Viaje en tren hacia Yamagata</li>
+<li>Check-in en hotel frente al océano</li>
 
-          <li>Traslado al pueblo termal</li>
+<li>Paseo costero al atardecer</li>
 
-          <li>Check-in en ryokan tradicional</li>
+<li>Cena coreana tradicional</li>
 
-          <li>Paseo nocturno entre faroles</li>
+<li>Exploración nocturna de cafés</li>
 
-          <li>Cena japonesa kaiseki</li>
+</ul>
 
-          <li>Primer baño onsen</li>
+</div>
 
-        </ul>
+</div>
 
-      </div>
+<div class="experience-card">
 
-    </div>
+<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1200&auto=format&fit=crop" alt="Naturaleza Jeju">
 
-    <div class="experience-card">
+<div class="experience-content">
 
-      <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1200&auto=format&fit=crop" alt="">
+<h3>
+Día 2 — Naturaleza volcánica
+</h3>
 
-      <div class="experience-content">
+<ul>
 
-        <h3>
-          Día 2 — Pueblo y Onsen
-        </h3>
+<li>Visita al Hallasan</li>
 
-        <ul>
+<li>Senderismo entre bosques</li>
 
-          <li>Desayuno japonés tradicional</li>
+<li>Fotografía de paisajes</li>
 
-          <li>Exploración del pueblo histórico</li>
+<li>Visita a cascadas y acantilados</li>
 
-          <li>Visita a cafés y tiendas artesanales</li>
+</ul>
 
-          <li>Fotografía en puentes nevados</li>
+</div>
 
-          <li>Relajación en baños termales</li>
+</div>
 
-        </ul>
+<div class="experience-card">
 
-      </div>
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Relax Jeju">
 
-    </div>
+<div class="experience-content">
 
-    <div class="experience-card">
+<h3>
+Día 3 — Relax y despedida
+</h3>
 
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="">
+<ul>
 
-      <div class="experience-content">
+<li>Mañana libre frente al mar</li>
 
-        <h3>
-          Día 3 — Montañas y Nostalgia
-        </h3>
+<li>Compras artesanales</li>
 
-        <ul>
+<li>Cafeterías panorámicas</li>
 
-          <li>Sendero panorámico en montaña</li>
+<li>Cena de despedida frente al océano</li>
 
-          <li>Fotografía de paisajes nevados</li>
+</ul>
 
-          <li>Té japonés tradicional</li>
+</div>
 
-          <li>Tiempo libre contemplativo</li>
+</div>
 
-          <li>Cena de despedida en ryokan</li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section" id="packages">
-
-  <h2 class="section-title">
-    Vive Ginzan Onsen
-  </h2>
-
-  <p class="section-text">
-
-    Descubre uno de los pueblos termales más hermosos y cinematográficos de Japón.
-
-  </p>
-
-  <div class="package-grid">
-
-    <div class="package-card">
-
-      <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1600&auto=format&fit=crop" alt="">
-
-      <div class="package-content">
-
-        <h3>
-          Ginzan Onsen — Viaje inspirado en Studio Ghibli
-        </h3>
-
-        <p>
-
-          3 Días / 2 Noches
-
-        </p>
-
-        <p>
-
-          Una experiencia inmersiva entre nieve, ryokans tradicionales, aguas termales y paisajes inspirados en El Viaje de Chihiro.
-
-        </p>
-
-        <h4>
-          Qué incluye
-        </h4>
-
-        <ul>
-
-          <li>2 noches en ryokan tradicional</li>
-
-          <li>Desayunos y cenas japonesas</li>
-
-          <li>Acceso a onsen</li>
-
-          <li>Traslados locales</li>
-
-          <li>Experiencia cultural japonesa</li>
-
-          <li>Mapa ilustrado de Ginzan</li>
-
-        </ul>
-
-        <h4>
-          Experiencia
-        </h4>
-
-        <ul>
-
-          <li>Slow travel japonés</li>
-
-          <li>Ambiente cinematográfico</li>
-
-          <li>Nostalgia y contemplación</li>
-
-          <li>Fotografía atmosférica</li>
-
-          <li>Relax termal</li>
-
-        </ul>
-
-        <h4>
-          Información práctica
-        </h4>
-
-        <ul>
-
-          <li>Mejor temporada: invierno y otoño</li>
-
-          <li>Ropa térmica recomendada</li>
-
-          <li>Ideal para fotografía</li>
-
-          <li>Clima frío y nevado</li>
-
-        </ul>
-
-        <div class="price">
-
-          USD 890 por persona
-
-        </div>
-
-        <p>
-
-          No incluye vuelos internacionales.
-
-        </p>
-
-        <a href="#" class="btn">
-
-          Reservar experiencia →
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 <script>
 
 /* ================================================= */
-/* ============== PARALLAX ATMOSPHERE ============== */
-/* ================================================= */
-
-document.addEventListener("mousemove",(e)=>{
-
-  const fog=document.querySelector(".forest-fog");
-
-  const x=(e.clientX/window.innerWidth)*10;
-  const y=(e.clientY/window.innerHeight)*10;
-
-  fog.style.transform=`translate(${-x}px,${-y}px)`;
-});
-
-/* ================================================= */
 /* ================= SCROLL REVEAL ================= */
 /* ================================================= */
 
 const cards=document.querySelectorAll(
-  ".activity-card,.experience-card,.package-card,.gallery img"
+".activity-card,.experience-card,.gallery img"
 );
 
 const observer=new IntersectionObserver((entries)=>{
 
-  entries.forEach(entry=>{
+entries.forEach(entry=>{
 
-    if(entry.isIntersecting){
+if(entry.isIntersecting){
 
-      entry.target.style.opacity="1";
-      entry.target.style.transform="translateY(0px)";
-    }
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0px)";
+}
 
-  });
+});
 
 },{
-  threshold:.15
+threshold:.15
 });
 
 cards.forEach(card=>{
 
-  card.style.opacity="0";
-  card.style.transform="translateY(40px)";
-  card.style.transition="1s ease";
+card.style.opacity="0";
+card.style.transform="translateY(40px)";
+card.style.transition="1s ease";
 
-  observer.observe(card);
+observer.observe(card);
 });
 
 </script>
