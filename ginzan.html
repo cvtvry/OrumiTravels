@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jeju | Orumi Journeys</title>
+<title>Ginzan Onsen | Orumi Journeys</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@ overflow-x:hidden;
 
 color:white;
 
-background:#111816;
+background:#1b2027;
 
 position:relative;
 }
@@ -58,29 +58,43 @@ z-index:-10;
 background:
 
 radial-gradient(
-circle at 20% 20%,
-rgba(130,190,170,0.18),
-transparent 26%
+circle at 50% -10%,
+rgba(255,255,255,0.18),
+transparent 38%
 ),
 
 radial-gradient(
-circle at 80% 40%,
-rgba(85,150,135,0.14),
-transparent 30%
+circle at 0% 50%,
+rgba(20,28,38,0.34),
+transparent 44%
 ),
 
 radial-gradient(
-circle at 40% 80%,
-rgba(255,255,255,0.05),
-transparent 35%
+circle at 100% 50%,
+rgba(18,22,32,0.30),
+transparent 42%
+),
+
+radial-gradient(
+circle at 24% 72%,
+rgba(90,110,138,0.18),
+transparent 32%
+),
+
+radial-gradient(
+circle at 82% 38%,
+rgba(255,190,120,0.08),
+transparent 24%
 ),
 
 linear-gradient(
 180deg,
-#4E5E58 0%,
-#38443F 28%,
-#25302C 56%,
-#151D1A 100%
+#75879A 0%,
+#667789 18%,
+#566779 36%,
+#465565 52%,
+#394553 70%,
+#232C36 100%
 );
 
 background-attachment:fixed;
@@ -104,70 +118,6 @@ url("https://www.transparenttextures.com/patterns/rice-paper-3.png");
 mix-blend-mode:soft-light;
 
 pointer-events:none;
-}
-
-/* ================================================= */
-/* ================= ATMOSPHERE ==================== */
-/* ================================================= */
-
-.atmosphere{
-
-position:fixed;
-
-inset:0;
-
-z-index:-8;
-
-overflow:hidden;
-
-pointer-events:none;
-}
-
-.fog{
-
-position:absolute;
-
-inset:-10%;
-
-background:
-
-radial-gradient(
-circle at 20% 20%,
-rgba(255,255,255,0.06),
-transparent 25%
-),
-
-radial-gradient(
-circle at 80% 30%,
-rgba(255,255,255,0.04),
-transparent 32%
-),
-
-radial-gradient(
-circle at 50% 70%,
-rgba(255,255,255,0.03),
-transparent 36%
-);
-
-filter:blur(120px);
-
-animation:
-fogMove 30s ease-in-out infinite alternate;
-}
-
-@keyframes fogMove{
-
-from{
-transform:
-translateX(0px)
-translateY(0px);
-}
-
-to{
-transform:
-translateX(-30px)
-translateY(-15px);
-}
 }
 
 /* ================================================= */
@@ -213,7 +163,9 @@ text-decoration:none;
 letter-spacing:1px;
 }
 
-/* ================= MENU ================= */
+/* ================================================= */
+/* ====================== MENU ===================== */
+/* ================================================= */
 
 .nav{
 
@@ -252,14 +204,14 @@ width:0%;
 
 height:1px;
 
-background:#9ED8C4;
+background:#E6C58A;
 
 transition:.4s;
 }
 
 .nav a:hover{
 
-color:#9ED8C4;
+color:#E6C58A;
 }
 
 .nav a:hover::after{
@@ -306,8 +258,8 @@ object-fit:cover;
 
 filter:
 brightness(.55)
-saturate(.95)
-contrast(1.05);
+saturate(.90)
+contrast(1.06);
 }
 
 .hero-image::after{
@@ -322,9 +274,10 @@ background:
 
 linear-gradient(
 to top,
-rgba(5,8,6,0.96) 0%,
-rgba(12,18,14,0.74) 30%,
-transparent 80%
+rgba(6,10,8,0.98) 0%,
+rgba(16,20,18,0.82) 28%,
+rgba(18,24,20,0.36) 54%,
+transparent 84%
 );
 }
 
@@ -339,7 +292,7 @@ max-width:760px;
 
 .location{
 
-color:#9ED8C4;
+color:#E6C58A;
 
 letter-spacing:5px;
 
@@ -706,10 +659,6 @@ height:320px;
 
 <body>
 
-<div class="atmosphere">
-<div class="fog"></div>
-</div>
-
 <!-- ================================================= -->
 <!-- ==================== HEADER ==================== -->
 <!-- ================================================= -->
@@ -723,9 +672,13 @@ Orumi Journeys
 <nav class="nav">
 
 <a href="index.html">index.html</a>
+
 <a href="destinations.html">destinations.html</a>
+
 <a href="book-now.html">book-now.html</a>
+
 <a href="about-us.html">about-us.html</a>
+
 <a href="contact-us.html">contact-us.html</a>
 
 </nav>
@@ -740,23 +693,23 @@ Orumi Journeys
 
 <div class="hero-image">
 
-<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1800&auto=format&fit=crop" alt="Jeju Island">
+<img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1800&auto=format&fit=crop" alt="Ginzan Onsen">
 
 </div>
 
 <div class="hero-content">
 
 <div class="location">
-SOUTH KOREA • JEJU
+JAPAN • GINZAN ONSEN
 </div>
 
 <h1>
-Jeju
+Ginzan Onsen
 </h1>
 
 <p>
 
-Una isla volcánica rodeada de océano, senderos costeros, bosques húmedos y paisajes contemplativos donde la naturaleza coreana se siente tranquila y profundamente inmersiva.
+Un pueblo termal escondido entre montañas nevadas y faroles antiguos donde las calles iluminadas parecen una escena viva de una película de Studio Ghibli.
 
 </p>
 
@@ -775,12 +728,12 @@ Explorar itinerario →
 <section class="section">
 
 <h2 class="section-title">
-Naturaleza oceánica
+Un pueblo detenido en el tiempo
 </h2>
 
 <p class="section-text">
 
-Jeju combina volcanes, acantilados, playas negras, cascadas y cafés minimalistas frente al mar en una experiencia contemplativa inspirada en la calma y la belleza natural de Corea del Sur.
+Ginzan Onsen es uno de los pueblos termales más mágicos de Japón. Sus ryokan tradicionales, puentes de madera y calles cubiertas de nieve crean una atmósfera cinematográfica y nostálgica.
 
 </p>
 
@@ -794,11 +747,11 @@ Jeju combina volcanes, acantilados, playas negras, cascadas y cafés minimalista
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Acantilados de Jeju">
+<img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop" alt="Ginzan streets">
 
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200&auto=format&fit=crop" alt="Bosques de Jeju">
+<img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1200&auto=format&fit=crop" alt="Japanese ryokan">
 
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Paisaje volcánico de Jeju">
+<img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=1200&auto=format&fit=crop" alt="Snow village">
 
 </div>
 
@@ -818,17 +771,17 @@ Experiencias
 
 <div class="activity-card">
 
-<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop" alt="Senderos Jeju">
+<img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1200&auto=format&fit=crop" alt="Ryokan">
 
 <div class="activity-content">
 
 <h3>
-Senderos volcánicos
+Ryokan tradicional
 </h3>
 
 <p>
 
-Caminatas entre acantilados, rutas oceánicas y paisajes creados por antiguos volcanes.
+Hospedaje japonés clásico con tatamis, yukatas, baños termales privados y cenas tradicionales kaiseki.
 
 </p>
 
@@ -838,17 +791,17 @@ Caminatas entre acantilados, rutas oceánicas y paisajes creados por antiguos vo
 
 <div class="activity-card">
 
-<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop" alt="Bosques Jeju">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Night walk">
 
 <div class="activity-content">
 
 <h3>
-Bosques y cascadas
+Paseos nocturnos
 </h3>
 
 <p>
 
-Explora bosques húmedos, cascadas escondidas y paisajes verdes llenos de calma y niebla.
+Caminatas entre faroles cálidos, puentes nevados y vapor termal bajo una atmósfera silenciosa y mágica.
 
 </p>
 
@@ -858,17 +811,17 @@ Explora bosques húmedos, cascadas escondidas y paisajes verdes llenos de calma 
 
 <div class="activity-card">
 
-<img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop" alt="Cafe Jeju">
+<img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1200&auto=format&fit=crop" alt="Photography">
 
 <div class="activity-content">
 
 <h3>
-Cafés junto al mar
+Fotografía atmosférica
 </h3>
 
 <p>
 
-Descubre cafeterías minimalistas coreanas con vistas panorámicas al océano y puestas de sol.
+Escenarios ideales para fotografía cinematográfica inspirada en la nostalgia japonesa y Studio Ghibli.
 
 </p>
 
@@ -892,7 +845,7 @@ Experiencias por Día
 
 <p class="section-text">
 
-Un viaje lento entre volcanes, océano, naturaleza y rincones tranquilos inspirados en la serenidad de Jeju.
+Una travesía lenta entre montañas nevadas, aguas termales y noches iluminadas por faroles japoneses.
 
 </p>
 
@@ -900,23 +853,23 @@ Un viaje lento entre volcanes, océano, naturaleza y rincones tranquilos inspira
 
 <div class="experience-card">
 
-<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop" alt="Costa Jeju">
+<img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop" alt="Arrival">
 
 <div class="experience-content">
 
 <h3>
-Día 1 — Llegada a Jeju
+Día 1 — Llegada a Ginzan
 </h3>
 
 <ul>
 
-<li>Check-in en hotel frente al océano</li>
+<li>Viaje en tren hacia Yamagata</li>
 
-<li>Paseo costero al atardecer</li>
+<li>Check-in en ryokan tradicional</li>
 
-<li>Cena coreana tradicional</li>
+<li>Paseo nocturno entre faroles</li>
 
-<li>Exploración nocturna de cafés</li>
+<li>Cena japonesa kaiseki</li>
 
 </ul>
 
@@ -926,23 +879,23 @@ Día 1 — Llegada a Jeju
 
 <div class="experience-card">
 
-<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1200&auto=format&fit=crop" alt="Naturaleza Jeju">
+<img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1200&auto=format&fit=crop" alt="Onsen">
 
 <div class="experience-content">
 
 <h3>
-Día 2 — Naturaleza volcánica
+Día 2 — Pueblo y Onsen
 </h3>
 
 <ul>
 
-<li>Visita al Hallasan</li>
+<li>Desayuno japonés tradicional</li>
 
-<li>Senderismo entre bosques</li>
+<li>Exploración del pueblo histórico</li>
 
-<li>Fotografía de paisajes</li>
+<li>Relajación en baños termales</li>
 
-<li>Visita a cascadas y acantilados</li>
+<li>Fotografía en puentes nevados</li>
 
 </ul>
 
@@ -952,23 +905,23 @@ Día 2 — Naturaleza volcánica
 
 <div class="experience-card">
 
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Relax Jeju">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Snow mountain">
 
 <div class="experience-content">
 
 <h3>
-Día 3 — Relax y despedida
+Día 3 — Montañas y nostalgia
 </h3>
 
 <ul>
 
-<li>Mañana libre frente al mar</li>
+<li>Sendero panorámico en montaña</li>
 
-<li>Compras artesanales</li>
+<li>Fotografía de paisajes nevados</li>
 
-<li>Cafeterías panorámicas</li>
+<li>Té japonés tradicional</li>
 
-<li>Cena de despedida frente al océano</li>
+<li>Cena de despedida en ryokan</li>
 
 </ul>
 
@@ -979,6 +932,10 @@ Día 3 — Relax y despedida
 </div>
 
 </section>
+
+<!-- ================================================= -->
+<!-- ====================== SCRIPT ================== -->
+<!-- ================================================= -->
 
 <script>
 
